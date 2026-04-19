@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<efxpt:design_db name="Ti180_mipi" device_def="Ti180J484" version="2024.2.294.4.12" db_version="20242999" last_change_date="Mon Mar 24 09:40:54 2025" xmlns:efxpt="http://www.efinixinc.com/peri_design_db" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.efinixinc.com/peri_design_db peri_design_db.xsd ">
+    <efxpt:device_info>
+        <efxpt:iobank_info>
+            <efxpt:iobank name="2A_2B_2C" iostd="1.8 V LVCMOS" is_dyn_voltage="false" mode_sel_name="2A_2B_2C_MODE_SEL"/>
+            <efxpt:iobank name="3A" iostd="1.8 V LVCMOS" is_dyn_voltage="false" mode_sel_name="3A_MODE_SEL"/>
+            <efxpt:iobank name="3B_3C" iostd="1.8 V LVCMOS" is_dyn_voltage="false" mode_sel_name="3B_3C_MODE_SEL"/>
+            <efxpt:iobank name="4A" iostd="1.8 V LVCMOS" is_dyn_voltage="false" mode_sel_name="4A_MODE_SEL"/>
+            <efxpt:iobank name="4B" iostd="1.8 V LVCMOS" is_dyn_voltage="false" mode_sel_name="4B_MODE_SEL"/>
+            <efxpt:iobank name="4C" iostd="1.8 V LVCMOS" is_dyn_voltage="false" mode_sel_name="4C_MODE_SEL"/>
+            <efxpt:iobank name="BL" iostd="3.3 V LVCMOS" is_dyn_voltage="false" mode_sel_name="BL_MODE_SEL"/>
+            <efxpt:iobank name="BR" iostd="3.3 V LVCMOS" is_dyn_voltage="false" mode_sel_name="BR_MODE_SEL"/>
+            <efxpt:iobank name="TL" iostd="3.3 V LVCMOS" is_dyn_voltage="false" mode_sel_name="TL_MODE_SEL"/>
+            <efxpt:iobank name="TR" iostd="3.3 V LVCMOS" is_dyn_voltage="false" mode_sel_name="TR_MODE_SEL"/>
+        </efxpt:iobank_info>
+        <efxpt:ctrl_info>
+            <efxpt:ctrl name="cfg" ctrl_def="CONFIG_CTRL0" clock_name="" is_clk_invert="false" cbsel_bus_name="cfg_CBSEL" config_ctrl_name="cfg_CONFIG" ena_capture_name="cfg_ENA" error_status_name="cfg_ERROR" um_signal_status_name="cfg_USR_STATUS" is_remote_update_enable="false" is_user_mode_enable="false"/>
+        </efxpt:ctrl_info>
+        <efxpt:seu_info>
+            <efxpt:seu name="seu" block_def="CONFIG_SEU0" mode="auto" ena_detect="false" wait_interval="16500000">
+                <efxpt:gen_pin>
+                    <efxpt:pin name="seu_START" type_name="START" is_bus="false"/>
+                    <efxpt:pin name="seu_INJECT_ERROR" type_name="INJECT_ERROR" is_bus="false"/>
+                    <efxpt:pin name="seu_RST" type_name="RST" is_bus="false"/>
+                    <efxpt:pin name="seu_CONFIG" type_name="CONFIG" is_bus="false"/>
+                    <efxpt:pin name="seu_ERROR" type_name="ERROR" is_bus="false"/>
+                    <efxpt:pin name="seu_DONE" type_name="DONE" is_bus="false"/>
+                </efxpt:gen_pin>
+            </efxpt:seu>
+        </efxpt:seu_info>
+        <efxpt:clkmux_info>
+            <efxpt:clkmux name="GCLKMUX_B" block_def="GCLKMUX_B" is_mux_bot0_dyn="false" is_mux_bot7_dyn="false">
+                <efxpt:gen_pin>
+                    <efxpt:pin name="" type_name="DYN_MUX_SEL_7" is_bus="true"/>
+                    <efxpt:pin name="" type_name="DYN_MUX_OUT_7" is_bus="false"/>
+                    <efxpt:pin name="" type_name="ROUTE0" is_bus="false" is_clk="true" is_clk_invert="false"/>
+                    <efxpt:pin name="" type_name="ROUTE1" is_bus="false" is_clk="true" is_clk_invert="false"/>
+                    <efxpt:pin name="" type_name="ROUTE2" is_bus="false" is_clk="true" is_clk_invert="false"/>
+                    <efxpt:pin name="" type_name="ROUTE3" is_bus="false" is_clk="true" is_clk_invert="false"/>
+                    <efxpt:pin name="" type_name="DYN_MUX_OUT_0" is_bus="false"/>
+                    <efxpt:pin name="" type_name="DYN_MUX_SEL_0" is_bus="true"/>
+                </efxpt:gen_pin>
+            </efxpt:clkmux>
+            <efxpt:clkmux name="GCLKMUX_L" block_def="GCLKMUX_L" is_mux_bot0_dyn="false" is_mux_bot7_dyn="false">
+                <efxpt:gen_pin>
+                    <efxpt:pin name="" type_name="DYN_MUX_SEL_7" is_bus="true"/>
+                    <efxpt:pin name="" type_name="DYN_MUX_OUT_7" is_bus="false"/>
+                    <efxpt:pin name="" type_name="ROUTE0" is_bus="false" is_clk="true" is_clk_invert="false"/>
+                    <efxpt:pin name="" type_name="ROUTE1" is_bus="false" is_clk="true" is_clk_invert="false"/>
+                    <efxpt:pin name="" type_name="ROUTE2" is_bus="false" is_clk="true" is_clk_invert="false"/>
+                    <efxpt:pin name="" type_name="ROUTE3" is_bus="false" is_clk="true" is_clk_invert="false"/>
+                    <efxpt:pin name="" type_name="DYN_MUX_OUT_0" is_bus="false"/>
+                    <efxpt:pin name="" type_name="DYN_MUX_SEL_0" is_bus="true"/>
+                </efxpt:gen_pin>
+            </efxpt:clkmux>
+            <efxpt:clkmux name="GCLKMUX_R" block_def="GCLKMUX_R" is_mux_bot0_dyn="false" is_mux_bot7_dyn="false">
+                <efxpt:gen_pin>
+                    <efxpt:pin name="" type_name="DYN_MUX_SEL_7" is_bus="true"/>
+                    <efxpt:pin name="" type_name="DYN_MUX_OUT_7" is_bus="false"/>
+                    <efxpt:pin name="" type_name="ROUTE0" is_bus="false" is_clk="true" is_clk_invert="false"/>
+                    <efxpt:pin name="" type_name="ROUTE1" is_bus="false" is_clk="true" is_clk_invert="false"/>
+                    <efxpt:pin name="" type_name="ROUTE2" is_bus="false" is_clk="true" is_clk_invert="false"/>
+                    <efxpt:pin name="" type_name="ROUTE3" is_bus="false" is_clk="true" is_clk_invert="false"/>
+                    <efxpt:pin name="" type_name="DYN_MUX_OUT_0" is_bus="false"/>
+                    <efxpt:pin name="" type_name="DYN_MUX_SEL_0" is_bus="true"/>
+                </efxpt:gen_pin>
+            </efxpt:clkmux>
+            <efxpt:clkmux name="GCLKMUX_T" block_def="GCLKMUX_T" is_mux_bot0_dyn="false" is_mux_bot7_dyn="false">
+                <efxpt:gen_pin>
+                    <efxpt:pin name="" type_name="DYN_MUX_SEL_7" is_bus="true"/>
+                    <efxpt:pin name="" type_name="DYN_MUX_OUT_7" is_bus="false"/>
+                    <efxpt:pin name="" type_name="ROUTE0" is_bus="false" is_clk="true" is_clk_invert="false"/>
+                    <efxpt:pin name="" type_name="ROUTE1" is_bus="false" is_clk="true" is_clk_invert="false"/>
+                    <efxpt:pin name="" type_name="ROUTE2" is_bus="false" is_clk="true" is_clk_invert="false"/>
+                    <efxpt:pin name="" type_name="ROUTE3" is_bus="false" is_clk="true" is_clk_invert="false"/>
+                    <efxpt:pin name="" type_name="DYN_MUX_OUT_0" is_bus="false"/>
+                    <efxpt:pin name="" type_name="DYN_MUX_SEL_0" is_bus="true"/>
+                </efxpt:gen_pin>
+            </efxpt:clkmux>
+        </efxpt:clkmux_info>
+    </efxpt:device_info>
+    <efxpt:gpio_info>
+        <efxpt:comp_gpio name="i_inject_err_n" gpio_def="GPIOB_N_14" mode="input" bus_name="" io_standard="1.8 V LVCMOS">
+            <efxpt:input_config name="i_inject_err_n" name_ddio_lo="" conn_type="normal" is_register="false" clock_name="" is_clock_inverted="false" pull_option="weak pullup" is_schmitt_trigger="false" ddio_type="none" is_bus_hold="false" delay="0" is_serial="false" is_dyn_delay="false" fastclk_name="" pullup_ena_name="i_inject_err_n_PULL_UP_ENA" dyn_delay_en_name="i_inject_err_n_DLY_ENA" dyn_delay_reset_name="i_inject_err_n_DLY_RST" dyn_delay_ctrl_name="i_inject_err_n_DLY_CTRL" clkmux_buf_name=""/>
+        </efxpt:comp_gpio>
+        <efxpt:comp_gpio name="led[0]" gpio_def="GPIOB_N_02" mode="output" bus_name="" io_standard="1.8 V LVCMOS">
+            <efxpt:output_config name="led[0]" name_ddio_lo="" register_option="none" clock_name="" is_clock_inverted="false" is_slew_rate="false" tied_option="none" ddio_type="none" delay="0" is_serial="false" drive_strength="4" fastclk_name=""/>
+        </efxpt:comp_gpio>
+        <efxpt:comp_gpio name="led[1]" gpio_def="GPIOB_P_02" mode="output" bus_name="" io_standard="1.8 V LVCMOS">
+            <efxpt:output_config name="led[1]" name_ddio_lo="" register_option="none" clock_name="" is_clock_inverted="false" is_slew_rate="false" tied_option="none" ddio_type="none" delay="0" is_serial="false" drive_strength="4" fastclk_name=""/>
+        </efxpt:comp_gpio>
+        <efxpt:comp_gpio name="led[2]" gpio_def="GPIOB_P_13" mode="output" bus_name="" io_standard="1.8 V LVCMOS">
+            <efxpt:output_config name="led[2]" name_ddio_lo="" register_option="none" clock_name="" is_clock_inverted="false" is_slew_rate="false" tied_option="none" ddio_type="none" delay="0" is_serial="false" drive_strength="4" fastclk_name=""/>
+        </efxpt:comp_gpio>
+        <efxpt:comp_gpio name="led[3]" gpio_def="GPIOB_P_14" mode="output" bus_name="" io_standard="1.8 V LVCMOS">
+            <efxpt:output_config name="led[3]" name_ddio_lo="" register_option="none" clock_name="" is_clock_inverted="false" is_slew_rate="false" tied_option="none" ddio_type="none" delay="0" is_serial="false" drive_strength="4" fastclk_name=""/>
+        </efxpt:comp_gpio>
+        <efxpt:comp_gpio name="led[4]" gpio_def="GPIOB_N_11" mode="output" bus_name="" io_standard="1.8 V LVCMOS">
+            <efxpt:output_config name="led[4]" name_ddio_lo="" register_option="none" clock_name="" is_clock_inverted="false" is_slew_rate="false" tied_option="none" ddio_type="none" delay="0" is_serial="false" drive_strength="4" fastclk_name=""/>
+        </efxpt:comp_gpio>
+        <efxpt:comp_gpio name="mipi_pll_refclkp" gpio_def="GPIOB_P_11" mode="input" bus_name="" io_standard="1.8 V LVCMOS">
+            <efxpt:input_config name="mipi_pll_refclkp" name_ddio_lo="" conn_type="pll_clkin" is_register="false" clock_name="" is_clock_inverted="false" pull_option="none" is_schmitt_trigger="false" ddio_type="none" is_bus_hold="false" delay="0" is_serial="false" is_dyn_delay="false" fastclk_name="" pullup_ena_name="mipi_pll_refclkp_PULL_UP_ENA" dyn_delay_en_name="mipi_pll_refclkp_DLY_ENA" dyn_delay_reset_name="mipi_pll_refclkp_DLY_RST" dyn_delay_ctrl_name="mipi_pll_refclkp_DLY_CTRL" clkmux_buf_name=""/>
+        </efxpt:comp_gpio>
+        <efxpt:comp_gpio name="pll_refclk" gpio_def="GPIOL_00" mode="input" bus_name="" io_standard="3.3 V LVCMOS">
+            <efxpt:input_config name="pll_refclk" name_ddio_lo="" conn_type="normal" is_register="false" clock_name="" is_clock_inverted="false" pull_option="none" is_schmitt_trigger="false" ddio_type="none" is_bus_hold="false" delay="0" is_serial="false" is_dyn_delay="false" fastclk_name="" pullup_ena_name="pll_refclk_PULL_UP_ENA" dyn_delay_en_name="pll_refclk_DLY_ENA" dyn_delay_reset_name="pll_refclk_DLY_RST" dyn_delay_ctrl_name="pll_refclk_DLY_CTRL" clkmux_buf_name=""/>
+        </efxpt:comp_gpio>
+        <efxpt:comp_gpio name="reset_n" gpio_def="GPIOB_N_13" mode="input" bus_name="" io_standard="1.8 V LVCMOS">
+            <efxpt:input_config name="reset_n" name_ddio_lo="" conn_type="normal" is_register="false" clock_name="" is_clock_inverted="false" pull_option="weak pullup" is_schmitt_trigger="false" ddio_type="none" is_bus_hold="false" delay="0" is_serial="false" is_dyn_delay="false" fastclk_name="" pullup_ena_name="reset_n_PULL_UP_ENA" dyn_delay_en_name="reset_n_DLY_ENA" dyn_delay_reset_name="reset_n_DLY_RST" dyn_delay_ctrl_name="reset_n_DLY_CTRL" clkmux_buf_name=""/>
+        </efxpt:comp_gpio>
+        <efxpt:global_unused_config state="input with weak pullup"/>
+    </efxpt:gpio_info>
+    <efxpt:pll_info>
+        <efxpt:pll name="pll_inst1" pll_def="PLL_BL0" ref_clock_name="pll_inst2_CLKOUT2" ref_clock_freq="50.0000" multiplier="1" pre_divider="2" post_divider="2" reset_name="" locked_name="i_pll1_locked" is_ipfrz="false" is_bypass_lock="true">
+            <efxpt:adv_prop ref_clock_mode="core" ref_clock1_name="" ext_ref_clock_id="2" clksel_name="" feedback_clock_name="clk0" feedback_mode="local"/>
+            <efxpt:gen_pin>
+                <efxpt:pin name="" type_name="SHIFT_ENA" is_bus="false"/>
+                <efxpt:pin name="" type_name="DESKEWED" is_bus="false"/>
+                <efxpt:pin name="" type_name="SHIFT" is_bus="true"/>
+                <efxpt:pin name="" type_name="SHIFT_SEL" is_bus="true"/>
+            </efxpt:gen_pin>
+            <efxpt:comp_output_clock name="clk0" number="0" out_divider="100" is_dyn_phase="false" phase_setting="0" is_inverted="false" conn_type="gclk" clkmux_buf_name="">
+                <efxpt:gen_pin>
+                    <efxpt:pin name="" type_name="CLKMUX_BUF" is_bus="false"/>
+                </efxpt:gen_pin>
+            </efxpt:comp_output_clock>
+            <efxpt:comp_output_clock name="pixel_clk" number="1" out_divider="12" is_dyn_phase="false" phase_setting="0" is_inverted="false" conn_type="gclk" clkmux_buf_name="">
+                <efxpt:gen_pin>
+                    <efxpt:pin name="" type_name="CLKMUX_BUF" is_bus="false"/>
+                </efxpt:gen_pin>
+            </efxpt:comp_output_clock>
+            <efxpt:comp_output_clock name="mipi_clk" number="2" out_divider="25" is_dyn_phase="false" phase_setting="0" is_inverted="false" conn_type="gclk" clkmux_buf_name="">
+                <efxpt:gen_pin>
+                    <efxpt:pin name="" type_name="CLKMUX_BUF" is_bus="false"/>
+                </efxpt:gen_pin>
+            </efxpt:comp_output_clock>
+            <efxpt:comp_prop/>
+        </efxpt:pll>
+        <efxpt:pll name="pll_inst2" pll_def="PLL_BL1" ref_clock_name="" ref_clock_freq="50.0000" multiplier="2" pre_divider="1" post_divider="4" reset_name="" locked_name="i_pll2_locked" is_ipfrz="false" is_bypass_lock="true">
+            <efxpt:adv_prop ref_clock_mode="external" ref_clock1_name="" ext_ref_clock_id="2" clksel_name="" feedback_clock_name="cfg_clk" feedback_mode="local"/>
+            <efxpt:gen_pin>
+                <efxpt:pin name="" type_name="SHIFT_ENA" is_bus="false"/>
+                <efxpt:pin name="" type_name="DESKEWED" is_bus="false"/>
+                <efxpt:pin name="" type_name="SHIFT" is_bus="true"/>
+                <efxpt:pin name="" type_name="SHIFT_SEL" is_bus="true"/>
+            </efxpt:gen_pin>
+            <efxpt:comp_output_clock name="cfg_clk" number="0" out_divider="13" is_dyn_phase="false" phase_setting="0" is_inverted="false" conn_type="gclk" clkmux_buf_name="">
+                <efxpt:gen_pin>
+                    <efxpt:pin name="" type_name="CLKMUX_BUF" is_bus="false"/>
+                </efxpt:gen_pin>
+            </efxpt:comp_output_clock>
+            <efxpt:comp_output_clock name="esc_clk" number="1" out_divider="65" is_dyn_phase="false" phase_setting="0" is_inverted="false" conn_type="gclk" clkmux_buf_name="">
+                <efxpt:gen_pin>
+                    <efxpt:pin name="" type_name="CLKMUX_BUF" is_bus="false"/>
+                </efxpt:gen_pin>
+            </efxpt:comp_output_clock>
+            <efxpt:comp_output_clock name="pll_inst2_CLKOUT3" number="3" out_divider="52" is_dyn_phase="false" phase_setting="0" is_inverted="false" conn_type="gclk" clkmux_buf_name="">
+                <efxpt:gen_pin>
+                    <efxpt:pin name="" type_name="CLKMUX_BUF" is_bus="false"/>
+                </efxpt:gen_pin>
+            </efxpt:comp_output_clock>
+            <efxpt:comp_output_clock name="pll_inst2_CLKOUT2" number="2" out_divider="26" is_dyn_phase="false" phase_setting="0" is_inverted="false" conn_type="gclk" clkmux_buf_name="">
+                <efxpt:gen_pin>
+                    <efxpt:pin name="" type_name="CLKMUX_BUF" is_bus="false"/>
+                </efxpt:gen_pin>
+            </efxpt:comp_output_clock>
+            <efxpt:comp_prop/>
+        </efxpt:pll>
+    </efxpt:pll_info>
+    <efxpt:osc_info/>
+    <efxpt:lvds_info/>
+    <efxpt:mipi_info>
+        <efxpt:mipi name="mipi_dphy_tx_inst1" mipi_def="MIPI_TX0" ops_type="tx">
+            <efxpt:mipi_hard_dphy_tx_info ref_clock_freq="25.0000" phy_bandwidth="2500" ref_clock_source="pll" turn_around_enable="false" data_width="16" ref_clock_name="" esc_clkout_conn_type="normal" byte_clkout_conn_type="gclk" buf_esc_clkout_name="" buf_byte_clkout_name="" ssc_enable="false">
+                <efxpt:gen_pin>
+                    <efxpt:pin name="esc_clk" type_name="TX_CLK_ESC" is_bus="false" is_clk="true" is_clk_invert="false"/>
+                    <efxpt:pin name="" type_name="RX_CLK_ESC" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_tx_inst1_SLOWCLK" type_name="WORD_CLKOUT_HS" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_tx_inst1_RESET_N" type_name="RESET_N" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_tx_inst1_PLL_UNLOCK" type_name="PLL_UNLOCK" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_tx_inst1_PLL_SSC_EN" type_name="PLL_SSC_EN" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_tx_inst1_STOPSTATE_CLK" type_name="STOPSTATE_CLK" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_tx_inst1_TX_REQUEST_HS" type_name="TX_REQUEST_HS" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_tx_inst1_TX_ULPS_CLK" type_name="TX_ULPS_CLK" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_tx_inst1_TX_ULPS_EXIT" type_name="TX_ULPS_EXIT" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_tx_inst1_TX_ULPS_ACTIVE_CLK_NOT" type_name="TX_ULPS_ACTIVE_CLK_NOT" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_tx_inst1_TX_REQUEST_ESC_LAN0" type_name="TX_REQUEST_ESC_LAN0" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_tx_inst1_STOPSTATE_LAN0" type_name="STOPSTATE_LAN0" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_tx_inst1_TX_REQUEST_HS_LAN0" type_name="TX_REQUEST_HS_LAN0" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_tx_inst1_TX_SKEW_CAL_HS_LAN0" type_name="TX_SKEW_CAL_HS_LAN0" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_tx_inst1_TX_WORD_VALID_HS_LAN0" type_name="TX_WORD_VALID_HS_LAN0" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_tx_inst1_TX_READY_HS_LAN0" type_name="TX_READY_HS_LAN0" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_tx_inst1_TX_ULPS_ESC_LAN0" type_name="TX_ULPS_ESC_LAN0" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_tx_inst1_TX_ULPS_EXIT_LAN0" type_name="TX_ULPS_EXIT_LAN0" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_tx_inst1_TX_ULPS_ACTIVE_NOT_LAN0" type_name="TX_ULPS_ACTIVE_NOT_LAN0" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_tx_inst1_TX_REQUEST_ESC_LAN1" type_name="TX_REQUEST_ESC_LAN1" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_tx_inst1_STOPSTATE_LAN1" type_name="STOPSTATE_LAN1" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_tx_inst1_TX_REQUEST_HS_LAN1" type_name="TX_REQUEST_HS_LAN1" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_tx_inst1_TX_SKEW_CAL_HS_LAN1" type_name="TX_SKEW_CAL_HS_LAN1" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_tx_inst1_TX_WORD_VALID_HS_LAN1" type_name="TX_WORD_VALID_HS_LAN1" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_tx_inst1_TX_READY_HS_LAN1" type_name="TX_READY_HS_LAN1" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_tx_inst1_TX_ULPS_ESC_LAN1" type_name="TX_ULPS_ESC_LAN1" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_tx_inst1_TX_ULPS_EXIT_LAN1" type_name="TX_ULPS_EXIT_LAN1" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_tx_inst1_TX_ULPS_ACTIVE_NOT_LAN1" type_name="TX_ULPS_ACTIVE_NOT_LAN1" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_tx_inst1_TX_REQUEST_ESC_LAN2" type_name="TX_REQUEST_ESC_LAN2" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_tx_inst1_STOPSTATE_LAN2" type_name="STOPSTATE_LAN2" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_tx_inst1_TX_REQUEST_HS_LAN2" type_name="TX_REQUEST_HS_LAN2" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_tx_inst1_TX_SKEW_CAL_HS_LAN2" type_name="TX_SKEW_CAL_HS_LAN2" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_tx_inst1_TX_WORD_VALID_HS_LAN2" type_name="TX_WORD_VALID_HS_LAN2" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_tx_inst1_TX_READY_HS_LAN2" type_name="TX_READY_HS_LAN2" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_tx_inst1_TX_ULPS_ESC_LAN2" type_name="TX_ULPS_ESC_LAN2" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_tx_inst1_TX_ULPS_EXIT_LAN2" type_name="TX_ULPS_EXIT_LAN2" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_tx_inst1_TX_ULPS_ACTIVE_NOT_LAN2" type_name="TX_ULPS_ACTIVE_NOT_LAN2" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_tx_inst1_TX_REQUEST_ESC_LAN3" type_name="TX_REQUEST_ESC_LAN3" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_tx_inst1_STOPSTATE_LAN3" type_name="STOPSTATE_LAN3" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_tx_inst1_TX_REQUEST_HS_LAN3" type_name="TX_REQUEST_HS_LAN3" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_tx_inst1_TX_SKEW_CAL_HS_LAN3" type_name="TX_SKEW_CAL_HS_LAN3" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_tx_inst1_TX_WORD_VALID_HS_LAN3" type_name="TX_WORD_VALID_HS_LAN3" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_tx_inst1_TX_READY_HS_LAN3" type_name="TX_READY_HS_LAN3" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_tx_inst1_TX_ULPS_ESC_LAN3" type_name="TX_ULPS_ESC_LAN3" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_tx_inst1_TX_ULPS_EXIT_LAN3" type_name="TX_ULPS_EXIT_LAN3" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_tx_inst1_TX_ULPS_ACTIVE_NOT_LAN3" type_name="TX_ULPS_ACTIVE_NOT_LAN3" is_bus="false"/>
+                    <efxpt:pin name="" type_name="TURN_REQUEST" is_bus="false"/>
+                    <efxpt:pin name="" type_name="FORCE_RX_MODE" is_bus="false"/>
+                    <efxpt:pin name="" type_name="DIRECTION" is_bus="false"/>
+                    <efxpt:pin name="" type_name="ERR_ESC" is_bus="false"/>
+                    <efxpt:pin name="" type_name="ERR_CONTROL" is_bus="false"/>
+                    <efxpt:pin name="" type_name="ERR_CONTENTION_LP0" is_bus="false"/>
+                    <efxpt:pin name="" type_name="ERR_CONTENTION_LP1" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_tx_inst1_TX_LPDT_ESC" type_name="TX_LPDT_ESC" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_tx_inst1_TX_VALID_ESC" type_name="TX_VALID_ESC" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_tx_inst1_TX_READY_ESC" type_name="TX_READY_ESC" is_bus="false"/>
+                    <efxpt:pin name="" type_name="RX_LPDT_ESC" is_bus="false"/>
+                    <efxpt:pin name="" type_name="RX_VALID_ESC" is_bus="false"/>
+                    <efxpt:pin name="" type_name="ERR_SYNC_ESC" is_bus="false"/>
+                    <efxpt:pin name="" type_name="RX_ULPS_ESC" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_tx_inst1_TEST_MODE" type_name="TEST_MODE" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_tx_inst1_TEST_SE" type_name="TEST_SE" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_tx_inst1_TEST_RST_N" type_name="TEST_RST_N" is_bus="false"/>
+                    <efxpt:pin name="" type_name="TEST_CLK" is_bus="false" is_clk="true" is_clk_invert="false"/>
+                    <efxpt:pin name="" type_name="DEBUG_CLK" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_tx_inst1_TX_DATA_HS_LAN0" type_name="TX_DATA_HS_LAN0" is_bus="true"/>
+                    <efxpt:pin name="mipi_dphy_tx_inst1_TX_DATA_HS_LAN1" type_name="TX_DATA_HS_LAN1" is_bus="true"/>
+                    <efxpt:pin name="mipi_dphy_tx_inst1_TX_DATA_HS_LAN2" type_name="TX_DATA_HS_LAN2" is_bus="true"/>
+                    <efxpt:pin name="mipi_dphy_tx_inst1_TX_DATA_HS_LAN3" type_name="TX_DATA_HS_LAN3" is_bus="true"/>
+                    <efxpt:pin name="mipi_dphy_tx_inst1_TX_TRIGGER_ESC" type_name="TX_TRIGGER_ESC" is_bus="true"/>
+                    <efxpt:pin name="" type_name="RX_TRIGGER_ESC" is_bus="true"/>
+                    <efxpt:pin name="mipi_dphy_tx_inst1_TX_DATA_ESC" type_name="TX_DATA_ESC" is_bus="true"/>
+                    <efxpt:pin name="" type_name="RX_DATA_ESC" is_bus="true"/>
+                    <efxpt:pin name="mipi_dphy_tx_inst1_DEBUG_IN" type_name="DEBUG_IN" is_bus="true"/>
+                    <efxpt:pin name="mipi_dphy_tx_inst1_DEBUG_OUT" type_name="DEBUG_OUT" is_bus="true"/>
+                </efxpt:gen_pin>
+                <efxpt:clock_lane lane_id="0" is_pn_swap="false" enable="true"/>
+                <efxpt:data_lane lane_id="1" enable="true" is_pn_swap="false"/>
+                <efxpt:data_lane lane_id="2" enable="true" is_pn_swap="false"/>
+                <efxpt:data_lane lane_id="3" enable="true" is_pn_swap="false"/>
+                <efxpt:data_lane lane_id="4" enable="true" is_pn_swap="false"/>
+                <efxpt:pll_ssc_info pll_ssc_period="30" pll_ssc_amp_init="5000" pll_ssc_amp="4999"/>
+                <efxpt:tx_timing t_pll_pre_div="1" t_pll_fbk_int="200" t_pll_fbk_fra="0" t_cycle_sel="0" t_dlane_hs_pre_time="14" t_dlane_hs_zero_time="33" t_dlane_hs_trail_time="22" t_clane_hs_pre_time="11" t_clane_hs_zero_time="83" t_clane_hs_trail_time="22" t_clane_hs_clk_pre_time="0" t_clane_hs_clk_post_time="24"/>
+            </efxpt:mipi_hard_dphy_tx_info>
+        </efxpt:mipi>
+        <efxpt:mipi name="mipi_dphy_rx_inst2" mipi_def="MIPI_RX0" ops_type="rx">
+            <efxpt:mipi_hard_dphy_rx_info cal_clk_freq="100" turn_around_enable="false" data_width="16" esc_clkout_conn_type="normal" byte_clkout_conn_type="gclk" buf_esc_clkout_name="" buf_byte_clkout_name="" data_rate="2500">
+                <efxpt:gen_pin>
+                    <efxpt:pin name="cfg_clk" type_name="CFG_CLK" is_bus="false" is_clk="true" is_clk_invert="false"/>
+                    <efxpt:pin name="" type_name="TX_CLK_ESC" is_bus="false" is_clk="true" is_clk_invert="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_SLOWCLK" type_name="WORD_CLKOUT_HS" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_LP_CLK" type_name="LP_CLK" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_STOPSTATE_CLK" type_name="STOPSTATE_CLK" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_RX_CLK_ACTIVE_HS" type_name="RX_CLK_ACTIVE_HS" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_RX_ULPS_CLK_NOT" type_name="RX_ULPS_CLK_NOT" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_RX_ULPS_ACTIVE_CLK_NOT" type_name="RX_ULPS_ACTIVE_CLK_NOT" is_bus="false"/>
+                    <efxpt:pin name="" type_name="RX_CLK_ESC_LAN0" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_ERR_ESC_LAN0" type_name="ERR_ESC_LAN0" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_STOPSTATE_LAN0" type_name="STOPSTATE_LAN0" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_ERR_CONTROL_LAN0" type_name="ERR_CONTROL_LAN0" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_RX_ULPS_ESC_LAN0" type_name="RX_ULPS_ESC_LAN0" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_RX_ULPS_ACTIVE_NOT_LAN0" type_name="RX_ULPS_ACTIVE_NOT_LAN0" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_RX_ACTIVE_HS_LAN0" type_name="RX_ACTIVE_HS_LAN0" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_RX_VALID_HS_LAN0" type_name="RX_VALID_HS_LAN0" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_RX_SYNC_HS_LAN0" type_name="RX_SYNC_HS_LAN0" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_RX_SKEW_CAL_HS_LAN0" type_name="RX_SKEW_CAL_HS_LAN0" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_ERR_SOT_HS_LAN0" type_name="ERR_SOT_HS_LAN0" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_ERR_SOT_SYNC_HS_LAN0" type_name="ERR_SOT_SYNC_HS_LAN0" is_bus="false"/>
+                    <efxpt:pin name="" type_name="RX_CLK_ESC_LAN1" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_ERR_ESC_LAN1" type_name="ERR_ESC_LAN1" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_STOPSTATE_LAN1" type_name="STOPSTATE_LAN1" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_ERR_CONTROL_LAN1" type_name="ERR_CONTROL_LAN1" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_RX_ULPS_ESC_LAN1" type_name="RX_ULPS_ESC_LAN1" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_RX_ULPS_ACTIVE_NOT_LAN1" type_name="RX_ULPS_ACTIVE_NOT_LAN1" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_RX_ACTIVE_HS_LAN1" type_name="RX_ACTIVE_HS_LAN1" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_RX_VALID_HS_LAN1" type_name="RX_VALID_HS_LAN1" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_RX_SYNC_HS_LAN1" type_name="RX_SYNC_HS_LAN1" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_RX_SKEW_CAL_HS_LAN1" type_name="RX_SKEW_CAL_HS_LAN1" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_ERR_SOT_HS_LAN1" type_name="ERR_SOT_HS_LAN1" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_ERR_SOT_SYNC_HS_LAN1" type_name="ERR_SOT_SYNC_HS_LAN1" is_bus="false"/>
+                    <efxpt:pin name="" type_name="RX_CLK_ESC_LAN2" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_ERR_ESC_LAN2" type_name="ERR_ESC_LAN2" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_STOPSTATE_LAN2" type_name="STOPSTATE_LAN2" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_ERR_CONTROL_LAN2" type_name="ERR_CONTROL_LAN2" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_RX_ULPS_ESC_LAN2" type_name="RX_ULPS_ESC_LAN2" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_RX_ULPS_ACTIVE_NOT_LAN2" type_name="RX_ULPS_ACTIVE_NOT_LAN2" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_RX_ACTIVE_HS_LAN2" type_name="RX_ACTIVE_HS_LAN2" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_RX_VALID_HS_LAN2" type_name="RX_VALID_HS_LAN2" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_RX_SYNC_HS_LAN2" type_name="RX_SYNC_HS_LAN2" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_RX_SKEW_CAL_HS_LAN2" type_name="RX_SKEW_CAL_HS_LAN2" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_ERR_SOT_HS_LAN2" type_name="ERR_SOT_HS_LAN2" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_ERR_SOT_SYNC_HS_LAN2" type_name="ERR_SOT_SYNC_HS_LAN2" is_bus="false"/>
+                    <efxpt:pin name="" type_name="RX_CLK_ESC_LAN3" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_ERR_ESC_LAN3" type_name="ERR_ESC_LAN3" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_STOPSTATE_LAN3" type_name="STOPSTATE_LAN3" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_ERR_CONTROL_LAN3" type_name="ERR_CONTROL_LAN3" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_RX_ULPS_ESC_LAN3" type_name="RX_ULPS_ESC_LAN3" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_RX_ULPS_ACTIVE_NOT_LAN3" type_name="RX_ULPS_ACTIVE_NOT_LAN3" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_RX_ACTIVE_HS_LAN3" type_name="RX_ACTIVE_HS_LAN3" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_RX_VALID_HS_LAN3" type_name="RX_VALID_HS_LAN3" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_RX_SYNC_HS_LAN3" type_name="RX_SYNC_HS_LAN3" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_RX_SKEW_CAL_HS_LAN3" type_name="RX_SKEW_CAL_HS_LAN3" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_ERR_SOT_HS_LAN3" type_name="ERR_SOT_HS_LAN3" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_ERR_SOT_SYNC_HS_LAN3" type_name="ERR_SOT_SYNC_HS_LAN3" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_RESET_N" type_name="RESET_N" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_RST0_N" type_name="RST0_N" is_bus="false"/>
+                    <efxpt:pin name="" type_name="TX_REQUEST_ESC" is_bus="false"/>
+                    <efxpt:pin name="" type_name="TURN_REQUEST" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_FORCE_RX_MODE" type_name="FORCE_RX_MODE" is_bus="false"/>
+                    <efxpt:pin name="" type_name="DIRECTION" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_ERR_CONTENTION_LP0" type_name="ERR_CONTENTION_LP0" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_ERR_CONTENTION_LP1" type_name="ERR_CONTENTION_LP1" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_RX_LPDT_ESC" type_name="RX_LPDT_ESC" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_RX_VALID_ESC" type_name="RX_VALID_ESC" is_bus="false"/>
+                    <efxpt:pin name="" type_name="ERR_SYNC_ESC" is_bus="false"/>
+                    <efxpt:pin name="" type_name="TX_LPDT_ESC" is_bus="false"/>
+                    <efxpt:pin name="" type_name="TX_VALID_ESC" is_bus="false"/>
+                    <efxpt:pin name="" type_name="TX_READY_ESC" is_bus="false"/>
+                    <efxpt:pin name="" type_name="TX_ULPS_ESC" is_bus="false"/>
+                    <efxpt:pin name="" type_name="TX_ULPS_EXIT" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_TEST_MODE" type_name="TEST_MODE" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_TEST_SE" type_name="TEST_SE" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_TEST_RST_N" type_name="TEST_RST_N" is_bus="false"/>
+                    <efxpt:pin name="" type_name="TEST_CLK" is_bus="false" is_clk="true" is_clk_invert="false"/>
+                    <efxpt:pin name="" type_name="DEBUG_CLK" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_STOPSTATE_CLK1" type_name="STOPSTATE_CLK1" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_RX_CLK1_ACTIVE_HS" type_name="RX_CLK1_ACTIVE_HS" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_RX_ULPS_CLK1_NOT" type_name="RX_ULPS_CLK1_NOT" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_RX_ULPS_ACTIVE_CLK1_NOT" type_name="RX_ULPS_ACTIVE_CLK1_NOT" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_LP_CLK1" type_name="LP_CLK1" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_RST1_N" type_name="RST1_N" is_bus="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_RX_DATA_HS_LAN0" type_name="RX_DATA_HS_LAN0" is_bus="true"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_RX_DATA_HS_LAN1" type_name="RX_DATA_HS_LAN1" is_bus="true"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_RX_DATA_HS_LAN2" type_name="RX_DATA_HS_LAN2" is_bus="true"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_RX_DATA_HS_LAN3" type_name="RX_DATA_HS_LAN3" is_bus="true"/>
+                    <efxpt:pin name="" type_name="TX_TRIGGER_ESC" is_bus="true"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_RX_TRIGGER_ESC" type_name="RX_TRIGGER_ESC" is_bus="true"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_RX_DATA_ESC" type_name="RX_DATA_ESC" is_bus="true"/>
+                    <efxpt:pin name="" type_name="TX_DATA_ESC" is_bus="true"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_REF_CLK" type_name="REF_CLK" is_bus="true" is_clk="true" is_clk_invert="false"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_DEBUG_IN" type_name="DEBUG_IN" is_bus="true"/>
+                    <efxpt:pin name="mipi_dphy_rx_inst2_DEBUG_OUT" type_name="DEBUG_OUT" is_bus="true"/>
+                </efxpt:gen_pin>
+                <efxpt:clock_lane lane_id="0" is_pn_swap="false" enable="true"/>
+                <efxpt:data_lane lane_id="1" enable="true" is_pn_swap="false"/>
+                <efxpt:data_lane lane_id="2" enable="true" is_pn_swap="false"/>
+                <efxpt:data_lane lane_id="3" enable="true" is_pn_swap="false"/>
+                <efxpt:data_lane lane_id="4" enable="true" is_pn_swap="false"/>
+                <efxpt:rx_timing/>
+            </efxpt:mipi_hard_dphy_rx_info>
+        </efxpt:mipi>
+    </efxpt:mipi_info>
+    <efxpt:jtag_info/>
+    <efxpt:ddr_info/>
+    <efxpt:mipi_dphy_info/>
+    <efxpt:pll_ssc_info/>
+</efxpt:design_db>

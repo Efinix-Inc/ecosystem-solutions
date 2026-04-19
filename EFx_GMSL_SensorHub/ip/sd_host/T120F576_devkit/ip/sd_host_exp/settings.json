@@ -1,0 +1,31 @@
+{
+    "args": [
+        "-o",
+        "sd_host_exp",
+        "--base_path",
+        "/projects/SSE/llching/repo/efx_IP_master/efx_IP/efx_sd_host_controller/fpga/T120F576_devkit/ip",
+        "--vlnv",
+        {
+            "vendor": "efinixinc.com",
+            "library": "memory_controller",
+            "name": "efx_sd_host_controller",
+            "version": "6.0"
+        }
+    ],
+    "conf": {
+        "DATA_BUFFER_DEPTH": "512",
+        "ADMA_DATA_WIDTH": "32"
+    },
+    "output": {
+        "external_script_reference_design": [],
+        "external_source_source": [
+            "sd_host_exp/sd_host_exp.v",
+            "sd_host_exp/sd_host_exp_define.vh",
+            "sd_host_exp/sd_host_exp_tmpl.vhd",
+            "sd_host_exp/sd_host_exp_tmpl.v"
+        ]
+    },
+    "ooc_synthesis": {},
+    "sw_version": "2025.M.257",
+    "generated_date": "2025-09-30T07:46:38.564287+00:00"
+}
