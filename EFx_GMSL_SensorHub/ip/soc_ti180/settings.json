@@ -3,7 +3,7 @@
         "-o",
         "soc_ti180",
         "--base_path",
-        "C:\\efinix\\solution_hub\\gitlab\\sync\\efx_ecosystem_solutions\\EFx_GMSL_SensorHub\\ip",
+        "C:\\efinix\\solution_hub\\gitlab\\EFx_GMSL_SensorHub_504K\\ip",
         "--vlnv",
         {
             "vendor": "efinixinc.com",
@@ -17,7 +17,7 @@
         "HexFile_Path": "\"bootloader/build/bootloader.hex\"",
         "APBSlave0_Size": "65536",
         "DEVKIT_CUSTOM": "\"Titanium Ti180J484 Dev Board\"",
-        "LDSize": "124",
+        "LDSize": "508",
         "LDStackSize": "4",
         "DEVKIT": "14",
         "DEBUG": "1'b1",
@@ -169,10 +169,10 @@
     "output": {
         "external_script_generator": [],
         "external_source_source": [
+            "soc_ti180\\soc_ti180_tmpl.vhd",
             "soc_ti180\\soc_ti180_define.vh",
-            "soc_ti180\\soc_ti180_tmpl.v",
             "soc_ti180\\soc_ti180.v",
-            "soc_ti180\\soc_ti180_tmpl.vhd"
+            "soc_ti180\\soc_ti180_tmpl.v"
         ],
         "external_script_script": [],
         "external_script_embedded_sw": [],
@@ -195,5 +195,5 @@
     },
     "ooc_synthesis": {},
     "sw_version": "2025.2.288.3.8",
-    "generated_date": "2026-04-19T09:59:03.831229+00:00"
+    "generated_date": "2026-04-20T02:01:55.969972+00:00"
 }

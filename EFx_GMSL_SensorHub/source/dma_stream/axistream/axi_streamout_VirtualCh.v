@@ -238,10 +238,15 @@ begin
 					r_axi_state<= START_LINE;
 			        r_de_in_count <= r_de_in_count + 1'b1;
 					r_x_count 	<= 11'd0;
+					r_de_buffer_count <= 'd0;
                 end
 			end 		
 		START_LINE:
 			begin
+			
+				if(r_de_buffer) 
+					r_de_buffer_count <= r_de_buffer_count +1'b1;
+			
 				if(~(r_de_in_count == r_de_out_count))
 				begin
 					r_tready <= 1'b1;
@@ -261,6 +266,10 @@ begin
 							end
 						end 
 					end
+					else 
+					begin
+						r_de_buffer <= 'b0;
+					end 
 				end 
 				else 
 				begin
