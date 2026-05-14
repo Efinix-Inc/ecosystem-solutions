@@ -1,0 +1,48 @@
+{
+    "args": [
+        "-o",
+        "axis_fifo_w41",
+        "--base_path",
+        "/projects/SSE/izzat/regression_2025/ww28_ti180_ecnn/tinyml_vision/Ti375C529_multicore_demo/ip",
+        "--vlnv",
+        {
+            "vendor": "efinixinc.com",
+            "library": "memory",
+            "name": "efx_fifo_top",
+            "version": "8.0"
+        }
+    ],
+    "conf": {
+        "SYNC_CLK": "0",
+        "SYNC_STAGE": "2",
+        "DEPTH_2": "7",
+        "DATA_WIDTH": "41",
+        "MODE": "\"FWFT\"",
+        "OUTPUT_REG": "0",
+        "PROG_FULL_ASSERT": "4",
+        "PROGRAMMABLE_FULL": "\"NONE\"",
+        "PFN_INTERNAL": "3",
+        "PEA_INTERNAL": "0",
+        "PEN_INTERNAL": "0",
+        "PROGRAMMABLE_EMPTY": "\"NONE\"",
+        "OPTIONAL_FLAGS": "0",
+        "PIPELINE_REG": "1",
+        "ASYM_WIDTH_RATIO": "4",
+        "BYPASS_RESET_SYNC": "0",
+        "ENDIANESS": "0",
+        "RAM_STYLE": "\"block_ram\"",
+        "OVERFLOW_PROTECT": "1",
+        "UNDERFLOW_PROTECT": "1"
+    },
+    "output": {
+        "external_source_source": [
+            "axis_fifo_w41/axis_fifo_w41.sv",
+            "axis_fifo_w41/axis_fifo_w41_tmpl.vhd",
+            "axis_fifo_w41/axis_fifo_w41_define.svh",
+            "axis_fifo_w41/axis_fifo_w41_tmpl.sv"
+        ]
+    },
+    "ooc_synthesis": {},
+    "sw_version": "2025.1.110",
+    "generated_date": "2025-07-25T16:28:20.866693+00:00"
+}
