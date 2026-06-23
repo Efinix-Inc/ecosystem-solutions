@@ -1,0 +1,522 @@
+{
+    "debug_cores": [
+        {
+            "name": "vio0",
+            "type": "vio",
+            "uuid": "5d9ce2af179b4ab69b2014db532d40bd",
+            "probes": [
+                {
+                    "name": "q1_cmn_ready",
+                    "width": 1,
+                    "init": null
+                },
+                {
+                    "name": "q3_cmn_ready",
+                    "width": 1,
+                    "init": null
+                },
+                {
+                    "name": "q1_l2_kr_training",
+                    "width": 1,
+                    "init": null
+                },
+                {
+                    "name": "q1_l2_kr_frame_lock",
+                    "width": 1,
+                    "init": null
+                },
+                {
+                    "name": "q1_l2_kr_local_rx_trained",
+                    "width": 1,
+                    "init": null
+                },
+                {
+                    "name": "q1_l2_kr_signal_detect",
+                    "width": 1,
+                    "init": null
+                },
+                {
+                    "name": "q1_l2_kr_training_failure",
+                    "width": 1,
+                    "init": null
+                },
+                {
+                    "name": "q3_l2_kr_training",
+                    "width": 1,
+                    "init": null
+                },
+                {
+                    "name": "q3_l2_kr_frame_lock",
+                    "width": 1,
+                    "init": null
+                },
+                {
+                    "name": "q3_l2_kr_local_rx_trained",
+                    "width": 1,
+                    "init": null
+                },
+                {
+                    "name": "q3_l2_kr_signal_detect",
+                    "width": 1,
+                    "init": null
+                },
+                {
+                    "name": "q3_l2_kr_training_failure",
+                    "width": 1,
+                    "init": null
+                },
+                {
+                    "name": "q1_l2_block_lock",
+                    "width": 1,
+                    "init": null
+                },
+                {
+                    "name": "q1_l2_hi_ber",
+                    "width": 1,
+                    "init": null
+                },
+                {
+                    "name": "q1_l2_irq",
+                    "width": 1,
+                    "init": null
+                },
+                {
+                    "name": "q1_l2_pcs_status",
+                    "width": 1,
+                    "init": null
+                },
+                {
+                    "name": "q1_l2_phy_interrupt",
+                    "width": 1,
+                    "init": null
+                },
+                {
+                    "name": "q3_l2_block_lock",
+                    "width": 1,
+                    "init": null
+                },
+                {
+                    "name": "q3_l2_hi_ber",
+                    "width": 1,
+                    "init": null
+                },
+                {
+                    "name": "q3_l2_irq",
+                    "width": 1,
+                    "init": null
+                },
+                {
+                    "name": "q3_l2_pcs_status",
+                    "width": 1,
+                    "init": null
+                },
+                {
+                    "name": "q3_l2_phy_interrupt",
+                    "width": 1,
+                    "init": null
+                },
+                {
+                    "name": "q1_l2_init_done",
+                    "width": 1,
+                    "init": null
+                },
+                {
+                    "name": "q3_l2_init_done",
+                    "width": 1,
+                    "init": null
+                },
+                {
+                    "name": "pll_locked",
+                    "width": 1,
+                    "init": null
+                },
+                {
+                    "name": "q1_l2_rx_signal_detect",
+                    "width": 1,
+                    "init": null
+                },
+                {
+                    "name": "q3_l2_rx_signal_detect",
+                    "width": 1,
+                    "init": null
+                },
+                {
+                    "name": "q1_ram_dout_d",
+                    "width": 32,
+                    "init": null
+                },
+                {
+                    "name": "q1_ram_dout_a",
+                    "width": 24,
+                    "init": null
+                },
+                {
+                    "name": "q3_ram_dout_d",
+                    "width": 32,
+                    "init": null
+                },
+                {
+                    "name": "q3_ram_dout_a",
+                    "width": 24,
+                    "init": null
+                },
+                {
+                    "name": "q1_apb_rom_end",
+                    "width": 1,
+                    "init": null
+                },
+                {
+                    "name": "q3_apb_rom_end",
+                    "width": 1,
+                    "init": null
+                },
+                {
+                    "name": "q1_l2_restart_kr_training_IN",
+                    "width": 1,
+                    "init": "0x0"
+                },
+                {
+                    "name": "q3_l2_restart_kr_training_IN",
+                    "width": 1,
+                    "init": "0x0"
+                },
+                {
+                    "name": "q1_ram_usr_wren",
+                    "width": 1,
+                    "init": "0x0"
+                },
+                {
+                    "name": "q1_ram_usr_addr",
+                    "width": 5,
+                    "init": "0x0"
+                },
+                {
+                    "name": "q3_ram_usr_wren",
+                    "width": 1,
+                    "init": "0x0"
+                },
+                {
+                    "name": "q3_ram_usr_addr",
+                    "width": 5,
+                    "init": "0x0"
+                },
+                {
+                    "name": "q1_usr_apb_start",
+                    "width": 1,
+                    "init": "0x0"
+                },
+                {
+                    "name": "q1_usr_apb_write",
+                    "width": 1,
+                    "init": "0x0"
+                },
+                {
+                    "name": "q1_usr_apb_addr",
+                    "width": 24,
+                    "init": "0x0"
+                },
+                {
+                    "name": "q1_usr_apb_pwdata",
+                    "width": 32,
+                    "init": "0x0"
+                },
+                {
+                    "name": "q3_usr_apb_start",
+                    "width": 1,
+                    "init": "0x0"
+                },
+                {
+                    "name": "q3_usr_apb_write",
+                    "width": 1,
+                    "init": "0x0"
+                },
+                {
+                    "name": "q3_usr_apb_addr",
+                    "width": 24,
+                    "init": "0x0"
+                },
+                {
+                    "name": "q3_usr_apb_pwdata",
+                    "width": 32,
+                    "init": "0x0"
+                },
+                {
+                    "name": "q1_l2_cnt_tx_frame_transmitted_good",
+                    "width": 32,
+                    "init": null
+                },
+                {
+                    "name": "q1_l2_cnt_tx_frame_pause_mac_ctrl",
+                    "width": 32,
+                    "init": null
+                },
+                {
+                    "name": "q1_l2_cnt_tx_frame_error_txfifo_overflow",
+                    "width": 32,
+                    "init": null
+                },
+                {
+                    "name": "q1_l2_cnt_tx_frame_is_fe",
+                    "width": 32,
+                    "init": null
+                },
+                {
+                    "name": "q1_l2_cnt_rx_frame_received_good",
+                    "width": 32,
+                    "init": null
+                },
+                {
+                    "name": "q1_l2_rpt_rx_frame_length",
+                    "width": 14,
+                    "init": null
+                },
+                {
+                    "name": "q1_l2_cnt_rx_frame_error_fcs",
+                    "width": 32,
+                    "init": null
+                },
+                {
+                    "name": "q1_l2_cnt_rx_frame_pause_mac_ctrl",
+                    "width": 32,
+                    "init": null
+                },
+                {
+                    "name": "q1_l2_cnt_rx_frame_errors",
+                    "width": 32,
+                    "init": null
+                },
+                {
+                    "name": "q1_l2_cnt_rx_frame_received_total",
+                    "width": 32,
+                    "init": null
+                },
+                {
+                    "name": "q1_l2_cnt_rx_frame_undersized",
+                    "width": 32,
+                    "init": null
+                },
+                {
+                    "name": "q1_l2_cnt_rx_frame_oversized",
+                    "width": 32,
+                    "init": null
+                },
+                {
+                    "name": "q1_l2_cnt_rx_frame_mismatched_length",
+                    "width": 32,
+                    "init": null
+                },
+                {
+                    "name": "q1_l2_cnt_rx_frame_filtered_by_address",
+                    "width": 32,
+                    "init": null
+                },
+                {
+                    "name": "q3_l2_cnt_tx_frame_transmitted_good",
+                    "width": 32,
+                    "init": null
+                },
+                {
+                    "name": "q3_l2_cnt_tx_frame_pause_mac_ctrl",
+                    "width": 32,
+                    "init": null
+                },
+                {
+                    "name": "q3_l2_cnt_tx_frame_error_txfifo_overflow",
+                    "width": 32,
+                    "init": null
+                },
+                {
+                    "name": "q3_l2_cnt_tx_frame_is_fe",
+                    "width": 32,
+                    "init": null
+                },
+                {
+                    "name": "q3_l2_cnt_rx_frame_received_good",
+                    "width": 32,
+                    "init": null
+                },
+                {
+                    "name": "q3_l2_rpt_rx_frame_length",
+                    "width": 14,
+                    "init": null
+                },
+                {
+                    "name": "q3_l2_cnt_rx_frame_error_fcs",
+                    "width": 32,
+                    "init": null
+                },
+                {
+                    "name": "q3_l2_cnt_rx_frame_pause_mac_ctrl",
+                    "width": 32,
+                    "init": null
+                },
+                {
+                    "name": "q3_l2_cnt_rx_frame_errors",
+                    "width": 32,
+                    "init": null
+                },
+                {
+                    "name": "q3_l2_cnt_rx_frame_received_total",
+                    "width": 32,
+                    "init": null
+                },
+                {
+                    "name": "q3_l2_cnt_rx_frame_undersized",
+                    "width": 32,
+                    "init": null
+                },
+                {
+                    "name": "q3_l2_cnt_rx_frame_oversized",
+                    "width": 32,
+                    "init": null
+                },
+                {
+                    "name": "q3_l2_cnt_rx_frame_mismatched_length",
+                    "width": 32,
+                    "init": null
+                },
+                {
+                    "name": "q3_l2_cnt_rx_frame_filtered_by_address",
+                    "width": 32,
+                    "init": null
+                },
+                {
+                    "name": "q1_l2_cnt_rst_n",
+                    "width": 1,
+                    "init": "0x1"
+                },
+                {
+                    "name": "q1_l2_rx_pause_ignore",
+                    "width": 1,
+                    "init": "0x0"
+                },
+                {
+                    "name": "q1_l2_rx_address_filtering_mask",
+                    "width": 48,
+                    "init": "0x0"
+                },
+                {
+                    "name": "q1_l2_tx_pause_gen",
+                    "width": 1,
+                    "init": "0x0"
+                },
+                {
+                    "name": "q1_l2_tx_pause_quant",
+                    "width": 16,
+                    "init": "0x0"
+                },
+                {
+                    "name": "q1_l2_tx_pause_busy",
+                    "width": 1,
+                    "init": null
+                },
+                {
+                    "name": "q3_l2_cnt_rst_n",
+                    "width": 1,
+                    "init": "0x1"
+                },
+                {
+                    "name": "q3_l2_rx_pause_ignore",
+                    "width": 1,
+                    "init": "0x0"
+                },
+                {
+                    "name": "q3_l2_rx_address_filtering_mask",
+                    "width": 48,
+                    "init": "0x0"
+                },
+                {
+                    "name": "q3_l2_tx_pause_gen",
+                    "width": 1,
+                    "init": "0x0"
+                },
+                {
+                    "name": "q3_l2_tx_pause_quant",
+                    "width": 16,
+                    "init": "0x0"
+                },
+                {
+                    "name": "q3_l2_tx_pause_busy",
+                    "width": 1,
+                    "init": null
+                },
+                {
+                    "name": "PASS_STATUS",
+                    "width": 1,
+                    "init": null
+                }
+            ]
+        },
+        {
+            "name": "vio1",
+            "type": "vio",
+            "uuid": "69fbe71d61384106b89060cb9e5eb92c",
+            "probes": [
+                {
+                    "name": "Q1_L2_rx_tuser_pass",
+                    "width": 1,
+                    "init": null
+                },
+                {
+                    "name": "Q1_L2_fe_pkt_pass",
+                    "width": 1,
+                    "init": null
+                },
+                {
+                    "name": "Q1_L2_kr_training_pass",
+                    "width": 1,
+                    "init": null
+                },
+                {
+                    "name": "Q1_L2_pcs_fault_pass",
+                    "width": 1,
+                    "init": null
+                },
+                {
+                    "name": "Q1_L2_phy_interrupt_pass",
+                    "width": 1,
+                    "init": null
+                },
+                {
+                    "name": "Q1_L2_auto_nego_pass",
+                    "width": 1,
+                    "init": null
+                },
+                {
+                    "name": "Q3_L2_rx_tuser_pass",
+                    "width": 1,
+                    "init": null
+                },
+                {
+                    "name": "Q3_L2_fe_pkt_pass",
+                    "width": 1,
+                    "init": null
+                },
+                {
+                    "name": "Q3_L2_kr_training_pass",
+                    "width": 1,
+                    "init": null
+                },
+                {
+                    "name": "Q3_L2_pcs_fault_pass",
+                    "width": 1,
+                    "init": null
+                },
+                {
+                    "name": "Q3_L2_phy_interrupt_pass",
+                    "width": 1,
+                    "init": null
+                },
+                {
+                    "name": "Q3_L2_auto_nego_pass",
+                    "width": 1,
+                    "init": null
+                }
+            ]
+        }
+    ],
+    "session": {
+        "debug_widget": [],
+        "wizard": {}
+    }
+}

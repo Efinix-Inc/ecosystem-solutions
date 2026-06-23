@@ -1,4 +1,4 @@
-# Setup GMSL Sensors Hub
+# Setup GMSL HDMI Display
 
 This guide show on how to setup the development boards for HDMI Display. This setup only applicable for Titanium Ti180J484 development board. 
 

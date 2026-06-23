@@ -1,0 +1,67 @@
+{
+    "args": [
+        "-o",
+        "efx_pcie_dma",
+        "--base_path",
+        "E:\\work\\project\\efinity\\Ti375N1156\\dma_netwoek\\network_sgdma\\par\\network_card\\ip",
+        "--vlnv",
+        {
+            "vendor": "efinixinc.com",
+            "library": "bridges_and_adaptors",
+            "name": "efx_pcie_dma",
+            "version": "5.0"
+        }
+    ],
+    "conf": {
+        "AXI_DATA_WIDTH": "256",
+        "DMA_ST_EN": "1'b0",
+        "S_APB_USR_EN": "1'b1",
+        "M_APB_USR_EN": "1'b1",
+        "M_AXI_BYP_EN": "1'b0",
+        "USR_INT_NUM": "4",
+        "MSIX_VEC_NUM": "32",
+        "CTH_CH_NUM": "1",
+        "HTC_CH_NUM": "1",
+        "CTH0_DSC_BYP_EN": "1'b0",
+        "CTH1_DSC_BYP_EN": "1'b0",
+        "CTH2_DSC_BYP_EN": "1'b0",
+        "CTH3_DSC_BYP_EN": "1'b0",
+        "HTC0_DSC_BYP_EN": "1'b0",
+        "HTC1_DSC_BYP_EN": "1'b0",
+        "HTC2_DSC_BYP_EN": "1'b0",
+        "HTC3_DSC_BYP_EN": "1'b0",
+        "M0_BASE_ADDR": "64'd0",
+        "M0_ADDR_SPACE": "64'd524288",
+        "M1_BASE_ADDR": "64'd655360",
+        "M1_ADDR_SPACE": "64'd8589934592",
+        "M2_BASE_ADDR": "64'd589824",
+        "M2_ADDR_SPACE": "64'd4096"
+    },
+    "output": {
+        "external_source_source": [
+            "efx_pcie_dma\\efx_pcie_dma_tmpl.vhd",
+            "efx_pcie_dma\\efx_pcie_dma_define.svh",
+            "efx_pcie_dma\\efx_pcie_dma_tmpl.sv",
+            "efx_pcie_dma\\efx_pcie_dma.sv"
+        ],
+        "external_testbench_modelsim": [
+            "efx_pcie_dma\\Testbench\\modelsim\\efx_pcie_dma.sv"
+        ],
+        "external_testbench_ncsim": [
+            "efx_pcie_dma\\Testbench\\ncsim\\efx_pcie_dma.sv"
+        ],
+        "external_testbench_synopsys": [
+            "efx_pcie_dma\\Testbench\\synopsys\\efx_pcie_dma.sv"
+        ],
+        "external_testbench_aldec": [
+            "efx_pcie_dma\\Testbench\\aldec\\efx_pcie_dma.sv"
+        ],
+        "external_testbench_testbench": [
+            "efx_pcie_dma\\Testbench\\efx_pcie_dma.sv",
+            "efx_pcie_dma\\Testbench\\efx_pcie_dma_define.svh"
+        ]
+    },
+    "ooc_synthesis": {},
+    "sw_version": "2025.2.288",
+    "generated_date": "2025-11-27T06:40:56.526160+00:00"
+}

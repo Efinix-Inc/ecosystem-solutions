@@ -1,0 +1,75 @@
+{
+    "args": [
+        "-o",
+        "sfifo_72w2048d_0dly",
+        "--base_path",
+        "E:\\work\\project\\efinity\\Ti375N1156\\dma_netwoek\\network_sgdma\\par\\network_card\\ip",
+        "--vlnv",
+        {
+            "vendor": "efinixinc.com",
+            "library": "memory",
+            "name": "efx_fifo_top",
+            "version": "8.1"
+        }
+    ],
+    "conf": {
+        "SYNC_CLK": "1",
+        "SYNC_STAGE": "2",
+        "DEPTH_2": "11",
+        "DATA_WIDTH": "72",
+        "MODE": "\"FWFT\"",
+        "OUTPUT_REG": "0",
+        "PROG_FULL_ASSERT": "2046",
+        "PROGRAMMABLE_FULL": "\"STATIC_SINGLE\"",
+        "PFN_INTERNAL": "3",
+        "PEA_INTERNAL": "2",
+        "PEN_INTERNAL": "3",
+        "PROGRAMMABLE_EMPTY": "\"STATIC_SINGLE\"",
+        "OPTIONAL_FLAGS": "1",
+        "PIPELINE_REG": "1",
+        "ASYM_WIDTH_RATIO": "4",
+        "BYPASS_RESET_SYNC": "0",
+        "ENDIANESS": "0",
+        "RAM_STYLE": "\"block_ram\"",
+        "OVERFLOW_PROTECT": "1",
+        "UNDERFLOW_PROTECT": "1"
+    },
+    "output": {
+        "external_source_source": [
+            "sfifo_72w2048d_0dly\\sfifo_72w2048d_0dly_tmpl.vhd",
+            "sfifo_72w2048d_0dly\\sfifo_72w2048d_0dly_tmpl.sv",
+            "sfifo_72w2048d_0dly\\sfifo_72w2048d_0dly_define.svh",
+            "sfifo_72w2048d_0dly\\sfifo_72w2048d_0dly.sv"
+        ],
+        "external_example_example": [
+            "sfifo_72w2048d_0dly\\T20F256_devkit\\fifo_demo_top.v",
+            "sfifo_72w2048d_0dly\\T20F256_devkit\\fifo_demo_T20.sdc",
+            "sfifo_72w2048d_0dly\\T20F256_devkit\\efx_symmetric_width_fifo_top.sv",
+            "sfifo_72w2048d_0dly\\T20F256_devkit\\sfifo_72w2048d_0dly.sv",
+            "sfifo_72w2048d_0dly\\T20F256_devkit\\sfifo_72w2048d_0dly_define.svh",
+            "sfifo_72w2048d_0dly\\T20F256_devkit\\fifo_demo.peri.xml",
+            "sfifo_72w2048d_0dly\\T20F256_devkit\\fifo_demo.xml"
+        ],
+        "external_example_2": [
+            "sfifo_72w2048d_0dly\\Ti60F225_devkit\\fifo_demo_top.v",
+            "sfifo_72w2048d_0dly\\Ti60F225_devkit\\fifo_demo_Ti60.sdc",
+            "sfifo_72w2048d_0dly\\Ti60F225_devkit\\efx_symmetric_width_fifo_top.sv",
+            "sfifo_72w2048d_0dly\\Ti60F225_devkit\\sfifo_72w2048d_0dly.sv",
+            "sfifo_72w2048d_0dly\\Ti60F225_devkit\\sfifo_72w2048d_0dly_define.svh",
+            "sfifo_72w2048d_0dly\\Ti60F225_devkit\\fifo_demo.peri.xml",
+            "sfifo_72w2048d_0dly\\Ti60F225_devkit\\fifo_demo.xml"
+        ],
+        "external_testbench_testbench": [
+            "sfifo_72w2048d_0dly\\Testbench\\fifo_tb.sv",
+            "sfifo_72w2048d_0dly\\Testbench\\xrun.sh",
+            "sfifo_72w2048d_0dly\\Testbench\\msim.sh",
+            "sfifo_72w2048d_0dly\\Testbench\\flist",
+            "sfifo_72w2048d_0dly\\Testbench\\modelsim.do",
+            "sfifo_72w2048d_0dly\\Testbench\\sfifo_72w2048d_0dly.sv",
+            "sfifo_72w2048d_0dly\\Testbench\\sfifo_72w2048d_0dly_define.svh"
+        ]
+    },
+    "ooc_synthesis": {},
+    "sw_version": "2025.2.288",
+    "generated_date": "2025-11-25T06:17:49.228743+00:00"
+}

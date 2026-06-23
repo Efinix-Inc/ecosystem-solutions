@@ -1,0 +1,7 @@
+# Rules file for Efinix programmer USB HID access (Linux)
+#
+# utilizing HIDAPI/libusb implementation
+#
+# USB device is recognized as Atmel HID DEMO
+
+SUBSYSTEM=="pcie_dma", MODE="666"

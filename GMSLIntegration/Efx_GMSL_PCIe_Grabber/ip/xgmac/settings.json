@@ -1,0 +1,75 @@
+{
+    "args": [
+        "-o",
+        "xgmac",
+        "--base_path",
+        "E:\\work\\project\\efinity\\Ti375N1156\\dma_netwoek\\network_sgdma\\par\\network_card\\ip",
+        "--vlnv",
+        {
+            "vendor": "efinixinc.com",
+            "library": "ethernet",
+            "name": "efx_mac10gbe",
+            "version": "1.4"
+        }
+    ],
+    "conf": {
+        "CUT_THRU_STORE_FWD": "1'b1",
+        "INTER_PACKET_GAP": "4'd12",
+        "MTU_FRAME_LENGTH": "14'd2000",
+        "MAC_SOURCE_ADDRESS": "48'd0",
+        "ENABLE_BROADCAST_FILTER": "1'b0",
+        "REG_WIDTH": "6'd32",
+        "TXFIFO_DEPTH": "512",
+        "AXIS_DATA_WIDTH": "64",
+        "DETECT_LINK_FAULT": "1'b1",
+        "OPTIMIZE_TIMING": "1'b1",
+        "TX_PKT_CNT_DW": "4'd3"
+    },
+    "output": {
+        "external_source_source": [
+            "xgmac\\xgmac_define.svh",
+            "xgmac\\xgmac_tmpl.sv",
+            "xgmac\\xgmac.sv",
+            "xgmac\\xgmac_tmpl.vhd"
+        ],
+        "external_testbench_testbench": [
+            "xgmac\\Testbench\\xgmac.sv",
+            "xgmac\\Testbench\\xgmac_define.svh"
+        ],
+        "external_testbench_ncsim": [
+            "xgmac\\Testbench\\ncsim\\xgmac.sv"
+        ],
+        "external_testbench_synopsys": [
+            "xgmac\\Testbench\\synopsys\\xgmac.sv"
+        ],
+        "external_testbench_aldec": [
+            "xgmac\\Testbench\\aldec\\xgmac.sv"
+        ],
+        "external_testbench_modelsim": [
+            "xgmac\\Testbench\\modelsim\\xgmac.sv"
+        ],
+        "external_example_example": [
+            "xgmac\\efx_ethernet_10g_exp\\efx_ethernet_10g_exp.peri.xml",
+            "xgmac\\efx_ethernet_10g_exp\\efx_ethernet_10g_exp.xml",
+            "xgmac\\efx_ethernet_10g_exp\\debug_profile.json",
+            "xgmac\\efx_ethernet_10g_exp\\debug_top.v",
+            "xgmac\\efx_ethernet_10g_exp\\efx_asyncreg.v",
+            "xgmac\\efx_ethernet_10g_exp\\efx_ethernet_10g_exp.sv",
+            "xgmac\\efx_ethernet_10g_exp\\efx_mac10gbe_exp_apb_halt.v",
+            "xgmac\\efx_ethernet_10g_exp\\efx_mac10gbe_exp_apb_master.v",
+            "xgmac\\efx_ethernet_10g_exp\\efx_mac10gbe_exp_checker.sv",
+            "xgmac\\efx_ethernet_10g_exp\\efx_mac10gbe_exp_pat_gen.v",
+            "xgmac\\efx_ethernet_10g_exp\\efx_q1_rom_mif.mem",
+            "xgmac\\efx_ethernet_10g_exp\\efx_q3_rom_mif.mem",
+            "xgmac\\efx_ethernet_10g_exp\\efx_resetsync.v",
+            "xgmac\\efx_ethernet_10g_exp\\efx_ethernet_10g_exp.sdc",
+            "xgmac\\efx_ethernet_10g_exp\\efx_q1_rom_mif_an.mem",
+            "xgmac\\efx_ethernet_10g_exp\\efx_q3_rom_mif_an.mem",
+            "xgmac\\efx_ethernet_10g_exp\\xgmac.sv",
+            "xgmac\\efx_ethernet_10g_exp\\xgmac_define.svh"
+        ]
+    },
+    "ooc_synthesis": {},
+    "sw_version": "2025.2.288",
+    "generated_date": "2025-11-26T07:54:37.660349+00:00"
+}

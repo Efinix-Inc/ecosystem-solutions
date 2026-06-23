@@ -120,7 +120,12 @@ Each frames would be stored to difference memory space with corrsponidng virtual
 
 ## Domonstration for GMSL Sensors Hub to PCIe Grabber
    Building .......
-
+## System Configuation 
+ 1. Prepare setup of the GMSL Sensors Hub and PCIe Grabber with GMSL EV Kit and Efinix Development Boards.  
+    - [Go to Setup Guide of GMSL Sensors Hub](Efx_GMSL_SensorsHub/docs/setup_gmsl_sensorshub.md)
+    - [Go to Setup Guide of GMSL PCIe Grabber](Efx_GMSL_PCIe_Grabber/docs/setup_PCIe_Grabber.md)
+ 2. Connecting the GMSL Sensors Hub to GMSL Video Grabber (HDMI) through GMSL Coaxial /STP Calbe.  
+ 3. Connecting the Porto f HDMI to LCD Monitor through HDMI cable
 
 ### document 
 - [ADI GMSL Serializer EVK](https://www.analog.com/media/en/technical-documentation/data-sheets/max96717ev.pdf)
