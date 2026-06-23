@@ -78,7 +78,7 @@ User could select the target Video Channel or a signale view for combining all 4
     - [Go to Setup Guide of GMSL Sensors Hub](Efx_GMSL_SensorsHub/docs/setup_gmsl_sensorshub.md)
     - [Go to Setup Guide of GMSL HDMI Display](Efx_GMSL_HDMI_Display/docs/setup_HDMI_dispaly.md)
  2. Connecting the GMSL Sensors Hub to GMSL Video Grabber (HDMI) through GMSL Coaxial /STP Calbe.  
- 3. Connecting the Porto f HDMI to LCD Monitor through HDMI cable
+ 3. Connecting the Port of HDMI to LCD Monitor through HDMI cable
 
 <img src="docs/images/pic_connection_GMSL_sensorshub2Hdmi.png" alt="Setup TI180" width="1000">
 
@@ -118,14 +118,66 @@ User could select the target Video Channel or a signale view for combining all 4
 In the PCIe Grabber part , Efinix Ti375n1156 will capture the video soruce of difference virtual Channel form a single GMSL De-serializer (MAX96792a). 
 Each frames would be stored to difference memory space with corrsponidng virtual channel. The PC-host will capture the video sources through the PCIe and show the video on Apps. 
 
+<img src="docs/images/pic_pcie_grabber.png" alt="Setup TI375" width="800">
+
+
 ## Domonstration for GMSL Sensors Hub to PCIe Grabber
-   Building .......
+<img src="docs/images/fullpic_gmsl_hubs2PCIe.png" alt="Setup TI180" width="800">
+
 ## System Configuation 
- 1. Prepare setup of the GMSL Sensors Hub and PCIe Grabber with GMSL EV Kit and Efinix Development Boards.  
+ 1. Prepare a Host PC
+    - Installed Ubuntu 24.04.2 LTS
+    - PCIe Gen 4 x4 SLot    
+ 2. Prepare setup of the GMSL Sensors Hub and PCIe Grabber with GMSL EV Kit and Efinix Development Boards.  
     - [Go to Setup Guide of GMSL Sensors Hub](Efx_GMSL_SensorsHub/docs/setup_gmsl_sensorshub.md)
     - [Go to Setup Guide of GMSL PCIe Grabber](Efx_GMSL_PCIe_Grabber/docs/setup_PCIe_Grabber.md)
- 2. Connecting the GMSL Sensors Hub to GMSL Video Grabber (HDMI) through GMSL Coaxial /STP Calbe.  
- 3. Connecting the Porto f HDMI to LCD Monitor through HDMI cable
+ 3. Connecting the GMSL Sensors Hub to GMSL Video Grabber (HDMI) through GMSL Coaxial /STP Calbe.  
+ 4. Connecting the Porto f HDMI to LCD Monitor through HDMI cable
+
+
+<img src="docs/images/pic_connection_gmsl_hubs2PCIe.png" alt="Setup TI180" width="1000">
+
+
+Running
+ 1. Power UP Sequency:
+    - Power up Serializer EVK 
+    - Power up De-Serializer EVK 
+    - Power up GMSL HDMI Display 
+ 2. Monitor would showing Colour Bar if no video streaming to the GMSL HDMI Display. 
+
+  <img src="docs/images/pic_videoshow_hdmi_colorbar.png" alt="Setup TI180" width="300">
+
+ 3. Power up the GMSL Sensors Hub.  
+
+
+Navigate to the unzipped folder <EFX_GMSL_PCIe_Grabber> in the Test PC. 
+Confirm the Test PC connected to internet 
+In the <EFX_GMSL_PCIe_Grabber> /host_Sw folder and source the script for installing dependencies: 
+sudo install.sh
+ (Ffmpeg, Qt6 package is required for the demo)
+
+
+
+Navigate to the unzipped folder the <EFX_GMSL_PCIe_Grabber> /host_Sw / driver/
+Compile the kernel module by running ;
+make
+If you do not have root access
+Navigate to <PCIe Vision AI Folder>/udev/ and run;  
+sudo cp 80-pcie_dma.rules /etc/udev/rules.d/
+sudo reboot
+Execute driver.sh by running ./driver.sh
+Use sudo dmesg to view the kernel buffer
+Use lspci to check if PCIe endpoint is detected  
+  <img src="docs/images/pic_lspci.png" alt="Setup TI180" width="300">
+
+
+In the folder the <EFX_GMSL_PCIe_Grabber> /host_Sw  /  , Run the PCIe GMSL Grabber on PC host
+sudo ./apps/ VideoGrabber
+   
+Press Start button to begin live capture video and show the inference results 
+
+  <img src="docs/images/pic_app_pcie_grabber.png" alt="Setup TI180" width="300">
+
 
 ### document 
 - [ADI GMSL Serializer EVK](https://www.analog.com/media/en/technical-documentation/data-sheets/max96717ev.pdf)
