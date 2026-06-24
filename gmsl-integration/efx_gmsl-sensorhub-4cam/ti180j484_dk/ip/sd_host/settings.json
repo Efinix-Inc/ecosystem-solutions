@@ -1,0 +1,42 @@
+{
+    "args": [
+        "-o",
+        "sd_host",
+        "--base_path",
+        "C:\\efinix\\solution_hub\\ADI_GSML\\Demo\\efx_ti180_4lane_IMX477_V1.2\\bsp\\TI180J484_DK\\ip",
+        "--vlnv",
+        {
+            "vendor": "efinixinc.com",
+            "library": "memory_controller",
+            "name": "efx_sd_host_controller",
+            "version": "6.0"
+        }
+    ],
+    "conf": {
+        "DATA_BUFFER_DEPTH": "512",
+        "ADMA_DATA_WIDTH": "32"
+    },
+    "output": {
+        "external_script_reference_design": [],
+        "external_source_source": [
+            "sd_host\\sd_host_tmpl.vhd",
+            "sd_host\\sd_host_tmpl.v",
+            "sd_host\\sd_host.v",
+            "sd_host\\sd_host_define.vh"
+        ],
+        "external_testbench_testbench": [
+            "sd_host\\Testbench\\tb_top.v",
+            "sd_host\\Testbench\\top.v",
+            "sd_host\\Testbench\\sdModel.v",
+            "sd_host\\Testbench\\axi_ram.v",
+            "sd_host\\Testbench\\axi_interconnect.v",
+            "sd_host\\Testbench\\apb3_2_axi4_lite.v",
+            "sd_host\\Testbench\\modelsim.do",
+            "sd_host\\Testbench\\sd_host.v",
+            "sd_host\\Testbench\\sd_host_define.vh"
+        ]
+    },
+    "ooc_synthesis": {},
+    "sw_version": "2025.2.288.3.8",
+    "generated_date": "2026-02-11T05:16:25.821654+00:00"
+}

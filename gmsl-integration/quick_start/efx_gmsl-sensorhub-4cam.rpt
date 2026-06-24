@@ -1,0 +1,8 @@
+**** Efinity Programming Tool Generation Report *****
+Time: 2026-06-24 16:55
+
+Generated FPGA Soc Image output file: C:\efinix\ecosystem_solutions\sync\merga\efx_ecosystem_solutions\gmsl-integration\quick_start\efx_gmsl-sensorhub-4cam.hex
+Flash Address  Length      Input Image File
+0x00000000     0x002345ff  C:/efinix/ecosystem_solutions/sync/merga/efx_ecosystem_solutions/gmsl-integration/precompile/fpga/efx_gmsl-sensorhub-4cam/efx-gmsl-sensorhub-4cam.hex
+0x00380000     0x000512df  C:/efinix/ecosystem_solutions/sync/merga/efx_ecosystem_solutions/gmsl-integration/precompile/embedded_sw/efx_gmsl-sensorhub-4cam/efx_gmsl_sensorhub_4cam.bin
+

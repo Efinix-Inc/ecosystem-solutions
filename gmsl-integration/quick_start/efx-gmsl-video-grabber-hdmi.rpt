@@ -1,0 +1,8 @@
+**** Efinity Programming Tool Generation Report *****
+Time: 2026-06-24 16:56
+
+Generated FPGA Soc Image output file: C:\efinix\ecosystem_solutions\sync\merga\efx_ecosystem_solutions\gmsl-integration\quick_start\efx-gmsl-video-grabber-hdmi.hex
+Flash Address  Length      Input Image File
+0x00000000     0x00238c34  C:/efinix/ecosystem_solutions/sync/merga/efx_ecosystem_solutions/gmsl-integration/precompile/fpga/efx-gmsl-video-grabber-hdmi/efx-gmsl-video-grabber-hdmi.hex
+0x00380000     0x00051277  C:/efinix/ecosystem_solutions/sync/merga/efx_ecosystem_solutions/gmsl-integration/precompile/embedded_sw/efx-gmsl-video-grabber-hdmi/efx-gmsl-video-grabber-hdmi.bin
+
