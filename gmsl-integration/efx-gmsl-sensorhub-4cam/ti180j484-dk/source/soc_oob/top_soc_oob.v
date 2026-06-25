@@ -34,7 +34,7 @@
 `define AXI_M0_MEM_CHECKER_ENABLE 1
 `define AXI_M0_DBW 512
 
-`define AXI_M1_SD_HOST_ENABLE 1
+//`define AXI_M1_SD_HOST_ENABLE 1
 `define AXI_M1_DBW 32;
 
 `define MEM_CHECKER_LFSR 1

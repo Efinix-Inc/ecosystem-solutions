@@ -19,10 +19,10 @@
 
 module tb_soc ();
 
-localparam  MEMWIDTH=512;
+localparam  MEMDEPTH=$clog2(469762048/512);
 localparam  MHZ=100000000;
 localparam PMHZ=50000000;
-localparam  MEMDEPTH=$clog2(469762048/512);
+localparam  MEMWIDTH=512;
 
 /////////////////////////////////////////////////////////////////////////////
 wire		io_systemClk; 
@@ -54,6 +54,9 @@ wire 		system_spi_0_io_data_1;
 wire		system_uart_0_io_txd;
 reg		    system_uart_0_io_rxd	= 1'b1;
 wire        memoryCheckerPass;
+wire  [3:0]	system_gpio_0_io;
+wire		baudClk=io_systemClk;
+reg  [10:0] BAUDRATE=(MHZ/115200);
 wire ext_mem_ctrl_clk; 
 wire ext_mem_ctrl_resetn; 
 wire			io_ddrA_arw_valid;
@@ -84,9 +87,6 @@ wire  [0:0]	system_spi_1_io_ss;
 wire		system_spi_1_io_sclk_write;
 wire		system_spi_1_io_data_0;
 wire		system_spi_1_io_data_1;
-wire  [3:0]	system_gpio_0_io;
-wire		baudClk=io_systemClk;
-reg  [10:0] BAUDRATE=(MHZ/115200);
 wire		system_i2c_0_io_sda;
 wire		system_i2c_0_io_scl;
 
@@ -268,8 +268,15 @@ end
 //////////////////////////////////////////////////////////////////////////////
 
 top_soc_wrapper dut_wrapper(
-.system_uart_0_io_txd(system_uart_0_io_txd),
-.system_uart_0_io_rxd(system_uart_0_io_rxd),
+.system_i2c_0_io_sda(system_i2c_0_io_sda),
+.system_i2c_0_io_scl(system_i2c_0_io_scl),
+.system_spi_1_io_data_0(system_spi_1_io_data_0),
+.system_spi_1_io_data_1(system_spi_1_io_data_1),
+.system_spi_1_io_sclk_write(system_spi_1_io_sclk_write),
+.system_spi_1_io_ss(system_spi_1_io_ss),
+.io_memoryClk(io_memoryClk),
+.memoryClk_rstn(memoryClk_rstn),
+.memoryClk_locked(memoryClk_locked),
 .io_ddrA_arw_valid(io_ddrA_arw_valid),
 .io_ddrA_arw_ready(io_ddrA_arw_ready),
 .io_ddrA_arw_payload_addr(io_ddrA_arw_payload_addr),
@@ -294,20 +301,13 @@ top_soc_wrapper dut_wrapper(
 .io_ddrA_r_payload_id(io_ddrA_r_payload_id),
 .io_ddrA_r_payload_resp(io_ddrA_r_payload_resp),
 .io_ddrA_r_payload_last(io_ddrA_r_payload_last),
+.system_uart_0_io_txd(system_uart_0_io_txd),
+.system_uart_0_io_rxd(system_uart_0_io_rxd),
+.system_gpio_0_io(system_gpio_0_io),
 .system_spi_0_io_data_0(system_spi_0_io_data_0),
 .system_spi_0_io_data_1(system_spi_0_io_data_1),
 .system_spi_0_io_sclk_write(system_spi_0_io_sclk_write),
 .system_spi_0_io_ss(system_spi_0_io_ss),
-.io_memoryClk(io_memoryClk),
-.memoryClk_rstn(memoryClk_rstn),
-.memoryClk_locked(memoryClk_locked),
-.system_gpio_0_io(system_gpio_0_io),
-.system_spi_1_io_data_0(system_spi_1_io_data_0),
-.system_spi_1_io_data_1(system_spi_1_io_data_1),
-.system_spi_1_io_sclk_write(system_spi_1_io_sclk_write),
-.system_spi_1_io_ss(system_spi_1_io_ss),
-.system_i2c_0_io_sda(system_i2c_0_io_sda),
-.system_i2c_0_io_scl(system_i2c_0_io_scl),
 
 //clock and reset
 .io_asyncResetn(~rst),
@@ -366,16 +366,8 @@ endmodule
 //////////////////////////////////////////////////////////////////////////////
 
 module top_soc_wrapper(
-inout		system_i2c_0_io_sda,
-inout		system_i2c_0_io_scl,
-inout [3:0]	system_gpio_0_io,
-output [0:0] system_spi_0_io_ss,
-output		system_spi_0_io_sclk_write,
-inout		system_spi_0_io_data_0,
-inout		system_spi_0_io_data_1,
-output		memoryClk_rstn,
-input		memoryClk_locked,
-input		io_memoryClk,
+output		system_uart_0_io_txd,
+input		system_uart_0_io_rxd,
 output		io_ddrA_arw_valid,
 input		io_ddrA_arw_ready,
 output [31:0] io_ddrA_arw_payload_addr,
@@ -404,8 +396,16 @@ output [0:0] system_spi_1_io_ss,
 output		system_spi_1_io_sclk_write,
 inout		system_spi_1_io_data_0,
 inout		system_spi_1_io_data_1,
-output		system_uart_0_io_txd,
-input		system_uart_0_io_rxd,
+output [0:0] system_spi_0_io_ss,
+output		system_spi_0_io_sclk_write,
+inout		system_spi_0_io_data_0,
+inout		system_spi_0_io_data_1,
+output		memoryClk_rstn,
+input		memoryClk_locked,
+input		io_memoryClk,
+inout [3:0]	system_gpio_0_io,
+inout		system_i2c_0_io_sda,
+inout		system_i2c_0_io_scl,
 
 output      systemClk_rstn,
 input       systemClk_locked,
@@ -414,17 +414,6 @@ input       io_asyncResetn,
 output      memoryCheckerPass
 );
 //////////////////////////////////////////////////////////////////////////////
-wire  [3:0]	system_gpio_0_io_read;
-wire  [3:0]	system_gpio_0_io_write;
-wire  [3:0]	system_gpio_0_io_writeEnable;
-wire  [0:0]	spi_1_io_ss;
-wire		spi_1_io_data_0_writeEnable;
-wire		system_spi_1_io_data_0_read;
-wire		spi_1_io_data_0_write;
-wire		spi_1_io_data_1_writeEnable;
-wire		system_spi_1_io_data_1_read;
-wire		spi_1_io_data_1_write;
-wire		spi_1_io_sclk_write;
 wire  [0:0]	spi_0_io_ss;
 wire		spi_0_io_data_0_writeEnable;
 wire		system_spi_0_io_data_0_read;
@@ -439,6 +428,17 @@ wire		system_i2c_0_io_sda_read;
 wire		system_i2c_0_io_scl_writeEnable;
 wire		system_i2c_0_io_scl_write;
 wire		system_i2c_0_io_scl_read;
+wire  [3:0]	system_gpio_0_io_read;
+wire  [3:0]	system_gpio_0_io_write;
+wire  [3:0]	system_gpio_0_io_writeEnable;
+wire  [0:0]	spi_1_io_ss;
+wire		spi_1_io_data_0_writeEnable;
+wire		system_spi_1_io_data_0_read;
+wire		spi_1_io_data_0_write;
+wire		spi_1_io_data_1_writeEnable;
+wire		system_spi_1_io_data_1_read;
+wire		spi_1_io_data_1_write;
+wire		spi_1_io_sclk_write;
 
 
 
@@ -456,19 +456,19 @@ io_sim  #(.WIDTH(2),.REG(1)) spi0_io_data (
 .in_pad({system_spi_0_io_data_0_read,system_spi_0_io_data_1_read}),
 .io({system_spi_0_io_data_0,system_spi_0_io_data_1}));
 
-io_sim  #(.WIDTH(2),.REG(0)) i2c0_io_data ( 
-.clk(io_systemClk),
-.out_pad({system_i2c_0_io_sda_write,system_i2c_0_io_scl_write}),
-.out_oe({system_i2c_0_io_sda_writeEnable,system_i2c_0_io_scl_writeEnable}),
-.in_pad({system_i2c_0_io_sda_read,system_i2c_0_io_scl_read}),
-.io({system_i2c_0_io_sda,system_i2c_0_io_scl}));
-
 io_sim  #(.WIDTH(4),.REG(0)) gpio0_io_data ( 
 .clk(io_systemClk),
 .out_pad(system_gpio_0_io_write),
 .out_oe(system_gpio_0_io_writeEnable),
 .in_pad(system_gpio_0_io_read),
 .io(system_gpio_0_io));
+
+io_sim  #(.WIDTH(2),.REG(0)) i2c0_io_data ( 
+.clk(io_systemClk),
+.out_pad({system_i2c_0_io_sda_write,system_i2c_0_io_scl_write}),
+.out_oe({system_i2c_0_io_sda_writeEnable,system_i2c_0_io_scl_writeEnable}),
+.in_pad({system_i2c_0_io_sda_read,system_i2c_0_io_scl_read}),
+.io({system_i2c_0_io_sda,system_i2c_0_io_scl}));
 
 io_sim  #(.WIDTH(1+1),.REG(1)) spi1_io_aux (
 .clk(io_systemClk),
@@ -486,20 +486,22 @@ io_sim  #(.WIDTH(2),.REG(1)) spi1_io_data (
 
 //////////////////////////////////////////////////////////////////////////////
 top_soc dut (
-.system_spi_0_io_sclk_write(spi_0_io_sclk_write),
-.system_spi_0_io_data_0_writeEnable(spi_0_io_data_0_writeEnable),
-.system_spi_0_io_data_0_read(system_spi_0_io_data_0_read),
-.system_spi_0_io_data_0_write(spi_0_io_data_0_write),
-.system_spi_0_io_data_1_writeEnable(spi_0_io_data_1_writeEnable),
-.system_spi_0_io_data_1_read(system_spi_0_io_data_1_read),
-.system_spi_0_io_data_1_write(spi_0_io_data_1_write),
-.system_spi_0_io_ss(spi_0_io_ss),
-.io_memoryClk(io_memoryClk),
-.memoryClk_rstn(memoryClk_rstn),
-.memoryClk_locked(memoryClk_locked),
-.system_gpio_0_io_read(system_gpio_0_io_read),
-.system_gpio_0_io_write(system_gpio_0_io_write),
-.system_gpio_0_io_writeEnable(system_gpio_0_io_writeEnable),
+.system_spi_1_io_sclk_write(spi_1_io_sclk_write),
+.system_spi_1_io_data_0_writeEnable(spi_1_io_data_0_writeEnable),
+.system_spi_1_io_data_0_read(system_spi_1_io_data_0_read),
+.system_spi_1_io_data_0_write(spi_1_io_data_0_write),
+.system_spi_1_io_data_1_writeEnable(spi_1_io_data_1_writeEnable),
+.system_spi_1_io_data_1_read(system_spi_1_io_data_1_read),
+.system_spi_1_io_data_1_write(spi_1_io_data_1_write),
+.system_spi_1_io_ss(spi_1_io_ss),
+.system_uart_0_io_txd(system_uart_0_io_txd),
+.system_uart_0_io_rxd(system_uart_0_io_rxd),
+.system_i2c_0_io_sda_writeEnable(system_i2c_0_io_sda_writeEnable),
+.system_i2c_0_io_sda_write(system_i2c_0_io_sda_write),
+.system_i2c_0_io_sda_read(system_i2c_0_io_sda_read),
+.system_i2c_0_io_scl_writeEnable(system_i2c_0_io_scl_writeEnable),
+.system_i2c_0_io_scl_write(system_i2c_0_io_scl_write),
+.system_i2c_0_io_scl_read(system_i2c_0_io_scl_read),
 .io_ddrA_arw_valid(io_ddrA_arw_valid),
 .io_ddrA_arw_ready(io_ddrA_arw_ready),
 .io_ddrA_arw_payload_addr(io_ddrA_arw_payload_addr),
@@ -524,22 +526,20 @@ top_soc dut (
 .io_ddrA_r_payload_id(io_ddrA_r_payload_id),
 .io_ddrA_r_payload_resp(io_ddrA_r_payload_resp),
 .io_ddrA_r_payload_last(io_ddrA_r_payload_last),
-.system_uart_0_io_txd(system_uart_0_io_txd),
-.system_uart_0_io_rxd(system_uart_0_io_rxd),
-.system_spi_1_io_sclk_write(spi_1_io_sclk_write),
-.system_spi_1_io_data_0_writeEnable(spi_1_io_data_0_writeEnable),
-.system_spi_1_io_data_0_read(system_spi_1_io_data_0_read),
-.system_spi_1_io_data_0_write(spi_1_io_data_0_write),
-.system_spi_1_io_data_1_writeEnable(spi_1_io_data_1_writeEnable),
-.system_spi_1_io_data_1_read(system_spi_1_io_data_1_read),
-.system_spi_1_io_data_1_write(spi_1_io_data_1_write),
-.system_spi_1_io_ss(spi_1_io_ss),
-.system_i2c_0_io_sda_writeEnable(system_i2c_0_io_sda_writeEnable),
-.system_i2c_0_io_sda_write(system_i2c_0_io_sda_write),
-.system_i2c_0_io_sda_read(system_i2c_0_io_sda_read),
-.system_i2c_0_io_scl_writeEnable(system_i2c_0_io_scl_writeEnable),
-.system_i2c_0_io_scl_write(system_i2c_0_io_scl_write),
-.system_i2c_0_io_scl_read(system_i2c_0_io_scl_read),
+.system_spi_0_io_sclk_write(spi_0_io_sclk_write),
+.system_spi_0_io_data_0_writeEnable(spi_0_io_data_0_writeEnable),
+.system_spi_0_io_data_0_read(system_spi_0_io_data_0_read),
+.system_spi_0_io_data_0_write(spi_0_io_data_0_write),
+.system_spi_0_io_data_1_writeEnable(spi_0_io_data_1_writeEnable),
+.system_spi_0_io_data_1_read(system_spi_0_io_data_1_read),
+.system_spi_0_io_data_1_write(spi_0_io_data_1_write),
+.system_spi_0_io_ss(spi_0_io_ss),
+.system_gpio_0_io_read(system_gpio_0_io_read),
+.system_gpio_0_io_write(system_gpio_0_io_write),
+.system_gpio_0_io_writeEnable(system_gpio_0_io_writeEnable),
+.io_memoryClk(io_memoryClk),
+.memoryClk_rstn(memoryClk_rstn),
+.memoryClk_locked(memoryClk_locked),
 
 //clock and reset
 .io_asyncResetn(io_asyncResetn),

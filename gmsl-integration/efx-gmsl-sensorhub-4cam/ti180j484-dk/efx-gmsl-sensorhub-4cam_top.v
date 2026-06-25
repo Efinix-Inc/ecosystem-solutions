@@ -25,6 +25,7 @@
 //`define CSI_TX_4LANES   //Default 2 lanes
 `define CSI_TX_LANE_DATAWIDTH   16
 
+//'define HDMI_OUTPUT
 
 module efx_gmsl_sensorhub_4cam_top #(
 	parameter AXI_0_DATA_WIDTH = 512,
@@ -32,7 +33,7 @@ module efx_gmsl_sensorhub_4cam_top #(
 	
 	parameter NUM_CAM  			= 4,
 	parameter NUM_CSI_TX		= 1,
-    parameter NUM_CSI_TX_FANOUT	= 4,
+    parameter NUM_CSI_TX_FANOUT	= 1,
     
 	parameter NUM_VIDEO_OUT		= 2,
 	parameter SYS_FREQ_MHZ    = 100, 
@@ -208,33 +209,6 @@ module efx_gmsl_sensorhub_4cam_top #(
 	output	[AXI_1_DATA_WIDTH/8-1:0] ddr_inst_WSTRB_1,	//Write strobes. This signal indicates which byte lanes hold valid data. There is one write strobe bit for each eight bits of the write data bus.
 	output	ddr_inst_WVALID_1,		//Write valid. This signal indicates that valid write data and strobes are available.
 	
-	
-	////SOC Ports
-  	//output   uart_0_txd,
-  	//input    uart_0_rxd,
-	//// Flash Interface 
-  	//output   spi_flash_0_sclk_write,
-  	//output   spi_flash_0_data_0_writeEnable,
-  	//input    spi_flash_0_data_0_read,
-  	//output   spi_flash_0_data_0_write,
-  	//output   spi_flash_0_data_1_writeEnable,
-  	//input    spi_flash_0_data_1_read,
-  	//output   spi_flash_0_data_1_write,
-  	//output   spi_flash_0_ss,
-	//		
-	//output   spi_flash_1_sclk_write,
-  	//output   spi_flash_1_data_0_writeEnable,
-  	//input    spi_flash_1_data_0_read,
-  	//output   spi_flash_1_data_0_write,
-  	//output   spi_flash_1_data_1_writeEnable,
-  	//input    spi_flash_1_data_1_read,
-  	//output   spi_flash_1_data_1_write,
-  	//output   spi_flash_1_ss,
-    
-    
-    
-    //SOC port 
-    
       
     output 					system_spi_0_io_sclk_write,
     output 					system_spi_0_io_data_0_writeEnable,
@@ -629,193 +603,193 @@ module efx_gmsl_sensorhub_4cam_top #(
   output mipi_dphy_tx_inst1_TX_WORD_VALID_HS_LAN3, //
 `endif  
   
-  //MIPI DPHY TX1 
-//input mipi_dphy_tx_inst2_PLL_UNLOCK,
-  input mipi_dphy_tx_inst2_STOPSTATE_CLK, //
-  input mipi_dphy_tx_inst2_STOPSTATE_LAN0,//
-  input mipi_dphy_tx_inst2_STOPSTATE_LAN1,//
-//input mipi_dphy_tx_inst2_TX_READY_ESC,
-  input mipi_dphy_tx_inst2_TX_READY_HS_LAN0,	//
-  input mipi_dphy_tx_inst2_TX_READY_HS_LAN1,	//
-  input mipi_dphy_tx_inst2_TX_ULPS_ACTIVE_CLK_NOT,	//
-  input mipi_dphy_tx_inst2_TX_ULPS_ACTIVE_NOT_LAN0,	//
-  input mipi_dphy_tx_inst2_TX_ULPS_ACTIVE_NOT_LAN1,	//
-  input mipi_dphy_tx_inst2_SLOWCLK,					//
-  
-  //output mipi_dphy_tx_inst2_TX_CLK_ESC,
-//output mipi_dphy_tx_inst2_PLL_SSC_EN,
-  output mipi_dphy_tx_inst2_RESET_N,	//
-//output [7:0] mipi_dphy_tx_inst2_TX_DATA_ESC,
-  output [CSI_TX_DATA_WIDTH_LANE-1:0] mipi_dphy_tx_inst2_TX_DATA_HS_LAN0, //
-  output [CSI_TX_DATA_WIDTH_LANE-1:0] mipi_dphy_tx_inst2_TX_DATA_HS_LAN1, //
-//output mipi_dphy_tx_inst2_TX_LPDT_ESC,
-  output mipi_dphy_tx_inst2_TX_REQUEST_ESC_LAN0,	//
-  output mipi_dphy_tx_inst2_TX_REQUEST_ESC_LAN1,	//
-  output mipi_dphy_tx_inst2_TX_REQUEST_HS,			//
-  output mipi_dphy_tx_inst2_TX_REQUEST_HS_LAN0,		//
-  output mipi_dphy_tx_inst2_TX_REQUEST_HS_LAN1,		//
-  output mipi_dphy_tx_inst2_TX_SKEW_CAL_HS_LAN0,	//
-  output mipi_dphy_tx_inst2_TX_SKEW_CAL_HS_LAN1,	//
-//output [3:0] mipi_dphy_t2_inst2_TX_TRIGGER_ESC,
-  output mipi_dphy_tx_inst2_TX_ULPS_CLK,	//
-  output mipi_dphy_tx_inst2_TX_ULPS_ESC_LAN0,	//
-  output mipi_dphy_tx_inst2_TX_ULPS_ESC_LAN1,	//
-  output mipi_dphy_tx_inst2_TX_ULPS_EXIT,	//
-  output mipi_dphy_tx_inst2_TX_ULPS_EXIT_LAN0,	//
-  output mipi_dphy_tx_inst2_TX_ULPS_EXIT_LAN1,	//
-//output mipi_dphy_tx_inst2_TX_VALID_ESC,
-  output mipi_dphy_tx_inst2_TX_WORD_VALID_HS_LAN0, //
-  output mipi_dphy_tx_inst2_TX_WORD_VALID_HS_LAN1, //
- 
-`ifdef CSI_TX_4LANES  
-  input mipi_dphy_tx_inst2_STOPSTATE_LAN2,//
-  input mipi_dphy_tx_inst2_STOPSTATE_LAN3,//
-  input mipi_dphy_tx_inst2_TX_READY_HS_LAN2,	//
-  input mipi_dphy_tx_inst2_TX_READY_HS_LAN3,	//
-  input mipi_dphy_tx_inst2_TX_ULPS_ACTIVE_NOT_LAN2,	//
-  input mipi_dphy_tx_inst2_TX_ULPS_ACTIVE_NOT_LAN3,	//
-  output [CSI_TX_DATA_WIDTH_LANE-1:0] mipi_dphy_tx_inst2_TX_DATA_HS_LAN2, //
-  output [CSI_TX_DATA_WIDTH_LANE-1:0] mipi_dphy_tx_inst2_TX_DATA_HS_LAN3, //
-  output mipi_dphy_tx_inst2_TX_REQUEST_ESC_LAN2,	//
-  output mipi_dphy_tx_inst2_TX_REQUEST_ESC_LAN3,	//
-  output mipi_dphy_tx_inst2_TX_REQUEST_HS_LAN2,		//
-  output mipi_dphy_tx_inst2_TX_REQUEST_HS_LAN3,		//
-  output mipi_dphy_tx_inst2_TX_SKEW_CAL_HS_LAN2,	//
-  output mipi_dphy_tx_inst2_TX_SKEW_CAL_HS_LAN3,	//
-  output mipi_dphy_tx_inst2_TX_ULPS_ESC_LAN2,	//
-  output mipi_dphy_tx_inst2_TX_ULPS_ESC_LAN3,	//
-  output mipi_dphy_tx_inst2_TX_ULPS_EXIT_LAN2,	//
-  output mipi_dphy_tx_inst2_TX_ULPS_EXIT_LAN3,	//
-  output mipi_dphy_tx_inst2_TX_WORD_VALID_HS_LAN2, //
-  output mipi_dphy_tx_inst2_TX_WORD_VALID_HS_LAN3, //
-`endif  
- 
-  
-    //MIPI DPHY TX2 
-//input mipi_dphy_tx_inst3_PLL_UNLOCK,
-  input mipi_dphy_tx_inst3_STOPSTATE_CLK, //
-  input mipi_dphy_tx_inst3_STOPSTATE_LAN0,//
-  input mipi_dphy_tx_inst3_STOPSTATE_LAN1,//
-//input mipi_dphy_tx_inst3_TX_READY_ESC,
-  input mipi_dphy_tx_inst3_TX_READY_HS_LAN0,	//
-  input mipi_dphy_tx_inst3_TX_READY_HS_LAN1,	//
-  input mipi_dphy_tx_inst3_TX_ULPS_ACTIVE_CLK_NOT,	//
-  input mipi_dphy_tx_inst3_TX_ULPS_ACTIVE_NOT_LAN0,	//
-  input mipi_dphy_tx_inst3_TX_ULPS_ACTIVE_NOT_LAN1,	//
-  input mipi_dphy_tx_inst3_SLOWCLK,					//
-  
-//  output mipi_dphy_tx_inst3_TX_CLK_ESC,
-//output mipi_dphy_tx_inst3_PLL_SSC_EN,
-  output mipi_dphy_tx_inst3_RESET_N,	//
-//output [7:0] mipi_dphy_tx_inst3_TX_DATA_ESC,
-  output [CSI_TX_DATA_WIDTH_LANE-1:0] mipi_dphy_tx_inst3_TX_DATA_HS_LAN0, //
-  output [CSI_TX_DATA_WIDTH_LANE-1:0] mipi_dphy_tx_inst3_TX_DATA_HS_LAN1, //
-//output mipi_dphy_tx_inst3_TX_LPDT_ESC,
-  output mipi_dphy_tx_inst3_TX_REQUEST_ESC_LAN0,	//
-  output mipi_dphy_tx_inst3_TX_REQUEST_ESC_LAN1,	//
-  output mipi_dphy_tx_inst3_TX_REQUEST_HS,			//
-  output mipi_dphy_tx_inst3_TX_REQUEST_HS_LAN0,		//
-  output mipi_dphy_tx_inst3_TX_REQUEST_HS_LAN1,		//
-  output mipi_dphy_tx_inst3_TX_SKEW_CAL_HS_LAN0,	//
-  output mipi_dphy_tx_inst3_TX_SKEW_CAL_HS_LAN1,	//
-//output [3:0] mipi_dphy_tx_inst3_TX_TRIGGER_ESC,
-  output mipi_dphy_tx_inst3_TX_ULPS_CLK,	//
-  output mipi_dphy_tx_inst3_TX_ULPS_ESC_LAN0,	//
-  output mipi_dphy_tx_inst3_TX_ULPS_ESC_LAN1,	//
-  output mipi_dphy_tx_inst3_TX_ULPS_EXIT,	//
-  output mipi_dphy_tx_inst3_TX_ULPS_EXIT_LAN0,	//
-  output mipi_dphy_tx_inst3_TX_ULPS_EXIT_LAN1,	//
-//output mipi_dphy_tx_inst3_TX_VALID_ESC,
-  output mipi_dphy_tx_inst3_TX_WORD_VALID_HS_LAN0, //
-  output mipi_dphy_tx_inst3_TX_WORD_VALID_HS_LAN1, //
- 
-`ifdef CSI_TX_4LANES  
-  input mipi_dphy_tx_inst3_STOPSTATE_LAN2,//
-  input mipi_dphy_tx_inst3_STOPSTATE_LAN3,//
-  input mipi_dphy_tx_inst3_TX_READY_HS_LAN2,	//
-  input mipi_dphy_tx_inst3_TX_READY_HS_LAN3,	//
-  input mipi_dphy_tx_inst3_TX_ULPS_ACTIVE_NOT_LAN2,	//
-  input mipi_dphy_tx_inst3_TX_ULPS_ACTIVE_NOT_LAN3,	//
-  output [CSI_TX_DATA_WIDTH_LANE-1:0] mipi_dphy_tx_inst3_TX_DATA_HS_LAN2, //
-  output [CSI_TX_DATA_WIDTH_LANE-1:0] mipi_dphy_tx_inst3_TX_DATA_HS_LAN3, //
-  output mipi_dphy_tx_inst3_TX_REQUEST_ESC_LAN2,	//
-  output mipi_dphy_tx_inst3_TX_REQUEST_ESC_LAN3,	//
-  output mipi_dphy_tx_inst3_TX_REQUEST_HS_LAN2,		//
-  output mipi_dphy_tx_inst3_TX_REQUEST_HS_LAN3,		//
-  output mipi_dphy_tx_inst3_TX_SKEW_CAL_HS_LAN2,	//
-  output mipi_dphy_tx_inst3_TX_SKEW_CAL_HS_LAN3,	//
-  output mipi_dphy_tx_inst3_TX_ULPS_ESC_LAN2,	//
-  output mipi_dphy_tx_inst3_TX_ULPS_ESC_LAN3,	//
-  output mipi_dphy_tx_inst3_TX_ULPS_EXIT_LAN2,	//
-  output mipi_dphy_tx_inst3_TX_ULPS_EXIT_LAN3,	//
-  output mipi_dphy_tx_inst3_TX_WORD_VALID_HS_LAN2, //
-  output mipi_dphy_tx_inst3_TX_WORD_VALID_HS_LAN3, //
-`endif  
-
- 
-    //MIPI DPHY TX3 
-//input mipi_dphy_tx_inst4_PLL_UNLOCK,
-  input mipi_dphy_tx_inst4_STOPSTATE_CLK, //
-  input mipi_dphy_tx_inst4_STOPSTATE_LAN0,//
-  input mipi_dphy_tx_inst4_STOPSTATE_LAN1,//
-//input mipi_dphy_tx_inst4_TX_READY_ESC,
-  input mipi_dphy_tx_inst4_TX_READY_HS_LAN0,	//
-  input mipi_dphy_tx_inst4_TX_READY_HS_LAN1,	//
-  input mipi_dphy_tx_inst4_TX_ULPS_ACTIVE_CLK_NOT,	//
-  input mipi_dphy_tx_inst4_TX_ULPS_ACTIVE_NOT_LAN0,	//
-  input mipi_dphy_tx_inst4_TX_ULPS_ACTIVE_NOT_LAN1,	//
-  input mipi_dphy_tx_inst4_SLOWCLK,					//
-  
-//  output mipi_dphy_tx_inst4_TX_CLK_ESC,	  
-//output mipi_dphy_tx_inst4_PLL_SSC_EN,
-  output mipi_dphy_tx_inst4_RESET_N,	//
-//output [7:0] mipi_dphy_tx_inst4_TX_DATA_ESC,
-  output [CSI_TX_DATA_WIDTH_LANE-1:0] mipi_dphy_tx_inst4_TX_DATA_HS_LAN0, //
-  output [CSI_TX_DATA_WIDTH_LANE-1:0] mipi_dphy_tx_inst4_TX_DATA_HS_LAN1, //
-//output mipi_dphy_tx_inst4_TX_LPDT_ESC,
-  output mipi_dphy_tx_inst4_TX_REQUEST_ESC_LAN0,	//
-  output mipi_dphy_tx_inst4_TX_REQUEST_ESC_LAN1,	//
-  output mipi_dphy_tx_inst4_TX_REQUEST_HS,			//
-  output mipi_dphy_tx_inst4_TX_REQUEST_HS_LAN0,		//
-  output mipi_dphy_tx_inst4_TX_REQUEST_HS_LAN1,		//
-  output mipi_dphy_tx_inst4_TX_SKEW_CAL_HS_LAN0,	//
-  output mipi_dphy_tx_inst4_TX_SKEW_CAL_HS_LAN1,	//
-//output [3:0] mipi_dphy_tx_inst4_TX_TRIGGER_ESC,
-  output mipi_dphy_tx_inst4_TX_ULPS_CLK,	//
-  output mipi_dphy_tx_inst4_TX_ULPS_ESC_LAN0,	//
-  output mipi_dphy_tx_inst4_TX_ULPS_ESC_LAN1,	//
-  output mipi_dphy_tx_inst4_TX_ULPS_EXIT,	//
-  output mipi_dphy_tx_inst4_TX_ULPS_EXIT_LAN0,	//
-  output mipi_dphy_tx_inst4_TX_ULPS_EXIT_LAN1,	//
-//output mipi_dphy_tx_inst4_TX_VALID_ESC,
-  output mipi_dphy_tx_inst4_TX_WORD_VALID_HS_LAN0, //
-  output mipi_dphy_tx_inst4_TX_WORD_VALID_HS_LAN1, //
-
-`ifdef CSI_TX_4LANES  
-  input mipi_dphy_tx_inst4_STOPSTATE_LAN2,//
-  input mipi_dphy_tx_inst4_STOPSTATE_LAN3,//
-  input mipi_dphy_tx_inst4_TX_READY_HS_LAN2,	//
-  input mipi_dphy_tx_inst4_TX_READY_HS_LAN3,	//
-  input mipi_dphy_tx_inst4_TX_ULPS_ACTIVE_NOT_LAN2,	//
-  input mipi_dphy_tx_inst4_TX_ULPS_ACTIVE_NOT_LAN3,	//
-  output [CSI_TX_DATA_WIDTH_LANE-1:0] mipi_dphy_tx_inst4_TX_DATA_HS_LAN2, //
-  output [CSI_TX_DATA_WIDTH_LANE-1:0] mipi_dphy_tx_inst4_TX_DATA_HS_LAN3, //
-  output mipi_dphy_tx_inst4_TX_REQUEST_ESC_LAN2,	//
-  output mipi_dphy_tx_inst4_TX_REQUEST_ESC_LAN3,	//
-  output mipi_dphy_tx_inst4_TX_REQUEST_HS_LAN2,		//
-  output mipi_dphy_tx_inst4_TX_REQUEST_HS_LAN3,		//
-  output mipi_dphy_tx_inst4_TX_SKEW_CAL_HS_LAN2,	//
-  output mipi_dphy_tx_inst4_TX_SKEW_CAL_HS_LAN3,	//
-  output mipi_dphy_tx_inst4_TX_ULPS_ESC_LAN2,	//
-  output mipi_dphy_tx_inst4_TX_ULPS_ESC_LAN3,	//
-  output mipi_dphy_tx_inst4_TX_ULPS_EXIT_LAN2,	//
-  output mipi_dphy_tx_inst4_TX_ULPS_EXIT_LAN3,	//
-  output mipi_dphy_tx_inst4_TX_WORD_VALID_HS_LAN2, //
-  output mipi_dphy_tx_inst4_TX_WORD_VALID_HS_LAN3, //
-`endif  
+//  //MIPI DPHY TX1 
+////input mipi_dphy_tx_inst2_PLL_UNLOCK,
+//  input mipi_dphy_tx_inst2_STOPSTATE_CLK, //
+//  input mipi_dphy_tx_inst2_STOPSTATE_LAN0,//
+//  input mipi_dphy_tx_inst2_STOPSTATE_LAN1,//
+////input mipi_dphy_tx_inst2_TX_READY_ESC,
+//  input mipi_dphy_tx_inst2_TX_READY_HS_LAN0,	//
+//  input mipi_dphy_tx_inst2_TX_READY_HS_LAN1,	//
+//  input mipi_dphy_tx_inst2_TX_ULPS_ACTIVE_CLK_NOT,	//
+//  input mipi_dphy_tx_inst2_TX_ULPS_ACTIVE_NOT_LAN0,	//
+//  input mipi_dphy_tx_inst2_TX_ULPS_ACTIVE_NOT_LAN1,	//
+//  input mipi_dphy_tx_inst2_SLOWCLK,					//
+//  
+//  //output mipi_dphy_tx_inst2_TX_CLK_ESC,
+////output mipi_dphy_tx_inst2_PLL_SSC_EN,
+//  output mipi_dphy_tx_inst2_RESET_N,	//
+////output [7:0] mipi_dphy_tx_inst2_TX_DATA_ESC,
+//  output [CSI_TX_DATA_WIDTH_LANE-1:0] mipi_dphy_tx_inst2_TX_DATA_HS_LAN0, //
+//  output [CSI_TX_DATA_WIDTH_LANE-1:0] mipi_dphy_tx_inst2_TX_DATA_HS_LAN1, //
+////output mipi_dphy_tx_inst2_TX_LPDT_ESC,
+//  output mipi_dphy_tx_inst2_TX_REQUEST_ESC_LAN0,	//
+//  output mipi_dphy_tx_inst2_TX_REQUEST_ESC_LAN1,	//
+//  output mipi_dphy_tx_inst2_TX_REQUEST_HS,			//
+//  output mipi_dphy_tx_inst2_TX_REQUEST_HS_LAN0,		//
+//  output mipi_dphy_tx_inst2_TX_REQUEST_HS_LAN1,		//
+//  output mipi_dphy_tx_inst2_TX_SKEW_CAL_HS_LAN0,	//
+//  output mipi_dphy_tx_inst2_TX_SKEW_CAL_HS_LAN1,	//
+////output [3:0] mipi_dphy_t2_inst2_TX_TRIGGER_ESC,
+//  output mipi_dphy_tx_inst2_TX_ULPS_CLK,	//
+//  output mipi_dphy_tx_inst2_TX_ULPS_ESC_LAN0,	//
+//  output mipi_dphy_tx_inst2_TX_ULPS_ESC_LAN1,	//
+//  output mipi_dphy_tx_inst2_TX_ULPS_EXIT,	//
+//  output mipi_dphy_tx_inst2_TX_ULPS_EXIT_LAN0,	//
+//  output mipi_dphy_tx_inst2_TX_ULPS_EXIT_LAN1,	//
+////output mipi_dphy_tx_inst2_TX_VALID_ESC,
+//  output mipi_dphy_tx_inst2_TX_WORD_VALID_HS_LAN0, //
+//  output mipi_dphy_tx_inst2_TX_WORD_VALID_HS_LAN1, //
+// 
+//`ifdef CSI_TX_4LANES  
+//  input mipi_dphy_tx_inst2_STOPSTATE_LAN2,//
+//  input mipi_dphy_tx_inst2_STOPSTATE_LAN3,//
+//  input mipi_dphy_tx_inst2_TX_READY_HS_LAN2,	//
+//  input mipi_dphy_tx_inst2_TX_READY_HS_LAN3,	//
+//  input mipi_dphy_tx_inst2_TX_ULPS_ACTIVE_NOT_LAN2,	//
+//  input mipi_dphy_tx_inst2_TX_ULPS_ACTIVE_NOT_LAN3,	//
+//  output [CSI_TX_DATA_WIDTH_LANE-1:0] mipi_dphy_tx_inst2_TX_DATA_HS_LAN2, //
+//  output [CSI_TX_DATA_WIDTH_LANE-1:0] mipi_dphy_tx_inst2_TX_DATA_HS_LAN3, //
+//  output mipi_dphy_tx_inst2_TX_REQUEST_ESC_LAN2,	//
+//  output mipi_dphy_tx_inst2_TX_REQUEST_ESC_LAN3,	//
+//  output mipi_dphy_tx_inst2_TX_REQUEST_HS_LAN2,		//
+//  output mipi_dphy_tx_inst2_TX_REQUEST_HS_LAN3,		//
+//  output mipi_dphy_tx_inst2_TX_SKEW_CAL_HS_LAN2,	//
+//  output mipi_dphy_tx_inst2_TX_SKEW_CAL_HS_LAN3,	//
+//  output mipi_dphy_tx_inst2_TX_ULPS_ESC_LAN2,	//
+//  output mipi_dphy_tx_inst2_TX_ULPS_ESC_LAN3,	//
+//  output mipi_dphy_tx_inst2_TX_ULPS_EXIT_LAN2,	//
+//  output mipi_dphy_tx_inst2_TX_ULPS_EXIT_LAN3,	//
+//  output mipi_dphy_tx_inst2_TX_WORD_VALID_HS_LAN2, //
+//  output mipi_dphy_tx_inst2_TX_WORD_VALID_HS_LAN3, //
+//`endif  
+// 
+//  
+//    //MIPI DPHY TX2 
+////input mipi_dphy_tx_inst3_PLL_UNLOCK,
+//  input mipi_dphy_tx_inst3_STOPSTATE_CLK, //
+//  input mipi_dphy_tx_inst3_STOPSTATE_LAN0,//
+//  input mipi_dphy_tx_inst3_STOPSTATE_LAN1,//
+////input mipi_dphy_tx_inst3_TX_READY_ESC,
+//  input mipi_dphy_tx_inst3_TX_READY_HS_LAN0,	//
+//  input mipi_dphy_tx_inst3_TX_READY_HS_LAN1,	//
+//  input mipi_dphy_tx_inst3_TX_ULPS_ACTIVE_CLK_NOT,	//
+//  input mipi_dphy_tx_inst3_TX_ULPS_ACTIVE_NOT_LAN0,	//
+//  input mipi_dphy_tx_inst3_TX_ULPS_ACTIVE_NOT_LAN1,	//
+//  input mipi_dphy_tx_inst3_SLOWCLK,					//
+//  
+////  output mipi_dphy_tx_inst3_TX_CLK_ESC,
+////output mipi_dphy_tx_inst3_PLL_SSC_EN,
+//  output mipi_dphy_tx_inst3_RESET_N,	//
+////output [7:0] mipi_dphy_tx_inst3_TX_DATA_ESC,
+//  output [CSI_TX_DATA_WIDTH_LANE-1:0] mipi_dphy_tx_inst3_TX_DATA_HS_LAN0, //
+//  output [CSI_TX_DATA_WIDTH_LANE-1:0] mipi_dphy_tx_inst3_TX_DATA_HS_LAN1, //
+////output mipi_dphy_tx_inst3_TX_LPDT_ESC,
+//  output mipi_dphy_tx_inst3_TX_REQUEST_ESC_LAN0,	//
+//  output mipi_dphy_tx_inst3_TX_REQUEST_ESC_LAN1,	//
+//  output mipi_dphy_tx_inst3_TX_REQUEST_HS,			//
+//  output mipi_dphy_tx_inst3_TX_REQUEST_HS_LAN0,		//
+//  output mipi_dphy_tx_inst3_TX_REQUEST_HS_LAN1,		//
+//  output mipi_dphy_tx_inst3_TX_SKEW_CAL_HS_LAN0,	//
+//  output mipi_dphy_tx_inst3_TX_SKEW_CAL_HS_LAN1,	//
+////output [3:0] mipi_dphy_tx_inst3_TX_TRIGGER_ESC,
+//  output mipi_dphy_tx_inst3_TX_ULPS_CLK,	//
+//  output mipi_dphy_tx_inst3_TX_ULPS_ESC_LAN0,	//
+//  output mipi_dphy_tx_inst3_TX_ULPS_ESC_LAN1,	//
+//  output mipi_dphy_tx_inst3_TX_ULPS_EXIT,	//
+//  output mipi_dphy_tx_inst3_TX_ULPS_EXIT_LAN0,	//
+//  output mipi_dphy_tx_inst3_TX_ULPS_EXIT_LAN1,	//
+////output mipi_dphy_tx_inst3_TX_VALID_ESC,
+//  output mipi_dphy_tx_inst3_TX_WORD_VALID_HS_LAN0, //
+//  output mipi_dphy_tx_inst3_TX_WORD_VALID_HS_LAN1, //
+// 
+//`ifdef CSI_TX_4LANES  
+//  input mipi_dphy_tx_inst3_STOPSTATE_LAN2,//
+//  input mipi_dphy_tx_inst3_STOPSTATE_LAN3,//
+//  input mipi_dphy_tx_inst3_TX_READY_HS_LAN2,	//
+//  input mipi_dphy_tx_inst3_TX_READY_HS_LAN3,	//
+//  input mipi_dphy_tx_inst3_TX_ULPS_ACTIVE_NOT_LAN2,	//
+//  input mipi_dphy_tx_inst3_TX_ULPS_ACTIVE_NOT_LAN3,	//
+//  output [CSI_TX_DATA_WIDTH_LANE-1:0] mipi_dphy_tx_inst3_TX_DATA_HS_LAN2, //
+//  output [CSI_TX_DATA_WIDTH_LANE-1:0] mipi_dphy_tx_inst3_TX_DATA_HS_LAN3, //
+//  output mipi_dphy_tx_inst3_TX_REQUEST_ESC_LAN2,	//
+//  output mipi_dphy_tx_inst3_TX_REQUEST_ESC_LAN3,	//
+//  output mipi_dphy_tx_inst3_TX_REQUEST_HS_LAN2,		//
+//  output mipi_dphy_tx_inst3_TX_REQUEST_HS_LAN3,		//
+//  output mipi_dphy_tx_inst3_TX_SKEW_CAL_HS_LAN2,	//
+//  output mipi_dphy_tx_inst3_TX_SKEW_CAL_HS_LAN3,	//
+//  output mipi_dphy_tx_inst3_TX_ULPS_ESC_LAN2,	//
+//  output mipi_dphy_tx_inst3_TX_ULPS_ESC_LAN3,	//
+//  output mipi_dphy_tx_inst3_TX_ULPS_EXIT_LAN2,	//
+//  output mipi_dphy_tx_inst3_TX_ULPS_EXIT_LAN3,	//
+//  output mipi_dphy_tx_inst3_TX_WORD_VALID_HS_LAN2, //
+//  output mipi_dphy_tx_inst3_TX_WORD_VALID_HS_LAN3, //
+//`endif  
+//
+// 
+//    //MIPI DPHY TX3 
+////input mipi_dphy_tx_inst4_PLL_UNLOCK,
+//  input mipi_dphy_tx_inst4_STOPSTATE_CLK, //
+//  input mipi_dphy_tx_inst4_STOPSTATE_LAN0,//
+//  input mipi_dphy_tx_inst4_STOPSTATE_LAN1,//
+////input mipi_dphy_tx_inst4_TX_READY_ESC,
+//  input mipi_dphy_tx_inst4_TX_READY_HS_LAN0,	//
+//  input mipi_dphy_tx_inst4_TX_READY_HS_LAN1,	//
+//  input mipi_dphy_tx_inst4_TX_ULPS_ACTIVE_CLK_NOT,	//
+//  input mipi_dphy_tx_inst4_TX_ULPS_ACTIVE_NOT_LAN0,	//
+//  input mipi_dphy_tx_inst4_TX_ULPS_ACTIVE_NOT_LAN1,	//
+//  input mipi_dphy_tx_inst4_SLOWCLK,					//
+//  
+////  output mipi_dphy_tx_inst4_TX_CLK_ESC,	  
+////output mipi_dphy_tx_inst4_PLL_SSC_EN,
+//  output mipi_dphy_tx_inst4_RESET_N,	//
+////output [7:0] mipi_dphy_tx_inst4_TX_DATA_ESC,
+//  output [CSI_TX_DATA_WIDTH_LANE-1:0] mipi_dphy_tx_inst4_TX_DATA_HS_LAN0, //
+//  output [CSI_TX_DATA_WIDTH_LANE-1:0] mipi_dphy_tx_inst4_TX_DATA_HS_LAN1, //
+////output mipi_dphy_tx_inst4_TX_LPDT_ESC,
+//  output mipi_dphy_tx_inst4_TX_REQUEST_ESC_LAN0,	//
+//  output mipi_dphy_tx_inst4_TX_REQUEST_ESC_LAN1,	//
+//  output mipi_dphy_tx_inst4_TX_REQUEST_HS,			//
+//  output mipi_dphy_tx_inst4_TX_REQUEST_HS_LAN0,		//
+//  output mipi_dphy_tx_inst4_TX_REQUEST_HS_LAN1,		//
+//  output mipi_dphy_tx_inst4_TX_SKEW_CAL_HS_LAN0,	//
+//  output mipi_dphy_tx_inst4_TX_SKEW_CAL_HS_LAN1,	//
+////output [3:0] mipi_dphy_tx_inst4_TX_TRIGGER_ESC,
+//  output mipi_dphy_tx_inst4_TX_ULPS_CLK,	//
+//  output mipi_dphy_tx_inst4_TX_ULPS_ESC_LAN0,	//
+//  output mipi_dphy_tx_inst4_TX_ULPS_ESC_LAN1,	//
+//  output mipi_dphy_tx_inst4_TX_ULPS_EXIT,	//
+//  output mipi_dphy_tx_inst4_TX_ULPS_EXIT_LAN0,	//
+//  output mipi_dphy_tx_inst4_TX_ULPS_EXIT_LAN1,	//
+////output mipi_dphy_tx_inst4_TX_VALID_ESC,
+//  output mipi_dphy_tx_inst4_TX_WORD_VALID_HS_LAN0, //
+//  output mipi_dphy_tx_inst4_TX_WORD_VALID_HS_LAN1, //
+//
+//`ifdef CSI_TX_4LANES  
+//  input mipi_dphy_tx_inst4_STOPSTATE_LAN2,//
+//  input mipi_dphy_tx_inst4_STOPSTATE_LAN3,//
+//  input mipi_dphy_tx_inst4_TX_READY_HS_LAN2,	//
+//  input mipi_dphy_tx_inst4_TX_READY_HS_LAN3,	//
+//  input mipi_dphy_tx_inst4_TX_ULPS_ACTIVE_NOT_LAN2,	//
+//  input mipi_dphy_tx_inst4_TX_ULPS_ACTIVE_NOT_LAN3,	//
+//  output [CSI_TX_DATA_WIDTH_LANE-1:0] mipi_dphy_tx_inst4_TX_DATA_HS_LAN2, //
+//  output [CSI_TX_DATA_WIDTH_LANE-1:0] mipi_dphy_tx_inst4_TX_DATA_HS_LAN3, //
+//  output mipi_dphy_tx_inst4_TX_REQUEST_ESC_LAN2,	//
+//  output mipi_dphy_tx_inst4_TX_REQUEST_ESC_LAN3,	//
+//  output mipi_dphy_tx_inst4_TX_REQUEST_HS_LAN2,		//
+//  output mipi_dphy_tx_inst4_TX_REQUEST_HS_LAN3,		//
+//  output mipi_dphy_tx_inst4_TX_SKEW_CAL_HS_LAN2,	//
+//  output mipi_dphy_tx_inst4_TX_SKEW_CAL_HS_LAN3,	//
+//  output mipi_dphy_tx_inst4_TX_ULPS_ESC_LAN2,	//
+//  output mipi_dphy_tx_inst4_TX_ULPS_ESC_LAN3,	//
+//  output mipi_dphy_tx_inst4_TX_ULPS_EXIT_LAN2,	//
+//  output mipi_dphy_tx_inst4_TX_ULPS_EXIT_LAN3,	//
+//  output mipi_dphy_tx_inst4_TX_WORD_VALID_HS_LAN2, //
+//  output mipi_dphy_tx_inst4_TX_WORD_VALID_HS_LAN3, //
+//`endif  
     
     // YCbCr video output for HDMI
-    
+`ifdef HDMI_OUTPUT    
     input [0:0] i_hdmi_sda,
 	output [0:0] o_hdmi_sda_oe,
 	input [0:0] i_hdmi_scl,
@@ -825,7 +799,7 @@ module efx_gmsl_sensorhub_4cam_top #(
     output 			hdmi_yuv_hs,
     output 			hdmi_yuv_de,
     output 			[15:0]	hdmi_yuv_data,
-    
+`endif    
     
 	  //SD Interface
     output  wire                    sd_clk_hi,
@@ -1272,239 +1246,239 @@ assign mipi_dphy_tx_inst1_TX_WORD_VALID_HS_LAN2 = TxReqValidHS2_0[1];
 assign mipi_dphy_tx_inst1_TX_WORD_VALID_HS_LAN3 = TxReqValidHS3_0[1];
 `endif
 
-// Mapping to DPHY TX 1 
-//CSI TX Interface
-wire tx_pclk_1;//
-wire resetb_tx_1;  //
-wire TxUlpsClk_1;	//
-wire TxUlpsExitClk_1; //
-wire [CSI_TX_NUM_DATA_LANE-1:0] TxUlpsEsc_1;	//
-wire [CSI_TX_NUM_DATA_LANE-1:0] TxUlpsExit_1;	//
-wire [CSI_TX_NUM_DATA_LANE-1:0] TxRequestEsc_1;	//
-wire [CSI_TX_NUM_DATA_LANE-1:0] TxSkewCalHS_1;		//
-wire [CSI_TX_NUM_DATA_LANE-1:0] TxRequestHS_1;		//
-wire TxRequestHSc_1;	//
-wire [CSI_TX_DATA_WIDTH_LANE-1:0] TxDataHS0_1; //
-wire [CSI_TX_DATA_WIDTH_LANE-1:0] TxDataHS1_1; //
-wire [CSI_TX_DATA_WIDTH_LANE-1:0] TxDataHS2_1; //
-wire [CSI_TX_DATA_WIDTH_LANE-1:0] TxDataHS3_1; //
-wire [1:0] TxReqValidHS0_1;//
-wire [1:0] TxReqValidHS1_1;// 
-wire [1:0] TxReqValidHS2_1;// 
-wire [1:0] TxReqValidHS3_1;//
-wire TxUlpsActiveClkNot_1;	//
-wire [CSI_TX_NUM_DATA_LANE-1:0] TxStopStateD_1;//
-wire TxStopStateC_1;	//
-wire [CSI_TX_NUM_DATA_LANE-1:0] TxUlpsActiveNot_1; //
-wire [CSI_TX_NUM_DATA_LANE-1:0] TxReadyHS_1;	//
-
-//assign mipi_dphy_tx_inst2_TX_CLK_ESC = tx_escclk; 
-assign tx_pclk_1 = mipi_dphy_tx_inst2_SLOWCLK;
-assign mipi_dphy_tx_inst2_RESET_N =  resetb_tx_1;
-assign mipi_dphy_tx_inst2_TX_ULPS_CLK  = TxUlpsClk_1;
-assign mipi_dphy_tx_inst2_TX_ULPS_EXIT = TxUlpsExitClk_1;
-assign mipi_dphy_tx_inst2_TX_ULPS_EXIT_LAN0 = TxUlpsExit_1[0];
-assign mipi_dphy_tx_inst2_TX_ULPS_EXIT_LAN1 = TxUlpsExit_1[1];
-assign TxUlpsActiveClkNot_1 = mipi_dphy_tx_inst2_TX_ULPS_ACTIVE_CLK_NOT;
-assign mipi_dphy_tx_inst2_TX_ULPS_ESC_LAN0 = TxUlpsEsc_1[0];
-assign mipi_dphy_tx_inst2_TX_ULPS_ESC_LAN1 = TxUlpsEsc_1[1];
-assign mipi_dphy_tx_inst2_TX_REQUEST_ESC_LAN0 = TxRequestEsc_1[0];
-assign mipi_dphy_tx_inst2_TX_REQUEST_ESC_LAN1 = TxRequestEsc_1[1];
-assign mipi_dphy_tx_inst2_TX_SKEW_CAL_HS_LAN0 = TxSkewCalHS_1[0];
-assign mipi_dphy_tx_inst2_TX_SKEW_CAL_HS_LAN1 = TxSkewCalHS_1[1];
-assign TxStopStateD_1[0] = mipi_dphy_tx_inst2_STOPSTATE_LAN0;
-assign TxStopStateD_1[1] = mipi_dphy_tx_inst2_STOPSTATE_LAN1;
-assign TxStopStateC_1 = mipi_dphy_tx_inst2_STOPSTATE_CLK;
-assign TxUlpsActiveNot_1[0] = mipi_dphy_tx_inst2_TX_ULPS_ACTIVE_NOT_LAN0;
-assign TxUlpsActiveNot_1[1] = mipi_dphy_tx_inst2_TX_ULPS_ACTIVE_NOT_LAN1;
-assign TxReadyHS_1[0] = mipi_dphy_tx_inst2_TX_READY_HS_LAN0;
-assign TxReadyHS_1[1] = mipi_dphy_tx_inst2_TX_READY_HS_LAN1;
-assign mipi_dphy_tx_inst2_TX_REQUEST_HS_LAN0 = TxRequestHS_1[0];
-assign mipi_dphy_tx_inst2_TX_REQUEST_HS_LAN1 = TxRequestHS_1[1];
-assign mipi_dphy_tx_inst2_TX_REQUEST_HS = TxRequestHSc_1;
-assign mipi_dphy_tx_inst2_TX_DATA_HS_LAN0 = TxDataHS0_1;
-assign mipi_dphy_tx_inst2_TX_DATA_HS_LAN1 = TxDataHS1_1;
-assign mipi_dphy_tx_inst2_TX_WORD_VALID_HS_LAN0 = TxReqValidHS0_1[1];
-assign mipi_dphy_tx_inst2_TX_WORD_VALID_HS_LAN1 = TxReqValidHS1_1[1];
-
-`ifdef CSI_TX_4LANES 
-assign mipi_dphy_tx_inst2_TX_ULPS_EXIT_LAN2 = TxUlpsExit_1[2];
-assign mipi_dphy_tx_inst2_TX_ULPS_EXIT_LAN3 = TxUlpsExit_1[3];
-assign mipi_dphy_tx_inst2_TX_ULPS_ESC_LAN2 = TxUlpsEsc_1[2];
-assign mipi_dphy_tx_inst2_TX_ULPS_ESC_LAN3 = TxUlpsEsc_1[3];
-assign mipi_dphy_tx_inst2_TX_REQUEST_ESC_LAN2 = TxRequestEsc_1[2];
-assign mipi_dphy_tx_inst2_TX_REQUEST_ESC_LAN3 = TxRequestEsc_1[3];
-assign mipi_dphy_tx_inst2_TX_SKEW_CAL_HS_LAN2 = TxSkewCalHS_1[2];
-assign mipi_dphy_tx_inst2_TX_SKEW_CAL_HS_LAN3 = TxSkewCalHS_1[3];
-assign TxStopStateD_1[2] = mipi_dphy_tx_inst2_STOPSTATE_LAN2;
-assign TxStopStateD_1[3] = mipi_dphy_tx_inst2_STOPSTATE_LAN3;
-assign TxUlpsActiveNot_1[2] = mipi_dphy_tx_inst2_TX_ULPS_ACTIVE_NOT_LAN2;
-assign TxUlpsActiveNot_1[3] = mipi_dphy_tx_inst2_TX_ULPS_ACTIVE_NOT_LAN3;
-assign TxReadyHS_1[2] = mipi_dphy_tx_inst2_TX_READY_HS_LAN2;
-assign TxReadyHS_1[3] = mipi_dphy_tx_inst2_TX_READY_HS_LAN3;
-assign mipi_dphy_tx_inst2_TX_REQUEST_HS_LAN2 = TxRequestHS_1[2];
-assign mipi_dphy_tx_inst2_TX_REQUEST_HS_LAN3 = TxRequestHS_1[3];
-assign mipi_dphy_tx_inst2_TX_DATA_HS_LAN2 = TxDataHS2_1;
-assign mipi_dphy_tx_inst2_TX_DATA_HS_LAN3 = TxDataHS3_1;
-assign mipi_dphy_tx_inst2_TX_WORD_VALID_HS_LAN2 = TxReqValidHS2_1[1];
-assign mipi_dphy_tx_inst2_TX_WORD_VALID_HS_LAN3 = TxReqValidHS3_1[1];
-`endif
-
-// Mapping to DPHY TX 2 
-//CSI TX Interface
-wire tx_pclk_2;//
-wire resetb_tx_2;  //
-wire TxUlpsClk_2;	//
-wire TxUlpsExitClk_2; //
-wire [CSI_TX_NUM_DATA_LANE-1:0] TxUlpsEsc_2;	//
-wire [CSI_TX_NUM_DATA_LANE-1:0] TxUlpsExit_2;	//
-wire [CSI_TX_NUM_DATA_LANE-1:0] TxRequestEsc_2;	//
-wire [CSI_TX_NUM_DATA_LANE-1:0] TxSkewCalHS_2;		//
-wire [CSI_TX_NUM_DATA_LANE-1:0] TxRequestHS_2;		//
-wire TxRequestHSc_2;	//
-wire [CSI_TX_DATA_WIDTH_LANE-1:0] TxDataHS0_2; //
-wire [CSI_TX_DATA_WIDTH_LANE-1:0] TxDataHS1_2; //
-wire [CSI_TX_DATA_WIDTH_LANE-1:0] TxDataHS2_2; //
-wire [CSI_TX_DATA_WIDTH_LANE-1:0] TxDataHS3_2; //
-wire [1:0] TxReqValidHS0_2;//
-wire [1:0] TxReqValidHS1_2;// 
-wire [1:0] TxReqValidHS2_2;// 
-wire [1:0] TxReqValidHS3_2;//
-wire TxUlpsActiveClkNot_2;	//
-wire [CSI_TX_NUM_DATA_LANE-1:0] TxStopStateD_2;//
-wire TxStopStateC_2;	//
-wire [CSI_TX_NUM_DATA_LANE-1:0] TxUlpsActiveNot_2; //
-wire [CSI_TX_NUM_DATA_LANE-1:0] TxReadyHS_2;	//
-
-//assign mipi_dphy_tx_inst3_TX_CLK_ESC = tx_escclk; 
-assign tx_pclk_2 = mipi_dphy_tx_inst3_SLOWCLK;
-assign mipi_dphy_tx_inst3_RESET_N =  resetb_tx_2;
-assign mipi_dphy_tx_inst3_TX_ULPS_CLK  = TxUlpsClk_2;
-assign mipi_dphy_tx_inst3_TX_ULPS_EXIT = TxUlpsExitClk_2;
-assign mipi_dphy_tx_inst3_TX_ULPS_EXIT_LAN0 = TxUlpsExit_2[0];
-assign mipi_dphy_tx_inst3_TX_ULPS_EXIT_LAN1 = TxUlpsExit_2[1];
-assign TxUlpsActiveClkNot_2 = mipi_dphy_tx_inst3_TX_ULPS_ACTIVE_CLK_NOT;
-assign mipi_dphy_tx_inst3_TX_ULPS_ESC_LAN0 = TxUlpsEsc_2[0];
-assign mipi_dphy_tx_inst3_TX_ULPS_ESC_LAN1 = TxUlpsEsc_2[1];
-assign mipi_dphy_tx_inst3_TX_REQUEST_ESC_LAN0 = TxRequestEsc_2[0];
-assign mipi_dphy_tx_inst3_TX_REQUEST_ESC_LAN1 = TxRequestEsc_2[1];
-assign mipi_dphy_tx_inst3_TX_SKEW_CAL_HS_LAN0 = TxSkewCalHS_2[0];
-assign mipi_dphy_tx_inst3_TX_SKEW_CAL_HS_LAN1 = TxSkewCalHS_2[1];
-assign TxStopStateD_2[0] = mipi_dphy_tx_inst3_STOPSTATE_LAN0;
-assign TxStopStateD_2[1] = mipi_dphy_tx_inst3_STOPSTATE_LAN1;
-assign TxStopStateC_2 = mipi_dphy_tx_inst3_STOPSTATE_CLK;
-assign TxUlpsActiveNot_2[0] = mipi_dphy_tx_inst3_TX_ULPS_ACTIVE_NOT_LAN0;
-assign TxUlpsActiveNot_2[1] = mipi_dphy_tx_inst3_TX_ULPS_ACTIVE_NOT_LAN1;
-assign TxReadyHS_2[0] = mipi_dphy_tx_inst3_TX_READY_HS_LAN0;
-assign TxReadyHS_2[1] = mipi_dphy_tx_inst3_TX_READY_HS_LAN1;
-assign mipi_dphy_tx_inst3_TX_REQUEST_HS_LAN0 = TxRequestHS_2[0];
-assign mipi_dphy_tx_inst3_TX_REQUEST_HS_LAN1 = TxRequestHS_2[1];
-assign mipi_dphy_tx_inst3_TX_REQUEST_HS = TxRequestHSc_2;
-assign mipi_dphy_tx_inst3_TX_DATA_HS_LAN0 = TxDataHS0_2;
-assign mipi_dphy_tx_inst3_TX_DATA_HS_LAN1 = TxDataHS1_2;
-assign mipi_dphy_tx_inst3_TX_WORD_VALID_HS_LAN0 = TxReqValidHS0_2[1];
-assign mipi_dphy_tx_inst3_TX_WORD_VALID_HS_LAN1 = TxReqValidHS1_2[1];
-
-`ifdef CSI_TX_4LANES 
-assign mipi_dphy_tx_inst3_TX_ULPS_EXIT_LAN2 = TxUlpsExit_2[2];
-assign mipi_dphy_tx_inst3_TX_ULPS_EXIT_LAN3 = TxUlpsExit_2[3];
-assign mipi_dphy_tx_inst3_TX_ULPS_ESC_LAN2 = TxUlpsEsc_2[2];
-assign mipi_dphy_tx_inst3_TX_ULPS_ESC_LAN3 = TxUlpsEsc_2[3];
-assign mipi_dphy_tx_inst3_TX_REQUEST_ESC_LAN2 = TxRequestEsc_2[2];
-assign mipi_dphy_tx_inst3_TX_REQUEST_ESC_LAN3 = TxRequestEsc_2[3];
-assign mipi_dphy_tx_inst3_TX_SKEW_CAL_HS_LAN2 = TxSkewCalHS_2[2];
-assign mipi_dphy_tx_inst3_TX_SKEW_CAL_HS_LAN3 = TxSkewCalHS_2[3];
-assign TxStopStateD_2[2] = mipi_dphy_tx_inst3_STOPSTATE_LAN2;
-assign TxStopStateD_2[3] = mipi_dphy_tx_inst3_STOPSTATE_LAN3;
-assign TxUlpsActiveNot_2[2] = mipi_dphy_tx_inst3_TX_ULPS_ACTIVE_NOT_LAN2;
-assign TxUlpsActiveNot_2[3] = mipi_dphy_tx_inst3_TX_ULPS_ACTIVE_NOT_LAN3;
-assign TxReadyHS_2[2] = mipi_dphy_tx_inst3_TX_READY_HS_LAN2;
-assign TxReadyHS_2[3] = mipi_dphy_tx_inst3_TX_READY_HS_LAN3;
-assign mipi_dphy_tx_inst3_TX_REQUEST_HS_LAN2 = TxRequestHS_2[2];
-assign mipi_dphy_tx_inst3_TX_REQUEST_HS_LAN3 = TxRequestHS_2[3];
-assign mipi_dphy_tx_inst3_TX_DATA_HS_LAN2 = TxDataHS2_2;
-assign mipi_dphy_tx_inst3_TX_DATA_HS_LAN3 = TxDataHS3_2;
-assign mipi_dphy_tx_inst3_TX_WORD_VALID_HS_LAN2 = TxReqValidHS2_2[1];
-assign mipi_dphy_tx_inst3_TX_WORD_VALID_HS_LAN3 = TxReqValidHS3_2[1];
-`endif
-
-// Mapping to DPHY TX 3 
-//CSI TX Interface
-wire tx_pclk_3;//
-wire resetb_tx_3;  //
-wire TxUlpsClk_3;	//
-wire TxUlpsExitClk_3; //
-wire [CSI_TX_NUM_DATA_LANE-1:0] TxUlpsEsc_3;	//
-wire [CSI_TX_NUM_DATA_LANE-1:0] TxUlpsExit_3;	//
-wire [CSI_TX_NUM_DATA_LANE-1:0] TxRequestEsc_3;	//
-wire [CSI_TX_NUM_DATA_LANE-1:0] TxSkewCalHS_3;		//
-wire [CSI_TX_NUM_DATA_LANE-1:0] TxRequestHS_3;		//
-wire TxRequestHSc_3;	//
-wire [CSI_TX_DATA_WIDTH_LANE-1:0] TxDataHS0_3; //
-wire [CSI_TX_DATA_WIDTH_LANE-1:0] TxDataHS1_3; //
-wire [CSI_TX_DATA_WIDTH_LANE-1:0] TxDataHS2_3; //
-wire [CSI_TX_DATA_WIDTH_LANE-1:0] TxDataHS3_3; //
-wire [1:0] TxReqValidHS0_3;//
-wire [1:0] TxReqValidHS1_3;// 
-wire [1:0] TxReqValidHS2_3;// 
-wire [1:0] TxReqValidHS3_3;//
-wire TxUlpsActiveClkNot_3;	//
-wire [CSI_TX_NUM_DATA_LANE-1:0] TxStopStateD_3;//
-wire TxStopStateC_3;	//
-wire [CSI_TX_NUM_DATA_LANE-1:0] TxUlpsActiveNot_3; //
-wire [CSI_TX_NUM_DATA_LANE-1:0] TxReadyHS_3;	//
-
-//assign mipi_dphy_tx_inst4_TX_CLK_ESC = tx_escclk; 
-assign tx_pclk_3 = mipi_dphy_tx_inst4_SLOWCLK;
-assign mipi_dphy_tx_inst4_RESET_N =  resetb_tx_3;
-assign mipi_dphy_tx_inst4_TX_ULPS_CLK  = TxUlpsClk_3;
-assign mipi_dphy_tx_inst4_TX_ULPS_EXIT = TxUlpsExitClk_3;
-assign mipi_dphy_tx_inst4_TX_ULPS_EXIT_LAN0 = TxUlpsExit_3[0];
-assign mipi_dphy_tx_inst4_TX_ULPS_EXIT_LAN1 = TxUlpsExit_3[1];
-assign TxUlpsActiveClkNot_3 = mipi_dphy_tx_inst4_TX_ULPS_ACTIVE_CLK_NOT;
-assign mipi_dphy_tx_inst4_TX_ULPS_ESC_LAN0 = TxUlpsEsc_3[0];
-assign mipi_dphy_tx_inst4_TX_ULPS_ESC_LAN1 = TxUlpsEsc_3[1];
-assign mipi_dphy_tx_inst4_TX_REQUEST_ESC_LAN0 = TxRequestEsc_3[0];
-assign mipi_dphy_tx_inst4_TX_REQUEST_ESC_LAN1 = TxRequestEsc_3[1];
-assign mipi_dphy_tx_inst4_TX_SKEW_CAL_HS_LAN0 = TxSkewCalHS_3[0];
-assign mipi_dphy_tx_inst4_TX_SKEW_CAL_HS_LAN1 = TxSkewCalHS_3[1];
-assign TxStopStateD_3[0] = mipi_dphy_tx_inst4_STOPSTATE_LAN0;
-assign TxStopStateD_3[1] = mipi_dphy_tx_inst4_STOPSTATE_LAN1;
-assign TxStopStateC_3 = mipi_dphy_tx_inst4_STOPSTATE_CLK;
-assign TxUlpsActiveNot_3[0] = mipi_dphy_tx_inst4_TX_ULPS_ACTIVE_NOT_LAN0;
-assign TxUlpsActiveNot_3[1] = mipi_dphy_tx_inst4_TX_ULPS_ACTIVE_NOT_LAN1;
-assign TxReadyHS_3[0] = mipi_dphy_tx_inst4_TX_READY_HS_LAN0;
-assign TxReadyHS_3[1] = mipi_dphy_tx_inst4_TX_READY_HS_LAN1;
-assign mipi_dphy_tx_inst4_TX_REQUEST_HS_LAN0 = TxRequestHS_3[0];
-assign mipi_dphy_tx_inst4_TX_REQUEST_HS_LAN1 = TxRequestHS_3[1];
-assign mipi_dphy_tx_inst4_TX_REQUEST_HS = TxRequestHSc_3;
-assign mipi_dphy_tx_inst4_TX_DATA_HS_LAN0 = TxDataHS0_3;
-assign mipi_dphy_tx_inst4_TX_DATA_HS_LAN1 = TxDataHS1_3;
-assign mipi_dphy_tx_inst4_TX_WORD_VALID_HS_LAN0 = TxReqValidHS0_3[1];
-assign mipi_dphy_tx_inst4_TX_WORD_VALID_HS_LAN1 = TxReqValidHS1_3[1];
-
-`ifdef CSI_TX_4LANES 
-assign mipi_dphy_tx_inst4_TX_ULPS_EXIT_LAN2 = TxUlpsExit_3[2];
-assign mipi_dphy_tx_inst4_TX_ULPS_EXIT_LAN3 = TxUlpsExit_3[3];
-assign mipi_dphy_tx_inst4_TX_ULPS_ESC_LAN2 = TxUlpsEsc_3[2];
-assign mipi_dphy_tx_inst4_TX_ULPS_ESC_LAN3 = TxUlpsEsc_3[3];
-assign mipi_dphy_tx_inst4_TX_REQUEST_ESC_LAN2 = TxRequestEsc_3[2];
-assign mipi_dphy_tx_inst4_TX_REQUEST_ESC_LAN3 = TxRequestEsc_3[3];
-assign mipi_dphy_tx_inst4_TX_SKEW_CAL_HS_LAN2 = TxSkewCalHS_3[2];
-assign mipi_dphy_tx_inst4_TX_SKEW_CAL_HS_LAN3 = TxSkewCalHS_3[3];
-assign TxStopStateD_3[2] = mipi_dphy_tx_inst4_STOPSTATE_LAN2;
-assign TxStopStateD_3[3] = mipi_dphy_tx_inst4_STOPSTATE_LAN3;
-assign TxUlpsActiveNot_3[2] = mipi_dphy_tx_inst4_TX_ULPS_ACTIVE_NOT_LAN2;
-assign TxUlpsActiveNot_3[3] = mipi_dphy_tx_inst4_TX_ULPS_ACTIVE_NOT_LAN3;
-assign TxReadyHS_3[2] = mipi_dphy_tx_inst4_TX_READY_HS_LAN2;
-assign TxReadyHS_3[3] = mipi_dphy_tx_inst4_TX_READY_HS_LAN3;
-assign mipi_dphy_tx_inst4_TX_REQUEST_HS_LAN2 = TxRequestHS_3[2];
-assign mipi_dphy_tx_inst4_TX_REQUEST_HS_LAN3 = TxRequestHS_3[3];
-assign mipi_dphy_tx_inst4_TX_DATA_HS_LAN2 = TxDataHS2_3;
-assign mipi_dphy_tx_inst4_TX_DATA_HS_LAN3 = TxDataHS3_3;
-assign mipi_dphy_tx_inst4_TX_WORD_VALID_HS_LAN2 = TxReqValidHS2_3[1];
-assign mipi_dphy_tx_inst4_TX_WORD_VALID_HS_LAN3 = TxReqValidHS3_3[1];
-`endif
+//// Mapping to DPHY TX 1 
+////CSI TX Interface
+//wire tx_pclk_1;//
+//wire resetb_tx_1;  //
+//wire TxUlpsClk_1;	//
+//wire TxUlpsExitClk_1; //
+//wire [CSI_TX_NUM_DATA_LANE-1:0] TxUlpsEsc_1;	//
+//wire [CSI_TX_NUM_DATA_LANE-1:0] TxUlpsExit_1;	//
+//wire [CSI_TX_NUM_DATA_LANE-1:0] TxRequestEsc_1;	//
+//wire [CSI_TX_NUM_DATA_LANE-1:0] TxSkewCalHS_1;		//
+//wire [CSI_TX_NUM_DATA_LANE-1:0] TxRequestHS_1;		//
+//wire TxRequestHSc_1;	//
+//wire [CSI_TX_DATA_WIDTH_LANE-1:0] TxDataHS0_1; //
+//wire [CSI_TX_DATA_WIDTH_LANE-1:0] TxDataHS1_1; //
+//wire [CSI_TX_DATA_WIDTH_LANE-1:0] TxDataHS2_1; //
+//wire [CSI_TX_DATA_WIDTH_LANE-1:0] TxDataHS3_1; //
+//wire [1:0] TxReqValidHS0_1;//
+//wire [1:0] TxReqValidHS1_1;// 
+//wire [1:0] TxReqValidHS2_1;// 
+//wire [1:0] TxReqValidHS3_1;//
+//wire TxUlpsActiveClkNot_1;	//
+//wire [CSI_TX_NUM_DATA_LANE-1:0] TxStopStateD_1;//
+//wire TxStopStateC_1;	//
+//wire [CSI_TX_NUM_DATA_LANE-1:0] TxUlpsActiveNot_1; //
+//wire [CSI_TX_NUM_DATA_LANE-1:0] TxReadyHS_1;	//
+//
+////assign mipi_dphy_tx_inst2_TX_CLK_ESC = tx_escclk; 
+//assign tx_pclk_1 = mipi_dphy_tx_inst2_SLOWCLK;
+//assign mipi_dphy_tx_inst2_RESET_N =  resetb_tx_1;
+//assign mipi_dphy_tx_inst2_TX_ULPS_CLK  = TxUlpsClk_1;
+//assign mipi_dphy_tx_inst2_TX_ULPS_EXIT = TxUlpsExitClk_1;
+//assign mipi_dphy_tx_inst2_TX_ULPS_EXIT_LAN0 = TxUlpsExit_1[0];
+//assign mipi_dphy_tx_inst2_TX_ULPS_EXIT_LAN1 = TxUlpsExit_1[1];
+//assign TxUlpsActiveClkNot_1 = mipi_dphy_tx_inst2_TX_ULPS_ACTIVE_CLK_NOT;
+//assign mipi_dphy_tx_inst2_TX_ULPS_ESC_LAN0 = TxUlpsEsc_1[0];
+//assign mipi_dphy_tx_inst2_TX_ULPS_ESC_LAN1 = TxUlpsEsc_1[1];
+//assign mipi_dphy_tx_inst2_TX_REQUEST_ESC_LAN0 = TxRequestEsc_1[0];
+//assign mipi_dphy_tx_inst2_TX_REQUEST_ESC_LAN1 = TxRequestEsc_1[1];
+//assign mipi_dphy_tx_inst2_TX_SKEW_CAL_HS_LAN0 = TxSkewCalHS_1[0];
+//assign mipi_dphy_tx_inst2_TX_SKEW_CAL_HS_LAN1 = TxSkewCalHS_1[1];
+//assign TxStopStateD_1[0] = mipi_dphy_tx_inst2_STOPSTATE_LAN0;
+//assign TxStopStateD_1[1] = mipi_dphy_tx_inst2_STOPSTATE_LAN1;
+//assign TxStopStateC_1 = mipi_dphy_tx_inst2_STOPSTATE_CLK;
+//assign TxUlpsActiveNot_1[0] = mipi_dphy_tx_inst2_TX_ULPS_ACTIVE_NOT_LAN0;
+//assign TxUlpsActiveNot_1[1] = mipi_dphy_tx_inst2_TX_ULPS_ACTIVE_NOT_LAN1;
+//assign TxReadyHS_1[0] = mipi_dphy_tx_inst2_TX_READY_HS_LAN0;
+//assign TxReadyHS_1[1] = mipi_dphy_tx_inst2_TX_READY_HS_LAN1;
+//assign mipi_dphy_tx_inst2_TX_REQUEST_HS_LAN0 = TxRequestHS_1[0];
+//assign mipi_dphy_tx_inst2_TX_REQUEST_HS_LAN1 = TxRequestHS_1[1];
+//assign mipi_dphy_tx_inst2_TX_REQUEST_HS = TxRequestHSc_1;
+//assign mipi_dphy_tx_inst2_TX_DATA_HS_LAN0 = TxDataHS0_1;
+//assign mipi_dphy_tx_inst2_TX_DATA_HS_LAN1 = TxDataHS1_1;
+//assign mipi_dphy_tx_inst2_TX_WORD_VALID_HS_LAN0 = TxReqValidHS0_1[1];
+//assign mipi_dphy_tx_inst2_TX_WORD_VALID_HS_LAN1 = TxReqValidHS1_1[1];
+//
+//`ifdef CSI_TX_4LANES 
+//assign mipi_dphy_tx_inst2_TX_ULPS_EXIT_LAN2 = TxUlpsExit_1[2];
+//assign mipi_dphy_tx_inst2_TX_ULPS_EXIT_LAN3 = TxUlpsExit_1[3];
+//assign mipi_dphy_tx_inst2_TX_ULPS_ESC_LAN2 = TxUlpsEsc_1[2];
+//assign mipi_dphy_tx_inst2_TX_ULPS_ESC_LAN3 = TxUlpsEsc_1[3];
+//assign mipi_dphy_tx_inst2_TX_REQUEST_ESC_LAN2 = TxRequestEsc_1[2];
+//assign mipi_dphy_tx_inst2_TX_REQUEST_ESC_LAN3 = TxRequestEsc_1[3];
+//assign mipi_dphy_tx_inst2_TX_SKEW_CAL_HS_LAN2 = TxSkewCalHS_1[2];
+//assign mipi_dphy_tx_inst2_TX_SKEW_CAL_HS_LAN3 = TxSkewCalHS_1[3];
+//assign TxStopStateD_1[2] = mipi_dphy_tx_inst2_STOPSTATE_LAN2;
+//assign TxStopStateD_1[3] = mipi_dphy_tx_inst2_STOPSTATE_LAN3;
+//assign TxUlpsActiveNot_1[2] = mipi_dphy_tx_inst2_TX_ULPS_ACTIVE_NOT_LAN2;
+//assign TxUlpsActiveNot_1[3] = mipi_dphy_tx_inst2_TX_ULPS_ACTIVE_NOT_LAN3;
+//assign TxReadyHS_1[2] = mipi_dphy_tx_inst2_TX_READY_HS_LAN2;
+//assign TxReadyHS_1[3] = mipi_dphy_tx_inst2_TX_READY_HS_LAN3;
+//assign mipi_dphy_tx_inst2_TX_REQUEST_HS_LAN2 = TxRequestHS_1[2];
+//assign mipi_dphy_tx_inst2_TX_REQUEST_HS_LAN3 = TxRequestHS_1[3];
+//assign mipi_dphy_tx_inst2_TX_DATA_HS_LAN2 = TxDataHS2_1;
+//assign mipi_dphy_tx_inst2_TX_DATA_HS_LAN3 = TxDataHS3_1;
+//assign mipi_dphy_tx_inst2_TX_WORD_VALID_HS_LAN2 = TxReqValidHS2_1[1];
+//assign mipi_dphy_tx_inst2_TX_WORD_VALID_HS_LAN3 = TxReqValidHS3_1[1];
+//`endif
+//
+//// Mapping to DPHY TX 2 
+////CSI TX Interface
+//wire tx_pclk_2;//
+//wire resetb_tx_2;  //
+//wire TxUlpsClk_2;	//
+//wire TxUlpsExitClk_2; //
+//wire [CSI_TX_NUM_DATA_LANE-1:0] TxUlpsEsc_2;	//
+//wire [CSI_TX_NUM_DATA_LANE-1:0] TxUlpsExit_2;	//
+//wire [CSI_TX_NUM_DATA_LANE-1:0] TxRequestEsc_2;	//
+//wire [CSI_TX_NUM_DATA_LANE-1:0] TxSkewCalHS_2;		//
+//wire [CSI_TX_NUM_DATA_LANE-1:0] TxRequestHS_2;		//
+//wire TxRequestHSc_2;	//
+//wire [CSI_TX_DATA_WIDTH_LANE-1:0] TxDataHS0_2; //
+//wire [CSI_TX_DATA_WIDTH_LANE-1:0] TxDataHS1_2; //
+//wire [CSI_TX_DATA_WIDTH_LANE-1:0] TxDataHS2_2; //
+//wire [CSI_TX_DATA_WIDTH_LANE-1:0] TxDataHS3_2; //
+//wire [1:0] TxReqValidHS0_2;//
+//wire [1:0] TxReqValidHS1_2;// 
+//wire [1:0] TxReqValidHS2_2;// 
+//wire [1:0] TxReqValidHS3_2;//
+//wire TxUlpsActiveClkNot_2;	//
+//wire [CSI_TX_NUM_DATA_LANE-1:0] TxStopStateD_2;//
+//wire TxStopStateC_2;	//
+//wire [CSI_TX_NUM_DATA_LANE-1:0] TxUlpsActiveNot_2; //
+//wire [CSI_TX_NUM_DATA_LANE-1:0] TxReadyHS_2;	//
+//
+////assign mipi_dphy_tx_inst3_TX_CLK_ESC = tx_escclk; 
+//assign tx_pclk_2 = mipi_dphy_tx_inst3_SLOWCLK;
+//assign mipi_dphy_tx_inst3_RESET_N =  resetb_tx_2;
+//assign mipi_dphy_tx_inst3_TX_ULPS_CLK  = TxUlpsClk_2;
+//assign mipi_dphy_tx_inst3_TX_ULPS_EXIT = TxUlpsExitClk_2;
+//assign mipi_dphy_tx_inst3_TX_ULPS_EXIT_LAN0 = TxUlpsExit_2[0];
+//assign mipi_dphy_tx_inst3_TX_ULPS_EXIT_LAN1 = TxUlpsExit_2[1];
+//assign TxUlpsActiveClkNot_2 = mipi_dphy_tx_inst3_TX_ULPS_ACTIVE_CLK_NOT;
+//assign mipi_dphy_tx_inst3_TX_ULPS_ESC_LAN0 = TxUlpsEsc_2[0];
+//assign mipi_dphy_tx_inst3_TX_ULPS_ESC_LAN1 = TxUlpsEsc_2[1];
+//assign mipi_dphy_tx_inst3_TX_REQUEST_ESC_LAN0 = TxRequestEsc_2[0];
+//assign mipi_dphy_tx_inst3_TX_REQUEST_ESC_LAN1 = TxRequestEsc_2[1];
+//assign mipi_dphy_tx_inst3_TX_SKEW_CAL_HS_LAN0 = TxSkewCalHS_2[0];
+//assign mipi_dphy_tx_inst3_TX_SKEW_CAL_HS_LAN1 = TxSkewCalHS_2[1];
+//assign TxStopStateD_2[0] = mipi_dphy_tx_inst3_STOPSTATE_LAN0;
+//assign TxStopStateD_2[1] = mipi_dphy_tx_inst3_STOPSTATE_LAN1;
+//assign TxStopStateC_2 = mipi_dphy_tx_inst3_STOPSTATE_CLK;
+//assign TxUlpsActiveNot_2[0] = mipi_dphy_tx_inst3_TX_ULPS_ACTIVE_NOT_LAN0;
+//assign TxUlpsActiveNot_2[1] = mipi_dphy_tx_inst3_TX_ULPS_ACTIVE_NOT_LAN1;
+//assign TxReadyHS_2[0] = mipi_dphy_tx_inst3_TX_READY_HS_LAN0;
+//assign TxReadyHS_2[1] = mipi_dphy_tx_inst3_TX_READY_HS_LAN1;
+//assign mipi_dphy_tx_inst3_TX_REQUEST_HS_LAN0 = TxRequestHS_2[0];
+//assign mipi_dphy_tx_inst3_TX_REQUEST_HS_LAN1 = TxRequestHS_2[1];
+//assign mipi_dphy_tx_inst3_TX_REQUEST_HS = TxRequestHSc_2;
+//assign mipi_dphy_tx_inst3_TX_DATA_HS_LAN0 = TxDataHS0_2;
+//assign mipi_dphy_tx_inst3_TX_DATA_HS_LAN1 = TxDataHS1_2;
+//assign mipi_dphy_tx_inst3_TX_WORD_VALID_HS_LAN0 = TxReqValidHS0_2[1];
+//assign mipi_dphy_tx_inst3_TX_WORD_VALID_HS_LAN1 = TxReqValidHS1_2[1];
+//
+//`ifdef CSI_TX_4LANES 
+//assign mipi_dphy_tx_inst3_TX_ULPS_EXIT_LAN2 = TxUlpsExit_2[2];
+//assign mipi_dphy_tx_inst3_TX_ULPS_EXIT_LAN3 = TxUlpsExit_2[3];
+//assign mipi_dphy_tx_inst3_TX_ULPS_ESC_LAN2 = TxUlpsEsc_2[2];
+//assign mipi_dphy_tx_inst3_TX_ULPS_ESC_LAN3 = TxUlpsEsc_2[3];
+//assign mipi_dphy_tx_inst3_TX_REQUEST_ESC_LAN2 = TxRequestEsc_2[2];
+//assign mipi_dphy_tx_inst3_TX_REQUEST_ESC_LAN3 = TxRequestEsc_2[3];
+//assign mipi_dphy_tx_inst3_TX_SKEW_CAL_HS_LAN2 = TxSkewCalHS_2[2];
+//assign mipi_dphy_tx_inst3_TX_SKEW_CAL_HS_LAN3 = TxSkewCalHS_2[3];
+//assign TxStopStateD_2[2] = mipi_dphy_tx_inst3_STOPSTATE_LAN2;
+//assign TxStopStateD_2[3] = mipi_dphy_tx_inst3_STOPSTATE_LAN3;
+//assign TxUlpsActiveNot_2[2] = mipi_dphy_tx_inst3_TX_ULPS_ACTIVE_NOT_LAN2;
+//assign TxUlpsActiveNot_2[3] = mipi_dphy_tx_inst3_TX_ULPS_ACTIVE_NOT_LAN3;
+//assign TxReadyHS_2[2] = mipi_dphy_tx_inst3_TX_READY_HS_LAN2;
+//assign TxReadyHS_2[3] = mipi_dphy_tx_inst3_TX_READY_HS_LAN3;
+//assign mipi_dphy_tx_inst3_TX_REQUEST_HS_LAN2 = TxRequestHS_2[2];
+//assign mipi_dphy_tx_inst3_TX_REQUEST_HS_LAN3 = TxRequestHS_2[3];
+//assign mipi_dphy_tx_inst3_TX_DATA_HS_LAN2 = TxDataHS2_2;
+//assign mipi_dphy_tx_inst3_TX_DATA_HS_LAN3 = TxDataHS3_2;
+//assign mipi_dphy_tx_inst3_TX_WORD_VALID_HS_LAN2 = TxReqValidHS2_2[1];
+//assign mipi_dphy_tx_inst3_TX_WORD_VALID_HS_LAN3 = TxReqValidHS3_2[1];
+//`endif
+//
+//// Mapping to DPHY TX 3 
+////CSI TX Interface
+//wire tx_pclk_3;//
+//wire resetb_tx_3;  //
+//wire TxUlpsClk_3;	//
+//wire TxUlpsExitClk_3; //
+//wire [CSI_TX_NUM_DATA_LANE-1:0] TxUlpsEsc_3;	//
+//wire [CSI_TX_NUM_DATA_LANE-1:0] TxUlpsExit_3;	//
+//wire [CSI_TX_NUM_DATA_LANE-1:0] TxRequestEsc_3;	//
+//wire [CSI_TX_NUM_DATA_LANE-1:0] TxSkewCalHS_3;		//
+//wire [CSI_TX_NUM_DATA_LANE-1:0] TxRequestHS_3;		//
+//wire TxRequestHSc_3;	//
+//wire [CSI_TX_DATA_WIDTH_LANE-1:0] TxDataHS0_3; //
+//wire [CSI_TX_DATA_WIDTH_LANE-1:0] TxDataHS1_3; //
+//wire [CSI_TX_DATA_WIDTH_LANE-1:0] TxDataHS2_3; //
+//wire [CSI_TX_DATA_WIDTH_LANE-1:0] TxDataHS3_3; //
+//wire [1:0] TxReqValidHS0_3;//
+//wire [1:0] TxReqValidHS1_3;// 
+//wire [1:0] TxReqValidHS2_3;// 
+//wire [1:0] TxReqValidHS3_3;//
+//wire TxUlpsActiveClkNot_3;	//
+//wire [CSI_TX_NUM_DATA_LANE-1:0] TxStopStateD_3;//
+//wire TxStopStateC_3;	//
+//wire [CSI_TX_NUM_DATA_LANE-1:0] TxUlpsActiveNot_3; //
+//wire [CSI_TX_NUM_DATA_LANE-1:0] TxReadyHS_3;	//
+//
+////assign mipi_dphy_tx_inst4_TX_CLK_ESC = tx_escclk; 
+//assign tx_pclk_3 = mipi_dphy_tx_inst4_SLOWCLK;
+//assign mipi_dphy_tx_inst4_RESET_N =  resetb_tx_3;
+//assign mipi_dphy_tx_inst4_TX_ULPS_CLK  = TxUlpsClk_3;
+//assign mipi_dphy_tx_inst4_TX_ULPS_EXIT = TxUlpsExitClk_3;
+//assign mipi_dphy_tx_inst4_TX_ULPS_EXIT_LAN0 = TxUlpsExit_3[0];
+//assign mipi_dphy_tx_inst4_TX_ULPS_EXIT_LAN1 = TxUlpsExit_3[1];
+//assign TxUlpsActiveClkNot_3 = mipi_dphy_tx_inst4_TX_ULPS_ACTIVE_CLK_NOT;
+//assign mipi_dphy_tx_inst4_TX_ULPS_ESC_LAN0 = TxUlpsEsc_3[0];
+//assign mipi_dphy_tx_inst4_TX_ULPS_ESC_LAN1 = TxUlpsEsc_3[1];
+//assign mipi_dphy_tx_inst4_TX_REQUEST_ESC_LAN0 = TxRequestEsc_3[0];
+//assign mipi_dphy_tx_inst4_TX_REQUEST_ESC_LAN1 = TxRequestEsc_3[1];
+//assign mipi_dphy_tx_inst4_TX_SKEW_CAL_HS_LAN0 = TxSkewCalHS_3[0];
+//assign mipi_dphy_tx_inst4_TX_SKEW_CAL_HS_LAN1 = TxSkewCalHS_3[1];
+//assign TxStopStateD_3[0] = mipi_dphy_tx_inst4_STOPSTATE_LAN0;
+//assign TxStopStateD_3[1] = mipi_dphy_tx_inst4_STOPSTATE_LAN1;
+//assign TxStopStateC_3 = mipi_dphy_tx_inst4_STOPSTATE_CLK;
+//assign TxUlpsActiveNot_3[0] = mipi_dphy_tx_inst4_TX_ULPS_ACTIVE_NOT_LAN0;
+//assign TxUlpsActiveNot_3[1] = mipi_dphy_tx_inst4_TX_ULPS_ACTIVE_NOT_LAN1;
+//assign TxReadyHS_3[0] = mipi_dphy_tx_inst4_TX_READY_HS_LAN0;
+//assign TxReadyHS_3[1] = mipi_dphy_tx_inst4_TX_READY_HS_LAN1;
+//assign mipi_dphy_tx_inst4_TX_REQUEST_HS_LAN0 = TxRequestHS_3[0];
+//assign mipi_dphy_tx_inst4_TX_REQUEST_HS_LAN1 = TxRequestHS_3[1];
+//assign mipi_dphy_tx_inst4_TX_REQUEST_HS = TxRequestHSc_3;
+//assign mipi_dphy_tx_inst4_TX_DATA_HS_LAN0 = TxDataHS0_3;
+//assign mipi_dphy_tx_inst4_TX_DATA_HS_LAN1 = TxDataHS1_3;
+//assign mipi_dphy_tx_inst4_TX_WORD_VALID_HS_LAN0 = TxReqValidHS0_3[1];
+//assign mipi_dphy_tx_inst4_TX_WORD_VALID_HS_LAN1 = TxReqValidHS1_3[1];
+//
+//`ifdef CSI_TX_4LANES 
+//assign mipi_dphy_tx_inst4_TX_ULPS_EXIT_LAN2 = TxUlpsExit_3[2];
+//assign mipi_dphy_tx_inst4_TX_ULPS_EXIT_LAN3 = TxUlpsExit_3[3];
+//assign mipi_dphy_tx_inst4_TX_ULPS_ESC_LAN2 = TxUlpsEsc_3[2];
+//assign mipi_dphy_tx_inst4_TX_ULPS_ESC_LAN3 = TxUlpsEsc_3[3];
+//assign mipi_dphy_tx_inst4_TX_REQUEST_ESC_LAN2 = TxRequestEsc_3[2];
+//assign mipi_dphy_tx_inst4_TX_REQUEST_ESC_LAN3 = TxRequestEsc_3[3];
+//assign mipi_dphy_tx_inst4_TX_SKEW_CAL_HS_LAN2 = TxSkewCalHS_3[2];
+//assign mipi_dphy_tx_inst4_TX_SKEW_CAL_HS_LAN3 = TxSkewCalHS_3[3];
+//assign TxStopStateD_3[2] = mipi_dphy_tx_inst4_STOPSTATE_LAN2;
+//assign TxStopStateD_3[3] = mipi_dphy_tx_inst4_STOPSTATE_LAN3;
+//assign TxUlpsActiveNot_3[2] = mipi_dphy_tx_inst4_TX_ULPS_ACTIVE_NOT_LAN2;
+//assign TxUlpsActiveNot_3[3] = mipi_dphy_tx_inst4_TX_ULPS_ACTIVE_NOT_LAN3;
+//assign TxReadyHS_3[2] = mipi_dphy_tx_inst4_TX_READY_HS_LAN2;
+//assign TxReadyHS_3[3] = mipi_dphy_tx_inst4_TX_READY_HS_LAN3;
+//assign mipi_dphy_tx_inst4_TX_REQUEST_HS_LAN2 = TxRequestHS_3[2];
+//assign mipi_dphy_tx_inst4_TX_REQUEST_HS_LAN3 = TxRequestHS_3[3];
+//assign mipi_dphy_tx_inst4_TX_DATA_HS_LAN2 = TxDataHS2_3;
+//assign mipi_dphy_tx_inst4_TX_DATA_HS_LAN3 = TxDataHS3_3;
+//assign mipi_dphy_tx_inst4_TX_WORD_VALID_HS_LAN2 = TxReqValidHS2_3[1];
+//assign mipi_dphy_tx_inst4_TX_WORD_VALID_HS_LAN3 = TxReqValidHS3_3[1];
+//`endif
 
 //CSI Camera Interface
 wire  [NUM_CAM-1:0] w_cam_i2c_sda_write;
@@ -1987,59 +1961,59 @@ inst_csi_tx_controllers
   	.clk_esc(tx_escclk),
   // DPHY interface port
 	
-    .clk_byte_HS({tx_pclk_3,tx_pclk_2,tx_pclk_1,tx_pclk_0}),
+    .clk_byte_HS({tx_pclk_0}),
  //   .reset_byte_HS_n(),
-	.resetb_tx({resetb_tx_3,resetb_tx_2,resetb_tx_1,resetb_tx_0}),
+	.resetb_tx({resetb_tx_0}),
   
    //TX
-    .TxStopStateC		({TxStopStateC_3,TxStopStateC_2,TxStopStateC_1,TxStopStateC_0}),
-    .TxUlpsActiveClkNot	({TxUlpsActiveClkNot_3,TxUlpsActiveClkNot_2,TxUlpsActiveClkNot_1,TxUlpsActiveClkNot_0}),
-    .TxReadyHS			({TxReadyHS_3,TxReadyHS_2,TxReadyHS_1,TxReadyHS_0}),  
-    .TxStopStateD		({TxStopStateD_3,TxStopStateD_2,TxStopStateD_1,TxStopStateD_0}),
-    .TxUlpsActiveNot	({TxUlpsActiveNot_3,TxUlpsActiveNot_2,TxUlpsActiveNot_1,TxUlpsActiveNot_0}),
+    .TxStopStateC		({TxStopStateC_0}),
+    .TxUlpsActiveClkNot	({TxUlpsActiveClkNot_0}),
+    .TxReadyHS			({TxReadyHS_0}),  
+    .TxStopStateD		({TxStopStateD_0}),
+    .TxUlpsActiveNot	({TxUlpsActiveNot_0}),
 		
-    .TxRequestHS		({TxRequestHS_3,   TxRequestHS_2, TxRequestHS_1,   TxRequestHS_0	}),
-    .TxRequestEsc      	({TxRequestEsc_3,  TxRequestEsc_2, TxRequestEsc_1,  TxRequestEsc_0   }),
-    .TxUlpsExit        	({TxUlpsExit_3,    TxUlpsExit_2, TxUlpsExit_1,    TxUlpsExit_0     }),
-    .TxUlpsEsc         	({TxUlpsEsc_3,     TxUlpsEsc_2, TxUlpsEsc_1,     TxUlpsEsc_0      }),
-    .TxDataHS0         	({TxDataHS0_3,     TxDataHS0_2, TxDataHS0_1,     TxDataHS0_0      }),
-    .TxDataHS1         	({TxDataHS1_3,     TxDataHS1_2, TxDataHS1_1,     TxDataHS1_0      }),
-    .TxSkewCalHS       	({TxSkewCalHS_3,   TxSkewCalHS_2 , TxSkewCalHS_1,   TxSkewCalHS_0    }),
-    .TxUlpsClk         	({TxUlpsClk_3,     TxUlpsClk_2, TxUlpsClk_1,     TxUlpsClk_0      }),
-    .TxUlpsExitClk     	({TxUlpsExitClk_3, TxUlpsExitClk_2, TxUlpsExitClk_1, TxUlpsExitClk_0  }),
-    .TxRequestHSc      	({TxRequestHSc_3,  TxRequestHSc_2, TxRequestHSc_1,  TxRequestHSc_0   }),
+    .TxRequestHS		({TxRequestHS_0	}),
+    .TxRequestEsc      	({TxRequestEsc_0   }),
+    .TxUlpsExit        	({TxUlpsExit_0     }),
+    .TxUlpsEsc         	({TxUlpsEsc_0      }),
+    .TxDataHS0         	({TxDataHS0_0      }),
+    .TxDataHS1         	({TxDataHS1_0      }),
+    .TxSkewCalHS       	({TxSkewCalHS_0    }),
+    .TxUlpsClk         	({TxUlpsClk_0      }),
+    .TxUlpsExitClk     	({TxUlpsExitClk_0  }),
+    .TxRequestHSc      	({TxRequestHSc_0   }),
 
-    .TxReqValidHS0      ({TxReqValidHS0_3,TxReqValidHS0_2,TxReqValidHS0_1,TxReqValidHS0_0}),
-    .TxReqValidHS1      ({TxReqValidHS1_3,TxReqValidHS1_2,TxReqValidHS1_1,TxReqValidHS1_0}),
+    .TxReqValidHS0      ({TxReqValidHS0_0}),
+    .TxReqValidHS1      ({TxReqValidHS1_0}),
     
     `ifdef CSI_RX_4LANES
-    .TxDataHS2         	({TxDataHS2_3,     TxDataHS2_2, TxDataHS2_1,     TxDataHS2_0      }),
-    .TxDataHS3         	({TxDataHS3_3,     TxDataHS3_2, TxDataHS3_1,     TxDataHS3_0      }),
-    .TxReqValidHS2      ({TxReqValidHS2_3,TxReqValidHS2_2,TxReqValidHS2_1,TxReqValidHS2_0}),
-    .TxReqValidHS3      ({TxReqValidHS3_3,TxReqValidHS3_2,TxReqValidHS3_1,TxReqValidHS3_0}),
+    .TxDataHS2         	({TxDataHS2_0      }),
+    .TxDataHS3         	({TxDataHS3_0      }),
+    .TxReqValidHS2      ({TxReqValidHS2_0}),
+    .TxReqValidHS3      ({TxReqValidHS3_0}),
     `endif
     
     .datatype(6'h2B),  	//RAW10:0x2B  
     .haddr(16'd1920),    //16 bit total Horizontal number of pixels
   // CSI controller input interface port
-    .tx_in_de		({4{w_out_csi_tx_de}}),
-    .tx_in_vs0		({4{w_out_csi_tx_vsync0}}),
-    .tx_in_hs0		({4{w_out_csi_tx_hsync0}}),
-    .tx_in_vs1		({4{w_out_csi_tx_vsync1}}),
-    .tx_in_hs1		({4{w_out_csi_tx_hsync1}}),
-    .tx_in_vs2		({4{w_out_csi_tx_vsync2}}),
-    .tx_in_hs2		({4{w_out_csi_tx_hsync2}}),
-    .tx_in_vs3		({4{w_out_csi_tx_vsync3}}),
-    .tx_in_hs3		({4{w_out_csi_tx_hsync3}}),
+    .tx_in_de		({1{w_out_csi_tx_de}}),
+    .tx_in_vs0		({1{w_out_csi_tx_vsync0}}),
+    .tx_in_hs0		({1{w_out_csi_tx_hsync0}}),
+    .tx_in_vs1		({1{w_out_csi_tx_vsync1}}),
+    .tx_in_hs1		({1{w_out_csi_tx_hsync1}}),
+    .tx_in_vs2		({1{w_out_csi_tx_vsync2}}),
+    .tx_in_hs2		({1{w_out_csi_tx_hsync2}}),
+    .tx_in_vs3		({1{w_out_csi_tx_vsync3}}),
+    .tx_in_hs3		({1{w_out_csi_tx_hsync3}}),
     
-    .tx_in_data_00	({4{w_out_csi_tx_rd_00}}),
-    .tx_in_data_01	({4{w_out_csi_tx_rd_01}}),
-    .tx_in_data_10	({4{w_out_csi_tx_rd_10}}),
-    .tx_in_data_11  ({4{w_out_csi_tx_rd_11}})
+    .tx_in_data_00	({1{w_out_csi_tx_rd_00}}),
+    .tx_in_data_01	({1{w_out_csi_tx_rd_01}}),
+    .tx_in_data_10	({1{w_out_csi_tx_rd_10}}),
+    .tx_in_data_11  ({1{w_out_csi_tx_rd_11}})
     
 );
 
-
+`ifdef HDMI_OUTPUT
 
 overlay_merge 
 #(
@@ -2078,6 +2052,8 @@ inst_overlay_merge
 	.out_rd_11 (w_out_video_overlay_rd_11[VIDEO_MEM_DATAWIDTH*1-1:VIDEO_MEM_DATAWIDTH*0])
 
 );
+
+
 
 
 /* I2C initialization for ADV7511 */
@@ -2141,6 +2117,8 @@ hdmi_post_process inst_hdmi_post_process
 );
 
 
+`endif 
+
 wire [7:0] dma_arid;
 wire [7:0] dma_awid;
 
@@ -2191,7 +2169,7 @@ inst_dma_stream_ctrl
     
     .in_vclk({i_pixel_clk,i_pixel_clk,i_pixel_clk,i_pixel_clk}),
     .out_tx_clk(i_pixel_clk_tx),
-    .out_vclk(i_hdmi_clk),
+ 
 	
     .vga_reset(1'b0),
     .i_ref_clk(r_ref_clk),
@@ -2294,8 +2272,8 @@ inst_dma_stream_ctrl
 	.out_csi_tx_rd_10(w_out_csi_tx_rd_10),
 	.out_csi_tx_rd_11(w_out_csi_tx_rd_11),
 	
-	
 	//Video Stream Output
+    .out_vclk(i_hdmi_clk),
 	.out_video_de   (w_out_video_de   ),
 	.out_video_valid(w_out_video_valid),
 	.out_video_hsync(w_out_video_hsync),
@@ -2304,7 +2282,7 @@ inst_dma_stream_ctrl
 	.out_video_rd_01(w_out_video_rd_01),
 	.out_video_rd_10(w_out_video_rd_10),
 	.out_video_rd_11(w_out_video_rd_11)
-	
+
 );
 
 top_soc_oob #(

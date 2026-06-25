@@ -3,8 +3,8 @@ io_asyncReset sampled by
 io_memoryClk sampled by 
 io_memoryReset clocked by io_memoryClk
 jtagCtrl_tck sampled by 
-userInterruptA sampled by 
 userInterruptB sampled by 
+userInterruptA sampled by 
 userInterruptC sampled by 
 io_systemReset clocked by io_systemClk
 jtagCtrl_tdi sampled by jtagCtrl_tck
@@ -53,47 +53,6 @@ io_ddrA_b_valid sampled by io_memoryClk
 io_ddrA_b_ready clocked by io_memoryClk
 io_ddrA_b_payload_id sampled by io_memoryClk
 io_ddrA_b_payload_resp sampled by io_memoryClk
-io_ddrMasters_1_ar_valid sampled by io_ddrMasters_1_clk
-io_ddrMasters_1_ar_ready clocked by io_ddrMasters_1_clk
-io_ddrMasters_1_ar_payload_addr sampled by io_ddrMasters_1_clk
-io_ddrMasters_1_ar_payload_id sampled by io_ddrMasters_1_clk
-io_ddrMasters_1_ar_payload_region sampled by io_ddrMasters_1_clk
-io_ddrMasters_1_ar_payload_len sampled by io_ddrMasters_1_clk
-io_ddrMasters_1_ar_payload_size sampled by io_ddrMasters_1_clk
-io_ddrMasters_1_ar_payload_burst sampled by io_ddrMasters_1_clk
-io_ddrMasters_1_ar_payload_lock sampled by io_ddrMasters_1_clk
-io_ddrMasters_1_ar_payload_cache sampled by io_ddrMasters_1_clk
-io_ddrMasters_1_ar_payload_qos sampled by io_ddrMasters_1_clk
-io_ddrMasters_1_ar_payload_prot sampled by io_ddrMasters_1_clk
-io_ddrMasters_1_aw_valid sampled by io_ddrMasters_1_clk
-io_ddrMasters_1_aw_ready clocked by io_ddrMasters_1_clk
-io_ddrMasters_1_aw_payload_addr sampled by io_ddrMasters_1_clk
-io_ddrMasters_1_aw_payload_id sampled by io_ddrMasters_1_clk
-io_ddrMasters_1_aw_payload_region sampled by io_ddrMasters_1_clk
-io_ddrMasters_1_aw_payload_len sampled by io_ddrMasters_1_clk
-io_ddrMasters_1_aw_payload_size sampled by io_ddrMasters_1_clk
-io_ddrMasters_1_aw_payload_burst sampled by io_ddrMasters_1_clk
-io_ddrMasters_1_aw_payload_lock sampled by io_ddrMasters_1_clk
-io_ddrMasters_1_aw_payload_cache sampled by io_ddrMasters_1_clk
-io_ddrMasters_1_aw_payload_qos sampled by io_ddrMasters_1_clk
-io_ddrMasters_1_aw_payload_prot sampled by io_ddrMasters_1_clk
-io_ddrMasters_1_w_valid sampled by io_ddrMasters_1_clk
-io_ddrMasters_1_w_ready clocked by io_ddrMasters_1_clk
-io_ddrMasters_1_w_payload_data sampled by io_ddrMasters_1_clk
-io_ddrMasters_1_w_payload_strb sampled by io_ddrMasters_1_clk
-io_ddrMasters_1_w_payload_last sampled by io_ddrMasters_1_clk
-io_ddrMasters_1_r_valid clocked by io_ddrMasters_1_clk
-io_ddrMasters_1_r_ready sampled by io_ddrMasters_1_clk
-io_ddrMasters_1_r_payload_data clocked by io_ddrMasters_1_clk
-io_ddrMasters_1_r_payload_id clocked by io_ddrMasters_1_clk
-io_ddrMasters_1_r_payload_resp clocked by io_ddrMasters_1_clk
-io_ddrMasters_1_r_payload_last clocked by io_ddrMasters_1_clk
-io_ddrMasters_1_b_valid clocked by io_ddrMasters_1_clk
-io_ddrMasters_1_b_ready sampled by io_ddrMasters_1_clk
-io_ddrMasters_1_b_payload_id clocked by io_ddrMasters_1_clk
-io_ddrMasters_1_b_payload_resp clocked by io_ddrMasters_1_clk
-io_ddrMasters_1_clk sampled by 
-io_ddrMasters_1_reset clocked by io_ddrMasters_1_clk
 io_ddrMasters_0_ar_valid sampled by io_ddrMasters_0_clk
 io_ddrMasters_0_ar_ready clocked by io_ddrMasters_0_clk
 io_ddrMasters_0_ar_payload_addr sampled by io_ddrMasters_0_clk
@@ -192,14 +151,6 @@ io_apbSlave_1_PWRITE clocked by io_systemClk
 io_apbSlave_1_PWDATA clocked by io_systemClk
 io_apbSlave_1_PRDATA sampled by io_systemClk
 io_apbSlave_1_PSLVERROR sampled by io_systemClk
-io_apbSlave_3_PADDR clocked by io_systemClk
-io_apbSlave_3_PSEL clocked by io_systemClk
-io_apbSlave_3_PENABLE clocked by io_systemClk
-io_apbSlave_3_PREADY sampled by io_systemClk
-io_apbSlave_3_PWRITE clocked by io_systemClk
-io_apbSlave_3_PWDATA clocked by io_systemClk
-io_apbSlave_3_PRDATA sampled by io_systemClk
-io_apbSlave_3_PSLVERROR sampled by io_systemClk
 io_apbSlave_2_PADDR clocked by io_systemClk
 io_apbSlave_2_PSEL clocked by io_systemClk
 io_apbSlave_2_PENABLE clocked by io_systemClk
@@ -208,6 +159,14 @@ io_apbSlave_2_PWRITE clocked by io_systemClk
 io_apbSlave_2_PWDATA clocked by io_systemClk
 io_apbSlave_2_PRDATA sampled by io_systemClk
 io_apbSlave_2_PSLVERROR sampled by io_systemClk
+io_apbSlave_3_PADDR clocked by io_systemClk
+io_apbSlave_3_PSEL clocked by io_systemClk
+io_apbSlave_3_PENABLE clocked by io_systemClk
+io_apbSlave_3_PREADY sampled by io_systemClk
+io_apbSlave_3_PWRITE clocked by io_systemClk
+io_apbSlave_3_PWDATA clocked by io_systemClk
+io_apbSlave_3_PRDATA sampled by io_systemClk
+io_apbSlave_3_PSLVERROR sampled by io_systemClk
 io_apbSlave_4_PADDR clocked by io_systemClk
 io_apbSlave_4_PSEL clocked by io_systemClk
 io_apbSlave_4_PENABLE clocked by io_systemClk
