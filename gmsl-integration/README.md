@@ -132,3 +132,4 @@ The demonstration is divided into two parts: **Sensor Hub** and **Video Grabber*
 ```
 
 ## Useful Links
+[Titanium Ti180 J484 Development Kit User Guide](https://www.efinixinc.com/support/docsdl.php?s=ef&pn=Ti180J484-DK-UG)
