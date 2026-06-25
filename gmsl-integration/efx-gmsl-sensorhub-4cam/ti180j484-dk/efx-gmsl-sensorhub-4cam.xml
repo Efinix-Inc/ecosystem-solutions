@@ -8,7 +8,7 @@
     <efx:design_info def_veri_version="verilog_2k" def_vhdl_version="vhdl_2008" unified_flow="false">
         <efx:top_module name="efx_gmsl_sensorhub_4cam_top"/>
         <efx:design_file name="source/SensorHub_files.f" version="na" library="default"/>
-        <efx:design_file name="efx_gmsl_sensorhub_4cam_top.v" version="default" library="default"/>
+        <efx:design_file name="efx-gmsl-sensorhub-4cam_top.v" version="default" library="default"/>
         <efx:top_vhdl_arch name=""/>
     </efx:design_info>
     <efx:constraint_info>
