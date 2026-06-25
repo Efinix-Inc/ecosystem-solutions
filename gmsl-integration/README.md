@@ -80,7 +80,7 @@ The demonstration is divided into two parts: **Sensor Hub** and **Video Grabber*
 
 
 ## Video Display Output
-
+<img src="docs/images/gmsl_4cam-aggregation_video-display.png" alt="GMSL 4-cam Aggregation Video Display Output">
 
 ## Resource Utilization
 | Project               | Device     | XLR             | Memory Block  | DSP Block  |
