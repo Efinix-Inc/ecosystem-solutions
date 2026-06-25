@@ -3,7 +3,7 @@
         "-o",
         "soc_ti180",
         "--base_path",
-        "C:\\efinix\\ecosystem_solutions\\sync\\merga\\efx_ecosystem_solutions\\gmsl-integration\\efx_gmsl-sensorhub-4cam\\ti180j484_dk\\ip",
+        "C:\\efinix\\ecosystem_solutions\\sync\\efx_ecosystem_solutions\\gmsl-integration\\efx-gmsl-sensorhub-4cam\\ti180j484-dk\\ip",
         "--vlnv",
         {
             "vendor": "efinixinc.com",
@@ -14,7 +14,7 @@
     ],
     "conf": {
         "HexFile_PathEnable": "1'b1",
-        "HexFile_Path": "\"../../precompile/embedded_sw/efx_gmsl-sensorhub-4cam/custom_bootloader.hex\"",
+        "HexFile_Path": "\"../../prebuild/bootloader/bootloader.hex\"",
         "APBSlave0_Size": "65536",
         "DEVKIT_CUSTOM": "\"Titanium Ti180J484 Dev Board\"",
         "LDSize": "508",
@@ -134,7 +134,7 @@
         "I2C0_INT_ID": "8",
         "I2C0": "1'b1",
         "AXIMasterWidth_1": "32",
-        "AXIMaster_1": "1'b1",
+        "AXIMaster_1": "1'b0",
         "AXIMasterWidth": "512",
         "AXIMaster": "1'b1",
         "USER_TIMER0": "1'b0",
@@ -170,8 +170,8 @@
         "external_script_generator": [],
         "external_source_source": [
             "soc_ti180\\soc_ti180_define.vh",
-            "soc_ti180\\soc_ti180_tmpl.v",
             "soc_ti180\\soc_ti180.v",
+            "soc_ti180\\soc_ti180_tmpl.v",
             "soc_ti180\\soc_ti180_tmpl.vhd"
         ],
         "external_script_script": [],
@@ -195,5 +195,5 @@
     },
     "ooc_synthesis": {},
     "sw_version": "2025.2.288.4.15",
-    "generated_date": "2026-06-24T08:08:45.270058+00:00"
+    "generated_date": "2026-06-25T07:11:46.614663+00:00"
 }

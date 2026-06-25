@@ -249,47 +249,6 @@ port (
     io_ddrMasters_0_aw_payload_addr : in std_logic_vector(31 downto 0);
     io_ddrMasters_0_aw_ready : out std_logic;
     io_ddrMasters_0_aw_valid : in std_logic;
-    io_ddrMasters_1_reset : out std_logic;
-    io_ddrMasters_1_clk : in std_logic;
-    io_ddrMasters_1_r_payload_last : out std_logic;
-    io_ddrMasters_1_r_payload_resp : out std_logic_vector(1 downto 0);
-    io_ddrMasters_1_r_payload_id : out std_logic_vector(3 downto 0);
-    io_ddrMasters_1_r_payload_data : out std_logic_vector(33'sd31 downto 0);
-    io_ddrMasters_1_r_ready : in std_logic;
-    io_ddrMasters_1_r_valid : out std_logic;
-    io_ddrMasters_1_ar_payload_prot : in std_logic_vector(2 downto 0);
-    io_ddrMasters_1_ar_payload_qos : in std_logic_vector(3 downto 0);
-    io_ddrMasters_1_ar_payload_cache : in std_logic_vector(3 downto 0);
-    io_ddrMasters_1_ar_payload_lock : in std_logic;
-    io_ddrMasters_1_ar_payload_burst : in std_logic_vector(1 downto 0);
-    io_ddrMasters_1_ar_payload_size : in std_logic_vector(2 downto 0);
-    io_ddrMasters_1_ar_payload_len : in std_logic_vector(7 downto 0);
-    io_ddrMasters_1_ar_payload_region : in std_logic_vector(3 downto 0);
-    io_ddrMasters_1_ar_payload_id : in std_logic_vector(3 downto 0);
-    io_ddrMasters_1_ar_payload_addr : in std_logic_vector(31 downto 0);
-    io_ddrMasters_1_ar_ready : out std_logic;
-    io_ddrMasters_1_ar_valid : in std_logic;
-    io_ddrMasters_1_b_payload_resp : out std_logic_vector(1 downto 0);
-    io_ddrMasters_1_b_payload_id : out std_logic_vector(3 downto 0);
-    io_ddrMasters_1_b_ready : in std_logic;
-    io_ddrMasters_1_b_valid : out std_logic;
-    io_ddrMasters_1_w_payload_last : in std_logic;
-    io_ddrMasters_1_w_payload_strb : in std_logic_vector(3 downto 0);
-    io_ddrMasters_1_w_payload_data : in std_logic_vector(31 downto 0);
-    io_ddrMasters_1_w_ready : out std_logic;
-    io_ddrMasters_1_w_valid : in std_logic;
-    io_ddrMasters_1_aw_payload_prot : in std_logic_vector(2 downto 0);
-    io_ddrMasters_1_aw_payload_qos : in std_logic_vector(3 downto 0);
-    io_ddrMasters_1_aw_payload_cache : in std_logic_vector(3 downto 0);
-    io_ddrMasters_1_aw_payload_lock : in std_logic;
-    io_ddrMasters_1_aw_payload_burst : in std_logic_vector(1 downto 0);
-    io_ddrMasters_1_aw_payload_size : in std_logic_vector(2 downto 0);
-    io_ddrMasters_1_aw_payload_len : in std_logic_vector(7 downto 0);
-    io_ddrMasters_1_aw_payload_region : in std_logic_vector(3 downto 0);
-    io_ddrMasters_1_aw_payload_id : in std_logic_vector(3 downto 0);
-    io_ddrMasters_1_aw_payload_addr : in std_logic_vector(31 downto 0);
-    io_ddrMasters_1_aw_ready : out std_logic;
-    io_ddrMasters_1_aw_valid : in std_logic;
     system_gpio_0_io_write : out std_logic_vector(3 downto 0);
     system_gpio_0_io_read : in std_logic_vector(3 downto 0);
     system_spi_0_io_ss : out std_logic_vector(0 to 0)
@@ -510,47 +469,6 @@ port map (
     io_ddrMasters_0_aw_payload_addr => io_ddrMasters_0_aw_payload_addr,
     io_ddrMasters_0_aw_ready => io_ddrMasters_0_aw_ready,
     io_ddrMasters_0_aw_valid => io_ddrMasters_0_aw_valid,
-    io_ddrMasters_1_reset => io_ddrMasters_1_reset,
-    io_ddrMasters_1_clk => io_ddrMasters_1_clk,
-    io_ddrMasters_1_r_payload_last => io_ddrMasters_1_r_payload_last,
-    io_ddrMasters_1_r_payload_resp => io_ddrMasters_1_r_payload_resp,
-    io_ddrMasters_1_r_payload_id => io_ddrMasters_1_r_payload_id,
-    io_ddrMasters_1_r_payload_data => io_ddrMasters_1_r_payload_data,
-    io_ddrMasters_1_r_ready => io_ddrMasters_1_r_ready,
-    io_ddrMasters_1_r_valid => io_ddrMasters_1_r_valid,
-    io_ddrMasters_1_ar_payload_prot => io_ddrMasters_1_ar_payload_prot,
-    io_ddrMasters_1_ar_payload_qos => io_ddrMasters_1_ar_payload_qos,
-    io_ddrMasters_1_ar_payload_cache => io_ddrMasters_1_ar_payload_cache,
-    io_ddrMasters_1_ar_payload_lock => io_ddrMasters_1_ar_payload_lock,
-    io_ddrMasters_1_ar_payload_burst => io_ddrMasters_1_ar_payload_burst,
-    io_ddrMasters_1_ar_payload_size => io_ddrMasters_1_ar_payload_size,
-    io_ddrMasters_1_ar_payload_len => io_ddrMasters_1_ar_payload_len,
-    io_ddrMasters_1_ar_payload_region => io_ddrMasters_1_ar_payload_region,
-    io_ddrMasters_1_ar_payload_id => io_ddrMasters_1_ar_payload_id,
-    io_ddrMasters_1_ar_payload_addr => io_ddrMasters_1_ar_payload_addr,
-    io_ddrMasters_1_ar_ready => io_ddrMasters_1_ar_ready,
-    io_ddrMasters_1_ar_valid => io_ddrMasters_1_ar_valid,
-    io_ddrMasters_1_b_payload_resp => io_ddrMasters_1_b_payload_resp,
-    io_ddrMasters_1_b_payload_id => io_ddrMasters_1_b_payload_id,
-    io_ddrMasters_1_b_ready => io_ddrMasters_1_b_ready,
-    io_ddrMasters_1_b_valid => io_ddrMasters_1_b_valid,
-    io_ddrMasters_1_w_payload_last => io_ddrMasters_1_w_payload_last,
-    io_ddrMasters_1_w_payload_strb => io_ddrMasters_1_w_payload_strb,
-    io_ddrMasters_1_w_payload_data => io_ddrMasters_1_w_payload_data,
-    io_ddrMasters_1_w_ready => io_ddrMasters_1_w_ready,
-    io_ddrMasters_1_w_valid => io_ddrMasters_1_w_valid,
-    io_ddrMasters_1_aw_payload_prot => io_ddrMasters_1_aw_payload_prot,
-    io_ddrMasters_1_aw_payload_qos => io_ddrMasters_1_aw_payload_qos,
-    io_ddrMasters_1_aw_payload_cache => io_ddrMasters_1_aw_payload_cache,
-    io_ddrMasters_1_aw_payload_lock => io_ddrMasters_1_aw_payload_lock,
-    io_ddrMasters_1_aw_payload_burst => io_ddrMasters_1_aw_payload_burst,
-    io_ddrMasters_1_aw_payload_size => io_ddrMasters_1_aw_payload_size,
-    io_ddrMasters_1_aw_payload_len => io_ddrMasters_1_aw_payload_len,
-    io_ddrMasters_1_aw_payload_region => io_ddrMasters_1_aw_payload_region,
-    io_ddrMasters_1_aw_payload_id => io_ddrMasters_1_aw_payload_id,
-    io_ddrMasters_1_aw_payload_addr => io_ddrMasters_1_aw_payload_addr,
-    io_ddrMasters_1_aw_ready => io_ddrMasters_1_aw_ready,
-    io_ddrMasters_1_aw_valid => io_ddrMasters_1_aw_valid,
     system_gpio_0_io_write => system_gpio_0_io_write,
     system_gpio_0_io_read => system_gpio_0_io_read,
     system_spi_0_io_ss => system_spi_0_io_ss

@@ -1,5 +1,4 @@
 soc_oob/apb3_slave_oob.v
-soc_oob/top_soc_oob.v
 soc_oob/user_dual_port_ram.v
 common/dual_clock_fifo.v
 common/simple_dual_port_ram.v
