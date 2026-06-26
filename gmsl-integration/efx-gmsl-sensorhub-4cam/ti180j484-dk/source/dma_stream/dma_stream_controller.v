@@ -197,9 +197,9 @@ module dma_stream_controller #(
 
 parameter	CSI_TX_MAX_HRES		= 11'd1920 ;
 parameter	CSI_TX_MAX_VRES		= 11'd1080;
-parameter	CSI_TX_HSP				= 8'd150;//8'd150;      //8'd50;//8'd200; //'d176; //8'd44;
-parameter	CSI_TX_HBP				= 8'd150;//8'd200;     //8'd100;//8'd400; //'d592; //8'd148;
-parameter	CSI_TX_HFP				= 8'd150;//8'd150;      //8'd50;//8'd200; //'d352; //8'd88;
+parameter	CSI_TX_HSP				= 8'd200;//8'd150;      //8'd50;//8'd200; //'d176; //8'd44;
+parameter	CSI_TX_HBP				= 8'd400;//8'd200;     //8'd100;//8'd400; //'d592; //8'd148;
+parameter	CSI_TX_HFP				= 8'd200;//8'd150;      //8'd50;//8'd200; //'d352; //8'd88;
 parameter	CSI_TX_VSP				= 6'd5;       //6'd2;
 parameter	CSI_TX_VBP				= 6'd21;       //6'd2;
 parameter	CSI_TX_VFP				= 6'd4;       //6'd2;

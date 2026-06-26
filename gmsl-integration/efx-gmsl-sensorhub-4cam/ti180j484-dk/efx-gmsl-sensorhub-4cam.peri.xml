@@ -270,27 +270,27 @@
                 <efxpt:pin name="" type_name="SHIFT" is_bus="true"/>
                 <efxpt:pin name="" type_name="SHIFT_SEL" is_bus="true"/>
             </efxpt:gen_pin>
-            <efxpt:comp_output_clock name="mipi_clk" number="0" out_divider="15" is_dyn_phase="false" phase_setting="0" is_inverted="false" conn_type="gclk" clkmux_buf_name="">
+            <efxpt:comp_output_clock name="mipi_clk" number="0" out_divider="25" is_dyn_phase="false" phase_setting="0" is_inverted="false" conn_type="gclk" clkmux_buf_name="">
                 <efxpt:gen_pin>
                     <efxpt:pin name="" type_name="CLKMUX_BUF" is_bus="false"/>
                 </efxpt:gen_pin>
             </efxpt:comp_output_clock>
-            <efxpt:comp_output_clock name="i_pixel_clk" number="1" out_divider="12" is_dyn_phase="false" phase_setting="0" is_inverted="false" conn_type="gclk" clkmux_buf_name="">
+            <efxpt:comp_output_clock name="i_pixel_clk" number="1" out_divider="20" is_dyn_phase="false" phase_setting="0" is_inverted="false" conn_type="gclk" clkmux_buf_name="">
                 <efxpt:gen_pin>
                     <efxpt:pin name="" type_name="CLKMUX_BUF" is_bus="false"/>
                 </efxpt:gen_pin>
             </efxpt:comp_output_clock>
-            <efxpt:comp_output_clock name="rx_cfgclk" number="2" out_divider="15" is_dyn_phase="false" phase_setting="0" is_inverted="false" conn_type="gclk" clkmux_buf_name="">
+            <efxpt:comp_output_clock name="rx_cfgclk" number="2" out_divider="25" is_dyn_phase="false" phase_setting="0" is_inverted="false" conn_type="gclk" clkmux_buf_name="">
                 <efxpt:gen_pin>
                     <efxpt:pin name="" type_name="CLKMUX_BUF" is_bus="false"/>
                 </efxpt:gen_pin>
             </efxpt:comp_output_clock>
-            <efxpt:comp_output_clock name="tx_escclk" number="3" out_divider="75" is_dyn_phase="false" phase_setting="0" is_inverted="false" conn_type="gclk" clkmux_buf_name="">
+            <efxpt:comp_output_clock name="tx_escclk" number="3" out_divider="125" is_dyn_phase="false" phase_setting="0" is_inverted="false" conn_type="gclk" clkmux_buf_name="">
                 <efxpt:gen_pin>
                     <efxpt:pin name="" type_name="CLKMUX_BUF" is_bus="false"/>
                 </efxpt:gen_pin>
             </efxpt:comp_output_clock>
-            <efxpt:comp_output_clock name="i_pixel_clk_tx" number="4" out_divider="10" is_dyn_phase="false" phase_setting="0" is_inverted="false" conn_type="gclk" clkmux_buf_name="">
+            <efxpt:comp_output_clock name="i_pixel_clk_tx" number="4" out_divider="25" is_dyn_phase="false" phase_setting="0" is_inverted="false" conn_type="gclk" clkmux_buf_name="">
                 <efxpt:gen_pin>
                     <efxpt:pin name="" type_name="CLKMUX_BUF" is_bus="false"/>
                 </efxpt:gen_pin>

@@ -22,7 +22,6 @@ hdmi/i2c_phy.v
 hdmi/post_process.v
 hdmi/adv7511_config.v
 hdmi/data_unpack.v
-dma_stream/dma_stream_controller.v
 dma_stream/dma_axi4/EfxDMA.v
 dma_stream/axistream/overlay_merge.v
 dma_stream/axistream/vga_buffer.v

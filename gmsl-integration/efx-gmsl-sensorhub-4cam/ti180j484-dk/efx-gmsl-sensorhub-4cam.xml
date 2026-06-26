@@ -10,6 +10,7 @@
         <efx:design_file name="source/SensorHub_files.f" version="na" library="default"/>
         <efx:design_file name="efx-gmsl-sensorhub-4cam_top.v" version="default" library="default"/>
         <efx:design_file name="source/soc_oob/top_soc_oob.v" version="default" library="default"/>
+        <efx:design_file name="source/dma_stream/dma_stream_controller.v" version="default" library="default"/>
         <efx:top_vhdl_arch name=""/>
     </efx:design_info>
     <efx:constraint_info>
