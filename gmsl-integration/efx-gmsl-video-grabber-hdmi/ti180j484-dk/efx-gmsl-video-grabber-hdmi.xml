@@ -10,6 +10,8 @@
         <efx:design_file name="source/HDMI_Display_files.f" version="na" library="default"/>
         <efx:design_file name="efx-gmsl-video-grabber-hdmi_top.v" version="default" library="default"/>
         <efx:design_file name="source/video_monitor.v" version="default" library="default"/>
+        <efx:design_file name="source/soc_oob/top_soc_oob.v" version="default" library="default"/>
+        <efx:design_file name="source/dma_stream/dma_stream_controller.v" version="default" library="default"/>
         <efx:top_vhdl_arch name=""/>
     </efx:design_info>
     <efx:constraint_info>
@@ -20,12 +22,6 @@
     <efx:misc_info/>
     <efx:ooc_info/>
     <efx:ip_info>
-        <efx:ip instance_name="sd_host" path="ip/sd_host/settings.json" ooc="false">
-            <efx:ip_src_file name="sd_host.v"/>
-        </efx:ip>
-        <efx:ip instance_name="apb3_2_axi4_lite_sdhc" path="ip/apb3_2_axi4_lite_sdhc/settings.json" ooc="false">
-            <efx:ip_src_file name="apb3_2_axi4_lite_sdhc.v"/>
-        </efx:ip>
         <efx:ip instance_name="csi2_hard_mipi_tx" path="ip/csi2_hard_mipi_tx/settings.json" ooc="false">
             <efx:ip_src_file name="csi2_hard_mipi_tx.sv"/>
         </efx:ip>
@@ -81,11 +77,9 @@
         <efx:param name="enable-mark-debug" value="1" value_type="e_option"/>
         <efx:param name="suppress_info_msgs" value="off" value_type="e_bool"/>
         <efx:param name="suppress_warning_msgs" value="off" value_type="e_bool"/>
-        <efx:param name="include" value="ip/apb3_2_axi4_lite_sdhc" value_type="e_string"/>
         <efx:param name="include" value="ip/csi2_hard_mipi_rx" value_type="e_string"/>
         <efx:param name="include" value="ip/csi2_hard_mipi_tx" value_type="e_string"/>
         <efx:param name="include" value="ip/dma_controller" value_type="e_string"/>
-        <efx:param name="include" value="ip/sd_host" value_type="e_string"/>
         <efx:param name="include" value="ip/soc_ti180" value_type="e_string"/>
     </efx:synthesis>
     <efx:place_and_route tool_name="efx_pnr">

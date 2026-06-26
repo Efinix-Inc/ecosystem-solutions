@@ -544,6 +544,7 @@ generate
 		);
 	end
 	
+    /*
 	for(x=0; x<NUM_CSI_TX_OUT; x=x+1)
 	begin:dma_stream_csi_tx
 	
@@ -603,7 +604,7 @@ generate
 			.in_tvalid_count()
 		);	
 	end 
-	
+	*/
 	
 	for(x=0; x<NUM_VIDEO_TX_OUT; x=x+1)
 	begin:dma_stream_video_tx 

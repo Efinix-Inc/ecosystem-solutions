@@ -77,7 +77,7 @@ u32 swithCmdPtr = 0;
 #define program_mem ((volatile uint32_t*)(0x1000)) // DDR Start Address of Ruby
 #define data_mem ((volatile uint32_t*)(0x100000)) // DDR Start Address of Ruby
 
-void check_sd(u32 testtype);
+
 void cmd_operation(uint8_t key );
 
 void cmd_cam_brightnes(u8 AGain, u16 DGain);
@@ -98,163 +98,6 @@ volatile struct dmasg_descriptor input_descriptor[40] __attribute__ ((aligned (6
 void print(uint8_t * data) {
       uart_writeStr(BSP_UART_TERMINAL, data);
     }
-
-
-
-void check_sd(u32 testtype){
-
-	struct mmc *mmc;
-	struct mmc_cmd *cmd;
-	struct mmc_data *data;
-	struct mmc_config *cfg;
-	struct mmc_ops *ops;
-	int fail=1;
-	u32 total_block_n,n;
-	u32 timer_start,timer_end;
-	u32 rd_timer_start,rd_timer_end;
-	u32 ts,te;
-
-	bsp_uDelay(1000000);
-
-	mmc=malloc(sizeof(struct mmc));
-	cfg=malloc(sizeof(struct mmc_config));
-	ops=malloc(sizeof(struct mmc_ops));
-	cmd=malloc(sizeof(struct mmc_cmd));
-	data=malloc(sizeof(struct mmc_data));
-
-
-
-	bsp_printf("\n\r--- EFX-SD Card Demo ---\n\r");
-	bsp_printf("\r\nInitialize...:");
-
-	//Allocation Struct Space
-
-	memset(mmc, 0, sizeof(struct mmc));
-	memset(cfg, 0, sizeof(struct mmc_config));
-	memset(ops, 0, sizeof(struct mmc_ops));
-	memset(cmd, 0, sizeof(struct mmc_cmd));
-	memset(data, 0, sizeof(struct mmc_data));
-	memset(buf, 0, (sizeof(char)*BLOCK_SIZE*MAX_BLK_BUF));
-	memset(rd_buf, 0, (sizeof(char)*BLOCK_SIZE*MAX_BLK_BUF));
-
-	mmc->cfg = cfg;		//pass the pointer after malloc in struct
-	mmc->cfg->ops = ops;//pass the pointer after malloc in struct
-
-	sd_ctrl_mmc_probe(mmc,PROBE_ADDR); //init SD Card driver
-
-	//u32 apb3_rd = APB3_REGR(OOB_APB_SLV, APB3_SLV0_REG1_LED);
-	//	apb3_rd &= (~0x038);
-	//	APB3_REGW(OOB_APB_SLV, APB3_SLV0_REG1_LED, apb3_rd);
-
-	IntcSDInitialize(mmc);	// init interrupt
-	if(SD_CardInitial(mmc,cmd))	//init SD Card
-	{
-	//	apb3_rd |= 0x08;
-	//	APB3_REGW(OOB_APB_SLV, APB3_SLV0_REG1_LED, apb3_rd);
-	//	bsp_printf("SD Initial Error \r\n\n");
-		return;
-	}
-//	apb3_rd |= 0x10;
-//	APB3_REGW(OOB_APB_SLV, APB3_SLV0_REG1_LED, apb3_rd);
-
-	bsp_printf("Done\r\n\n");
-
-	if(DEBUG_PRINTF_EN == 1)
-		bsp_printf("**************WR ADDR 0x%x Rd ADDR 0x%x\r\n",buf,rd_buf);
-
-	SD_InitRandomBuff(buf,BLOCK_SIZE*MAX_BLK_BUF);	//init write buffer with random data;
-
-	u32 speed = mmc->tran_speed;
-	speed = speed/1000;
-
-	//Read/Write Test with Speed
-
-	//!!!!warning it will crash the SD card data!!!!
-
-	total_block_n = ((u32)(mmc->capacity/512));
-
-	bsp_printf("**************START SD Card TEST*******************\r\n");
-	bsp_printf("**SD CLOCK SPEED = %d\r\n",SD_CLK_FREQ);
-	bsp_printf("**CARD SPEED = %d kHz\r\n", speed); // mmc->tran_speed/1000);
-	bsp_printf("**CARD SIZE = %d Mbyte Total BLOCK = %d\r\n",(u32)(mmc->capacity/1024/1024),total_block_n);
-	bsp_printf("**SD BUS WIDTH = %d\r\n",mmc->bus_width);
-	bsp_printf("**BLOCK SIZE = %d BUFFER OF BLOCK = %d\r\n",BLOCK_SIZE,MAX_BLK_BUF);
-	bsp_printf("**TEST SIZE = %d kbyte\r\n",(BLOCK_SIZE*MAX_BLK_BUF)/1024);
-	bsp_printf("*************************************************\r\n");
-	char temp_udata;
-
-
-
-
-
-	if (testtype!=0)
-	{
-
-		bsp_printf("\r\n!!!!Warning ! The following test will over write data on each memory blocks of the SD card !!!!");
-		bsp_printf("\r\n!!!!it will crash the SD card data ,Push q or Q to quit the test !!!!");
-		bsp_printf("\r\nOr you could push Any Key to Continue the test and you could push q or Q to quit the test any time! \r\n\n");
-
-
-		while(1)
-		{
-			temp_udata = uart_read(BSP_UART_TERMINAL);
-			if(temp_udata!=0)
-				break;
-		}
-
-		if( (temp_udata!='q') && (temp_udata!='Q') )
-		{
-			bsp_printf("\r\nStart to Memory Blocks Write/Read Access test! \r\n\n");
-
-
-
-			for(n=0;n<total_block_n;n+=MAX_BLK_BUF)
-					{
-						SD_EraseBlk(mmc,cmd,0,MAX_BLK_BUF);	//erase Block
-
-						timer_start=(u32)machineTimer_getTime(BSP_MACHINE_TIMER);	//get write start time
-						SD_WRITE_BLOCK(mmc,0,buf,MAX_BLK_BUF);						//write block
-						timer_end=(u32)machineTimer_getTime(BSP_MACHINE_TIMER);		//get write finish time
-						//while(1){}
-						rd_timer_start=(u32)machineTimer_getTime(BSP_MACHINE_TIMER);	//get read start time
-						SD_READ_BLOCK(mmc,0,rd_buf,MAX_BLK_BUF);
-						rd_timer_end=(u32)machineTimer_getTime(BSP_MACHINE_TIMER);		//get read finish time
-
-
-						SD_ReadWriteCompare(buf,rd_buf,timer_start,timer_end,rd_timer_start,rd_timer_end,MAX_BLK_BUF,n,total_block_n);	//compare 2 buffer with speed calculation
-
-						if(uart_readOccupancy(BSP_UART_TERMINAL) != 0)
-						{
-								        	temp_udata = read_u32(BSP_UART_TERMINAL + UART_DATA);
-
-								  		  bsp_putString("echo character:");
-								  				            bsp_putChar(temp_udata);
-								  				            bsp_putString("\n\r");
-
-								        	if ( (temp_udata =='q') || (temp_udata =='Q') )
-								        	{
-								        		bsp_printf("\r\nQuit the Memory Blocks Write/Read Access test! \r\n\n");
-								        		break;
-								        	}
-
-								      }
-
-
-
-					}
-
-		}
-		else
-		{
-			bsp_printf("\r\nQuit the Memory Blocks Write/Read Access test! \r\n\n");
-		}
-
-
-	}
-
-
-}
-
 
 
 void inital_video_stream()
@@ -469,7 +312,7 @@ void inital_video_stream()
 
 
 
-
+/*
 	cs_descriptor_csi_TX[0].ctrl_word = 0x0002;
 	cs_descriptor_csi_TX[0].src_addr = ((u32)(framebuffer_ptr[6] ));
 	cs_descriptor_csi_TX[0].dst_addr = 0;
@@ -493,7 +336,7 @@ void inital_video_stream()
 //	dma_video_out_channel_execution(framebuffer_ptr[9], DMASG_CHANNEL_DUMMY_CSI);
 
 	dma_video_out_channel_cs_sg_execution(cs_descriptor_csi_TX, 4,DMASG_CHANNEL_DUMMY_CSI);
-
+*/
 	bsp_uDelay(400000);
 	dma_video_out_channel_execution(framebuffer_ptr[4], DMASG_CHANNEL_OVERLAY);
 
@@ -519,8 +362,8 @@ void inital_video_stream()
 
 
 
-	cmd_cam_brightnes((cam_brightness/0x1000)&0xff, cam_brightness&0xfff);
-	cmd_cam_colour_gain(cam_gain_r, cam_gain_g, cam_gain_b);
+//	cmd_cam_brightnes((cam_brightness/0x1000)&0xff, cam_brightness&0xfff);
+//	cmd_cam_colour_gain(cam_gain_r, cam_gain_g, cam_gain_b);
 
 
 
@@ -684,95 +527,9 @@ void cmd_operation(uint8_t key )
 
 
 	}
-	else if (key == 'u')
-	{
-		check_sd(0);
-	}
-	else if (key == 'v')
-	{
-		check_sd(1);
-	}
 
-	else if (key =='l')
-	{
-		cam_brightness += BRIGHTNESS_STEP;
-		if(cam_brightness>=BRIGHTNESS_MAX)
-		{
-			cam_brightness = BRIGHTNESS_MAX;
-		}
-		bsp_printf("cam_brightness: 0x%x\n\r",cam_brightness);
-		cmd_cam_brightnes((cam_brightness/0x1000)&0xff, cam_brightness&0xfff);
 
-	}
-	else if (key == 'L')
-	{
-		cam_brightness -= BRIGHTNESS_STEP;
-		if(cam_brightness<=BRIGHTNESS_MIN)
-		{
-			cam_brightness = BRIGHTNESS_MIN;
-		}
-		bsp_printf("cam_brightness: 0x%x\n\r",cam_brightness);
-		cmd_cam_brightnes((cam_brightness/0x1000)&0xff, cam_brightness&0xfff);
 
-	}
-	else if (key =='r')
-	{
-		cam_gain_r += GAIN_R_STEP;
-		if(cam_gain_r>=GAIN_R_MAX)
-		{
-			cam_gain_r = GAIN_R_MAX;
-		}
-		//bsp_printf("cam_gain_r: 0x%x\n\r",cam_gain_r);
-		cmd_cam_colour_gain(cam_gain_r, cam_gain_g, cam_gain_b);
-	}
-	else if (key =='R')
-	{
-		cam_gain_r -= GAIN_R_STEP;
-		if(cam_gain_r<=GAIN_R_MIN)
-		{
-			cam_gain_r = GAIN_R_MIN;
-		}
-		//bsp_printf("cam_gain_r: 0x%x\n\r",cam_gain_r);
-		cmd_cam_colour_gain(cam_gain_r, cam_gain_g, cam_gain_b);
-	}
-
-	else if (key =='g')
-	{
-		cam_gain_g += GAIN_G_STEP;
-		if(cam_gain_g>=GAIN_G_MAX)
-		{
-			cam_gain_g = GAIN_G_MAX;
-		}
-		cmd_cam_colour_gain(cam_gain_r, cam_gain_g, cam_gain_b);
-	}
-	else if (key =='G')
-	{
-		cam_gain_g -= GAIN_G_STEP;
-		if(cam_gain_g<=GAIN_G_MIN)
-		{
-			cam_gain_g = GAIN_G_MIN;
-		}
-		cmd_cam_colour_gain(cam_gain_r, cam_gain_g, cam_gain_b);
-	}
-
-	else if (key =='b')
-	{
-			cam_gain_b += GAIN_B_STEP;
-			if(cam_gain_b>=GAIN_B_MAX)
-			{
-				cam_gain_b = GAIN_B_MAX;
-			}
-			cmd_cam_colour_gain(cam_gain_r, cam_gain_g, cam_gain_b);
-	}
-	else if (key =='B')
-	{
-			cam_gain_b -= GAIN_B_STEP;
-			if(cam_gain_b <= GAIN_B_MIN)
-			{
-				cam_gain_b = GAIN_B_MIN;
-			}
-			cmd_cam_colour_gain(cam_gain_r, cam_gain_g, cam_gain_b);
-	}
 
 }
 

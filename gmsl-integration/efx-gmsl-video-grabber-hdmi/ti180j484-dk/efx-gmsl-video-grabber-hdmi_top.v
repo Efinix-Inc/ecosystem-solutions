@@ -25,6 +25,7 @@
 //`define CSI_TX_4LANES   //Default 2 lanes
 `define CSI_TX_LANE_DATAWIDTH   16
 
+//`define CSI_TX_ENABLE
 
 module efx_gmsl_video_grabber_hdmi_top #(
 	parameter AXI_0_DATA_WIDTH = 512,
@@ -566,7 +567,7 @@ module efx_gmsl_video_grabber_hdmi_top #(
   input mipi_dphy_rx_inst4_STOPSTATE_LAN3,
   `endif  
  
-
+`ifdef CSI_TX_ENABLE
    //MIPI DPHY TX0  
 //input mipi_dphy_tx_inst1_PLL_UNLOCK,
   input mipi_dphy_tx_inst1_STOPSTATE_CLK, //
@@ -813,7 +814,7 @@ module efx_gmsl_video_grabber_hdmi_top #(
   output mipi_dphy_tx_inst4_TX_WORD_VALID_HS_LAN2, //
   output mipi_dphy_tx_inst4_TX_WORD_VALID_HS_LAN3, //
 `endif  
-    
+ `endif   
     // YCbCr video output for HDMI
     
     input [0:0] i_hdmi_sda,
@@ -1192,6 +1193,8 @@ assign RxDataHS_3[2] 			= mipi_dphy_rx_inst4_RX_DATA_HS_LAN2;
 assign RxDataHS_3[3] 			= mipi_dphy_rx_inst4_RX_DATA_HS_LAN3;
 `endif
 
+
+`ifdef CSI_TX_ENABLE
 // Mapping to DPHY TX 0 
 //CSI TX Interface
 wire tx_pclk_0;//
@@ -1504,6 +1507,8 @@ assign mipi_dphy_tx_inst4_TX_DATA_HS_LAN2 = TxDataHS2_3;
 assign mipi_dphy_tx_inst4_TX_DATA_HS_LAN3 = TxDataHS3_3;
 assign mipi_dphy_tx_inst4_TX_WORD_VALID_HS_LAN2 = TxReqValidHS2_3[1];
 assign mipi_dphy_tx_inst4_TX_WORD_VALID_HS_LAN3 = TxReqValidHS3_3[1];
+`endif
+
 `endif
 
 //CSI Camera Interface
@@ -1969,7 +1974,7 @@ end
 
 
 
-
+`ifdef CSI_TX_ENABLE
 csi_tx_controllers #(
 	.NUM_CHANNEL(NUM_CSI_TX_FANOUT),
     .NUM_TX_PER_CHANNEL(CSI_TX_NUM_DATA_LANE),
@@ -2039,7 +2044,7 @@ inst_csi_tx_controllers
     
 );
 
-
+`endif
 
 overlay_merge 
 #(
