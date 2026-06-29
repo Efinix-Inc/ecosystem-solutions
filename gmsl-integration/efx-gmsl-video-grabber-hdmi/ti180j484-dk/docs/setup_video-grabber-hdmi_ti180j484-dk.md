@@ -48,4 +48,5 @@ This document explains how to set up the Titanium Ti180J484 Development Board wi
    - Make sure that the Starting Flash Address is set to 0x00000000
    - Click the "Start Programming" Icon to start the programming process  
    <img src="images/gmsl_4cam_vg_programmer.png" alt="Setup TI180" width="600">  
+   
    - For details for using Efinity Programmer, check out [Efinity Programmer User Guide](https://www.efinixinc.com/support/docsdl.php?s=ef&pn=UG-EFN-PGM)  
