@@ -1,8 +1,6 @@
 # GMSL Integration
 This project highlights the integration of four cameras, streaming through a GMSL link, with output displayed on HDMI ports.
 
-&nbsp;
-
 # Table of Contents
 * [Overview](#overview)
 * [Hardware Requirement](#hardware-requirement)
@@ -25,8 +23,6 @@ This project highlights the integration of four cameras, streaming through a GMS
 * [Project Directory Description](#project-directory-description)
 * [Useful Links](#useful-links)
 
-&nbsp;
-
 # Overview
 The demonstration is divided into two parts: **Sensor Hub** and **Video Grabber**.
 
@@ -39,8 +35,6 @@ The demonstration is divided into two parts: **Sensor Hub** and **Video Grabber*
   The FPGA extracts the video frames from the virtual channels and output to HDMI display monitor.
 
 <img src="docs/images/gmsl_4cam-aggregation_block-diagram.png" alt="GMSL 4-cam Aggregation Block Diagram" width=1000>
-
-&nbsp;
 
 # Hardware Requirement
 ### GMSL Sensor Hub (4 Cameras)
@@ -62,8 +56,6 @@ The demonstration is divided into two parts: **Sensor Hub** and **Video Grabber*
 - [ADI MAX96792A DPHY Evaluation Kit (GMSL2/3 De-serializer, CSI-2, P/N: MAX96792A-BCK-EVK#)](https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/max96716evkit.html)
 - 22-pin FFC Cable (Type A) - *The FFC cable come with GMSL Evalution Kit Adapter Board (Type B) does not fit*
 
-&nbsp;
-
 # Software Requirement
 ### Efinity Software
 - [v2025.2.288](https://www.efinixinc.com/support/efinity.php) 
@@ -75,15 +67,13 @@ The demonstration is divided into two parts: **Sensor Hub** and **Video Grabber*
 ### GMSL SerDes Public GUI Software
 - [Version 1.6.1](https://www.analog.com/en/resources/evaluation-hardware-and-software/software/software-download?swpart=SFW0019760J) or above
 
-&nbsp;
-
 # Getting Start
 ### Configurating GMSL Sensor Hub 
-* [Setup Guide: GMSL Sensor Hub - Ti180J484-DK (Board #1)](#efx-gmsl-sensorhub-4cam/ti180j484-dk/docs/setup_sensor-hub-4cam_ti180j484-dk.md)
-* [Setup Guide: GMSL Sensor Hub - ADI GMSL Serializer (MAX96793-ACK-EVK#)](#efx-gmsl-sensorhub-4cam/ti180j484-dk/docs/setup_gmsl-serializer_max96793-ack-evk.md)
+* [Setup Guide: GMSL Sensor Hub - Ti180J484-DK (Board #1)](efx-gmsl-sensorhub-4cam/ti180j484-dk/docs/setup_sensor-hub-4cam_ti180j484-dk.md)
+* [Setup Guide: GMSL Sensor Hub - ADI GMSL Serializer (MAX96793-ACK-EVK#)](efx-gmsl-sensorhub-4cam/ti180j484-dk/docs/setup_gmsl-serializer_max96793-ack-evk.md)
 ### Configurating GMSL Video Grabber (HDMI)
-* [Setup Guide: Video Grabber (HDMI) - Ti180J484-DK (Board #2)](#efx-gmsl-video-grabber-hdmi/ti180j484-dk/docs/setup_video-grabber-hdmi_ti180j484-dk.md)
-* [Setup Guide: Video Grabber (HDMI) - ADI GMSL Deserializer (MAX96792A-BCK-EVK#)](#efx-gmsl-sensorhub-4cam/ti180j484-dk/docs/setup_gmsl-deserializer_max96792a-bck-evk.md)
+* [Setup Guide: Video Grabber (HDMI) - Ti180J484-DK (Board #2)](efx-gmsl-video-grabber-hdmi/ti180j484-dk/docs/setup_video-grabber-hdmi_ti180j484-dk.md)
+* [Setup Guide: Video Grabber (HDMI) - ADI GMSL Deserializer (MAX96792A-BCK-EVK#)](efx-gmsl-sensorhub-4cam/ti180j484-dk/docs/setup_gmsl-deserializer_max96792a-bck-evk.md)
 ### Running Video Streaming Demo
 Once all the kits are configurated properly, follow the steps below to start the video streaming demonstration:
 1. Connecting the Sensor Hub Deserializer and Video Grabber Serializer using STP cable, and connect a monitor with HDMI cable.  
@@ -95,8 +85,6 @@ Once all the kits are configurated properly, follow the steps below to start the
     - Titanium&#8482; Ti180J180-DK (Sensor Hub, Board #2)
     - Once color bar is shown on monitor, turn on Titanium&#8482; Ti180J480-DK (Video Grabber, Board #1)  
       <img src="docs/images/gmsl_4cam-aggregation_colorbar.png" alt="GMSL 4-cam Aggregation Colorbar" width=400>
-
-&nbsp;
 
 # Result
 
@@ -113,23 +101,17 @@ Once all the kits are configurated properly, follow the steps below to start the
 ### Video Display Output
 <img src="docs/images/gmsl_4cam-aggregation_video-display.png" alt="GMSL 4-cam Aggregation Video Display Output" width=400>
 
-&nbsp;
-
 # Resource Utilization
 | Project               | Device     | XLR             | Memory Block  | DSP Block  |
 |-----------------------|------------|-----------------|---------------|------------|
 | Sensor Hub            | Ti180J484  | 81662 / 172800  | 599 / 1280    | 4 / 640    |
 | Video Grabber (HDMI)  | Ti180J484  | 81299 / 172800  | 599 / 1280    | 4 / 640    |
 
-&nbsp;
-
 # Performance
 | Device             | Mipi Pixel Clk RX (MHz)  |  (MHz)                   | Memory Clk SOC (MHz) | Memory Clk DMA (MHz) | HDMI Clk (MHz) | SOC Clk (MHz) |
 |--------------------|--------------------------|--------------------------|----------------------|----------------------|----------------|---------------|
 | Sensor Hub         | 250                      | 215                      | 141                  | 193                  | 211            | 158           |
 | Video Grabber (HDMI) | 232                      | 202                      | 140                  | 193                  | 194            | 160           |
-
-&nbsp;
 
 # Project Directory Description
 ```
@@ -167,11 +149,18 @@ Once all the kits are configurated properly, follow the steps below to start the
     └── README.md
 ```
 
-&nbsp;
-
 # Useful Links
 [Titanium&#8482; Ti180 J484 Development Kit User Guide](https://www.efinixinc.com/support/docsdl.php?s=ef&pn=Ti180J484-DK-UG)  
 [Efinity&#174; Software User Guide](https://www.efinixinc.com/support/docsdl.php?s=ef&pn=UG-EFN-SOFTWARE)  
 [Sapphire RV32 SoC User Guide](https://www.efinixinc.com/support/docsdl.php?s=ef&pn=SAPPHIREUG)  
-[MAX96717/MAX96793 DPHY Evaluation Kit Data Sheet](https://www.analog.com/media/en/technical-documentation/data-sheets/max96717ev.pdf)  
-[MAX96716A/MAX96716F/MAX96792A DPHY Evaluation Kit Data Sheet](https://www.analog.com/media/en/technical-documentation/data-sheets/max96716evkit.pdf)
+[AD-GMSLCAMRPI-ADP# Schematics](https://wiki.analog.com/_media/resources/eval/user-guides/02_075922a_top.pdf)  
+
+Serializer (MAX96793)  
+- [MAX96717/MAX96793 DPHY Evaluation Kit Data Sheet](https://www.analog.com/media/en/technical-documentation/data-sheets/max96717ev.pdf)  
+- [MAX96793: CSI-2 to GMSL3/2 Serializer Data Sheet](https://www.analog.com/media/en/technical-documentation/data-sheets/max96793.pdf)  
+- [MAX96793 Device Specific User Guide](https://www.analog.com/media/en/technical-documentation/user-guides/max96793-device-specific-user-guide.pdf)  
+
+Deserializer (MAX96792A)  
+- [MAX96716A/MAX96716F/MAX96792A DPHY Evaluation Kit Data Sheet](https://www.analog.com/media/en/technical-documentation/data-sheets/max96716evkit.pdf)  
+- [MAX96792A: Dual GMSL3/2 to CSI-2 Deserializer Data Sheet ](hhttps://www.analog.com/media/en/technical-documentation/data-sheets/max96792a.pdf)  
+- [MAX96792A Dual GMSL3 to CSI-2 Deserializer User Guide](https://www.analog.com/media/en/technical-documentation/user-guides/max96792a-device-specific-user-guide.pdf)  
