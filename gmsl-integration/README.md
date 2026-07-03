@@ -127,7 +127,7 @@ Once all the kits are configurated properly, follow the steps below to start the
     │       └── ...
     ├── efx-gmsl-video-grabber-hdmi/                             # GMSL Video Grabber (HDMI) project folder
     │   └── ... 
-    ├── prebuild/
+    ├── prebuild/                                                # Find the prebuild folder in Release Build
     │   ├── bootloader/                                          # Bootloader for both firmware images
     │   │   ├── bootloader.hex 
     │   ├── fpga/                                                # Bitstream for Efinity project
@@ -146,6 +146,7 @@ Once all the kits are configurated properly, follow the steps below to start the
     │       ├── efx-gmsl-video-grabber-hdmi_combined.hex
     │       └── efx-gmsl-video-grabber-hdmi_combined.rpt
     ├── LICENSE
+    ├── VERSION
     └── README.md
 ```
 
