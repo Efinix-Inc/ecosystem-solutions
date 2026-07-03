@@ -10,3 +10,6 @@
 
 # Exclude prebuild folder, keeping the prebuild in Git Release
 **/prebuild/
+
+# Exclude vscode settings
+**/.vscode/

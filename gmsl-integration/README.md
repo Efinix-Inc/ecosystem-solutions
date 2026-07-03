@@ -108,9 +108,9 @@ Once all the kits are configurated properly, follow the steps below to start the
 | Video Grabber (HDMI)  | Ti180J484  | 81299 / 172800  | 599 / 1280    | 4 / 640    |
 
 # Performance
-| Device             | Mipi Pixel Clk RX (MHz)  |  (MHz)                   | Memory Clk SOC (MHz) | Memory Clk DMA (MHz) | HDMI Clk (MHz) | SOC Clk (MHz) |
-|--------------------|--------------------------|--------------------------|----------------------|----------------------|----------------|---------------|
-| Sensor Hub         | 250                      | 215                      | 141                  | 193                  | 211            | 158           |
+| Device               | Mipi Pixel Clk RX (MHz)  |  (MHz)                   | Memory Clk SOC (MHz) | Memory Clk DMA (MHz) | HDMI Clk (MHz) | SOC Clk (MHz) |
+|----------------------|--------------------------|--------------------------|----------------------|----------------------|----------------|---------------|
+| Sensor Hub           | 250                      | 215                      | 141                  | 193                  | 211            | 158           |
 | Video Grabber (HDMI) | 232                      | 202                      | 140                  | 193                  | 194            | 160           |
 
 # Project Directory Description
