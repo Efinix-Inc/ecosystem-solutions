@@ -7,3 +7,6 @@
 
 # Exclude IPM generated example projects
 **/ip/**/*_devkit/
+
+# Exclude prebuild folder, keeping the prebuild in Git Release
+**/prebuild/
