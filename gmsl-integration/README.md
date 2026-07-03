@@ -163,5 +163,5 @@ Serializer (MAX96793)
 
 Deserializer (MAX96792A)  
 - [MAX96716A/MAX96716F/MAX96792A DPHY Evaluation Kit Data Sheet](https://www.analog.com/media/en/technical-documentation/data-sheets/max96716evkit.pdf)  
-- [MAX96792A: Dual GMSL3/2 to CSI-2 Deserializer Data Sheet ](hhttps://www.analog.com/media/en/technical-documentation/data-sheets/max96792a.pdf)  
+- [MAX96792A: Dual GMSL3/2 to CSI-2 Deserializer Data Sheet](https://www.analog.com/media/en/technical-documentation/data-sheets/max96792a.pdf)  
 - [MAX96792A Dual GMSL3 to CSI-2 Deserializer User Guide](https://www.analog.com/media/en/technical-documentation/user-guides/max96792a-device-specific-user-guide.pdf)  
