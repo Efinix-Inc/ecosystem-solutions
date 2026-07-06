@@ -104,14 +104,14 @@ Once all the kits are configurated properly, follow the steps below to start the
 # Resource Utilization
 | Project               | Device     | XLR             | Memory Block  | DSP Block  |
 |-----------------------|------------|-----------------|---------------|------------|
-| Sensor Hub            | Ti180J484  | 81662 / 172800  | 599 / 1280    | 4 / 640    |
-| Video Grabber (HDMI)  | Ti180J484  | 81299 / 172800  | 599 / 1280    | 4 / 640    |
+| Sensor Hub            | Ti180J484  | 64855 / 172800  | 420 / 1280    | 4 / 640    |
+| Video Grabber (HDMI)  | Ti180J484  | 66093 / 172800  | 426 / 1280    | 4 / 640    |
 
 # Performance
-| Device               | Mipi Pixel Clk RX (MHz)  |  (MHz)                   | Memory Clk SOC (MHz) | Memory Clk DMA (MHz) | HDMI Clk (MHz) | SOC Clk (MHz) |
-|----------------------|--------------------------|--------------------------|----------------------|----------------------|----------------|---------------|
-| Sensor Hub           | 250                      | 215                      | 141                  | 193                  | 211            | 158           |
-| Video Grabber (HDMI) | 232                      | 202                      | 140                  | 193                  | 194            | 160           |
+| Device               | i_pixel_clk (MHz)  | i_pixel_clk_tx (MHz)  | i_axi0_mem_clk (MHz) | i_axi1_mem_clk (MHz)  | i_hdmi_clk (MHz)  | i_soc_clk (MHz)  |
+|----------------------|--------------------|-----------------------|----------------------|-----------------------|-------------------|------------------|
+| Sensor Hub           | 221                | 226                   | 138                  | 192                   | N/A               | 154              |
+| Video Grabber (HDMI) | 231                | N/A                   | 143                  | 183                   | 191               | 161              |
 
 # Project Directory Description
 ```
