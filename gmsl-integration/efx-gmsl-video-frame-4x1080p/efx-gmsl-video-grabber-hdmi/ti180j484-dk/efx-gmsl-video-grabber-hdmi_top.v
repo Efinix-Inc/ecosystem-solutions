@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////
 //           _____       
-//          / _______    Copyright (C) 2013-2022 Efinix Inc. All rights reserved.
+//          / _______    Copyright (C) 2013-2026 Efinix Inc. All rights reserved.
 //         / /       \   
 //        / /  ..    /   ti180_oob_top.v
 //       / / .'     /    

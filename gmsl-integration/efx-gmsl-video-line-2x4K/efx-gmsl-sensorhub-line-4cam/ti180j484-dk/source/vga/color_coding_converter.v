@@ -1,7 +1,7 @@
 
 /////////////////////////////////////////////////////////////////////////////
 //
-// Copyright (C) 2013-2021 Efinix Inc. All rights reserved.
+// Copyright (C) 2013-2026 Efinix Inc. All rights reserved.
 //
 // Description:
 // Colour Coding Convertion 

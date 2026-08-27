@@ -1,30 +1,28 @@
 # GMSL Integration
-This project highlights the integration of four cameras, streaming through a GMSL link, with output displayed on HDMI ports.
+
+This project demonstrates multi-camera streaming into a central hub, which consolidates the feeds over a single GMSL interface. The live video is transmitted to a secondary terminal, enabling simultaneous multi-video grid view display via HDMI.
 
 # Table of Contents
 * [Overview](#overview)
+* [Demo Selection](#Demo-Selection)
+  * [Per-Frame Mode 4x1080p](efx-gmsl-video-frame-4x1080p/)
+  * [Per-Line Mode 4×1080p](efx-gmsl-video-line-4x1080p/)
+  * [Per-Line Mode 2×4K](efx-gmsl-video-line-2x4K/)
+* [Performance](#performance)
+* [Resource Utilization](#resource-utilization)
 * [Hardware Requirement](#hardware-requirement)
-  * [GMSL Sensor Hub (4 Cameras)](#gmsl-sensor-hub-4-cameras)
-  * [GMSL Video Grabber (HDMI)](#gmsl-video-grabber-hdmi)
 * [Software Requirement](#software-requirement)
   * [Efinity Software](#efinity-software)
   * [Eifnity RISC-V Embedded Software IDE](#efinity-risc-v-embedded-software-ide)
   * [GMSL SerDes Public GUI Software](#gmsl-serdes-public-gui-software)
-* [Getting Start](#getting-start)
-  * [Configurating GMSL Sensor Hub](#configurating-gmsl-sensor-hub)
-  * [Configurating GMSL Video Grabber (HDMI)](#configurating-gmsl-video-grabber-hdmi)
-  * [Running Video Streaming Demo](#running-video-streaming-demo)
-* [Result](#result)
-  * [Sensor Hub User IO Behavior (Board #1)](#sensor-hub-user-io-behavior-board-1)
-  * [Video Grabber User IO Behavior (Board #2)](#video-grabber-user-io-behavior-board-2)
-  * [Video Display Output](#video-display-output)
-* [Resource Utilization](#resource-utilization)
-* [Performance](#performance)
 * [Project Directory Description](#project-directory-description)
 * [Useful Links](#useful-links)
 
+
 # Overview
-The demonstration is divided into two parts: **Sensor Hub** and **Video Grabber**.
+<img src="docs/images/gmsl_4cam-aggregation_block-diagram_full.png" alt="GMSL 4-cam Aggregation Block Diagram" width=1300>
+
+The demonstration is divided into two parts: **Sensor Hub** and **Video Grabber**. 
 
 - **Sensor Hub**  
   Aggregates video frames from four-camera inputs and packs them into a single MIPI CSI‑2 TX channel using virtual channels (VC).  
@@ -34,11 +32,62 @@ The demonstration is divided into two parts: **Sensor Hub** and **Video Grabber*
   Deserializes the data from GMSL link with the Analog Device Inc. MAX96792A and convert to MIPI CSI‑2 packeted data to the Titanium&#8482; Ti180 FPGA.  
   The FPGA extracts the video frames from the virtual channels and output to HDMI display monitor.
 
-<img src="docs/images/gmsl_4cam-aggregation_block-diagram.png" alt="GMSL 4-cam Aggregation Block Diagram" width=1000>
+he project demonstrates two distinct video aggregation architectures—**Per-Frame Mode** and **Per-Line Mode**.
+
+
+
+- **Per-Frame Mode**
+The video aggregation is implemented in a per-frame architecture. Frames from each individual video channel are buffered in system memory and transmitted sequentially to a GMSL serializer. 
+- **Per-Line Mode**
+The video aggregation is implemented in a line-interleave architecture. Instead of buffering full frames, lines of video data from each individual channel are multiplexed in real time and transmitted sequentially to a GMSL serializer
+
+<img src="docs/images/Frame_Line_mode.png" alt="GMSL 4-cam Aggregation Block Diagram" width=1000>
+
+
+
+| Mode | Memory |  Latency | Priority |
+|------|---------|------------|-----------------|
+| Pre-Frame | Frame buffer on External memory (LPDDR4) | At least one Frame period delay  | Strict Round-Robin |  
+| Pre-Line | line buffers (FIFOs) inside FPGA block RAM (BRAM) | At least one line period delay  | Highest-Occupancy-First (HOF) (Number of Lines arrived) |
+
+
+
+# Demo Selection
+
+Choose one of the three available demonstrations based on your camera count and resolution needs:
+
+| Demo | Mode | Cameras input| Resolution | GMSL Link Setup |
+|------|------|---------|------------|--------|
+| [Per-Frame Mode 4x1080p](efx-gmsl-video-frame-4x1080p/) | Pre-Frame | 4 x IMX219| 1080p | 6Gbps , MIPI CSI-2 ,2 lanes |
+| [Per-Line Mode 4x1080p](efx-gmsl-video-line-4x1080p/) | Pre-Line | 4 x IMX219 | 1080p | 12Gbps , MIPI CSI-2, 4 lanes |
+| [Per-Line Mode 2x4K](efx-gmsl-video-line-2x4K/) | Pre-Line | 2 x IMX477 | 4K |12Gbps , MIPI CSI-2 ,4 lanes|
+
+
+
+
+# Performance
+| Demo | Num of Channel |  Resolution | Channel Frame Rate | Link Throughput |
+|------|----------------|-------------|--------------------|-----------------|
+| [Per-Frame Mode 4x1080p](efx-gmsl-video-frame-4x1080p/) | 4 | 1920x1080 @RAW10 | 22 FPS | 1.8Gbps |
+| [Per-Line Mode 4x1080p](efx-gmsl-video-line-4x1080p/) | 4 | 1920x1080 @RAW10 | 72 FPS | 6.1Gbps |
+| [Per-Line Mode 2x4K](efx-gmsl-video-line-2x4K/) | 2 | 3840x2180 @RAW10 | 44 FPS | 7.6Gbps |
+
+
+# Resource Utilization
+| Demo | Projects | Device | XRL | Memory Block | DSP Block |
+| :--- | :--- | :--- | :---: | :---: | :---: |
+| [Per-Frame Mode 4x1080p](efx-gmsl-video-frame-4x1080p/) | efx-gmsl-sensorhub-4cam | Ti180J484 | 64855 / 172800 | 420 / 1280 | 4 / 640 |
+| | efx-gmsl-video-grabber-hdmi | Ti180J484 | 66093 / 172800 | 426 / 1280 | 4 / 640 |
+| [Per-Line Mode 4x1080p](efx-gmsl-video-line-4x1080p/) | efx-gmsl-sensorhub-line-4cam | Ti180J484 | 34529 / 172800 | 496 / 1280 | 12 / 640 |
+| | efx-gmsl-video-grabber-line-hdmi | Ti180J484 | 59101 / 172800 | 514 / 1280 | 4 / 640 |
+| [Per-Line Mode 2x4K](efx-gmsl-video-line-2x4K/) | efx-gmsl-sensorhub-line-4cam | Ti180J484 | 34604 / 172800 | 640 / 1280 | 12 / 640 |
+| | efx-gmsl-video-grabber-line-hdmi | Ti180J484 | 59101 / 172800 | 514 / 1280 | 4 / 640 |
+
+
 
 # Hardware Requirement
-### GMSL Sensor Hub (4 Cameras)
-
+### GMSL Sensor Hub (4 IMX219 Cameras)
+Note: For Demo with connecting 4 Pi Cam V2 to Sensor Hub 
 - [Titanium&#8482; Ti180J484-DK](https://www.efinixinc.com/products-devkits-titaniumti180j484.html)
   - Titanium&#8482; Ti180J484 Development Board
   - 2 x [Dual Raspberry Pi Camera Connector Daughter Card](https://www.efinixinc.com/support/docsdl.php?s=ef&pn=DUAL-RPICAM-DC-UG)
@@ -47,6 +96,19 @@ The demonstration is divided into two parts: **Sensor Hub** and **Video Grabber*
 - [ADI MAX96793 DPHY Evaluation Kit (GMSL2/3 Serializer, CSI-2, P/N: MAX96793-ACK-EVK#)](https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/max96717f-aak-evk.html)
 - [ADI GMSL Evaluation Kit Adapter Board](https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/ad-gmslcamrpi-adp.html)
 - 22-pin FFC Cable (Type A) - *The FFC cable come with GMSL Evalution Kit Adapter Board (Type B) does not fit*
+
+### GMSL Sensor Hub (2 IMX477 Cameras)
+Note: For Demo with connecting 2 IMX477 to Sensor Hub
+- [Titanium&#8482; Ti180J484-DK](https://www.efinixinc.com/products-devkits-titaniumti180j484.html)
+  - Titanium&#8482; Ti180J484 Development Board
+  - 2 x [IMX477 Camera Module 2](https://www.arducam.com/b0242-arducam-imx477-hq-camera.html)
+  - 2 x IMX477 Camera Connector Daughter Card
+- [ADI MAX96793 DPHY Evaluation Kit (GMSL2/3 Serializer, CSI-2, P/N: MAX96793-ACK-EVK#)](https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/max96717f-aak-evk.html)
+- [ADI GMSL Evaluation Kit Adapter Board](https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/ad-gmslcamrpi-adp.html)
+- 22-pin FFC Cable (Type A) - *The FFC cable come with GMSL Evalution Kit Adapter Board (Type B) does not fit*
+
+
+
 ### GMSL Video Grabber (HDMI)
 - [Titanium&#8482; Ti180J484-DK](https://www.efinixinc.com/products-devkits-titaniumti180j484.html)
   - Titanium&#8482; Ti180J484 Development Board
@@ -67,94 +129,75 @@ The demonstration is divided into two parts: **Sensor Hub** and **Video Grabber*
 ### GMSL SerDes Public GUI Software
 - [Version 1.6.1](https://www.analog.com/en/resources/evaluation-hardware-and-software/software/software-download?swpart=SFW0019760J) or above
 
-# Getting Start
-### Configurating GMSL Sensor Hub 
-* [Setup Guide: GMSL Sensor Hub - Ti180J484-DK (Board #1)](efx-gmsl-sensorhub-4cam/ti180j484-dk/docs/setup_sensor-hub-4cam_ti180j484-dk.md)
-* [Setup Guide: GMSL Sensor Hub - ADI GMSL Serializer (MAX96793-ACK-EVK#)](efx-gmsl-sensorhub-4cam/ti180j484-dk/docs/setup_gmsl-serializer_max96793-ack-evk.md)
-### Configurating GMSL Video Grabber (HDMI)
-* [Setup Guide: Video Grabber (HDMI) - Ti180J484-DK (Board #2)](efx-gmsl-video-grabber-hdmi/ti180j484-dk/docs/setup_video-grabber-hdmi_ti180j484-dk.md)
-* [Setup Guide: Video Grabber (HDMI) - ADI GMSL Deserializer (MAX96792A-BCK-EVK#)](efx-gmsl-sensorhub-4cam/ti180j484-dk/docs/setup_gmsl-deserializer_max96792a-bck-evk.md)
-### Running Video Streaming Demo
-Once all the kits are configurated properly, follow the steps below to start the video streaming demonstration:
-1. Connecting the Sensor Hub Deserializer and Video Grabber Serializer using STP cable, and connect a monitor with HDMI cable.  
-<img src="docs/images/gmsl_4cam-aggregation_hw-setup.png" alt="GMSL 4-cam Aggregation Hardware Setup" width=1000>
-
-2. Turn on the power in this sequence: 
-    - ADI Serializer EVK
-    - ADI Deserializer EVK
-    - Titanium&#8482; Ti180J180-DK (Sensor Hub, Board #2)
-    - Once color bar is shown on monitor, turn on Titanium&#8482; Ti180J480-DK (Video Grabber, Board #1)  
-      <img src="docs/images/gmsl_4cam-aggregation_colorbar.png" alt="GMSL 4-cam Aggregation Colorbar" width=400>
-
-# Result
-
-### Sensor Hub User IO Behavior (Board #1)
-* SW4: System reset
-* LED7: Initialization done
-* LED3-6: Camera 0-3 streaming video
-
-### Video Grabber User IO Behavior (Board #2)
-* SW4: Video mode switching: CAM0 -> CAM1 -> CAM2 -> CAM3 -> Split-screen (multi-view) -> CAM0 -> ...
-* LED7: Initialization done
-* LED3: Receiving data from GMSL link
-
-### Video Display Output
-<img src="docs/images/gmsl_4cam-aggregation_video-display.png" alt="GMSL 4-cam Aggregation Video Display Output" width=400>
-
-# Resource Utilization
-| Project               | Device     | XLR             | Memory Block  | DSP Block  |
-|-----------------------|------------|-----------------|---------------|------------|
-| Sensor Hub            | Ti180J484  | 64855 / 172800  | 420 / 1280    | 4 / 640    |
-| Video Grabber (HDMI)  | Ti180J484  | 66093 / 172800  | 426 / 1280    | 4 / 640    |
-
-# Performance
-| Device               | i_pixel_clk (MHz)  | i_pixel_clk_tx (MHz)  | i_axi0_mem_clk (MHz) | i_axi1_mem_clk (MHz)  | i_hdmi_clk (MHz)  | i_soc_clk (MHz)  |
-|----------------------|--------------------|-----------------------|----------------------|-----------------------|-------------------|------------------|
-| Sensor Hub           | 221                | 226                   | 138                  | 192                   | N/A               | 154              |
-| Video Grabber (HDMI) | 231                | N/A                   | 143                  | 183                   | 191               | 161              |
-
 # Project Directory Description
 ```
 .
-└── gmsl_integration/
-    ├── docs/
-    │   ├── images
-    │   └── .md
-    ├── efx-gmsl-sensorhub-4cam/                                 # GMSL Sensor Hub (4-cam) project folder
-    │   └── ti180j484-dk/                                        # Efinity project
-    │       └── docs/ 
-    │       └── embeddeded_sw/                                   # RISC-V embedded software project directory
-    │       └── ...
-    ├── efx-gmsl-video-grabber-hdmi/                             # GMSL Video Grabber (HDMI) project folder
-    │   └── ... 
-    ├── prebuild/                                                # Find the prebuild folder in Release Build
-    │   ├── bootloader/                                          # Bootloader for both firmware images
-    │   │   ├── bootloader.hex 
-    │   ├── fpga/                                                # Bitstream for Efinity project
-    │   │   ├── efx-gmsl-sensorhub-4cam.bit
-    │   │   ├── efx-gmsl-sensorhub-4cam.hex
-    │   │   ├── efx-gmsl-video-grabber-hdmi.bit
-    │   │   └── efx-gmsl-video-grabber-hdmi.hex
-    │   ├── fw/                                                  # Compiled firmware image
-    │   │   ├── efx-gmsl-sensorhub-4cam.bin
-    │   │   ├── efx-gmsl-sensorhub-4cam.elf
-    │   │   ├── efx-gmsl-video-grabber-hdmi.bin
-    │   │   └── efx-gmsl-video-grabber-hdmi.elf
-    │   └── quick_start/                                         # Combined bitstream (fpga+fw) for quick demo deployment
-    │       ├── efx-gmsl-sensorhub-4cam_combined.hex
-    │       ├── efx-gmsl-sensorhub-4cam_combined.rpt             # Report from combining bitstream 
-    │       ├── efx-gmsl-video-grabber-hdmi_combined.hex
-    │       └── efx-gmsl-video-grabber-hdmi_combined.rpt
+└── gmsl-integration/
+    ├── efx-gmsl-video-framemode-4x1080p/                                   # GMSL Video Streamming Demo (Pre-Frame mode, 4cam @ 1080P)
+    │    ├── efx-gmsl-sensorhub-4cam/                                        
+    │    │   └── ti180j484-dk/                                               
+    │    │       └── embeddeded_sw/                                          # RISC-V embedded software workspace of Sensor Hub
+    │    │       └── efx-gmsl-sensorhub-4cam.xml                             # Efinity project of Sensor Hub
+    │    └── efx-gmsl-video-grabber-hdmi/                                    
+    │        └── ti180j484-dk/                                               
+    │            └── embeddeded_sw/                                          # RISC-V embedded software workspace of Video Grabber
+    │            └── efx-gmsl-video-grabber-hdmi.xml                         # Efinity project of Video Grabber
+    │        
+    ├── efx-gmsl-video-linemode-4x1080p/                                    # GMSL Video Streamming Demo (Pre-Line mode, 4cam @ 1080P)
+    │    ├── efx-gmsl-sensorhub-4cam/                                        
+    │    │   └── ti180j484-dk/                                               
+    │    │       └── embeddeded_sw/                                          # RISC-V embedded software workspace of Sensor Hub
+    │    │       └── efx-gmsl-sensorhub-line-4cam.xml                        # Efinity project of Sensor Hub
+    │    └── efx-gmsl-video-grabber-hdmi/                                    
+    │        └── ti180j484-dk/                                               
+    │            └── embeddeded_sw/                                          # RISC-V embedded software workspace of Video Grabber
+    │            └── efx-gmsl-video-grabber-line-hdmi.xml                    # Efinity project of Video Grabber
+    │        
+    ├── efx-gmsl-video-linemode-2x4K/                                       # GMSL Video Streamming Demo (Pre-Line mode, 2cam @ 4K)
+    │    ├── efx-gmsl-sensorhub-4cam/                                         
+    │    │   └── ti180j484-dk/                                                
+    │    │       └── embeddeded_sw/                                          # RISC-V embedded software workspace of Sensor Hub
+    │    │       └── efx-gmsl-sensorhub-line-4cam.xml                        # Efinity project of Sensor Hub
+    │    └── efx-gmsl-video-grabber-hdmi/                                    
+    │        └── ti180j484-dk/         
+    │            └── embeddeded_sw/                                          # RISC-V embedded software workspace of Video Grabber
+    │            └── efx-gmsl-video-grabber-line-hdmi.xml                    # Efinity project of Video Grabber
+    │ 
     ├── LICENSE
     ├── VERSION
-    └── README.md
+    ├── README.md
+    │
+    └── prebuild/                                                           # Find the prebuild folder in Release Build
+        ├── efx-gmsl-video-frame-4x1080p/                                   # GMSL Video aggregator (Pre-Frame mode, 4cam @ 1080P)
+        │    ├── bootloader/                                                # Bootloader for both firmware images
+        │    ├── fpga/                                                      # Bitstream for Efinity project
+        │    ├── fw/                                                        # Compiled firmware image
+        │    └── quick_start/                                               # Combined bitstream (fpga+fw) for quick demo deployment
+        │        ├── efx-gmsl-sensorhub-4cam_combined.hex                   
+        │        └──vefx-gmsl-video-grabber-hdmi_combined.hex     
+        ├── efx-gmsl-video-frame-4x1080p/                                   # GMSL Video aggregator (Pre-Line mode, 4cam @ 1080P)
+        │    ├── bootloader/                                                # Bootloader for both firmware images
+        │    ├── fpga/                                                      # Bitstream for Efinity project
+        │    ├── fw/                                                        # Compiled firmware image
+        │    └── quick_start/                                               # Combined bitstream (fpga+fw) for quick demo deployment
+        │        ├── efx-gmsl-sensorhub-line-4x1080p_combined.hex
+        │        └── efx-gmsl-video-grabber-line-hdmi-4x1080p_combined.hex
+        └── efx-gmsl-video-line-2x4k/                                       # GMSL Video aggregator (Pre-Line mode, 2cam @ 4K) 
+             ├── bootloader/                                                # Bootloader for both firmware images
+             ├── fpga/                                                      # Bitstream for Efinity project
+             ├── fw/                                                        # Compiled firmware image
+             └── quick_start/                                               # Combined bitstream (fpga+fw) for quick demo deployment
+                 ├── efx-gmsl-sensorhub-line-2x4K_combined.hex
+                 └── efx-gmsl-video-grabber-line-hdmi-2x4k_combined.hex
+
 ```
 
 # Useful Links
-[Titanium&#8482; Ti180 J484 Development Kit User Guide](https://www.efinixinc.com/support/docsdl.php?s=ef&pn=Ti180J484-DK-UG)  
-[Efinity&#174; Software User Guide](https://www.efinixinc.com/support/docsdl.php?s=ef&pn=UG-EFN-SOFTWARE)  
-[Sapphire RV32 SoC User Guide](https://www.efinixinc.com/support/docsdl.php?s=ef&pn=SAPPHIREUG)  
-[AD-GMSLCAMRPI-ADP# Schematics](https://wiki.analog.com/_media/resources/eval/user-guides/02_075922a_top.pdf)  
+- [Titanium&#8482; Ti180 J484 Development Kit User Guide](https://www.efinixinc.com/support/docsdl.php?s=ef&pn=Ti180J484-DK-UG)  
+- [Efinity&#174; Software User Guide](https://www.efinixinc.com/support/docsdl.php?s=ef&pn=UG-EFN-SOFTWARE)  
+- [Sapphire RV32 SoC User Guide](https://www.efinixinc.com/support/docsdl.php?s=ef&pn=SAPPHIREUG)  
+- [AD-GMSLCAMRPI-ADP# Schematics](https://wiki.analog.com/_media/resources/eval/user-guides/02_075922a_top.pdf)  
+
 
 Serializer (MAX96793)  
 - [MAX96717/MAX96793 DPHY Evaluation Kit Data Sheet](https://www.analog.com/media/en/technical-documentation/data-sheets/max96717ev.pdf)  

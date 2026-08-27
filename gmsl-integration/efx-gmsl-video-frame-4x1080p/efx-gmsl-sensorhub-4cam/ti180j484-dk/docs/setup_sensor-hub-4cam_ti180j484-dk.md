@@ -47,7 +47,7 @@ This document explains how to set up the Titanium Ti180J484 Development Board wi
    - Connect the Ti180J484-DK with PC using USB Type-C cable and power on.
    - Open Efinity Programmer and select the USB Target (i.e. Titanium Ti180 J484 Development Board)
    - Select "SPI Active using JTAG Bridge" for Programming Mode
-   - Choose the efx-gmsl-sensorhub-4cam_combined.hex in prebuild/quickstart folder (from release build)
+   - Choose the efx-gmsl-sensorhub-4cam_combined.hex in prebuild/efx-gmsl-video-frame-4x1080p/quickstart folder (from release build)
    - Make sure that the Starting Flash Address is set to 0x00000000
    - Click the "Start Programming" Icon to start the programming process  
    <img src="images/gmsl_4cam_sh_programmer.png" alt="Setup TI180" width="600">  

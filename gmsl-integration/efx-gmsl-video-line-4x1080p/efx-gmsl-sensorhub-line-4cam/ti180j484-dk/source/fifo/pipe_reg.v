@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////
 //           _____       
-//          / _______    Copyright (C) 2013-2020 Efinix Inc. All rights reserved.
+//          / _______    Copyright (C) 2013-2026 Efinix Inc. All rights reserved.
 //         / /       \   
 //        / /  ..    /   pipe_reg.v
 //       / / .'     /    
@@ -43,7 +43,7 @@ assign d_o = pipe_reg[DEPTH-1];
 endmodule
 
 ////////////////////////////////////////////////////////////////////////////////
-// Copyright (C) 2013-2020 Efinix Inc. All rights reserved.              
+// Copyright (C) 2013-2026 Efinix Inc. All rights reserved.              
 //
 // This   document  contains  proprietary information  which   is        
 // protected by  copyright. All rights  are reserved.  This notice       

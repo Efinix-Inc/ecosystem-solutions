@@ -5,7 +5,7 @@
 // =============================================================================
 
 ////////////////////////////////////////////////////////////////////////////////
-// Copyright (C) 2013-2020 Efinix Inc. All rights reserved.              
+// Copyright (C) 2013-2026 Efinix Inc. All rights reserved.              
 //
 // This   document  contains  proprietary information  which   is        
 // protected by  copyright. All rights  are reserved.  This notice       
@@ -114,7 +114,7 @@ endmodule
 
 /////////////////////////////////////////////////////////////////////////////
 //           _____       
-//          / _______    Copyright (C) 2013-2020 Efinix Inc. All rights reserved.
+//          / _______    Copyright (C) 2013-2026 Efinix Inc. All rights reserved.
 //         / /       \   
 //        / /  ..    /   i2c_controller_6d7d364d888b4433a8478f528dc3612a.v
 //       / / .'     /    
@@ -292,7 +292,7 @@ endmodule
     
 /////////////////////////////////////////////////////////////////////////////
 //           _____       
-//          / _______    Copyright (C) 2013-2020 Efinix Inc. All rights reserved.
+//          / _______    Copyright (C) 2013-2026 Efinix Inc. All rights reserved.
 //         / /       \   
 //        / /  ..    /   i2c_master_ctl_6d7d364d888b4433a8478f528dc3612a.v
 //       / / .'     /    
@@ -894,7 +894,7 @@ endgenerate
 endmodule // i2c_master_ctrl
 
 //////////////////////////////////////////////////////////////////////////////
-// Copyright (C) 2013-2019 Efinix Inc. All rights reserved.
+// Copyright (C) 2013-2026 Efinix Inc. All rights reserved.
 //
 // This   document  contains  proprietary information  which   is
 // protected by  copyright. All rights  are reserved.  This notice
@@ -932,7 +932,7 @@ endmodule // i2c_master_ctrl
 //
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //           _____       
-//          / _______    Copyright (C) 2013-2020 Efinix Inc. All rights reserved.
+//          / _______    Copyright (C) 2013-2026 Efinix Inc. All rights reserved.
 //         / /       \   
 //        / /  ..    /   i2c_mstrslv_ctl_6d7d364d888b4433a8478f528dc3612a.v
 //       / / .'     /    
@@ -2092,7 +2092,7 @@ wire mbcr_wr_nedge;
 endmodule 
 
 //////////////////////////////////////////////////////////////////////////////
-// Copyright (C) 2013-2019 Efinix Inc. All rights reserved.
+// Copyright (C) 2013-2026 Efinix Inc. All rights reserved.
 //
 // This   document  contains  proprietary information  which   is
 // protected by  copyright. All rights  are reserved.  This notice
@@ -2131,7 +2131,7 @@ endmodule
 /////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
 //           _____       
-//          / _______    Copyright (C) 2013-2020 Efinix Inc. All rights reserved.
+//          / _______    Copyright (C) 2013-2026 Efinix Inc. All rights reserved.
 //         / /       \   
 //        / /  ..    /   i2c_slave_ctl_6d7d364d888b4433a8478f528dc3612a.v
 //       / / .'     /    
@@ -2556,7 +2556,7 @@ endgenerate
 endmodule // i2c_master_ctrl
 
 //////////////////////////////////////////////////////////////////////////////
-// Copyright (C) 2013-2019 Efinix Inc. All rights reserved.
+// Copyright (C) 2013-2026 Efinix Inc. All rights reserved.
 //
 // This   document  contains  proprietary information  which   is
 // protected by  copyright. All rights  are reserved.  This notice
@@ -2594,7 +2594,7 @@ endmodule // i2c_master_ctrl
 //
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //           _____       
-//          / _______    Copyright (C) 2013-2020 Efinix Inc. All rights reserved.
+//          / _______    Copyright (C) 2013-2026 Efinix Inc. All rights reserved.
 //         / /       \   
 //        / /  ..    /   pulse_gen_fts_6d7d364d888b4433a8478f528dc3612a.v
 //       / / .'     /    
@@ -2669,7 +2669,7 @@ module pulse_gen_fts_6d7d364d888b4433a8478f528dc3612a
 endmodule // pulse_gen_fts_6d7d364d888b4433a8478f528dc3612a
 
 //////////////////////////////////////////////////////////////////////////////
-// Copyright (C) 2013-2019 Efinix Inc. All rights reserved.
+// Copyright (C) 2013-2026 Efinix Inc. All rights reserved.
 //
 // This   document  contains  proprietary information  which   is
 // protected by  copyright. All rights  are reserved.  This notice

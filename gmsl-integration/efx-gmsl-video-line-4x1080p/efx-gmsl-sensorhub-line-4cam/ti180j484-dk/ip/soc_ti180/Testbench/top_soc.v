@@ -1,6 +1,6 @@
 /////////////////////////////////////////////////////////////////////////////
 //
-// Copyright (C) 2013-2023 Efinix Inc. All rights reserved.
+// Copyright (C) 2013-2026 Efinix Inc. All rights reserved.
 //
 // Description:
 // Example top file for EfxSapphireSoc
@@ -789,7 +789,7 @@ soc_ti180 soc_inst
 endmodule
 
 //////////////////////////////////////////////////////////////////////////////
-// Copyright (C) 2013-2023 Efinix Inc. All rights reserved.
+// Copyright (C) 2013-2026 Efinix Inc. All rights reserved.
 //
 // This   document  contains  proprietary information  which   is
 // protected by  copyright. All rights  are reserved.  This notice

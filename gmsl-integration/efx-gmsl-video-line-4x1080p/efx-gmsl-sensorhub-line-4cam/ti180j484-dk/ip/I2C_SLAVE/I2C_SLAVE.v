@@ -5,7 +5,7 @@
 // =============================================================================
 
 ////////////////////////////////////////////////////////////////////////////////
-// Copyright (C) 2013-2025 Efinix Inc. All rights reserved.              
+// Copyright (C) 2013-2026 Efinix Inc. All rights reserved.              
 //
 // This   document  contains  proprietary information  which   is        
 // protected by  copyright. All rights  are reserved.  This notice       
@@ -99,7 +99,7 @@ endmodule
 
 /////////////////////////////////////////////////////////////////////////////
 //           _____       
-//          / _______    Copyright (C) 2013-2020 Efinix Inc. All rights reserved.
+//          / _______    Copyright (C) 2013-2026 Efinix Inc. All rights reserved.
 //         / /       \   
 //        / /  ..    /   i2c_controller.v
 //       / / .'     /    
@@ -279,7 +279,7 @@ endmodule
 
 /////////////////////////////////////////////////////////////////////////////
 //           _____       
-//          / _______    Copyright (C) 2013-2020 Efinix Inc. All rights reserved.
+//          / _______    Copyright (C) 2013-2026 Efinix Inc. All rights reserved.
 //         / /       \   
 //        / /  ..    /   i2c_master_ctl.v
 //       / / .'     /    
@@ -881,7 +881,7 @@ endgenerate
 endmodule // i2c_master_ctrl
 
 //////////////////////////////////////////////////////////////////////////////
-// Copyright (C) 2013-2019 Efinix Inc. All rights reserved.
+// Copyright (C) 2013-2026 Efinix Inc. All rights reserved.
 //
 // This   document  contains  proprietary information  which   is
 // protected by  copyright. All rights  are reserved.  This notice
@@ -921,7 +921,7 @@ endmodule // i2c_master_ctrl
 
 /////////////////////////////////////////////////////////////////////////////
 //           _____       
-//          / _______    Copyright (C) 2013-2020 Efinix Inc. All rights reserved.
+//          / _______    Copyright (C) 2013-2026 Efinix Inc. All rights reserved.
 //         / /       \   
 //        / /  ..    /   i2c_mstrslv_ctl.v
 //       / / .'     /    
@@ -2089,7 +2089,7 @@ wire mbcr_wr_nedge;
 endmodule 
 
 //////////////////////////////////////////////////////////////////////////////
-// Copyright (C) 2013-2019 Efinix Inc. All rights reserved.
+// Copyright (C) 2013-2026 Efinix Inc. All rights reserved.
 //
 // This   document  contains  proprietary information  which   is
 // protected by  copyright. All rights  are reserved.  This notice
@@ -2130,7 +2130,7 @@ endmodule
 
 /////////////////////////////////////////////////////////////////////////////
 //           _____       
-//          / _______    Copyright (C) 2013-2020 Efinix Inc. All rights reserved.
+//          / _______    Copyright (C) 2013-2026 Efinix Inc. All rights reserved.
 //         / /       \   
 //        / /  ..    /   i2c_slave_ctl.v
 //       / / .'     /    
@@ -2555,7 +2555,7 @@ endgenerate
 endmodule // i2c_master_ctrl
 
 //////////////////////////////////////////////////////////////////////////////
-// Copyright (C) 2013-2019 Efinix Inc. All rights reserved.
+// Copyright (C) 2013-2026 Efinix Inc. All rights reserved.
 //
 // This   document  contains  proprietary information  which   is
 // protected by  copyright. All rights  are reserved.  This notice
@@ -2595,7 +2595,7 @@ endmodule // i2c_master_ctrl
 
 /////////////////////////////////////////////////////////////////////////////
 //           _____       
-//          / _______    Copyright (C) 2013-2020 Efinix Inc. All rights reserved.
+//          / _______    Copyright (C) 2013-2026 Efinix Inc. All rights reserved.
 //         / /       \   
 //        / /  ..    /   pulse_gen_fts.v
 //       / / .'     /    
@@ -2670,7 +2670,7 @@ module `IP_MODULE_NAME(pulse_gen_fts)
 endmodule // pulse_gen_fts
 
 //////////////////////////////////////////////////////////////////////////////
-// Copyright (C) 2013-2019 Efinix Inc. All rights reserved.
+// Copyright (C) 2013-2026 Efinix Inc. All rights reserved.
 //
 // This   document  contains  proprietary information  which   is
 // protected by  copyright. All rights  are reserved.  This notice

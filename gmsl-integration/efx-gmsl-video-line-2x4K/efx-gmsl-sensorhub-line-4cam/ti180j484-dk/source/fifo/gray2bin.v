@@ -1,6 +1,6 @@
 /////////////////////////////////////////////////////////////////////////////
 //           _____       
-//          / _______    Copyright (C) 2013-2020 Efinix Inc. All rights reserved.
+//          / _______    Copyright (C) 2013-2026 Efinix Inc. All rights reserved.
 //         / /       \   
 //        / /  ..    /   gray2bin.v
 //       / / .'     /    
@@ -47,7 +47,7 @@ endgenerate
 endmodule 
 
 ////////////////////////////////////////////////////////////////////////////////
-// Copyright (C) 2013-2020 Efinix Inc. All rights reserved.              
+// Copyright (C) 2013-2026 Efinix Inc. All rights reserved.              
 //
 // This   document  contains  proprietary information  which   is        
 // protected by  copyright. All rights  are reserved.  This notice       

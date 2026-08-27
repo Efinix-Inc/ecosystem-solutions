@@ -1,0 +1,53 @@
+[dumpfile] "C:\Users\DRAGON~1\AppData\Local\Temp\tmpmxbr7jtu\la0tmp_continous.vcd"
+[dumpfile_mtime] "Fri Aug 28 01:55:25 2026"
+[dumpfile_size] 847799
+[savefile] "C:\efinix\gitlab\efx_ecosystem_solutions\gmsl-integration\efx-gmsl-video-line-2x4K\efx-gmsl-video-grabber-line-hdmi\ti180j484-dk\la0_waveform.gtkw"
+[timestart] 0
+[size] 1000 600
+[pos] -1 -1
+*0.000000 c 4096 12288 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[signals_width] 126
+[sst_expanded] 1
+@22
+top.inst_csi_rx_controllers/vc_fanout[0].inst_csi_rx_monitor/de
+top.inst_csi_rx_controllers/vc_fanout[0].inst_csi_rx_monitor/frame_rate[9:0]
+top.inst_csi_rx_controllers/vc_fanout[0].inst_csi_rx_monitor/hsync_per_frame[15:0]
+top.inst_csi_rx_controllers/vc_fanout[0].inst_csi_rx_monitor/hsync_sync
+top.inst_csi_rx_controllers/vc_fanout[0].inst_csi_rx_monitor/pixel_per_line[15:0]
+top.inst_csi_rx_controllers/vc_fanout[0].inst_csi_rx_monitor/vsync_sync
+top.inst_csi_rx_controllers/vc_fanout[1].inst_csi_rx_monitor/de
+top.inst_csi_rx_controllers/vc_fanout[1].inst_csi_rx_monitor/frame_rate[9:0]
+top.inst_csi_rx_controllers/vc_fanout[1].inst_csi_rx_monitor/hsync_sync
+top.inst_csi_rx_controllers/vc_fanout[1].inst_csi_rx_monitor/pixel_per_line[15:0]
+top.inst_csi_rx_controllers/vc_fanout[1].inst_csi_rx_monitor/vsync_sync
+top.inst_csi_rx_controllers/inst_efx_csi2_rx0/mipi_debug_out[31:0]
+top.inst_dma_stream_ctrl/dma_stream_in[0].inst_axi_streamin/r_data_out_count[31:0]
+top.inst_dma_stream_ctrl/dma_stream_in[0].inst_axi_streamin/r_x_count[10:0]
+top.inst_dma_stream_ctrl/dma_stream_in[0].inst_axi_streamin/out_tvalid
+top.inst_dma_stream_ctrl/dma_stream_in[0].inst_axi_streamin/out_tdata[31:0]
+top.inst_dma_stream_ctrl/dma_stream_in[0].inst_axi_streamin/out_tkeep[3:0]
+top.inst_dma_stream_ctrl/dma_stream_in[0].inst_axi_streamin/in_tready
+top.inst_dma_stream_ctrl/dma_stream_in[0].inst_axi_streamin/w_fifo_data_empty
+top.inst_dma_stream_ctrl/dma_stream_in[0].inst_axi_streamin/out_tlast
+top.inst_dma_stream_ctrl/dma_stream_in[0].inst_axi_streamin/in_de
+top.inst_dma_stream_ctrl/dma_stream_in[0].inst_axi_streamin/r_y_count[10:0]
+top.inst_dma_stream_ctrl/dma_stream_in[0].inst_axi_streamin/r_data_in_count[31:0]
+top.inst_dma_stream_ctrl/dma_stream_in[0].inst_axi_streamin/out_tdest[3:0]
+top.inst_dma_stream_ctrl/dma_stream_in[0].inst_axi_streamin/in_vs
+top.inst_dma_stream_ctrl/dma_stream_in[0].inst_axi_streamin/w_fifo_data_full
+top.inst_dma_stream_ctrl/dma_stream_in[0].inst_axi_streamin/in_hs
+top.inst_dma_stream_ctrl/dma_stream_in[1].inst_axi_streamin/in_vs
+top.inst_dma_stream_ctrl/dma_stream_in[1].inst_axi_streamin/out_tlast
+top.inst_dma_stream_ctrl/dma_stream_in[1].inst_axi_streamin/w_fifo_data_full
+top.inst_dma_stream_ctrl/dma_stream_in[1].inst_axi_streamin/debug_data_in_count[31:0]
+top.inst_dma_stream_ctrl/dma_stream_in[1].inst_axi_streamin/in_hs
+top.inst_dma_stream_ctrl/dma_stream_in[1].inst_axi_streamin/out_tdata[31:0]
+top.inst_dma_stream_ctrl/dma_stream_in[1].inst_axi_streamin/w_fifo_data_empty
+top.inst_dma_stream_ctrl/dma_stream_in[1].inst_axi_streamin/out_tdest[3:0]
+top.inst_dma_stream_ctrl/dma_stream_in[1].inst_axi_streamin/in_tready
+top.inst_dma_stream_ctrl/dma_stream_in[1].inst_axi_streamin/out_tvalid
+top.inst_dma_stream_ctrl/dma_stream_in[1].inst_axi_streamin/debug_data_out_count[31:0]
+top.inst_dma_stream_ctrl/dma_stream_in[1].inst_axi_streamin/in_de
+top.inst_dma_stream_ctrl/dma_stream_in[1].inst_axi_streamin/out_tkeep[3:0]
+top.inst_csi_rx_controllers/w_rx_agg_mipi_hs_clk[31:0]
+top.inst_csi_rx_controllers/w_rx_agg_de_throughput[31:0]

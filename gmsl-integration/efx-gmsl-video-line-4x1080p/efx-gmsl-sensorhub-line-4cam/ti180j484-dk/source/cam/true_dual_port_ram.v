@@ -1,6 +1,6 @@
 /////////////////////////////////////////////////////////////////////////////
 //
-// Copyright (C) 2013-2018 Efinix Inc. All rights reserved.
+// Copyright (C) 2013-2026 Efinix Inc. All rights reserved.
 //
 // True Dual Port RAM
 //
