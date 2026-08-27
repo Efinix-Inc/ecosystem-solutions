@@ -1,0 +1,56 @@
+{
+    "args": [
+        "-o",
+        "csi2_hard_mipi_rx",
+        "--base_path",
+        "C:\\efinix\\solution_hub\\ADI_GSML\\CSI2_aggregator\\EFx_GMSL_Grabber_HDMI_Perline\\ip",
+        "--vlnv",
+        {
+            "vendor": "efinixinc.com",
+            "library": "mipi",
+            "name": "efx_csi2_rx_top",
+            "version": "5.15"
+        }
+    ],
+    "conf": {
+        "tINIT_NS": "100000",
+        "NUM_DATA_LANE": "4",
+        "ASYNC_STAGE": "2",
+        "CLOCK_FREQ_MHZ": "100",
+        "PIXEL_FIFO_DEPTH": "4096",
+        "AREGISTER": "8",
+        "Pack_40": "1",
+        "Pack_48": "1",
+        "Pack_56": "1",
+        "Pack_64": "1",
+        "FRAME_MODE": "\"GENERIC\"",
+        "ENABLE_VCX": "0",
+        "MIPI_CSI2_RX_DEBUG": "1'b1",
+        "MIPI_CSI2_RX_PIXEL_SIDEBAND": "1'b1"
+    },
+    "output": {
+        "external_source_source": [
+            "csi2_hard_mipi_rx\\csi2_hard_mipi_rx.sv",
+            "csi2_hard_mipi_rx\\csi2_hard_mipi_rx_define.svh",
+            "csi2_hard_mipi_rx\\csi2_hard_mipi_rx_tmpl.sv",
+            "csi2_hard_mipi_rx\\csi2_hard_mipi_rx_tmpl.vhd"
+        ],
+        "external_example_example": [
+            "csi2_hard_mipi_rx\\Ti180J484_devkit\\csichk.v",
+            "csi2_hard_mipi_rx\\Ti180J484_devkit\\efx_csi2_rx_top.sv",
+            "csi2_hard_mipi_rx\\Ti180J484_devkit\\efx_csi2_tx_top.sv",
+            "csi2_hard_mipi_rx\\Ti180J484_devkit\\reset_ctrl.v",
+            "csi2_hard_mipi_rx\\Ti180J484_devkit\\Ti180_mipi.sdc",
+            "csi2_hard_mipi_rx\\Ti180J484_devkit\\top_2_5g.sv",
+            "csi2_hard_mipi_rx\\Ti180J484_devkit\\vga_chk.v",
+            "csi2_hard_mipi_rx\\Ti180J484_devkit\\vga_gen.v",
+            "csi2_hard_mipi_rx\\Ti180J484_devkit\\csi2_hard_mipi_rx.sv",
+            "csi2_hard_mipi_rx\\Ti180J484_devkit\\csi2_hard_mipi_rx_define.svh",
+            "csi2_hard_mipi_rx\\Ti180J484_devkit\\Ti180_mipi.peri.xml",
+            "csi2_hard_mipi_rx\\Ti180J484_devkit\\Ti180_mipi.xml"
+        ]
+    },
+    "ooc_synthesis": {},
+    "sw_version": "2025.2.288.3.8",
+    "generated_date": "2026-05-11T06:09:47.583722+00:00"
+}
