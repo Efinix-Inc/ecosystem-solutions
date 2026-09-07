@@ -2,12 +2,12 @@
 //           _____       
 //          / _______    Copyright (C) 2013-2026 Efinix Inc. All rights reserved.
 //         / /       \   
-//        / /  ..    /   ti180_oob_top.v
+//        / /  ..    /   efx_gmsl_video_grabber_line_hdmi_top.v
 //       / / .'     /    
 //    __/ /.'      /     Description:
-//   __   \       /       top file for GMSL Video Grabber (HDMI) on TI180M484 dev kit
-//  /_/ /\ \_____/ /      supporting 
-// ____/  \_______/      
+//   __   \       /       top file for Video Grabber (HDMI) of GMSL Video Streaming Demo 
+//  /_/ /\ \_____/ /     Support:   
+// ____/  \_______/       Per Line Mode
 //
 // ***********************************************************************
 // Revisions:

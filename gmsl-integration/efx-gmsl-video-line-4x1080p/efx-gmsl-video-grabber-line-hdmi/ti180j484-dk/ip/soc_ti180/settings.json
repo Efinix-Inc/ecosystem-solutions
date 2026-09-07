@@ -17,7 +17,7 @@
         "HexFile_Path": "\"../../../prebuild/bootloader/bootloader.hex\"",
         "APBSlave0_Size": "65536",
         "DEVKIT_CUSTOM": "\"Titanium Ti180J484 Dev Board\"",
-        "LDSize": "124",
+        "LDSize": "508",
         "LDStackSize": "4",
         "DEVKIT": "14",
         "DEBUG": "1'b1",
