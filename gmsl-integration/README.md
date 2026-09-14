@@ -191,11 +191,13 @@ Note: For the demo with 2 IMX477 cameras connected to the Sensor Hub
                  └── efx-gmsl-video-grabber-line-hdmi-2x4K_combined.hex
 
 ```
-Notice: Prebuilt Bootloader Required
-- This repository excludes prebuilt bootloader binaries (/bootloader) to keep the source tree size manageable.
-- To add the bootloader to your project:Navigate to the Releases page.Find the release matching your current branch or tag.
-- Expand Assets and download the correct prebuilt file.
-- Extract/copy the files into: <your-project-folder>/prebuilt/bootloader/
+**Note:** The file `bootloader.hex` located in `prebuild/bootloader/` is required when updating or regenerating the SoC IP. 
+To access this file:
+- Navigate to the repository **Release** tag.
+- Download `prebuild_vx.x.x.zip`.
+- Extract the ZIP file to the parent directory.
+- Ensure the archive is extracted **prior to** opening the IP configuration or starting the generation process.
+
 
 # Useful Links
 - [Titanium&#8482; Ti180 J484 Development Kit User Guide](https://www.efinixinc.com/support/docsdl.php?s=ef&pn=Ti180J484-DK-UG)  
