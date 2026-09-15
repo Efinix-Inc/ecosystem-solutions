@@ -1,0 +1,775 @@
+////////////////////////////////////////////////////////////////////////////
+//           _____
+//          / _______    Copyright (C) 2013-2022 Efinix Inc. All rights reserved.
+//         / /       \
+//        / /  ..    /
+//       / / .'     /
+//    __/ /.'      /     Description:
+//   __   \       /       Main Controller flow for TI180M484 dev kit OOB design
+//  /_/ /\ \_____/ /
+// ____/  \_______/
+//
+// ***********************************************************************
+
+#include <stdint.h>
+#include <stdlib.h>
+#include <string.h>
+#include "bsp.h"
+#include "userdef.h"
+#include "intc.h"
+#include "mmc.h"
+#include "common.h"
+#include "efx_mmc_driver.h"
+#include "sdhc_driver.h"
+#include "dma_video_Stream.h"
+#include "dmasg.h"
+#include "PiCamDriver.h"
+#include "IMX477_Driver.h"
+
+#include "GMSL_SerDes.h"
+
+
+
+#define MAX_SPRIT_LINE		2
+#define MAX_LINE_OUT		1080
+
+#define START_MEM_ADDR			0x2000000
+#define START_FRAMEBUFFER_ADDR	START_MEM_ADDR
+#define START_DESCRIPTOR_ADDR	START_FRAMEBUFFER_ADDR + 0x400000
+#define START_SD_BUF_ADDR		START_DESCRIPTOR_ADDR  + 0x100000
+#define START_SD_RDBUF_ADDR		START_SD_BUF_ADDR	   + 0x100000
+#define START_DESCRIPTOR_ADDR_input		START_SD_RDBUF_ADDR	   + 0x100000
+#define START_DESCRIPTOR_ADDR_output		START_DESCRIPTOR_ADDR_input	   + 0x100000
+
+
+#define mem_framebuffer ((uint32_t*)START_FRAMEBUFFER_ADDR)
+
+
+
+
+
+#define OutFrameLine
+
+#define IMX477_ENABLE			0
+#define GMSL_SerDes_ENABLE			1
+
+uint32_t * framebuffer_ptr[10];
+
+#define descriptors0  ((  struct dmasg_descriptor __attribute__ ((aligned (64))) *   )START_DESCRIPTOR_ADDR)
+#define descriptors_input  ((  struct dmasg_descriptor __attribute__ ((aligned (64))) *   )START_DESCRIPTOR_ADDR_input)
+#define descriptors_output  ((  struct dmasg_descriptor __attribute__ ((aligned (64))) *   )START_DESCRIPTOR_ADDR_output)
+
+
+
+
+int32_t cam_brightness = BRIGHTNESS_DEFAULT;
+int32_t cam_gain_r	   = GAIN_R_DEFAULT;
+int32_t cam_gain_g	   = GAIN_G_DEFAULT;
+int32_t cam_gain_b	   = GAIN_B_DEFAULT;
+
+
+#define buf ((char*) START_SD_BUF_ADDR)
+#define rd_buf ((char*) START_SD_BUF_ADDR)
+
+u32 lastChannel = DMASG_CHANNEL2;
+u32 swithCmdPtr = 0;
+
+#define program_mem ((volatile uint32_t*)(0x1000)) // DDR Start Address of Ruby
+#define data_mem ((volatile uint32_t*)(0x100000)) // DDR Start Address of Ruby
+
+void check_sd(u32 testtype);
+void cmd_operation(uint8_t key );
+
+void cmd_cam_brightnes(u8 AGain, u16 DGain);
+void cmd_cam_colour_gain( u16 gain_r, u16 gain_g, u16 gain_b);
+
+
+int camStatus[4];
+
+int last_overlay_type = 0;
+
+
+struct cs_sg_descriptor cs_descriptor_csi_TX[4];
+struct cs_sg_descriptor cs_descriptor_csi_RX[4];
+
+
+volatile struct dmasg_descriptor input_descriptor[40] __attribute__ ((aligned (64)));
+
+void print(uint8_t * data) {
+      uart_writeStr(BSP_UART_TERMINAL, data);
+    }
+
+
+
+void check_sd(u32 testtype){
+
+	struct mmc *mmc;
+	struct mmc_cmd *cmd;
+	struct mmc_data *data;
+	struct mmc_config *cfg;
+	struct mmc_ops *ops;
+	int fail=1;
+	u32 total_block_n,n;
+	u32 timer_start,timer_end;
+	u32 rd_timer_start,rd_timer_end;
+	u32 ts,te;
+
+	bsp_uDelay(1000000);
+
+	mmc=malloc(sizeof(struct mmc));
+	cfg=malloc(sizeof(struct mmc_config));
+	ops=malloc(sizeof(struct mmc_ops));
+	cmd=malloc(sizeof(struct mmc_cmd));
+	data=malloc(sizeof(struct mmc_data));
+
+
+
+	bsp_printf("\n\r--- EFX-SD Card Demo ---\n\r");
+	bsp_printf("\r\nInitialize...:");
+
+	//Allocation Struct Space
+
+	memset(mmc, 0, sizeof(struct mmc));
+	memset(cfg, 0, sizeof(struct mmc_config));
+	memset(ops, 0, sizeof(struct mmc_ops));
+	memset(cmd, 0, sizeof(struct mmc_cmd));
+	memset(data, 0, sizeof(struct mmc_data));
+	memset(buf, 0, (sizeof(char)*BLOCK_SIZE*MAX_BLK_BUF));
+	memset(rd_buf, 0, (sizeof(char)*BLOCK_SIZE*MAX_BLK_BUF));
+
+	mmc->cfg = cfg;		//pass the pointer after malloc in struct
+	mmc->cfg->ops = ops;//pass the pointer after malloc in struct
+
+	sd_ctrl_mmc_probe(mmc,PROBE_ADDR); //init SD Card driver
+
+	//u32 apb3_rd = APB3_REGR(OOB_APB_SLV, APB3_SLV0_REG1_LED);
+	//	apb3_rd &= (~0x038);
+	//	APB3_REGW(OOB_APB_SLV, APB3_SLV0_REG1_LED, apb3_rd);
+
+	IntcSDInitialize(mmc);	// init interrupt
+	if(SD_CardInitial(mmc,cmd))	//init SD Card
+	{
+	//	apb3_rd |= 0x08;
+	//	APB3_REGW(OOB_APB_SLV, APB3_SLV0_REG1_LED, apb3_rd);
+	//	bsp_printf("SD Initial Error \r\n\n");
+		return;
+	}
+//	apb3_rd |= 0x10;
+//	APB3_REGW(OOB_APB_SLV, APB3_SLV0_REG1_LED, apb3_rd);
+
+	bsp_printf("Done\r\n\n");
+
+	if(DEBUG_PRINTF_EN == 1)
+		bsp_printf("**************WR ADDR 0x%x Rd ADDR 0x%x\r\n",buf,rd_buf);
+
+	SD_InitRandomBuff(buf,BLOCK_SIZE*MAX_BLK_BUF);	//init write buffer with random data;
+
+	u32 speed = mmc->tran_speed;
+	speed = speed/1000;
+
+	//Read/Write Test with Speed
+
+	//!!!!warning it will crash the SD card data!!!!
+
+	total_block_n = ((u32)(mmc->capacity/512));
+
+	bsp_printf("**************START SD Card TEST*******************\r\n");
+	bsp_printf("**SD CLOCK SPEED = %d\r\n",SD_CLK_FREQ);
+	bsp_printf("**CARD SPEED = %d kHz\r\n", speed); // mmc->tran_speed/1000);
+	bsp_printf("**CARD SIZE = %d Mbyte Total BLOCK = %d\r\n",(u32)(mmc->capacity/1024/1024),total_block_n);
+	bsp_printf("**SD BUS WIDTH = %d\r\n",mmc->bus_width);
+	bsp_printf("**BLOCK SIZE = %d BUFFER OF BLOCK = %d\r\n",BLOCK_SIZE,MAX_BLK_BUF);
+	bsp_printf("**TEST SIZE = %d kbyte\r\n",(BLOCK_SIZE*MAX_BLK_BUF)/1024);
+	bsp_printf("*************************************************\r\n");
+	char temp_udata;
+
+
+
+
+
+	if (testtype!=0)
+	{
+
+		bsp_printf("\r\n!!!!Warning ! The following test will over write data on each memory blocks of the SD card !!!!");
+		bsp_printf("\r\n!!!!it will crash the SD card data ,Push q or Q to quit the test !!!!");
+		bsp_printf("\r\nOr you could push Any Key to Continue the test and you could push q or Q to quit the test any time! \r\n\n");
+
+
+		while(1)
+		{
+			temp_udata = uart_read(BSP_UART_TERMINAL);
+			if(temp_udata!=0)
+				break;
+		}
+
+		if( (temp_udata!='q') && (temp_udata!='Q') )
+		{
+			bsp_printf("\r\nStart to Memory Blocks Write/Read Access test! \r\n\n");
+
+
+
+			for(n=0;n<total_block_n;n+=MAX_BLK_BUF)
+					{
+						SD_EraseBlk(mmc,cmd,0,MAX_BLK_BUF);	//erase Block
+
+						timer_start=(u32)machineTimer_getTime(BSP_MACHINE_TIMER);	//get write start time
+						SD_WRITE_BLOCK(mmc,0,buf,MAX_BLK_BUF);						//write block
+						timer_end=(u32)machineTimer_getTime(BSP_MACHINE_TIMER);		//get write finish time
+						//while(1){}
+						rd_timer_start=(u32)machineTimer_getTime(BSP_MACHINE_TIMER);	//get read start time
+						SD_READ_BLOCK(mmc,0,rd_buf,MAX_BLK_BUF);
+						rd_timer_end=(u32)machineTimer_getTime(BSP_MACHINE_TIMER);		//get read finish time
+
+
+						SD_ReadWriteCompare(buf,rd_buf,timer_start,timer_end,rd_timer_start,rd_timer_end,MAX_BLK_BUF,n,total_block_n);	//compare 2 buffer with speed calculation
+
+						if(uart_readOccupancy(BSP_UART_TERMINAL) != 0)
+						{
+								        	temp_udata = read_u32(BSP_UART_TERMINAL + UART_DATA);
+
+								  		  bsp_putString("echo character:");
+								  				            bsp_putChar(temp_udata);
+								  				            bsp_putString("\n\r");
+
+								        	if ( (temp_udata =='q') || (temp_udata =='Q') )
+								        	{
+								        		bsp_printf("\r\nQuit the Memory Blocks Write/Read Access test! \r\n\n");
+								        		break;
+								        	}
+
+								      }
+
+
+
+					}
+
+		}
+		else
+		{
+			bsp_printf("\r\nQuit the Memory Blocks Write/Read Access test! \r\n\n");
+		}
+
+
+	}
+
+
+}
+
+
+
+void inital_video_stream()
+{
+	mipi_i2c_init();
+	u32 apb3_rd = APB3_REGR(OOB_APB_SLV, APB3_SLV0_REG1_LED);
+	apb3_rd &= (~0x07);
+
+	int result;
+
+	for(int i=0;i<FRAME_SIZE*8; i++)
+	{
+		mem_framebuffer[i] = 0x00000000;
+	}
+	framebuffer_ptr[0] =  mem_framebuffer;
+
+	framebuffer_ptr[1] =  mem_framebuffer  +FRAME_SIZE*1;
+	framebuffer_ptr[2] =  mem_framebuffer  +FRAME_SIZE*2;
+	framebuffer_ptr[3] =  mem_framebuffer  +FRAME_SIZE*3;
+	framebuffer_ptr[4] =  mem_framebuffer  +FRAME_SIZE*4;
+
+
+	framebuffer_ptr[5] = mem_framebuffer  +FRAME_SIZE*5;
+	framebuffer_ptr[6] = mem_framebuffer  +FRAME_SIZE*6;
+	framebuffer_ptr[7] = mem_framebuffer  +FRAME_SIZE*7;
+	framebuffer_ptr[8] = mem_framebuffer  +FRAME_SIZE*8;
+	framebuffer_ptr[9] = mem_framebuffer  +FRAME_SIZE*9;
+
+
+	bsp_printf(" Cameras Initial 4 !\n\r");
+
+	mipi_i2c_init();
+
+
+
+	for(int x=0; x<4; x++)
+	{
+		camStatus[x] = 0;
+		APB3_REGW(OOB_APB_SLV, APB3_SLV_REG12_I2C_CAM_SEL, x);
+
+
+/*
+
+		if(GMSL_SerDes_ENABLE==1)
+		{
+
+			bsp_printf("GMSL Initial!\n\r",x );
+			if(GMSL_SerDes_init())
+			{
+				bsp_printf("GMSL Serilizer and Deserilizer Initial Error!\n\r",x );
+			}
+			else {
+				bsp_printf("GMSL Serilizer and Deserilizer Initial Done!\n\r",x);
+			}
+		}
+
+*/
+		if (IMX477_ENABLE == 1)
+		{
+			if(imx477_init())
+			{
+				bsp_printf("IMX477 Camera %d Initial Error !\n\r",x );
+			}
+			else {
+				camStatus[x] =1;
+				bsp_printf("IMX477 Camera %d Initial Done !\n\r",x);
+			}
+
+		}
+		else {
+
+			if(PiCam_init()){
+					bsp_printf("Pi Camera %d Initial Error !\n\r",x );
+				}
+			else {
+				camStatus[x] =1;
+				bsp_printf("Pi Camera %d Initial Done !\n\r",x);
+			}
+		}
+
+
+		bsp_uDelay(200000);
+
+	}
+
+
+
+	APB3_REGW(OOB_APB_SLV, APB3_SLV0_REG1_LED, apb3_rd);
+
+
+
+
+//	cmd_cam_brightnes((cam_brightness/0x1000)&0xff, cam_brightness&0xfff);
+//	cmd_cam_colour_gain(cam_gain_r, cam_gain_g, cam_gain_b);
+
+
+
+//	cmd_operation('1');
+}
+
+
+
+#define MASK_ALL  	0x03
+#define MASK_SW1	( MASK_ALL & (~0x01) )
+#define MASK_SW2	( MASK_ALL & (~0x02) )
+#define MASK_SW3	( MASK_ALL & (~0x04) )
+
+void cmd_cam_brightnes(u8 AGain, u16 DGain)
+{
+
+
+	for(int x=0; x<4; x++)
+	{
+		APB3_REGW(OOB_APB_SLV, APB3_SLV_REG12_I2C_CAM_SEL, x);
+		if(camStatus[x]!=0)
+		{
+			if( PiCam_Gainfilter(AGain,DGain) ){
+				bsp_printf("Pi Camera %d Brightness Error !\n\r",x );
+			}
+			else
+			{
+				bsp_printf("Pi Camera %d Brightness Done !\n\r",x);
+				bsp_printf("AGain: 0x%x\n\r",AGain);
+				bsp_printf("DGain: 0x%x\n\r",DGain);
+
+			}
+
+		}
+		bsp_uDelay(200000);
+
+	}
+
+}
+
+void cmd_cam_colour_gain( u16 gain_r, u16 gain_g, u16 gain_b)
+{
+
+	for(int x=0; x<4; x++)
+	{
+		APB3_REGW(OOB_APB_SLV, APB3_SLV_REG12_I2C_CAM_SEL, x);
+		if(camStatus[x]!=0)
+		{
+
+			if (IMX477_ENABLE !=1)
+			{
+			 if ( PiCam_WriteRegData(gain_r_1, (gain_r/0x100)&0xff) ==0 )
+			 {
+				 PiCam_WriteRegData(gain_r_0, gain_r&0xff);
+				 PiCam_WriteRegData(gain_GR_1, (gain_g/0x100)&0xff);
+				 PiCam_WriteRegData(gain_GR_0, gain_g&0xff);
+
+				 PiCam_WriteRegData(gain_GB_1, (gain_g/0x100)&0xff);
+				 PiCam_WriteRegData(gain_GB_0, gain_g&0xff);
+
+				 PiCam_WriteRegData(gain_B_1, (gain_b/0x100)&0xff);
+				 PiCam_WriteRegData(gain_B_0, gain_b&0xff);
+				 bsp_printf("Pi Camera %d Colour !\n\r",x);
+				 bsp_printf("Red Gain: 0x%x\n\r",gain_r);
+				 bsp_printf("Green Gain: 0x%x\n\r",gain_g);
+				 bsp_printf("Blue Gain: 0x%x\n\r",gain_b);
+
+			 }
+			}
+			else {
+
+		 	 	/* if ( imx477_WriteRegData(IMX477_DIG_GAIN_R_HI, (gain_r/0x100)&0xff) ==0 )
+					 {
+		 	 		 	 imx477_WriteRegData(IMX477_DIG_GAIN_R_LO, gain_r&0xff);
+		 	 		 	 imx477_WriteRegData(IMX477_DIG_GAIN_GR_HI, (gain_g/0x100)&0xff);
+		 	 		 	 imx477_WriteRegData(IMX477_DIG_GAIN_GR_LO, gain_g&0xff);
+
+		 	 		 	 imx477_WriteRegData(IMX477_DIG_GAIN_GB_HI, (gain_g/0x100)&0xff);
+		 	 		 	 imx477_WriteRegData(IMX477_DIG_GAIN_GB_LO, gain_g&0xff);
+
+		 	 		 	 imx477_WriteRegData(IMX477_DIG_GAIN_B_HI, (gain_b/0x100)&0xff);
+		 	 		 	 imx477_WriteRegData(IMX477_DIG_GAIN_B_LO, gain_b&0xff);
+						 bsp_printf("Pi Camera %d Colour !\n\r",x);
+						 bsp_printf("Red Gain: 0x%x\n\r",gain_r);
+						 bsp_printf("Green Gain: 0x%x\n\r",gain_g);
+						 bsp_printf("Blue Gain: 0x%x\n\r",gain_b);
+
+					 }*/
+
+
+				// 1. START Group Hold
+				imx477_WriteRegData(0x0104, 0x01);
+
+				// 2. Set Safe Exposure for VMAX=1551 (e.g., 1000 lines = 0x03E8)
+				// Must be strictly LESS than 0x060B (1547)
+				imx477_WriteRegData(IMX477_REG_EXPOSURE,   0x03);
+				imx477_WriteRegData(IMX477_REG_EXPOSURE+1, 0xE8);
+
+				// 3. Set Baseline Analog Gain (0x0000 = 1.0x / 0dB)
+				imx477_WriteRegData(IMX477_REG_ANALOG_GAIN,   0x00);
+				imx477_WriteRegData(IMX477_REG_ANALOG_GAIN+1, 0x00);
+
+				// 4. Write Calibrated Digital Gains (U8.8 Fixed-Point Format)
+				// Green = 1.0x (0x0100), Red = ~1.62x (0x01A0), Blue = ~1.43x (0x0170)
+				imx477_WriteRegData(IMX477_DIG_GAIN_R_HI,  0x01); // Red Hi (0x020E)
+				imx477_WriteRegData(IMX477_DIG_GAIN_R_LO,  0xA0); // Red Lo (0x020F)
+
+				imx477_WriteRegData(IMX477_DIG_GAIN_GR_HI, 0x01); // GR Hi  (0x0210)
+				imx477_WriteRegData(IMX477_DIG_GAIN_GR_LO, 0x00); // GR Lo  (0x0211)
+
+				imx477_WriteRegData(IMX477_DIG_GAIN_GB_HI, 0x01); // GB Hi  (0x0212)
+				imx477_WriteRegData(IMX477_DIG_GAIN_GB_LO, 0x00); // GB Lo  (0x0213)
+
+				imx477_WriteRegData(IMX477_DIG_GAIN_B_HI,  0x01); // Blue Hi(0x0214)
+				imx477_WriteRegData(IMX477_DIG_GAIN_B_LO,  0x70); // Blue Lo(0x0215)
+
+				// 5. END Group Hold (Commit parameters atomically)
+				imx477_WriteRegData(0x0104, 0x00);
+			}
+		}
+		bsp_uDelay(200000);
+
+	}
+
+}
+
+
+void overlay_update(uint32_t type)
+{
+
+	/*if (last_overlay_type != type)
+	{
+		if(last_overlay_type != 7 )
+		{
+		//	framebuffer_pattern(framebuffer_ptr[4],3,0);//Buffer for Overlay Mask
+		}
+		else if(type == 6)
+		{
+		 	framebuffer_overlayFrame(framebuffer_ptr[4], 0, 	960, 	0, 		540,	 8, 8);
+			framebuffer_overlayFrame(framebuffer_ptr[4], 0, 	960, 	540, 	1080,	 8, 8);
+			framebuffer_overlayFrame(framebuffer_ptr[4], 960, 	1920,	0, 		540,	 8, 8);
+			framebuffer_overlayFrame(framebuffer_ptr[4], 960, 	1920, 	540, 	1080,	 8, 8);
+		}
+
+
+		if (type == 7) {
+			framebuffer_pattern(framebuffer_ptr[4],3,0);//Buffer for Overlay Mask
+		}
+		else if (type == 6)
+		{
+		 	framebuffer_overlayFrame(framebuffer_ptr[4], 0, 	960, 	0, 		540,	 8, 1);
+		 	framebuffer_overlayFrame(framebuffer_ptr[4], 0, 	960, 	540, 	1080,	 8, 1);
+		 	framebuffer_overlayFrame(framebuffer_ptr[4], 960, 	1920,	0, 		540,	 8, 1);
+		 	framebuffer_overlayFrame(framebuffer_ptr[4], 960, 	1920, 	540, 	1080,	 8, 1);
+		}
+	}
+
+	last_overlay_type = type;
+*/
+}
+
+
+void cmd_operation(uint8_t key )
+{
+	if(key == '1')
+	{
+		swithCmdPtr = 0;
+		dma_video_out_stop();
+		APB3_REGW(OOB_APB_SLV, APB3_SLV_REG_STREAM_OUT, 0x00  | 0x70);
+     	bsp_uDelay(200000);
+     //  	overlay_update(1);
+ 		dma_video_out_execution( framebuffer_ptr[DMASG_CHANNEL0], framebuffer_ptr[DMASG_CHANNEL0]);
+     	APB3_REGW(OOB_APB_SLV, APB3_SLV_REG_STREAM_OUT, 0x05  | 0x70);
+
+	}
+	else if (key == '2')
+	{
+		swithCmdPtr = 1;
+		dma_video_out_stop();
+		APB3_REGW(OOB_APB_SLV, APB3_SLV_REG_STREAM_OUT, 0x00  | 0x70);
+		bsp_uDelay(200000);
+    //	overlay_update(2);
+     	dma_video_out_execution( framebuffer_ptr[DMASG_CHANNEL1], framebuffer_ptr[DMASG_CHANNEL1]);
+    	APB3_REGW(OOB_APB_SLV, APB3_SLV_REG_STREAM_OUT, 0x05  | 0x70);
+	}
+	else if (key == '3')
+	{
+		swithCmdPtr = 2;
+		dma_video_out_stop();
+		APB3_REGW(OOB_APB_SLV, APB3_SLV_REG_STREAM_OUT, 0x00  | 0x70);
+		bsp_uDelay(200000);
+	 // 	overlay_update(3);
+ 		dma_video_out_execution( framebuffer_ptr[DMASG_CHANNEL2], framebuffer_ptr[DMASG_CHANNEL2]);
+		APB3_REGW(OOB_APB_SLV, APB3_SLV_REG_STREAM_OUT, 0x05  | 0x70);
+	}
+	else if (key == '4')
+	{
+		swithCmdPtr = 3;
+		dma_video_out_stop();
+		APB3_REGW(OOB_APB_SLV, APB3_SLV_REG_STREAM_OUT, 0x00  | 0x70);
+		bsp_uDelay(200000);
+		dma_video_out_execution( framebuffer_ptr[DMASG_CHANNEL3], framebuffer_ptr[DMASG_CHANNEL3]);
+		APB3_REGW(OOB_APB_SLV, APB3_SLV_REG_STREAM_OUT, 0x05  | 0x70);
+	}
+	else if (key == '5')
+	{
+		swithCmdPtr = 4;
+		dma_video_out_stop();
+		APB3_REGW(OOB_APB_SLV, APB3_SLV_REG_STREAM_OUT, 0x00  | 0x70);
+		bsp_uDelay(200000);
+		dma_video_out_split4_frame(framebuffer_ptr[0],framebuffer_ptr[1], framebuffer_ptr[2], framebuffer_ptr[3], descriptors0 );
+		APB3_REGW(OOB_APB_SLV, APB3_SLV_REG_STREAM_OUT, 0x05  | 0x70);
+
+
+	}
+	else if (key == 'u')
+	{
+		check_sd(0);
+	}
+	else if (key == 'v')
+	{
+		check_sd(1);
+	}
+
+	else if (key =='l')
+	{
+		cam_brightness += BRIGHTNESS_STEP;
+		if(cam_brightness>=BRIGHTNESS_MAX)
+		{
+			cam_brightness = BRIGHTNESS_MAX;
+		}
+		bsp_printf("cam_brightness: 0x%x\n\r",cam_brightness);
+		cmd_cam_brightnes((cam_brightness/0x1000)&0xff, cam_brightness&0xfff);
+
+	}
+	else if (key == 'L')
+	{
+		cam_brightness -= BRIGHTNESS_STEP;
+		if(cam_brightness<=BRIGHTNESS_MIN)
+		{
+			cam_brightness = BRIGHTNESS_MIN;
+		}
+		bsp_printf("cam_brightness: 0x%x\n\r",cam_brightness);
+		cmd_cam_brightnes((cam_brightness/0x1000)&0xff, cam_brightness&0xfff);
+
+	}
+	else if (key =='r')
+	{
+		cam_gain_r += GAIN_R_STEP;
+		if(cam_gain_r>=GAIN_R_MAX)
+		{
+			cam_gain_r = GAIN_R_MAX;
+		}
+		//bsp_printf("cam_gain_r: 0x%x\n\r",cam_gain_r);
+		cmd_cam_colour_gain(cam_gain_r, cam_gain_g, cam_gain_b);
+	}
+	else if (key =='R')
+	{
+		cam_gain_r -= GAIN_R_STEP;
+		if(cam_gain_r<=GAIN_R_MIN)
+		{
+			cam_gain_r = GAIN_R_MIN;
+		}
+		//bsp_printf("cam_gain_r: 0x%x\n\r",cam_gain_r);
+		cmd_cam_colour_gain(cam_gain_r, cam_gain_g, cam_gain_b);
+	}
+
+	else if (key =='g')
+	{
+		cam_gain_g += GAIN_G_STEP;
+		if(cam_gain_g>=GAIN_G_MAX)
+		{
+			cam_gain_g = GAIN_G_MAX;
+		}
+		cmd_cam_colour_gain(cam_gain_r, cam_gain_g, cam_gain_b);
+	}
+	else if (key =='G')
+	{
+		cam_gain_g -= GAIN_G_STEP;
+		if(cam_gain_g<=GAIN_G_MIN)
+		{
+			cam_gain_g = GAIN_G_MIN;
+		}
+		cmd_cam_colour_gain(cam_gain_r, cam_gain_g, cam_gain_b);
+	}
+
+	else if (key =='b')
+	{
+			cam_gain_b += GAIN_B_STEP;
+			if(cam_gain_b>=GAIN_B_MAX)
+			{
+				cam_gain_b = GAIN_B_MAX;
+			}
+			cmd_cam_colour_gain(cam_gain_r, cam_gain_g, cam_gain_b);
+	}
+	else if (key =='B')
+	{
+			cam_gain_b -= GAIN_B_STEP;
+			if(cam_gain_b <= GAIN_B_MIN)
+			{
+				cam_gain_b = GAIN_B_MIN;
+			}
+			cmd_cam_colour_gain(cam_gain_r, cam_gain_g, cam_gain_b);
+	}
+
+}
+
+u32 last_switch = MASK_ALL;
+u32 NextDisplayMode	= 0x01; // next display mode 0: Camera Mode, 1: Colour Pattern Mode, 2:All Black Pattern Mode
+
+
+
+void switch2cmd()
+{
+	uint8_t command[5] = {'1','2','3','4','5'};
+
+	swithCmdPtr++;
+	if(swithCmdPtr>=5)
+	{
+		swithCmdPtr=0;
+
+	}
+	cmd_operation(command[swithCmdPtr]);
+
+}
+void swtich_event()
+{
+
+	u32 rd_apb3 = APB3_REGR(OOB_APB_SLV, APB3_SLV_REG5_SW_IN);
+	rd_apb3 &= MASK_ALL;
+
+
+	if(last_switch!=rd_apb3)
+	{
+		//bsp_printf("Event Switch 0x%x\n\r",rd_apb3);
+		u32 apb3_rd = APB3_REGR(OOB_APB_SLV, APB3_SLV0_REG1_LED);
+		apb3_rd &= (~0x02);
+		APB3_REGW(OOB_APB_SLV, APB3_SLV0_REG1_LED, apb3_rd);
+
+
+		if(rd_apb3 != MASK_ALL)
+		{
+			rd_apb3 = APB3_REGR(OOB_APB_SLV, APB3_SLV_REG5_SW_IN);
+			rd_apb3 &= MASK_ALL;
+
+		}
+
+
+		if(rd_apb3==MASK_SW1)
+		{
+			 bsp_printf("Event Switch 0\n\r");
+
+		}
+		else if(rd_apb3==MASK_SW2)
+		{
+			 bsp_printf("Event Switch 1\n\r");
+			 switch2cmd();
+		}
+	}
+
+	last_switch = rd_apb3;
+
+
+
+}
+
+void main(){
+	int index=0;
+
+	bsp_printf("************** TI180 OOBTest *******************\r\n");
+	bsp_printf("Version :  %s\r\n", VERSION);
+
+
+	uint8_t key;
+
+	IntcInitialize();
+
+	u32 HardConfig = APB3_REGR(OOB_APB_SLV, APB3_SLV_REG_HARD_CONFIG);
+	bsp_printf("Hardware Configuration Code: 0x%x\n\r",HardConfig);
+
+
+	bsp_printf("Waiting To Start Stream TX!\n\r");
+
+	APB3_REGW(OOB_APB_SLV, APB3_SLV_REG_STREAM_OUT, 0x00 | 0x30 );
+	bsp_uDelay(100000);
+
+	APB3_REGW(OOB_APB_SLV, APB3_SLV_REG_STREAM_OUT, 0x00 | 0x70 );
+	bsp_uDelay(100000);
+
+/*
+	 while(1)
+	 {
+		if(uart_readOccupancy(BSP_UART_TERMINAL)){
+			key=uart_read(BSP_UART_TERMINAL);
+			bsp_printf("Start initial Video TX!\n\r");
+
+			break;
+		}
+		  bsp_uDelay(100000);
+	}*/
+
+
+	inital_video_stream();
+
+	  while(1)
+	    {
+	        if(uart_readOccupancy(BSP_UART_TERMINAL)){
+	        	key=uart_read(BSP_UART_TERMINAL);
+	            bsp_putString("echo character:");
+	            bsp_putChar(key);
+	            bsp_putString("\n\r");
+
+
+	           // cmd_operation(key );
+
+
+	        }
+	        bsp_uDelay(100000);
+	        swtich_event();
+
+	    }
+
+
+}

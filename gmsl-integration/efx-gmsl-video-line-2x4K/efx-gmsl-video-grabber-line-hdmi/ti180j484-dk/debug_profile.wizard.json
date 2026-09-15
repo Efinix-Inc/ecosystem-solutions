@@ -1,0 +1,4139 @@
+{
+    "debug_cores": [
+        {
+            "name": "la0",
+            "type": "la",
+            "uuid": "824a10f5221b4b2096f7ac71a8e47a03",
+            "trigin_en": false,
+            "trigout_en": false,
+            "auto_inserted": true,
+            "capture_control": false,
+            "data_depth": 8192,
+            "input_pipeline": 1,
+            "probes": [
+                {
+                    "name": "inst_csi_rx_controllers/vc_fanout[0].inst_csi_rx_monitor/de",
+                    "width": 1,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_csi_rx_controllers/vc_fanout[0].inst_csi_rx_monitor/frame_rate",
+                    "width": 10,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_csi_rx_controllers/vc_fanout[0].inst_csi_rx_monitor/hsync_per_frame",
+                    "width": 16,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_csi_rx_controllers/vc_fanout[0].inst_csi_rx_monitor/hsync_sync",
+                    "width": 1,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_csi_rx_controllers/vc_fanout[0].inst_csi_rx_monitor/pixel_per_line",
+                    "width": 16,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_csi_rx_controllers/vc_fanout[0].inst_csi_rx_monitor/vsync_sync",
+                    "width": 1,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_csi_rx_controllers/vc_fanout[1].inst_csi_rx_monitor/de",
+                    "width": 1,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_csi_rx_controllers/vc_fanout[1].inst_csi_rx_monitor/frame_rate",
+                    "width": 10,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_csi_rx_controllers/vc_fanout[1].inst_csi_rx_monitor/hsync_sync",
+                    "width": 1,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_csi_rx_controllers/vc_fanout[1].inst_csi_rx_monitor/pixel_per_line",
+                    "width": 16,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_csi_rx_controllers/vc_fanout[1].inst_csi_rx_monitor/vsync_sync",
+                    "width": 1,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_csi_rx_controllers/inst_efx_csi2_rx0/mipi_debug_out",
+                    "width": 32,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_dma_stream_ctrl/dma_stream_in[0].inst_axi_streamin/r_data_out_count",
+                    "width": 32,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_dma_stream_ctrl/dma_stream_in[0].inst_axi_streamin/r_x_count",
+                    "width": 11,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_dma_stream_ctrl/dma_stream_in[0].inst_axi_streamin/out_tvalid",
+                    "width": 1,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_dma_stream_ctrl/dma_stream_in[0].inst_axi_streamin/out_tdata",
+                    "width": 32,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_dma_stream_ctrl/dma_stream_in[0].inst_axi_streamin/out_tkeep",
+                    "width": 4,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_dma_stream_ctrl/dma_stream_in[0].inst_axi_streamin/in_tready",
+                    "width": 1,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_dma_stream_ctrl/dma_stream_in[0].inst_axi_streamin/w_fifo_data_empty",
+                    "width": 1,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_dma_stream_ctrl/dma_stream_in[0].inst_axi_streamin/out_tlast",
+                    "width": 1,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_dma_stream_ctrl/dma_stream_in[0].inst_axi_streamin/in_de",
+                    "width": 1,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_dma_stream_ctrl/dma_stream_in[0].inst_axi_streamin/r_y_count",
+                    "width": 11,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_dma_stream_ctrl/dma_stream_in[0].inst_axi_streamin/r_data_in_count",
+                    "width": 32,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_dma_stream_ctrl/dma_stream_in[0].inst_axi_streamin/out_tdest",
+                    "width": 4,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_dma_stream_ctrl/dma_stream_in[0].inst_axi_streamin/in_vs",
+                    "width": 1,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_dma_stream_ctrl/dma_stream_in[0].inst_axi_streamin/w_fifo_data_full",
+                    "width": 1,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_dma_stream_ctrl/dma_stream_in[0].inst_axi_streamin/in_hs",
+                    "width": 1,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_dma_stream_ctrl/dma_stream_in[1].inst_axi_streamin/in_vs",
+                    "width": 1,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_dma_stream_ctrl/dma_stream_in[1].inst_axi_streamin/out_tlast",
+                    "width": 1,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_dma_stream_ctrl/dma_stream_in[1].inst_axi_streamin/w_fifo_data_full",
+                    "width": 1,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_dma_stream_ctrl/dma_stream_in[1].inst_axi_streamin/debug_data_in_count",
+                    "width": 32,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_dma_stream_ctrl/dma_stream_in[1].inst_axi_streamin/in_hs",
+                    "width": 1,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_dma_stream_ctrl/dma_stream_in[1].inst_axi_streamin/out_tdata",
+                    "width": 32,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_dma_stream_ctrl/dma_stream_in[1].inst_axi_streamin/w_fifo_data_empty",
+                    "width": 1,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_dma_stream_ctrl/dma_stream_in[1].inst_axi_streamin/out_tdest",
+                    "width": 4,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_dma_stream_ctrl/dma_stream_in[1].inst_axi_streamin/in_tready",
+                    "width": 1,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_dma_stream_ctrl/dma_stream_in[1].inst_axi_streamin/out_tvalid",
+                    "width": 1,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_dma_stream_ctrl/dma_stream_in[1].inst_axi_streamin/debug_data_out_count",
+                    "width": 32,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_dma_stream_ctrl/dma_stream_in[1].inst_axi_streamin/in_de",
+                    "width": 1,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_dma_stream_ctrl/dma_stream_in[1].inst_axi_streamin/out_tkeep",
+                    "width": 4,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_csi_rx_controllers/w_rx_agg_mipi_hs_clk",
+                    "width": 32,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_csi_rx_controllers/w_rx_agg_de_throughput",
+                    "width": 32,
+                    "probe_type": 1
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "command": "add_ports",
+            "id": 1,
+            "args": {
+                "netlist": "efx_gmsl_video_grabber_line_hdmi_top",
+                "ports": [
+                    {
+                        "name": "jtag_inst2_autodbg_CAPTURE__",
+                        "dir": "in",
+                        "width": 1
+                    },
+                    {
+                        "name": "jtag_inst2_autodbg_DRCK__",
+                        "dir": "in",
+                        "width": 1
+                    },
+                    {
+                        "name": "jtag_inst2_autodbg_RESET__",
+                        "dir": "in",
+                        "width": 1
+                    },
+                    {
+                        "name": "jtag_inst2_autodbg_RUNTEST__",
+                        "dir": "in",
+                        "width": 1
+                    },
+                    {
+                        "name": "jtag_inst2_autodbg_SEL__",
+                        "dir": "in",
+                        "width": 1
+                    },
+                    {
+                        "name": "jtag_inst2_autodbg_SHIFT__",
+                        "dir": "in",
+                        "width": 1
+                    },
+                    {
+                        "name": "jtag_inst2_autodbg_TCK__",
+                        "dir": "in",
+                        "width": 1
+                    },
+                    {
+                        "name": "jtag_inst2_autodbg_TDI__",
+                        "dir": "in",
+                        "width": 1
+                    },
+                    {
+                        "name": "jtag_inst2_autodbg_TMS__",
+                        "dir": "in",
+                        "width": 1
+                    },
+                    {
+                        "name": "jtag_inst2_autodbg_UPDATE__",
+                        "dir": "in",
+                        "width": 1
+                    },
+                    {
+                        "name": "jtag_inst2_autodbg_TDO__",
+                        "dir": "out",
+                        "width": 1
+                    }
+                ]
+            }
+        },
+        {
+            "command": "instantiate",
+            "netlist": "edb_top",
+            "id": 2,
+            "instance": "edb_top_autodbg_inst__"
+        },
+        {
+            "command": "connect",
+            "id": 3,
+            "args": {
+                "instance": "edb_top_autodbg_inst__",
+                "ports": [
+                    {
+                        "name": "bscan_CAPTURE",
+                        "net": "jtag_inst2_autodbg_CAPTURE__"
+                    },
+                    {
+                        "name": "bscan_DRCK",
+                        "net": "jtag_inst2_autodbg_DRCK__"
+                    },
+                    {
+                        "name": "bscan_RESET",
+                        "net": "jtag_inst2_autodbg_RESET__"
+                    },
+                    {
+                        "name": "bscan_RUNTEST",
+                        "net": "jtag_inst2_autodbg_RUNTEST__"
+                    },
+                    {
+                        "name": "bscan_SEL",
+                        "net": "jtag_inst2_autodbg_SEL__"
+                    },
+                    {
+                        "name": "bscan_SHIFT",
+                        "net": "jtag_inst2_autodbg_SHIFT__"
+                    },
+                    {
+                        "name": "bscan_TCK",
+                        "net": "jtag_inst2_autodbg_TCK__"
+                    },
+                    {
+                        "name": "bscan_TDI",
+                        "net": "jtag_inst2_autodbg_TDI__"
+                    },
+                    {
+                        "name": "bscan_TMS",
+                        "net": "jtag_inst2_autodbg_TMS__"
+                    },
+                    {
+                        "name": "bscan_UPDATE",
+                        "net": "jtag_inst2_autodbg_UPDATE__"
+                    },
+                    {
+                        "name": "bscan_TDO",
+                        "net": "jtag_inst2_autodbg_TDO__"
+                    },
+                    {
+                        "name": "la0_clk",
+                        "net": "i_pixel_clk",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe0",
+                        "net": "de",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe1[0]",
+                        "net": "frame_rate[0]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe1[1]",
+                        "net": "frame_rate[1]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe1[2]",
+                        "net": "frame_rate[2]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe1[3]",
+                        "net": "frame_rate[3]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe1[4]",
+                        "net": "frame_rate[4]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe1[5]",
+                        "net": "frame_rate[5]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe1[6]",
+                        "net": "frame_rate[6]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe1[7]",
+                        "net": "frame_rate[7]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe1[8]",
+                        "net": "frame_rate[8]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe1[9]",
+                        "net": "frame_rate[9]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe2[0]",
+                        "net": "hsync_per_frame[0]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe2[1]",
+                        "net": "hsync_per_frame[1]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe2[2]",
+                        "net": "hsync_per_frame[2]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe2[3]",
+                        "net": "hsync_per_frame[3]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe2[4]",
+                        "net": "hsync_per_frame[4]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe2[5]",
+                        "net": "hsync_per_frame[5]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe2[6]",
+                        "net": "hsync_per_frame[6]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe2[7]",
+                        "net": "hsync_per_frame[7]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe2[8]",
+                        "net": "hsync_per_frame[8]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe2[9]",
+                        "net": "hsync_per_frame[9]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe2[10]",
+                        "net": "hsync_per_frame[10]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe2[11]",
+                        "net": "hsync_per_frame[11]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe2[12]",
+                        "net": "hsync_per_frame[12]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe2[13]",
+                        "net": "hsync_per_frame[13]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe2[14]",
+                        "net": "hsync_per_frame[14]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe2[15]",
+                        "net": "hsync_per_frame[15]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe3",
+                        "net": "hsync_sync",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe4[0]",
+                        "net": "pixel_per_line[0]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe4[1]",
+                        "net": "pixel_per_line[1]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe4[2]",
+                        "net": "pixel_per_line[2]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe4[3]",
+                        "net": "pixel_per_line[3]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe4[4]",
+                        "net": "pixel_per_line[4]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe4[5]",
+                        "net": "pixel_per_line[5]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe4[6]",
+                        "net": "pixel_per_line[6]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe4[7]",
+                        "net": "pixel_per_line[7]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe4[8]",
+                        "net": "pixel_per_line[8]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe4[9]",
+                        "net": "pixel_per_line[9]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe4[10]",
+                        "net": "pixel_per_line[10]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe4[11]",
+                        "net": "pixel_per_line[11]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe4[12]",
+                        "net": "pixel_per_line[12]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe4[13]",
+                        "net": "pixel_per_line[13]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe4[14]",
+                        "net": "pixel_per_line[14]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe4[15]",
+                        "net": "pixel_per_line[15]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe5",
+                        "net": "vsync_sync",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe6",
+                        "net": "de",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe7[0]",
+                        "net": "frame_rate[0]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe7[1]",
+                        "net": "frame_rate[1]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe7[2]",
+                        "net": "frame_rate[2]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe7[3]",
+                        "net": "frame_rate[3]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe7[4]",
+                        "net": "frame_rate[4]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe7[5]",
+                        "net": "frame_rate[5]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe7[6]",
+                        "net": "frame_rate[6]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe7[7]",
+                        "net": "frame_rate[7]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe7[8]",
+                        "net": "frame_rate[8]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe7[9]",
+                        "net": "frame_rate[9]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe8",
+                        "net": "hsync_sync",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe9[0]",
+                        "net": "pixel_per_line[0]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe9[1]",
+                        "net": "pixel_per_line[1]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe9[2]",
+                        "net": "pixel_per_line[2]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe9[3]",
+                        "net": "pixel_per_line[3]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe9[4]",
+                        "net": "pixel_per_line[4]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe9[5]",
+                        "net": "pixel_per_line[5]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe9[6]",
+                        "net": "pixel_per_line[6]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe9[7]",
+                        "net": "pixel_per_line[7]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe9[8]",
+                        "net": "pixel_per_line[8]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe9[9]",
+                        "net": "pixel_per_line[9]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe9[10]",
+                        "net": "pixel_per_line[10]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe9[11]",
+                        "net": "pixel_per_line[11]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe9[12]",
+                        "net": "pixel_per_line[12]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe9[13]",
+                        "net": "pixel_per_line[13]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe9[14]",
+                        "net": "pixel_per_line[14]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe9[15]",
+                        "net": "pixel_per_line[15]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe10",
+                        "net": "vsync_sync",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "vc_fanout[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe11[0]",
+                        "net": "mipi_debug_out[0]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "inst_efx_csi2_rx0"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe11[1]",
+                        "net": "mipi_debug_out[1]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "inst_efx_csi2_rx0"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe11[2]",
+                        "net": "mipi_debug_out[2]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "inst_efx_csi2_rx0"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe11[3]",
+                        "net": "mipi_debug_out[3]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "inst_efx_csi2_rx0"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe11[4]",
+                        "net": "mipi_debug_out[4]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "inst_efx_csi2_rx0"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe11[5]",
+                        "net": "mipi_debug_out[5]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "inst_efx_csi2_rx0"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe11[6]",
+                        "net": "mipi_debug_out[6]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "inst_efx_csi2_rx0"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe11[7]",
+                        "net": "mipi_debug_out[7]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "inst_efx_csi2_rx0"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe11[8]",
+                        "net": "mipi_debug_out[8]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "inst_efx_csi2_rx0"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe11[9]",
+                        "net": "mipi_debug_out[9]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "inst_efx_csi2_rx0"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe11[10]",
+                        "net": "mipi_debug_out[10]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "inst_efx_csi2_rx0"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe11[11]",
+                        "net": "mipi_debug_out[11]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "inst_efx_csi2_rx0"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe11[12]",
+                        "net": "mipi_debug_out[12]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "inst_efx_csi2_rx0"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe11[13]",
+                        "net": "mipi_debug_out[13]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "inst_efx_csi2_rx0"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe11[14]",
+                        "net": "mipi_debug_out[14]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "inst_efx_csi2_rx0"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe11[15]",
+                        "net": "mipi_debug_out[15]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "inst_efx_csi2_rx0"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe11[16]",
+                        "net": "mipi_debug_out[16]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "inst_efx_csi2_rx0"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe11[17]",
+                        "net": "mipi_debug_out[17]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "inst_efx_csi2_rx0"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe11[18]",
+                        "net": "mipi_debug_out[18]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "inst_efx_csi2_rx0"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe11[19]",
+                        "net": "mipi_debug_out[19]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "inst_efx_csi2_rx0"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe11[20]",
+                        "net": "mipi_debug_out[20]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "inst_efx_csi2_rx0"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe11[21]",
+                        "net": "mipi_debug_out[21]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "inst_efx_csi2_rx0"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe11[22]",
+                        "net": "mipi_debug_out[22]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "inst_efx_csi2_rx0"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe11[23]",
+                        "net": "mipi_debug_out[23]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "inst_efx_csi2_rx0"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe11[24]",
+                        "net": "mipi_debug_out[24]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "inst_efx_csi2_rx0"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe11[25]",
+                        "net": "mipi_debug_out[25]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "inst_efx_csi2_rx0"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe11[26]",
+                        "net": "mipi_debug_out[26]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "inst_efx_csi2_rx0"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe11[27]",
+                        "net": "mipi_debug_out[27]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "inst_efx_csi2_rx0"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe11[28]",
+                        "net": "mipi_debug_out[28]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "inst_efx_csi2_rx0"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe11[29]",
+                        "net": "mipi_debug_out[29]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "inst_efx_csi2_rx0"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe11[30]",
+                        "net": "mipi_debug_out[30]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "inst_efx_csi2_rx0"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe11[31]",
+                        "net": "mipi_debug_out[31]",
+                        "path": [
+                            "inst_csi_rx_controllers",
+                            "inst_efx_csi2_rx0"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe12[0]",
+                        "net": "r_data_out_count[0]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe12[1]",
+                        "net": "r_data_out_count[1]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe12[2]",
+                        "net": "r_data_out_count[2]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe12[3]",
+                        "net": "r_data_out_count[3]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe12[4]",
+                        "net": "r_data_out_count[4]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe12[5]",
+                        "net": "r_data_out_count[5]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe12[6]",
+                        "net": "r_data_out_count[6]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe12[7]",
+                        "net": "r_data_out_count[7]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe12[8]",
+                        "net": "r_data_out_count[8]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe12[9]",
+                        "net": "r_data_out_count[9]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe12[10]",
+                        "net": "r_data_out_count[10]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe12[11]",
+                        "net": "r_data_out_count[11]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe12[12]",
+                        "net": "r_data_out_count[12]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe12[13]",
+                        "net": "r_data_out_count[13]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe12[14]",
+                        "net": "r_data_out_count[14]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe12[15]",
+                        "net": "r_data_out_count[15]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe12[16]",
+                        "net": "r_data_out_count[16]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe12[17]",
+                        "net": "r_data_out_count[17]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe12[18]",
+                        "net": "r_data_out_count[18]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe12[19]",
+                        "net": "r_data_out_count[19]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe12[20]",
+                        "net": "r_data_out_count[20]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe12[21]",
+                        "net": "r_data_out_count[21]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe12[22]",
+                        "net": "r_data_out_count[22]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe12[23]",
+                        "net": "r_data_out_count[23]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe12[24]",
+                        "net": "r_data_out_count[24]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe12[25]",
+                        "net": "r_data_out_count[25]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe12[26]",
+                        "net": "r_data_out_count[26]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe12[27]",
+                        "net": "r_data_out_count[27]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe12[28]",
+                        "net": "r_data_out_count[28]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe12[29]",
+                        "net": "r_data_out_count[29]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe12[30]",
+                        "net": "r_data_out_count[30]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe12[31]",
+                        "net": "r_data_out_count[31]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe13[0]",
+                        "net": "r_x_count[0]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe13[1]",
+                        "net": "r_x_count[1]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe13[2]",
+                        "net": "r_x_count[2]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe13[3]",
+                        "net": "r_x_count[3]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe13[4]",
+                        "net": "r_x_count[4]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe13[5]",
+                        "net": "r_x_count[5]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe13[6]",
+                        "net": "r_x_count[6]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe13[7]",
+                        "net": "r_x_count[7]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe13[8]",
+                        "net": "r_x_count[8]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe13[9]",
+                        "net": "r_x_count[9]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe13[10]",
+                        "net": "r_x_count[10]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe14",
+                        "net": "out_tvalid",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe15[0]",
+                        "net": "out_tdata[0]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe15[1]",
+                        "net": "out_tdata[1]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe15[2]",
+                        "net": "out_tdata[2]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe15[3]",
+                        "net": "out_tdata[3]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe15[4]",
+                        "net": "out_tdata[4]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe15[5]",
+                        "net": "out_tdata[5]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe15[6]",
+                        "net": "out_tdata[6]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe15[7]",
+                        "net": "out_tdata[7]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe15[8]",
+                        "net": "out_tdata[8]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe15[9]",
+                        "net": "out_tdata[9]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe15[10]",
+                        "net": "out_tdata[10]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe15[11]",
+                        "net": "out_tdata[11]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe15[12]",
+                        "net": "out_tdata[12]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe15[13]",
+                        "net": "out_tdata[13]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe15[14]",
+                        "net": "out_tdata[14]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe15[15]",
+                        "net": "out_tdata[15]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe15[16]",
+                        "net": "out_tdata[16]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe15[17]",
+                        "net": "out_tdata[17]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe15[18]",
+                        "net": "out_tdata[18]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe15[19]",
+                        "net": "out_tdata[19]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe15[20]",
+                        "net": "out_tdata[20]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe15[21]",
+                        "net": "out_tdata[21]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe15[22]",
+                        "net": "out_tdata[22]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe15[23]",
+                        "net": "out_tdata[23]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe15[24]",
+                        "net": "out_tdata[24]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe15[25]",
+                        "net": "out_tdata[25]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe15[26]",
+                        "net": "out_tdata[26]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe15[27]",
+                        "net": "out_tdata[27]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe15[28]",
+                        "net": "out_tdata[28]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe15[29]",
+                        "net": "out_tdata[29]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe15[30]",
+                        "net": "out_tdata[30]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe15[31]",
+                        "net": "out_tdata[31]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe16[0]",
+                        "net": "out_tkeep[0]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe16[1]",
+                        "net": "out_tkeep[1]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe16[2]",
+                        "net": "out_tkeep[2]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe16[3]",
+                        "net": "out_tkeep[3]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe17",
+                        "net": "in_tready",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe18",
+                        "net": "w_fifo_data_empty",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe19",
+                        "net": "out_tlast",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe20",
+                        "net": "in_de",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe21[0]",
+                        "net": "r_y_count[0]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe21[1]",
+                        "net": "r_y_count[1]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe21[2]",
+                        "net": "r_y_count[2]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe21[3]",
+                        "net": "r_y_count[3]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe21[4]",
+                        "net": "r_y_count[4]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe21[5]",
+                        "net": "r_y_count[5]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe21[6]",
+                        "net": "r_y_count[6]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe21[7]",
+                        "net": "r_y_count[7]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe21[8]",
+                        "net": "r_y_count[8]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe21[9]",
+                        "net": "r_y_count[9]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe21[10]",
+                        "net": "r_y_count[10]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe22[0]",
+                        "net": "r_data_in_count[0]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe22[1]",
+                        "net": "r_data_in_count[1]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe22[2]",
+                        "net": "r_data_in_count[2]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe22[3]",
+                        "net": "r_data_in_count[3]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe22[4]",
+                        "net": "r_data_in_count[4]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe22[5]",
+                        "net": "r_data_in_count[5]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe22[6]",
+                        "net": "r_data_in_count[6]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe22[7]",
+                        "net": "r_data_in_count[7]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe22[8]",
+                        "net": "r_data_in_count[8]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe22[9]",
+                        "net": "r_data_in_count[9]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe22[10]",
+                        "net": "r_data_in_count[10]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe22[11]",
+                        "net": "r_data_in_count[11]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe22[12]",
+                        "net": "r_data_in_count[12]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe22[13]",
+                        "net": "r_data_in_count[13]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe22[14]",
+                        "net": "r_data_in_count[14]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe22[15]",
+                        "net": "r_data_in_count[15]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe22[16]",
+                        "net": "r_data_in_count[16]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe22[17]",
+                        "net": "r_data_in_count[17]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe22[18]",
+                        "net": "r_data_in_count[18]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe22[19]",
+                        "net": "r_data_in_count[19]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe22[20]",
+                        "net": "r_data_in_count[20]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe22[21]",
+                        "net": "r_data_in_count[21]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe22[22]",
+                        "net": "r_data_in_count[22]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe22[23]",
+                        "net": "r_data_in_count[23]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe22[24]",
+                        "net": "r_data_in_count[24]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe22[25]",
+                        "net": "r_data_in_count[25]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe22[26]",
+                        "net": "r_data_in_count[26]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe22[27]",
+                        "net": "r_data_in_count[27]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe22[28]",
+                        "net": "r_data_in_count[28]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe22[29]",
+                        "net": "r_data_in_count[29]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe22[30]",
+                        "net": "r_data_in_count[30]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe22[31]",
+                        "net": "r_data_in_count[31]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe23[0]",
+                        "net": "out_tdest[0]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe23[1]",
+                        "net": "out_tdest[1]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe23[2]",
+                        "net": "out_tdest[2]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe23[3]",
+                        "net": "out_tdest[3]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe24",
+                        "net": "in_vs",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe25",
+                        "net": "w_fifo_data_full",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe26",
+                        "net": "in_hs",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[0].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe27",
+                        "net": "in_vs",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe28",
+                        "net": "out_tlast",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe29",
+                        "net": "w_fifo_data_full",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe30[0]",
+                        "net": "debug_data_in_count[0]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe30[1]",
+                        "net": "debug_data_in_count[1]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe30[2]",
+                        "net": "debug_data_in_count[2]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe30[3]",
+                        "net": "debug_data_in_count[3]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe30[4]",
+                        "net": "debug_data_in_count[4]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe30[5]",
+                        "net": "debug_data_in_count[5]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe30[6]",
+                        "net": "debug_data_in_count[6]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe30[7]",
+                        "net": "debug_data_in_count[7]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe30[8]",
+                        "net": "debug_data_in_count[8]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe30[9]",
+                        "net": "debug_data_in_count[9]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe30[10]",
+                        "net": "debug_data_in_count[10]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe30[11]",
+                        "net": "debug_data_in_count[11]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe30[12]",
+                        "net": "debug_data_in_count[12]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe30[13]",
+                        "net": "debug_data_in_count[13]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe30[14]",
+                        "net": "debug_data_in_count[14]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe30[15]",
+                        "net": "debug_data_in_count[15]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe30[16]",
+                        "net": "debug_data_in_count[16]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe30[17]",
+                        "net": "debug_data_in_count[17]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe30[18]",
+                        "net": "debug_data_in_count[18]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe30[19]",
+                        "net": "debug_data_in_count[19]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe30[20]",
+                        "net": "debug_data_in_count[20]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe30[21]",
+                        "net": "debug_data_in_count[21]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe30[22]",
+                        "net": "debug_data_in_count[22]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe30[23]",
+                        "net": "debug_data_in_count[23]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe30[24]",
+                        "net": "debug_data_in_count[24]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe30[25]",
+                        "net": "debug_data_in_count[25]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe30[26]",
+                        "net": "debug_data_in_count[26]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe30[27]",
+                        "net": "debug_data_in_count[27]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe30[28]",
+                        "net": "debug_data_in_count[28]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe30[29]",
+                        "net": "debug_data_in_count[29]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe30[30]",
+                        "net": "debug_data_in_count[30]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe30[31]",
+                        "net": "debug_data_in_count[31]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe31",
+                        "net": "in_hs",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe32[0]",
+                        "net": "out_tdata[0]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe32[1]",
+                        "net": "out_tdata[1]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe32[2]",
+                        "net": "out_tdata[2]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe32[3]",
+                        "net": "out_tdata[3]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe32[4]",
+                        "net": "out_tdata[4]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe32[5]",
+                        "net": "out_tdata[5]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe32[6]",
+                        "net": "out_tdata[6]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe32[7]",
+                        "net": "out_tdata[7]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe32[8]",
+                        "net": "out_tdata[8]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe32[9]",
+                        "net": "out_tdata[9]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe32[10]",
+                        "net": "out_tdata[10]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe32[11]",
+                        "net": "out_tdata[11]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe32[12]",
+                        "net": "out_tdata[12]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe32[13]",
+                        "net": "out_tdata[13]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe32[14]",
+                        "net": "out_tdata[14]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe32[15]",
+                        "net": "out_tdata[15]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe32[16]",
+                        "net": "out_tdata[16]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe32[17]",
+                        "net": "out_tdata[17]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe32[18]",
+                        "net": "out_tdata[18]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe32[19]",
+                        "net": "out_tdata[19]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe32[20]",
+                        "net": "out_tdata[20]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe32[21]",
+                        "net": "out_tdata[21]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe32[22]",
+                        "net": "out_tdata[22]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe32[23]",
+                        "net": "out_tdata[23]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe32[24]",
+                        "net": "out_tdata[24]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe32[25]",
+                        "net": "out_tdata[25]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe32[26]",
+                        "net": "out_tdata[26]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe32[27]",
+                        "net": "out_tdata[27]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe32[28]",
+                        "net": "out_tdata[28]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe32[29]",
+                        "net": "out_tdata[29]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe32[30]",
+                        "net": "out_tdata[30]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe32[31]",
+                        "net": "out_tdata[31]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe33",
+                        "net": "w_fifo_data_empty",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe34[0]",
+                        "net": "out_tdest[0]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe34[1]",
+                        "net": "out_tdest[1]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe34[2]",
+                        "net": "out_tdest[2]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe34[3]",
+                        "net": "out_tdest[3]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe35",
+                        "net": "in_tready",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe36",
+                        "net": "out_tvalid",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe37[0]",
+                        "net": "debug_data_out_count[0]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe37[1]",
+                        "net": "debug_data_out_count[1]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe37[2]",
+                        "net": "debug_data_out_count[2]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe37[3]",
+                        "net": "debug_data_out_count[3]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe37[4]",
+                        "net": "debug_data_out_count[4]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe37[5]",
+                        "net": "debug_data_out_count[5]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe37[6]",
+                        "net": "debug_data_out_count[6]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe37[7]",
+                        "net": "debug_data_out_count[7]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe37[8]",
+                        "net": "debug_data_out_count[8]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe37[9]",
+                        "net": "debug_data_out_count[9]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe37[10]",
+                        "net": "debug_data_out_count[10]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe37[11]",
+                        "net": "debug_data_out_count[11]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe37[12]",
+                        "net": "debug_data_out_count[12]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe37[13]",
+                        "net": "debug_data_out_count[13]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe37[14]",
+                        "net": "debug_data_out_count[14]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe37[15]",
+                        "net": "debug_data_out_count[15]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe37[16]",
+                        "net": "debug_data_out_count[16]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe37[17]",
+                        "net": "debug_data_out_count[17]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe37[18]",
+                        "net": "debug_data_out_count[18]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe37[19]",
+                        "net": "debug_data_out_count[19]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe37[20]",
+                        "net": "debug_data_out_count[20]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe37[21]",
+                        "net": "debug_data_out_count[21]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe37[22]",
+                        "net": "debug_data_out_count[22]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe37[23]",
+                        "net": "debug_data_out_count[23]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe37[24]",
+                        "net": "debug_data_out_count[24]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe37[25]",
+                        "net": "debug_data_out_count[25]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe37[26]",
+                        "net": "debug_data_out_count[26]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe37[27]",
+                        "net": "debug_data_out_count[27]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe37[28]",
+                        "net": "debug_data_out_count[28]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe37[29]",
+                        "net": "debug_data_out_count[29]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe37[30]",
+                        "net": "debug_data_out_count[30]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe37[31]",
+                        "net": "debug_data_out_count[31]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe38",
+                        "net": "in_de",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe39[0]",
+                        "net": "out_tkeep[0]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe39[1]",
+                        "net": "out_tkeep[1]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe39[2]",
+                        "net": "out_tkeep[2]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe39[3]",
+                        "net": "out_tkeep[3]",
+                        "path": [
+                            "inst_dma_stream_ctrl",
+                            "dma_stream_in[1].inst_axi_streamin"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe40[0]",
+                        "net": "w_rx_agg_mipi_hs_clk[0]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe40[1]",
+                        "net": "w_rx_agg_mipi_hs_clk[1]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe40[2]",
+                        "net": "w_rx_agg_mipi_hs_clk[2]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe40[3]",
+                        "net": "w_rx_agg_mipi_hs_clk[3]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe40[4]",
+                        "net": "w_rx_agg_mipi_hs_clk[4]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe40[5]",
+                        "net": "w_rx_agg_mipi_hs_clk[5]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe40[6]",
+                        "net": "w_rx_agg_mipi_hs_clk[6]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe40[7]",
+                        "net": "w_rx_agg_mipi_hs_clk[7]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe40[8]",
+                        "net": "w_rx_agg_mipi_hs_clk[8]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe40[9]",
+                        "net": "w_rx_agg_mipi_hs_clk[9]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe40[10]",
+                        "net": "w_rx_agg_mipi_hs_clk[10]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe40[11]",
+                        "net": "w_rx_agg_mipi_hs_clk[11]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe40[12]",
+                        "net": "w_rx_agg_mipi_hs_clk[12]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe40[13]",
+                        "net": "w_rx_agg_mipi_hs_clk[13]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe40[14]",
+                        "net": "w_rx_agg_mipi_hs_clk[14]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe40[15]",
+                        "net": "w_rx_agg_mipi_hs_clk[15]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe40[16]",
+                        "net": "w_rx_agg_mipi_hs_clk[16]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe40[17]",
+                        "net": "w_rx_agg_mipi_hs_clk[17]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe40[18]",
+                        "net": "w_rx_agg_mipi_hs_clk[18]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe40[19]",
+                        "net": "w_rx_agg_mipi_hs_clk[19]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe40[20]",
+                        "net": "w_rx_agg_mipi_hs_clk[20]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe40[21]",
+                        "net": "w_rx_agg_mipi_hs_clk[21]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe40[22]",
+                        "net": "w_rx_agg_mipi_hs_clk[22]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe40[23]",
+                        "net": "w_rx_agg_mipi_hs_clk[23]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe40[24]",
+                        "net": "w_rx_agg_mipi_hs_clk[24]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe40[25]",
+                        "net": "w_rx_agg_mipi_hs_clk[25]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe40[26]",
+                        "net": "w_rx_agg_mipi_hs_clk[26]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe40[27]",
+                        "net": "w_rx_agg_mipi_hs_clk[27]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe40[28]",
+                        "net": "w_rx_agg_mipi_hs_clk[28]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe40[29]",
+                        "net": "w_rx_agg_mipi_hs_clk[29]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe40[30]",
+                        "net": "w_rx_agg_mipi_hs_clk[30]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe40[31]",
+                        "net": "w_rx_agg_mipi_hs_clk[31]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe41[0]",
+                        "net": "w_rx_agg_de_throughput[0]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe41[1]",
+                        "net": "w_rx_agg_de_throughput[1]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe41[2]",
+                        "net": "w_rx_agg_de_throughput[2]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe41[3]",
+                        "net": "w_rx_agg_de_throughput[3]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe41[4]",
+                        "net": "w_rx_agg_de_throughput[4]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe41[5]",
+                        "net": "w_rx_agg_de_throughput[5]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe41[6]",
+                        "net": "w_rx_agg_de_throughput[6]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe41[7]",
+                        "net": "w_rx_agg_de_throughput[7]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe41[8]",
+                        "net": "w_rx_agg_de_throughput[8]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe41[9]",
+                        "net": "w_rx_agg_de_throughput[9]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe41[10]",
+                        "net": "w_rx_agg_de_throughput[10]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe41[11]",
+                        "net": "w_rx_agg_de_throughput[11]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe41[12]",
+                        "net": "w_rx_agg_de_throughput[12]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe41[13]",
+                        "net": "w_rx_agg_de_throughput[13]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe41[14]",
+                        "net": "w_rx_agg_de_throughput[14]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe41[15]",
+                        "net": "w_rx_agg_de_throughput[15]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe41[16]",
+                        "net": "w_rx_agg_de_throughput[16]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe41[17]",
+                        "net": "w_rx_agg_de_throughput[17]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe41[18]",
+                        "net": "w_rx_agg_de_throughput[18]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe41[19]",
+                        "net": "w_rx_agg_de_throughput[19]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe41[20]",
+                        "net": "w_rx_agg_de_throughput[20]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe41[21]",
+                        "net": "w_rx_agg_de_throughput[21]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe41[22]",
+                        "net": "w_rx_agg_de_throughput[22]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe41[23]",
+                        "net": "w_rx_agg_de_throughput[23]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe41[24]",
+                        "net": "w_rx_agg_de_throughput[24]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe41[25]",
+                        "net": "w_rx_agg_de_throughput[25]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe41[26]",
+                        "net": "w_rx_agg_de_throughput[26]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe41[27]",
+                        "net": "w_rx_agg_de_throughput[27]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe41[28]",
+                        "net": "w_rx_agg_de_throughput[28]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe41[29]",
+                        "net": "w_rx_agg_de_throughput[29]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe41[30]",
+                        "net": "w_rx_agg_de_throughput[30]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe41[31]",
+                        "net": "w_rx_agg_de_throughput[31]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "vdbs": [
+        {
+            "file": "debug_top.post.vdb",
+            "instance": "edb_top_autodbg_inst__"
+        }
+    ],
+    "session": {
+        "wizard": {
+            "data_depth": 8192,
+            "capture_control": false,
+            "selected_nets": [
+                {
+                    "name": "de",
+                    "width": 1,
+                    "clk_domain": "i_pixel_clk",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_csi_rx_controllers",
+                        "vc_fanout[0].inst_csi_rx_monitor"
+                    ]
+                },
+                {
+                    "name": "frame_rate",
+                    "width": 10,
+                    "clk_domain": "i_pixel_clk",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_csi_rx_controllers",
+                        "vc_fanout[0].inst_csi_rx_monitor"
+                    ],
+                    "net_idx_left": 9,
+                    "net_idx_right": 0
+                },
+                {
+                    "name": "hsync_per_frame",
+                    "width": 16,
+                    "clk_domain": "i_pixel_clk",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_csi_rx_controllers",
+                        "vc_fanout[0].inst_csi_rx_monitor"
+                    ],
+                    "net_idx_left": 15,
+                    "net_idx_right": 0
+                },
+                {
+                    "name": "hsync_sync",
+                    "width": 1,
+                    "clk_domain": "i_pixel_clk",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_csi_rx_controllers",
+                        "vc_fanout[0].inst_csi_rx_monitor"
+                    ]
+                },
+                {
+                    "name": "pixel_per_line",
+                    "width": 16,
+                    "clk_domain": "i_pixel_clk",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_csi_rx_controllers",
+                        "vc_fanout[0].inst_csi_rx_monitor"
+                    ],
+                    "net_idx_left": 15,
+                    "net_idx_right": 0
+                },
+                {
+                    "name": "vsync_sync",
+                    "width": 1,
+                    "clk_domain": "i_pixel_clk",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_csi_rx_controllers",
+                        "vc_fanout[0].inst_csi_rx_monitor"
+                    ]
+                },
+                {
+                    "name": "de",
+                    "width": 1,
+                    "clk_domain": "i_pixel_clk",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_csi_rx_controllers",
+                        "vc_fanout[1].inst_csi_rx_monitor"
+                    ]
+                },
+                {
+                    "name": "frame_rate",
+                    "width": 10,
+                    "clk_domain": "i_pixel_clk",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_csi_rx_controllers",
+                        "vc_fanout[1].inst_csi_rx_monitor"
+                    ],
+                    "net_idx_left": 9,
+                    "net_idx_right": 0
+                },
+                {
+                    "name": "hsync_sync",
+                    "width": 1,
+                    "clk_domain": "i_pixel_clk",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_csi_rx_controllers",
+                        "vc_fanout[1].inst_csi_rx_monitor"
+                    ]
+                },
+                {
+                    "name": "pixel_per_line",
+                    "width": 16,
+                    "clk_domain": "i_pixel_clk",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_csi_rx_controllers",
+                        "vc_fanout[1].inst_csi_rx_monitor"
+                    ],
+                    "net_idx_left": 15,
+                    "net_idx_right": 0
+                },
+                {
+                    "name": "vsync_sync",
+                    "width": 1,
+                    "clk_domain": "i_pixel_clk",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_csi_rx_controllers",
+                        "vc_fanout[1].inst_csi_rx_monitor"
+                    ]
+                },
+                {
+                    "name": "mipi_debug_out",
+                    "width": 32,
+                    "clk_domain": "i_pixel_clk",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_csi_rx_controllers",
+                        "inst_efx_csi2_rx0"
+                    ],
+                    "net_idx_left": 31,
+                    "net_idx_right": 0
+                },
+                {
+                    "name": "r_data_out_count",
+                    "width": 32,
+                    "clk_domain": "i_pixel_clk",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_dma_stream_ctrl",
+                        "dma_stream_in[0].inst_axi_streamin"
+                    ],
+                    "net_idx_left": 31,
+                    "net_idx_right": 0
+                },
+                {
+                    "name": "r_x_count",
+                    "width": 11,
+                    "clk_domain": "i_pixel_clk",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_dma_stream_ctrl",
+                        "dma_stream_in[0].inst_axi_streamin"
+                    ],
+                    "net_idx_left": 10,
+                    "net_idx_right": 0
+                },
+                {
+                    "name": "out_tvalid",
+                    "width": 1,
+                    "clk_domain": "i_pixel_clk",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_dma_stream_ctrl",
+                        "dma_stream_in[0].inst_axi_streamin"
+                    ]
+                },
+                {
+                    "name": "out_tdata",
+                    "width": 32,
+                    "clk_domain": "i_pixel_clk",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_dma_stream_ctrl",
+                        "dma_stream_in[0].inst_axi_streamin"
+                    ],
+                    "net_idx_left": 31,
+                    "net_idx_right": 0
+                },
+                {
+                    "name": "out_tkeep",
+                    "width": 4,
+                    "clk_domain": "i_pixel_clk",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_dma_stream_ctrl",
+                        "dma_stream_in[0].inst_axi_streamin"
+                    ],
+                    "net_idx_left": 3,
+                    "net_idx_right": 0
+                },
+                {
+                    "name": "in_tready",
+                    "width": 1,
+                    "clk_domain": "i_pixel_clk",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_dma_stream_ctrl",
+                        "dma_stream_in[0].inst_axi_streamin"
+                    ]
+                },
+                {
+                    "name": "w_fifo_data_empty",
+                    "width": 1,
+                    "clk_domain": "i_pixel_clk",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_dma_stream_ctrl",
+                        "dma_stream_in[0].inst_axi_streamin"
+                    ]
+                },
+                {
+                    "name": "out_tlast",
+                    "width": 1,
+                    "clk_domain": "i_pixel_clk",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_dma_stream_ctrl",
+                        "dma_stream_in[0].inst_axi_streamin"
+                    ]
+                },
+                {
+                    "name": "in_de",
+                    "width": 1,
+                    "clk_domain": "i_pixel_clk",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_dma_stream_ctrl",
+                        "dma_stream_in[0].inst_axi_streamin"
+                    ]
+                },
+                {
+                    "name": "r_y_count",
+                    "width": 11,
+                    "clk_domain": "i_pixel_clk",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_dma_stream_ctrl",
+                        "dma_stream_in[0].inst_axi_streamin"
+                    ],
+                    "net_idx_left": 10,
+                    "net_idx_right": 0
+                },
+                {
+                    "name": "r_data_in_count",
+                    "width": 32,
+                    "clk_domain": "i_pixel_clk",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_dma_stream_ctrl",
+                        "dma_stream_in[0].inst_axi_streamin"
+                    ],
+                    "net_idx_left": 31,
+                    "net_idx_right": 0
+                },
+                {
+                    "name": "out_tdest",
+                    "width": 4,
+                    "clk_domain": "i_pixel_clk",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_dma_stream_ctrl",
+                        "dma_stream_in[0].inst_axi_streamin"
+                    ],
+                    "net_idx_left": 3,
+                    "net_idx_right": 0
+                },
+                {
+                    "name": "in_vs",
+                    "width": 1,
+                    "clk_domain": "i_pixel_clk",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_dma_stream_ctrl",
+                        "dma_stream_in[0].inst_axi_streamin"
+                    ]
+                },
+                {
+                    "name": "w_fifo_data_full",
+                    "width": 1,
+                    "clk_domain": "i_pixel_clk",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_dma_stream_ctrl",
+                        "dma_stream_in[0].inst_axi_streamin"
+                    ]
+                },
+                {
+                    "name": "in_hs",
+                    "width": 1,
+                    "clk_domain": "i_pixel_clk",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_dma_stream_ctrl",
+                        "dma_stream_in[0].inst_axi_streamin"
+                    ]
+                },
+                {
+                    "name": "in_vs",
+                    "width": 1,
+                    "clk_domain": "i_pixel_clk",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_dma_stream_ctrl",
+                        "dma_stream_in[1].inst_axi_streamin"
+                    ]
+                },
+                {
+                    "name": "out_tlast",
+                    "width": 1,
+                    "clk_domain": "i_pixel_clk",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_dma_stream_ctrl",
+                        "dma_stream_in[1].inst_axi_streamin"
+                    ]
+                },
+                {
+                    "name": "w_fifo_data_full",
+                    "width": 1,
+                    "clk_domain": "i_pixel_clk",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_dma_stream_ctrl",
+                        "dma_stream_in[1].inst_axi_streamin"
+                    ]
+                },
+                {
+                    "name": "debug_data_in_count",
+                    "width": 32,
+                    "clk_domain": "i_pixel_clk",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_dma_stream_ctrl",
+                        "dma_stream_in[1].inst_axi_streamin"
+                    ],
+                    "net_idx_left": 31,
+                    "net_idx_right": 0
+                },
+                {
+                    "name": "in_hs",
+                    "width": 1,
+                    "clk_domain": "i_pixel_clk",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_dma_stream_ctrl",
+                        "dma_stream_in[1].inst_axi_streamin"
+                    ]
+                },
+                {
+                    "name": "out_tdata",
+                    "width": 32,
+                    "clk_domain": "i_pixel_clk",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_dma_stream_ctrl",
+                        "dma_stream_in[1].inst_axi_streamin"
+                    ],
+                    "net_idx_left": 31,
+                    "net_idx_right": 0
+                },
+                {
+                    "name": "w_fifo_data_empty",
+                    "width": 1,
+                    "clk_domain": "i_pixel_clk",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_dma_stream_ctrl",
+                        "dma_stream_in[1].inst_axi_streamin"
+                    ]
+                },
+                {
+                    "name": "out_tdest",
+                    "width": 4,
+                    "clk_domain": "i_pixel_clk",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_dma_stream_ctrl",
+                        "dma_stream_in[1].inst_axi_streamin"
+                    ],
+                    "net_idx_left": 3,
+                    "net_idx_right": 0
+                },
+                {
+                    "name": "in_tready",
+                    "width": 1,
+                    "clk_domain": "i_pixel_clk",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_dma_stream_ctrl",
+                        "dma_stream_in[1].inst_axi_streamin"
+                    ]
+                },
+                {
+                    "name": "out_tvalid",
+                    "width": 1,
+                    "clk_domain": "i_pixel_clk",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_dma_stream_ctrl",
+                        "dma_stream_in[1].inst_axi_streamin"
+                    ]
+                },
+                {
+                    "name": "debug_data_out_count",
+                    "width": 32,
+                    "clk_domain": "i_pixel_clk",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_dma_stream_ctrl",
+                        "dma_stream_in[1].inst_axi_streamin"
+                    ],
+                    "net_idx_left": 31,
+                    "net_idx_right": 0
+                },
+                {
+                    "name": "in_de",
+                    "width": 1,
+                    "clk_domain": "i_pixel_clk",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_dma_stream_ctrl",
+                        "dma_stream_in[1].inst_axi_streamin"
+                    ]
+                },
+                {
+                    "name": "out_tkeep",
+                    "width": 4,
+                    "clk_domain": "i_pixel_clk",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_dma_stream_ctrl",
+                        "dma_stream_in[1].inst_axi_streamin"
+                    ],
+                    "net_idx_left": 3,
+                    "net_idx_right": 0
+                },
+                {
+                    "name": "w_rx_agg_mipi_hs_clk",
+                    "width": 32,
+                    "clk_domain": "i_pixel_clk",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_csi_rx_controllers"
+                    ],
+                    "net_idx_left": 31,
+                    "net_idx_right": 0
+                },
+                {
+                    "name": "w_rx_agg_de_throughput",
+                    "width": 32,
+                    "clk_domain": "i_pixel_clk",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_csi_rx_controllers"
+                    ],
+                    "net_idx_left": 31,
+                    "net_idx_right": 0
+                }
+            ],
+            "top_module": "efx_gmsl_video_grabber_line_hdmi_top",
+            "src": "elaborate",
+            "jtag_user": "USER2",
+            "input_pipeline": 1
+        }
+    }
+}

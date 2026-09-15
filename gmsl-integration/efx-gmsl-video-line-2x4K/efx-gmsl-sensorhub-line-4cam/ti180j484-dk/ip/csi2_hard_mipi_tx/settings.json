@@ -1,0 +1,57 @@
+{
+    "args": [
+        "-o",
+        "csi2_hard_mipi_tx",
+        "--base_path",
+        "C:\\efinix\\ecosystem_solutions\\ADI_GMSL\\Testing\\PerLineMode\\CSI2_aggregator\\EFx_GMSL_SensorHub_Perline_VG\\ip",
+        "--vlnv",
+        {
+            "vendor": "efinixinc.com",
+            "library": "mipi",
+            "name": "efx_csi2_tx_top",
+            "version": "5.14"
+        }
+    ],
+    "conf": {
+        "tINIT_NS": "10000",
+        "tINIT_SKEWCAL_NS": "100000",
+        "NUM_DATA_LANE": "4",
+        "ASYNC_STAGE": "2",
+        "HS_BYTECLK_MHZ": "156",
+        "DPHY_CLOCK_MODE": "\"Continuous\"",
+        "PIXEL_FIFO_DEPTH": "4096",
+        "FRAME_MODE": "\"GENERIC\"",
+        "Pack_40": "1",
+        "Pack_48": "1",
+        "Pack_56": "1",
+        "Pack_64": "1",
+        "ENABLE_VCX": "0",
+        "ENABLE_SKEWCAL_INIT": "1",
+        "MIPI_CSI2_TX_DEBUG": "1'b1"
+    },
+    "output": {
+        "external_source_source": [
+            "csi2_hard_mipi_tx\\csi2_hard_mipi_tx.sv",
+            "csi2_hard_mipi_tx\\csi2_hard_mipi_tx_tmpl.vhd",
+            "csi2_hard_mipi_tx\\csi2_hard_mipi_tx_tmpl.sv",
+            "csi2_hard_mipi_tx\\csi2_hard_mipi_tx_define.svh"
+        ],
+        "external_example_example": [
+            "csi2_hard_mipi_tx\\Ti180J484_devkit\\Ti180_mipi.peri.xml",
+            "csi2_hard_mipi_tx\\Ti180J484_devkit\\Ti180_mipi.xml",
+            "csi2_hard_mipi_tx\\Ti180J484_devkit\\csichk.v",
+            "csi2_hard_mipi_tx\\Ti180J484_devkit\\efx_csi2_rx_top.sv",
+            "csi2_hard_mipi_tx\\Ti180J484_devkit\\efx_csi2_tx_top.sv",
+            "csi2_hard_mipi_tx\\Ti180J484_devkit\\reset_ctrl.v",
+            "csi2_hard_mipi_tx\\Ti180J484_devkit\\Ti180_mipi.sdc",
+            "csi2_hard_mipi_tx\\Ti180J484_devkit\\top_2_5g.sv",
+            "csi2_hard_mipi_tx\\Ti180J484_devkit\\vga_chk.v",
+            "csi2_hard_mipi_tx\\Ti180J484_devkit\\vga_gen.v",
+            "csi2_hard_mipi_tx\\Ti180J484_devkit\\csi2_hard_mipi_tx.sv",
+            "csi2_hard_mipi_tx\\Ti180J484_devkit\\csi2_hard_mipi_tx_define.svh"
+        ]
+    },
+    "ooc_synthesis": {},
+    "sw_version": "2025.2.288.4.15",
+    "generated_date": "2026-08-05T07:26:06.784265+00:00"
+}

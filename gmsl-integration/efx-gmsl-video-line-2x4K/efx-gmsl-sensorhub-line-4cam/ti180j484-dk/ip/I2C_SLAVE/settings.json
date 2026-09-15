@@ -1,0 +1,67 @@
+{
+    "args": [
+        "-o",
+        "I2C_SLAVE",
+        "--base_path",
+        "C:\\efinix\\ecosystem_solutions\\ADI_GMSL\\Testing\\PerLineMode\\CSI2_aggregator\\EFx_GMSL_SensorHub_Perline_VG\\ip",
+        "--vlnv",
+        {
+            "vendor": "efinixinc.com",
+            "library": "serial_interface",
+            "name": "efx_i2c_controller",
+            "version": "5.3"
+        }
+    ],
+    "conf": {
+        "SLAVE_ADDR": "84",
+        "I2C_FAST_MODE": "0",
+        "I2C_MODE": "\"SLAVE\"",
+        "DATA_BYTE_WIDTH": "8",
+        "CLOCK_FREQ": "100",
+        "SPIKE_FILTER_CYCLE": "2"
+    },
+    "output": {
+        "external_source_source": [
+            "I2C_SLAVE\\I2C_SLAVE_define.vh",
+            "I2C_SLAVE\\I2C_SLAVE_tmpl.v",
+            "I2C_SLAVE\\I2C_SLAVE_tmpl.vhd",
+            "I2C_SLAVE\\I2C_SLAVE.v"
+        ],
+        "external_example_example": [
+            "I2C_SLAVE\\T20F256_devkit\\i2c_clock_gen.v",
+            "I2C_SLAVE\\T20F256_devkit\\i2c_controller_test.v",
+            "I2C_SLAVE\\T20F256_devkit\\efx_i2c_master_controller.v",
+            "I2C_SLAVE\\T20F256_devkit\\efx_i2c_slave_controller.v",
+            "I2C_SLAVE\\T20F256_devkit\\i2c_T20.sdc",
+            "I2C_SLAVE\\T20F256_devkit\\i2c_functions.vh",
+            "I2C_SLAVE\\T20F256_devkit\\I2C_SLAVE.v",
+            "I2C_SLAVE\\T20F256_devkit\\I2C_SLAVE_define.vh",
+            "I2C_SLAVE\\T20F256_devkit\\i2c_controller_test.peri.xml",
+            "I2C_SLAVE\\T20F256_devkit\\i2c_controller_test.xml"
+        ],
+        "external_example_2": [
+            "I2C_SLAVE\\Ti60F225_devkit\\i2c_clock_gen.v",
+            "I2C_SLAVE\\Ti60F225_devkit\\i2c_controller_test.v",
+            "I2C_SLAVE\\Ti60F225_devkit\\efx_i2c_master_controller.v",
+            "I2C_SLAVE\\Ti60F225_devkit\\efx_i2c_slave_controller.v",
+            "I2C_SLAVE\\Ti60F225_devkit\\i2c_Ti60.sdc",
+            "I2C_SLAVE\\Ti60F225_devkit\\i2c_functions.vh",
+            "I2C_SLAVE\\Ti60F225_devkit\\I2C_SLAVE.v",
+            "I2C_SLAVE\\Ti60F225_devkit\\I2C_SLAVE_define.vh",
+            "I2C_SLAVE\\Ti60F225_devkit\\i2c_controller_test.peri.xml",
+            "I2C_SLAVE\\Ti60F225_devkit\\i2c_controller_test.xml"
+        ],
+        "external_testbench_testbench": [
+            "I2C_SLAVE\\Testbench\\i2c_controller_tb.v",
+            "I2C_SLAVE\\Testbench\\i2c_controller_test.v",
+            "I2C_SLAVE\\Testbench\\efx_i2c_master_controller.v",
+            "I2C_SLAVE\\Testbench\\efx_i2c_slave_controller.v",
+            "I2C_SLAVE\\Testbench\\modelsim.do",
+            "I2C_SLAVE\\Testbench\\I2C_SLAVE.v",
+            "I2C_SLAVE\\Testbench\\I2C_SLAVE_define.vh"
+        ]
+    },
+    "ooc_synthesis": {},
+    "sw_version": "2025.2.288.4.15",
+    "generated_date": "2026-08-06T09:15:42.944536+00:00"
+}

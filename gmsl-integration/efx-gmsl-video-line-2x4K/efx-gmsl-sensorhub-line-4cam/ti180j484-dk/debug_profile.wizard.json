@@ -1,0 +1,4452 @@
+{
+    "debug_cores": [
+        {
+            "name": "la0",
+            "type": "la",
+            "uuid": "035a86bf672b411ba85d97872744dfd9",
+            "trigin_en": false,
+            "trigout_en": false,
+            "auto_inserted": true,
+            "capture_control": false,
+            "data_depth": 8192,
+            "input_pipeline": 1,
+            "probes": [
+                {
+                    "name": "csi_rx_monitor[0].inst_csi_rx_monitor/pixel_per_line",
+                    "width": 16,
+                    "probe_type": 1
+                },
+                {
+                    "name": "csi_rx_monitor[0].inst_csi_rx_monitor/frame_rate",
+                    "width": 10,
+                    "probe_type": 1
+                },
+                {
+                    "name": "csi_rx_monitor[0].inst_csi_rx_monitor/hsync_per_frame",
+                    "width": 16,
+                    "probe_type": 1
+                },
+                {
+                    "name": "csi_rx_monitor[1].inst_csi_rx_monitor/frame_rate",
+                    "width": 10,
+                    "probe_type": 1
+                },
+                {
+                    "name": "csi_rx_monitor[1].inst_csi_rx_monitor/hsync_per_frame",
+                    "width": 16,
+                    "probe_type": 1
+                },
+                {
+                    "name": "csi_rx_monitor[1].inst_csi_rx_monitor/pixel_per_line",
+                    "width": 16,
+                    "probe_type": 1
+                },
+                {
+                    "name": "csi_tx_vc_monitor[0].inst_csi_Tx_monitor/hsync_per_frame",
+                    "width": 16,
+                    "probe_type": 1
+                },
+                {
+                    "name": "csi_tx_vc_monitor[0].inst_csi_Tx_monitor/frame_rate",
+                    "width": 10,
+                    "probe_type": 1
+                },
+                {
+                    "name": "csi_tx_vc_monitor[0].inst_csi_Tx_monitor/pixel_per_line",
+                    "width": 16,
+                    "probe_type": 1
+                },
+                {
+                    "name": "csi_tx_vc_monitor[1].inst_csi_Tx_monitor/frame_rate",
+                    "width": 10,
+                    "probe_type": 1
+                },
+                {
+                    "name": "csi_tx_vc_monitor[1].inst_csi_Tx_monitor/hsync_per_frame",
+                    "width": 16,
+                    "probe_type": 1
+                },
+                {
+                    "name": "csi_tx_vc_monitor[1].inst_csi_Tx_monitor/pixel_per_line",
+                    "width": 16,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_csi_tx_controllers/tx_in_de",
+                    "width": 1,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_csi2_aggregator/wr_buffer_full[1]",
+                    "width": 1,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_csi2_aggregator/wr_buffer_full[0]",
+                    "width": 1,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_csi2_aggregator/wr_line_full[1]",
+                    "width": 1,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_csi2_aggregator/wr_line_full[0]",
+                    "width": 1,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_csi2_aggregator/tx_vsync[1]",
+                    "width": 1,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_csi2_aggregator/tx_vsync[0]",
+                    "width": 1,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_csi2_aggregator/tx_hsync[0]",
+                    "width": 1,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_csi2_aggregator/tx_hsync[1]",
+                    "width": 1,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_csi2_aggregator/global_hact",
+                    "width": 1,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_csi2_aggregator/global_hsync",
+                    "width": 1,
+                    "probe_type": 1
+                },
+                {
+                    "name": "csi_rx_monitor[0].inst_csi_rx_monitor/vsync_sync",
+                    "width": 1,
+                    "probe_type": 1
+                },
+                {
+                    "name": "csi_rx_monitor[0].inst_csi_rx_monitor/hsync_sync",
+                    "width": 1,
+                    "probe_type": 1
+                },
+                {
+                    "name": "csi_rx_monitor[1].inst_csi_rx_monitor/vsync_sync",
+                    "width": 1,
+                    "probe_type": 1
+                },
+                {
+                    "name": "csi_rx_monitor[1].inst_csi_rx_monitor/hsync_sync",
+                    "width": 1,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_csi_tx_controllers/csi_tx[0].w_fifo_empty",
+                    "width": 1,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_csi_tx_controllers/csi_tx[0].w_fifo_full",
+                    "width": 1,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_csi_tx_controllers/csi_tx[0].w_mipi_debug_out",
+                    "width": 32,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_csi_tx_controllers/csi_tx[0].w_video_hs",
+                    "width": 16,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_csi_tx_controllers/csi_tx[0].w_video_de",
+                    "width": 1,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_csi_tx_controllers/csi_tx[0].w_video_vs",
+                    "width": 16,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_csi_tx_controllers/csi_tx[0].w_video_valid",
+                    "width": 1,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_csi_rx_controllers/csi_rx[0].w_debug_error_bits",
+                    "width": 32,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_csi_rx_controllers/csi_rx[1].r_line_count",
+                    "width": 16,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_csi_rx_controllers/csi_rx[0].r_line_count",
+                    "width": 16,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_csi_rx_controllers/csi_rx[1].w_debug_error_bits",
+                    "width": 32,
+                    "probe_type": 1
+                },
+                {
+                    "name": "csi_rx_monitor[0].inst_csi_rx_monitor/mipi_clk_freq",
+                    "width": 32,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_csi_rx_controllers/csi_rx[0].w_rx_vs",
+                    "width": 1,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_csi_rx_controllers/csi_rx[0].w_rx_valid",
+                    "width": 1,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_csi_rx_controllers/csi_rx[0].w_rx_hs",
+                    "width": 1,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_csi_rx_controllers/csi_rx[1].w_rx_vs",
+                    "width": 1,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_csi_rx_controllers/csi_rx[1].w_rx_valid",
+                    "width": 1,
+                    "probe_type": 1
+                },
+                {
+                    "name": "inst_csi_rx_controllers/csi_rx[1].w_rx_hs",
+                    "width": 1,
+                    "probe_type": 1
+                },
+                {
+                    "name": "global_hsyn_cnt",
+                    "width": 32,
+                    "probe_type": 1
+                },
+                {
+                    "name": "idle_cnt",
+                    "width": 32,
+                    "probe_type": 1
+                },
+                {
+                    "name": "hsyn_cnt",
+                    "width": 32,
+                    "probe_type": 1
+                },
+                {
+                    "name": "de_cnt",
+                    "width": 32,
+                    "probe_type": 1
+                },
+                {
+                    "name": "ref_cnt",
+                    "width": 32,
+                    "probe_type": 1
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "command": "add_ports",
+            "id": 1,
+            "args": {
+                "netlist": "efx_gmsl_sensorhub_line_4cam_top",
+                "ports": [
+                    {
+                        "name": "jtag_inst2_autodbg_CAPTURE__",
+                        "dir": "in",
+                        "width": 1
+                    },
+                    {
+                        "name": "jtag_inst2_autodbg_DRCK__",
+                        "dir": "in",
+                        "width": 1
+                    },
+                    {
+                        "name": "jtag_inst2_autodbg_RESET__",
+                        "dir": "in",
+                        "width": 1
+                    },
+                    {
+                        "name": "jtag_inst2_autodbg_RUNTEST__",
+                        "dir": "in",
+                        "width": 1
+                    },
+                    {
+                        "name": "jtag_inst2_autodbg_SEL__",
+                        "dir": "in",
+                        "width": 1
+                    },
+                    {
+                        "name": "jtag_inst2_autodbg_SHIFT__",
+                        "dir": "in",
+                        "width": 1
+                    },
+                    {
+                        "name": "jtag_inst2_autodbg_TCK__",
+                        "dir": "in",
+                        "width": 1
+                    },
+                    {
+                        "name": "jtag_inst2_autodbg_TDI__",
+                        "dir": "in",
+                        "width": 1
+                    },
+                    {
+                        "name": "jtag_inst2_autodbg_TMS__",
+                        "dir": "in",
+                        "width": 1
+                    },
+                    {
+                        "name": "jtag_inst2_autodbg_UPDATE__",
+                        "dir": "in",
+                        "width": 1
+                    },
+                    {
+                        "name": "jtag_inst2_autodbg_TDO__",
+                        "dir": "out",
+                        "width": 1
+                    }
+                ]
+            }
+        },
+        {
+            "command": "instantiate",
+            "netlist": "edb_top",
+            "id": 2,
+            "instance": "edb_top_autodbg_inst__"
+        },
+        {
+            "command": "connect",
+            "id": 3,
+            "args": {
+                "instance": "edb_top_autodbg_inst__",
+                "ports": [
+                    {
+                        "name": "bscan_CAPTURE",
+                        "net": "jtag_inst2_autodbg_CAPTURE__"
+                    },
+                    {
+                        "name": "bscan_DRCK",
+                        "net": "jtag_inst2_autodbg_DRCK__"
+                    },
+                    {
+                        "name": "bscan_RESET",
+                        "net": "jtag_inst2_autodbg_RESET__"
+                    },
+                    {
+                        "name": "bscan_RUNTEST",
+                        "net": "jtag_inst2_autodbg_RUNTEST__"
+                    },
+                    {
+                        "name": "bscan_SEL",
+                        "net": "jtag_inst2_autodbg_SEL__"
+                    },
+                    {
+                        "name": "bscan_SHIFT",
+                        "net": "jtag_inst2_autodbg_SHIFT__"
+                    },
+                    {
+                        "name": "bscan_TCK",
+                        "net": "jtag_inst2_autodbg_TCK__"
+                    },
+                    {
+                        "name": "bscan_TDI",
+                        "net": "jtag_inst2_autodbg_TDI__"
+                    },
+                    {
+                        "name": "bscan_TMS",
+                        "net": "jtag_inst2_autodbg_TMS__"
+                    },
+                    {
+                        "name": "bscan_UPDATE",
+                        "net": "jtag_inst2_autodbg_UPDATE__"
+                    },
+                    {
+                        "name": "bscan_TDO",
+                        "net": "jtag_inst2_autodbg_TDO__"
+                    },
+                    {
+                        "name": "la0_clk",
+                        "net": "i_pixel_clk_tx",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe0[0]",
+                        "net": "pixel_per_line[0]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe0[1]",
+                        "net": "pixel_per_line[1]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe0[2]",
+                        "net": "pixel_per_line[2]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe0[3]",
+                        "net": "pixel_per_line[3]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe0[4]",
+                        "net": "pixel_per_line[4]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe0[5]",
+                        "net": "pixel_per_line[5]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe0[6]",
+                        "net": "pixel_per_line[6]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe0[7]",
+                        "net": "pixel_per_line[7]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe0[8]",
+                        "net": "pixel_per_line[8]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe0[9]",
+                        "net": "pixel_per_line[9]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe0[10]",
+                        "net": "pixel_per_line[10]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe0[11]",
+                        "net": "pixel_per_line[11]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe0[12]",
+                        "net": "pixel_per_line[12]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe0[13]",
+                        "net": "pixel_per_line[13]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe0[14]",
+                        "net": "pixel_per_line[14]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe0[15]",
+                        "net": "pixel_per_line[15]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe1[0]",
+                        "net": "frame_rate[0]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe1[1]",
+                        "net": "frame_rate[1]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe1[2]",
+                        "net": "frame_rate[2]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe1[3]",
+                        "net": "frame_rate[3]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe1[4]",
+                        "net": "frame_rate[4]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe1[5]",
+                        "net": "frame_rate[5]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe1[6]",
+                        "net": "frame_rate[6]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe1[7]",
+                        "net": "frame_rate[7]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe1[8]",
+                        "net": "frame_rate[8]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe1[9]",
+                        "net": "frame_rate[9]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe2[0]",
+                        "net": "hsync_per_frame[0]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe2[1]",
+                        "net": "hsync_per_frame[1]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe2[2]",
+                        "net": "hsync_per_frame[2]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe2[3]",
+                        "net": "hsync_per_frame[3]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe2[4]",
+                        "net": "hsync_per_frame[4]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe2[5]",
+                        "net": "hsync_per_frame[5]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe2[6]",
+                        "net": "hsync_per_frame[6]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe2[7]",
+                        "net": "hsync_per_frame[7]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe2[8]",
+                        "net": "hsync_per_frame[8]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe2[9]",
+                        "net": "hsync_per_frame[9]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe2[10]",
+                        "net": "hsync_per_frame[10]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe2[11]",
+                        "net": "hsync_per_frame[11]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe2[12]",
+                        "net": "hsync_per_frame[12]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe2[13]",
+                        "net": "hsync_per_frame[13]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe2[14]",
+                        "net": "hsync_per_frame[14]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe2[15]",
+                        "net": "hsync_per_frame[15]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe3[0]",
+                        "net": "frame_rate[0]",
+                        "path": [
+                            "csi_rx_monitor[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe3[1]",
+                        "net": "frame_rate[1]",
+                        "path": [
+                            "csi_rx_monitor[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe3[2]",
+                        "net": "frame_rate[2]",
+                        "path": [
+                            "csi_rx_monitor[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe3[3]",
+                        "net": "frame_rate[3]",
+                        "path": [
+                            "csi_rx_monitor[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe3[4]",
+                        "net": "frame_rate[4]",
+                        "path": [
+                            "csi_rx_monitor[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe3[5]",
+                        "net": "frame_rate[5]",
+                        "path": [
+                            "csi_rx_monitor[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe3[6]",
+                        "net": "frame_rate[6]",
+                        "path": [
+                            "csi_rx_monitor[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe3[7]",
+                        "net": "frame_rate[7]",
+                        "path": [
+                            "csi_rx_monitor[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe3[8]",
+                        "net": "frame_rate[8]",
+                        "path": [
+                            "csi_rx_monitor[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe3[9]",
+                        "net": "frame_rate[9]",
+                        "path": [
+                            "csi_rx_monitor[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe4[0]",
+                        "net": "hsync_per_frame[0]",
+                        "path": [
+                            "csi_rx_monitor[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe4[1]",
+                        "net": "hsync_per_frame[1]",
+                        "path": [
+                            "csi_rx_monitor[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe4[2]",
+                        "net": "hsync_per_frame[2]",
+                        "path": [
+                            "csi_rx_monitor[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe4[3]",
+                        "net": "hsync_per_frame[3]",
+                        "path": [
+                            "csi_rx_monitor[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe4[4]",
+                        "net": "hsync_per_frame[4]",
+                        "path": [
+                            "csi_rx_monitor[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe4[5]",
+                        "net": "hsync_per_frame[5]",
+                        "path": [
+                            "csi_rx_monitor[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe4[6]",
+                        "net": "hsync_per_frame[6]",
+                        "path": [
+                            "csi_rx_monitor[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe4[7]",
+                        "net": "hsync_per_frame[7]",
+                        "path": [
+                            "csi_rx_monitor[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe4[8]",
+                        "net": "hsync_per_frame[8]",
+                        "path": [
+                            "csi_rx_monitor[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe4[9]",
+                        "net": "hsync_per_frame[9]",
+                        "path": [
+                            "csi_rx_monitor[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe4[10]",
+                        "net": "hsync_per_frame[10]",
+                        "path": [
+                            "csi_rx_monitor[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe4[11]",
+                        "net": "hsync_per_frame[11]",
+                        "path": [
+                            "csi_rx_monitor[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe4[12]",
+                        "net": "hsync_per_frame[12]",
+                        "path": [
+                            "csi_rx_monitor[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe4[13]",
+                        "net": "hsync_per_frame[13]",
+                        "path": [
+                            "csi_rx_monitor[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe4[14]",
+                        "net": "hsync_per_frame[14]",
+                        "path": [
+                            "csi_rx_monitor[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe4[15]",
+                        "net": "hsync_per_frame[15]",
+                        "path": [
+                            "csi_rx_monitor[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe5[0]",
+                        "net": "pixel_per_line[0]",
+                        "path": [
+                            "csi_rx_monitor[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe5[1]",
+                        "net": "pixel_per_line[1]",
+                        "path": [
+                            "csi_rx_monitor[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe5[2]",
+                        "net": "pixel_per_line[2]",
+                        "path": [
+                            "csi_rx_monitor[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe5[3]",
+                        "net": "pixel_per_line[3]",
+                        "path": [
+                            "csi_rx_monitor[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe5[4]",
+                        "net": "pixel_per_line[4]",
+                        "path": [
+                            "csi_rx_monitor[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe5[5]",
+                        "net": "pixel_per_line[5]",
+                        "path": [
+                            "csi_rx_monitor[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe5[6]",
+                        "net": "pixel_per_line[6]",
+                        "path": [
+                            "csi_rx_monitor[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe5[7]",
+                        "net": "pixel_per_line[7]",
+                        "path": [
+                            "csi_rx_monitor[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe5[8]",
+                        "net": "pixel_per_line[8]",
+                        "path": [
+                            "csi_rx_monitor[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe5[9]",
+                        "net": "pixel_per_line[9]",
+                        "path": [
+                            "csi_rx_monitor[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe5[10]",
+                        "net": "pixel_per_line[10]",
+                        "path": [
+                            "csi_rx_monitor[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe5[11]",
+                        "net": "pixel_per_line[11]",
+                        "path": [
+                            "csi_rx_monitor[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe5[12]",
+                        "net": "pixel_per_line[12]",
+                        "path": [
+                            "csi_rx_monitor[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe5[13]",
+                        "net": "pixel_per_line[13]",
+                        "path": [
+                            "csi_rx_monitor[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe5[14]",
+                        "net": "pixel_per_line[14]",
+                        "path": [
+                            "csi_rx_monitor[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe5[15]",
+                        "net": "pixel_per_line[15]",
+                        "path": [
+                            "csi_rx_monitor[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe6[0]",
+                        "net": "hsync_per_frame[0]",
+                        "path": [
+                            "csi_tx_vc_monitor[0].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe6[1]",
+                        "net": "hsync_per_frame[1]",
+                        "path": [
+                            "csi_tx_vc_monitor[0].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe6[2]",
+                        "net": "hsync_per_frame[2]",
+                        "path": [
+                            "csi_tx_vc_monitor[0].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe6[3]",
+                        "net": "hsync_per_frame[3]",
+                        "path": [
+                            "csi_tx_vc_monitor[0].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe6[4]",
+                        "net": "hsync_per_frame[4]",
+                        "path": [
+                            "csi_tx_vc_monitor[0].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe6[5]",
+                        "net": "hsync_per_frame[5]",
+                        "path": [
+                            "csi_tx_vc_monitor[0].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe6[6]",
+                        "net": "hsync_per_frame[6]",
+                        "path": [
+                            "csi_tx_vc_monitor[0].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe6[7]",
+                        "net": "hsync_per_frame[7]",
+                        "path": [
+                            "csi_tx_vc_monitor[0].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe6[8]",
+                        "net": "hsync_per_frame[8]",
+                        "path": [
+                            "csi_tx_vc_monitor[0].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe6[9]",
+                        "net": "hsync_per_frame[9]",
+                        "path": [
+                            "csi_tx_vc_monitor[0].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe6[10]",
+                        "net": "hsync_per_frame[10]",
+                        "path": [
+                            "csi_tx_vc_monitor[0].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe6[11]",
+                        "net": "hsync_per_frame[11]",
+                        "path": [
+                            "csi_tx_vc_monitor[0].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe6[12]",
+                        "net": "hsync_per_frame[12]",
+                        "path": [
+                            "csi_tx_vc_monitor[0].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe6[13]",
+                        "net": "hsync_per_frame[13]",
+                        "path": [
+                            "csi_tx_vc_monitor[0].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe6[14]",
+                        "net": "hsync_per_frame[14]",
+                        "path": [
+                            "csi_tx_vc_monitor[0].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe6[15]",
+                        "net": "hsync_per_frame[15]",
+                        "path": [
+                            "csi_tx_vc_monitor[0].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe7[0]",
+                        "net": "frame_rate[0]",
+                        "path": [
+                            "csi_tx_vc_monitor[0].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe7[1]",
+                        "net": "frame_rate[1]",
+                        "path": [
+                            "csi_tx_vc_monitor[0].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe7[2]",
+                        "net": "frame_rate[2]",
+                        "path": [
+                            "csi_tx_vc_monitor[0].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe7[3]",
+                        "net": "frame_rate[3]",
+                        "path": [
+                            "csi_tx_vc_monitor[0].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe7[4]",
+                        "net": "frame_rate[4]",
+                        "path": [
+                            "csi_tx_vc_monitor[0].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe7[5]",
+                        "net": "frame_rate[5]",
+                        "path": [
+                            "csi_tx_vc_monitor[0].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe7[6]",
+                        "net": "frame_rate[6]",
+                        "path": [
+                            "csi_tx_vc_monitor[0].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe7[7]",
+                        "net": "frame_rate[7]",
+                        "path": [
+                            "csi_tx_vc_monitor[0].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe7[8]",
+                        "net": "frame_rate[8]",
+                        "path": [
+                            "csi_tx_vc_monitor[0].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe7[9]",
+                        "net": "frame_rate[9]",
+                        "path": [
+                            "csi_tx_vc_monitor[0].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe8[0]",
+                        "net": "pixel_per_line[0]",
+                        "path": [
+                            "csi_tx_vc_monitor[0].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe8[1]",
+                        "net": "pixel_per_line[1]",
+                        "path": [
+                            "csi_tx_vc_monitor[0].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe8[2]",
+                        "net": "pixel_per_line[2]",
+                        "path": [
+                            "csi_tx_vc_monitor[0].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe8[3]",
+                        "net": "pixel_per_line[3]",
+                        "path": [
+                            "csi_tx_vc_monitor[0].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe8[4]",
+                        "net": "pixel_per_line[4]",
+                        "path": [
+                            "csi_tx_vc_monitor[0].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe8[5]",
+                        "net": "pixel_per_line[5]",
+                        "path": [
+                            "csi_tx_vc_monitor[0].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe8[6]",
+                        "net": "pixel_per_line[6]",
+                        "path": [
+                            "csi_tx_vc_monitor[0].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe8[7]",
+                        "net": "pixel_per_line[7]",
+                        "path": [
+                            "csi_tx_vc_monitor[0].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe8[8]",
+                        "net": "pixel_per_line[8]",
+                        "path": [
+                            "csi_tx_vc_monitor[0].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe8[9]",
+                        "net": "pixel_per_line[9]",
+                        "path": [
+                            "csi_tx_vc_monitor[0].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe8[10]",
+                        "net": "pixel_per_line[10]",
+                        "path": [
+                            "csi_tx_vc_monitor[0].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe8[11]",
+                        "net": "pixel_per_line[11]",
+                        "path": [
+                            "csi_tx_vc_monitor[0].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe8[12]",
+                        "net": "pixel_per_line[12]",
+                        "path": [
+                            "csi_tx_vc_monitor[0].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe8[13]",
+                        "net": "pixel_per_line[13]",
+                        "path": [
+                            "csi_tx_vc_monitor[0].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe8[14]",
+                        "net": "pixel_per_line[14]",
+                        "path": [
+                            "csi_tx_vc_monitor[0].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe8[15]",
+                        "net": "pixel_per_line[15]",
+                        "path": [
+                            "csi_tx_vc_monitor[0].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe9[0]",
+                        "net": "frame_rate[0]",
+                        "path": [
+                            "csi_tx_vc_monitor[1].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe9[1]",
+                        "net": "frame_rate[1]",
+                        "path": [
+                            "csi_tx_vc_monitor[1].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe9[2]",
+                        "net": "frame_rate[2]",
+                        "path": [
+                            "csi_tx_vc_monitor[1].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe9[3]",
+                        "net": "frame_rate[3]",
+                        "path": [
+                            "csi_tx_vc_monitor[1].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe9[4]",
+                        "net": "frame_rate[4]",
+                        "path": [
+                            "csi_tx_vc_monitor[1].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe9[5]",
+                        "net": "frame_rate[5]",
+                        "path": [
+                            "csi_tx_vc_monitor[1].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe9[6]",
+                        "net": "frame_rate[6]",
+                        "path": [
+                            "csi_tx_vc_monitor[1].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe9[7]",
+                        "net": "frame_rate[7]",
+                        "path": [
+                            "csi_tx_vc_monitor[1].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe9[8]",
+                        "net": "frame_rate[8]",
+                        "path": [
+                            "csi_tx_vc_monitor[1].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe9[9]",
+                        "net": "frame_rate[9]",
+                        "path": [
+                            "csi_tx_vc_monitor[1].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe10[0]",
+                        "net": "hsync_per_frame[0]",
+                        "path": [
+                            "csi_tx_vc_monitor[1].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe10[1]",
+                        "net": "hsync_per_frame[1]",
+                        "path": [
+                            "csi_tx_vc_monitor[1].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe10[2]",
+                        "net": "hsync_per_frame[2]",
+                        "path": [
+                            "csi_tx_vc_monitor[1].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe10[3]",
+                        "net": "hsync_per_frame[3]",
+                        "path": [
+                            "csi_tx_vc_monitor[1].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe10[4]",
+                        "net": "hsync_per_frame[4]",
+                        "path": [
+                            "csi_tx_vc_monitor[1].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe10[5]",
+                        "net": "hsync_per_frame[5]",
+                        "path": [
+                            "csi_tx_vc_monitor[1].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe10[6]",
+                        "net": "hsync_per_frame[6]",
+                        "path": [
+                            "csi_tx_vc_monitor[1].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe10[7]",
+                        "net": "hsync_per_frame[7]",
+                        "path": [
+                            "csi_tx_vc_monitor[1].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe10[8]",
+                        "net": "hsync_per_frame[8]",
+                        "path": [
+                            "csi_tx_vc_monitor[1].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe10[9]",
+                        "net": "hsync_per_frame[9]",
+                        "path": [
+                            "csi_tx_vc_monitor[1].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe10[10]",
+                        "net": "hsync_per_frame[10]",
+                        "path": [
+                            "csi_tx_vc_monitor[1].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe10[11]",
+                        "net": "hsync_per_frame[11]",
+                        "path": [
+                            "csi_tx_vc_monitor[1].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe10[12]",
+                        "net": "hsync_per_frame[12]",
+                        "path": [
+                            "csi_tx_vc_monitor[1].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe10[13]",
+                        "net": "hsync_per_frame[13]",
+                        "path": [
+                            "csi_tx_vc_monitor[1].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe10[14]",
+                        "net": "hsync_per_frame[14]",
+                        "path": [
+                            "csi_tx_vc_monitor[1].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe10[15]",
+                        "net": "hsync_per_frame[15]",
+                        "path": [
+                            "csi_tx_vc_monitor[1].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe11[0]",
+                        "net": "pixel_per_line[0]",
+                        "path": [
+                            "csi_tx_vc_monitor[1].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe11[1]",
+                        "net": "pixel_per_line[1]",
+                        "path": [
+                            "csi_tx_vc_monitor[1].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe11[2]",
+                        "net": "pixel_per_line[2]",
+                        "path": [
+                            "csi_tx_vc_monitor[1].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe11[3]",
+                        "net": "pixel_per_line[3]",
+                        "path": [
+                            "csi_tx_vc_monitor[1].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe11[4]",
+                        "net": "pixel_per_line[4]",
+                        "path": [
+                            "csi_tx_vc_monitor[1].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe11[5]",
+                        "net": "pixel_per_line[5]",
+                        "path": [
+                            "csi_tx_vc_monitor[1].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe11[6]",
+                        "net": "pixel_per_line[6]",
+                        "path": [
+                            "csi_tx_vc_monitor[1].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe11[7]",
+                        "net": "pixel_per_line[7]",
+                        "path": [
+                            "csi_tx_vc_monitor[1].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe11[8]",
+                        "net": "pixel_per_line[8]",
+                        "path": [
+                            "csi_tx_vc_monitor[1].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe11[9]",
+                        "net": "pixel_per_line[9]",
+                        "path": [
+                            "csi_tx_vc_monitor[1].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe11[10]",
+                        "net": "pixel_per_line[10]",
+                        "path": [
+                            "csi_tx_vc_monitor[1].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe11[11]",
+                        "net": "pixel_per_line[11]",
+                        "path": [
+                            "csi_tx_vc_monitor[1].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe11[12]",
+                        "net": "pixel_per_line[12]",
+                        "path": [
+                            "csi_tx_vc_monitor[1].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe11[13]",
+                        "net": "pixel_per_line[13]",
+                        "path": [
+                            "csi_tx_vc_monitor[1].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe11[14]",
+                        "net": "pixel_per_line[14]",
+                        "path": [
+                            "csi_tx_vc_monitor[1].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe11[15]",
+                        "net": "pixel_per_line[15]",
+                        "path": [
+                            "csi_tx_vc_monitor[1].inst_csi_Tx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe12",
+                        "net": "tx_in_de[0]",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe13",
+                        "net": "wr_buffer_full[1]",
+                        "path": [
+                            "inst_csi2_aggregator"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe14",
+                        "net": "wr_buffer_full[0]",
+                        "path": [
+                            "inst_csi2_aggregator"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe15",
+                        "net": "wr_line_full[1]",
+                        "path": [
+                            "inst_csi2_aggregator"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe16",
+                        "net": "wr_line_full[0]",
+                        "path": [
+                            "inst_csi2_aggregator"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe17",
+                        "net": "tx_vsync[1]",
+                        "path": [
+                            "inst_csi2_aggregator"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe18",
+                        "net": "tx_vsync[0]",
+                        "path": [
+                            "inst_csi2_aggregator"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe19",
+                        "net": "tx_hsync[0]",
+                        "path": [
+                            "inst_csi2_aggregator"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe20",
+                        "net": "tx_hsync[1]",
+                        "path": [
+                            "inst_csi2_aggregator"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe21",
+                        "net": "global_hact",
+                        "path": [
+                            "inst_csi2_aggregator"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe22",
+                        "net": "global_hsync",
+                        "path": [
+                            "inst_csi2_aggregator"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe23",
+                        "net": "vsync_sync",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe24",
+                        "net": "hsync_sync",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe25",
+                        "net": "vsync_sync",
+                        "path": [
+                            "csi_rx_monitor[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe26",
+                        "net": "hsync_sync",
+                        "path": [
+                            "csi_rx_monitor[1].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe27",
+                        "net": "csi_tx[0].w_fifo_empty",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe28",
+                        "net": "csi_tx[0].w_fifo_full",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe29[0]",
+                        "net": "csi_tx[0].w_mipi_debug_out[0]",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe29[1]",
+                        "net": "csi_tx[0].w_mipi_debug_out[1]",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe29[2]",
+                        "net": "csi_tx[0].w_mipi_debug_out[2]",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe29[3]",
+                        "net": "csi_tx[0].w_mipi_debug_out[3]",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe29[4]",
+                        "net": "csi_tx[0].w_mipi_debug_out[4]",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe29[5]",
+                        "net": "csi_tx[0].w_mipi_debug_out[5]",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe29[6]",
+                        "net": "csi_tx[0].w_mipi_debug_out[6]",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe29[7]",
+                        "net": "csi_tx[0].w_mipi_debug_out[7]",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe29[8]",
+                        "net": "csi_tx[0].w_mipi_debug_out[8]",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe29[9]",
+                        "net": "csi_tx[0].w_mipi_debug_out[9]",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe29[10]",
+                        "net": "csi_tx[0].w_mipi_debug_out[10]",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe29[11]",
+                        "net": "csi_tx[0].w_mipi_debug_out[11]",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe29[12]",
+                        "net": "csi_tx[0].w_mipi_debug_out[12]",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe29[13]",
+                        "net": "csi_tx[0].w_mipi_debug_out[13]",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe29[14]",
+                        "net": "csi_tx[0].w_mipi_debug_out[14]",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe29[15]",
+                        "net": "csi_tx[0].w_mipi_debug_out[15]",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe29[16]",
+                        "net": "csi_tx[0].w_mipi_debug_out[16]",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe29[17]",
+                        "net": "csi_tx[0].w_mipi_debug_out[17]",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe29[18]",
+                        "net": "csi_tx[0].w_mipi_debug_out[18]",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe29[19]",
+                        "net": "csi_tx[0].w_mipi_debug_out[19]",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe29[20]",
+                        "net": "csi_tx[0].w_mipi_debug_out[20]",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe29[21]",
+                        "net": "csi_tx[0].w_mipi_debug_out[21]",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe29[22]",
+                        "net": "csi_tx[0].w_mipi_debug_out[22]",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe29[23]",
+                        "net": "csi_tx[0].w_mipi_debug_out[23]",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe29[24]",
+                        "net": "csi_tx[0].w_mipi_debug_out[24]",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe29[25]",
+                        "net": "csi_tx[0].w_mipi_debug_out[25]",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe29[26]",
+                        "net": "csi_tx[0].w_mipi_debug_out[26]",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe29[27]",
+                        "net": "csi_tx[0].w_mipi_debug_out[27]",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe29[28]",
+                        "net": "csi_tx[0].w_mipi_debug_out[28]",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe29[29]",
+                        "net": "csi_tx[0].w_mipi_debug_out[29]",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe29[30]",
+                        "net": "csi_tx[0].w_mipi_debug_out[30]",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe29[31]",
+                        "net": "csi_tx[0].w_mipi_debug_out[31]",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe30[0]",
+                        "net": "csi_tx[0].w_video_hs[0]",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe30[1]",
+                        "net": "csi_tx[0].w_video_hs[1]",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe30[2]",
+                        "net": "csi_tx[0].w_video_hs[2]",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe30[3]",
+                        "net": "csi_tx[0].w_video_hs[3]",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe30[4]",
+                        "net": "csi_tx[0].w_video_hs[4]",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe30[5]",
+                        "net": "csi_tx[0].w_video_hs[5]",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe30[6]",
+                        "net": "csi_tx[0].w_video_hs[6]",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe30[7]",
+                        "net": "csi_tx[0].w_video_hs[7]",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe30[8]",
+                        "net": "csi_tx[0].w_video_hs[8]",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe30[9]",
+                        "net": "csi_tx[0].w_video_hs[9]",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe30[10]",
+                        "net": "csi_tx[0].w_video_hs[10]",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe30[11]",
+                        "net": "csi_tx[0].w_video_hs[11]",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe30[12]",
+                        "net": "csi_tx[0].w_video_hs[12]",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe30[13]",
+                        "net": "csi_tx[0].w_video_hs[13]",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe30[14]",
+                        "net": "csi_tx[0].w_video_hs[14]",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe30[15]",
+                        "net": "csi_tx[0].w_video_hs[15]",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe31",
+                        "net": "csi_tx[0].w_video_de",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe32[0]",
+                        "net": "csi_tx[0].w_video_vs[0]",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe32[1]",
+                        "net": "csi_tx[0].w_video_vs[1]",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe32[2]",
+                        "net": "csi_tx[0].w_video_vs[2]",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe32[3]",
+                        "net": "csi_tx[0].w_video_vs[3]",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe32[4]",
+                        "net": "csi_tx[0].w_video_vs[4]",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe32[5]",
+                        "net": "csi_tx[0].w_video_vs[5]",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe32[6]",
+                        "net": "csi_tx[0].w_video_vs[6]",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe32[7]",
+                        "net": "csi_tx[0].w_video_vs[7]",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe32[8]",
+                        "net": "csi_tx[0].w_video_vs[8]",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe32[9]",
+                        "net": "csi_tx[0].w_video_vs[9]",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe32[10]",
+                        "net": "csi_tx[0].w_video_vs[10]",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe32[11]",
+                        "net": "csi_tx[0].w_video_vs[11]",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe32[12]",
+                        "net": "csi_tx[0].w_video_vs[12]",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe32[13]",
+                        "net": "csi_tx[0].w_video_vs[13]",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe32[14]",
+                        "net": "csi_tx[0].w_video_vs[14]",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe32[15]",
+                        "net": "csi_tx[0].w_video_vs[15]",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe33",
+                        "net": "csi_tx[0].w_video_valid",
+                        "path": [
+                            "inst_csi_tx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe34[0]",
+                        "net": "csi_rx[0].w_debug_error_bits[0]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe34[1]",
+                        "net": "csi_rx[0].w_debug_error_bits[1]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe34[2]",
+                        "net": "csi_rx[0].w_debug_error_bits[2]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe34[3]",
+                        "net": "csi_rx[0].w_debug_error_bits[3]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe34[4]",
+                        "net": "csi_rx[0].w_debug_error_bits[4]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe34[5]",
+                        "net": "csi_rx[0].w_debug_error_bits[5]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe34[6]",
+                        "net": "csi_rx[0].w_debug_error_bits[6]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe34[7]",
+                        "net": "csi_rx[0].w_debug_error_bits[7]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe34[8]",
+                        "net": "csi_rx[0].w_debug_error_bits[8]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe34[9]",
+                        "net": "csi_rx[0].w_debug_error_bits[9]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe34[10]",
+                        "net": "csi_rx[0].w_debug_error_bits[10]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe34[11]",
+                        "net": "csi_rx[0].w_debug_error_bits[11]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe34[12]",
+                        "net": "csi_rx[0].w_debug_error_bits[12]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe34[13]",
+                        "net": "csi_rx[0].w_debug_error_bits[13]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe34[14]",
+                        "net": "csi_rx[0].w_debug_error_bits[14]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe34[15]",
+                        "net": "csi_rx[0].w_debug_error_bits[15]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe34[16]",
+                        "net": "csi_rx[0].w_debug_error_bits[16]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe34[17]",
+                        "net": "csi_rx[0].w_debug_error_bits[17]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe34[18]",
+                        "net": "csi_rx[0].w_debug_error_bits[18]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe34[19]",
+                        "net": "csi_rx[0].w_debug_error_bits[19]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe34[20]",
+                        "net": "csi_rx[0].w_debug_error_bits[20]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe34[21]",
+                        "net": "csi_rx[0].w_debug_error_bits[21]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe34[22]",
+                        "net": "csi_rx[0].w_debug_error_bits[22]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe34[23]",
+                        "net": "csi_rx[0].w_debug_error_bits[23]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe34[24]",
+                        "net": "csi_rx[0].w_debug_error_bits[24]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe34[25]",
+                        "net": "csi_rx[0].w_debug_error_bits[25]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe34[26]",
+                        "net": "csi_rx[0].w_debug_error_bits[26]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe34[27]",
+                        "net": "csi_rx[0].w_debug_error_bits[27]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe34[28]",
+                        "net": "csi_rx[0].w_debug_error_bits[28]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe34[29]",
+                        "net": "csi_rx[0].w_debug_error_bits[29]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe34[30]",
+                        "net": "csi_rx[0].w_debug_error_bits[30]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe34[31]",
+                        "net": "csi_rx[0].w_debug_error_bits[31]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe35[0]",
+                        "net": "csi_rx[1].r_line_count[0]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe35[1]",
+                        "net": "csi_rx[1].r_line_count[1]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe35[2]",
+                        "net": "csi_rx[1].r_line_count[2]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe35[3]",
+                        "net": "csi_rx[1].r_line_count[3]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe35[4]",
+                        "net": "csi_rx[1].r_line_count[4]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe35[5]",
+                        "net": "csi_rx[1].r_line_count[5]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe35[6]",
+                        "net": "csi_rx[1].r_line_count[6]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe35[7]",
+                        "net": "csi_rx[1].r_line_count[7]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe35[8]",
+                        "net": "csi_rx[1].r_line_count[8]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe35[9]",
+                        "net": "csi_rx[1].r_line_count[9]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe35[10]",
+                        "net": "csi_rx[1].r_line_count[10]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe35[11]",
+                        "net": "csi_rx[1].r_line_count[11]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe35[12]",
+                        "net": "csi_rx[1].r_line_count[12]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe35[13]",
+                        "net": "csi_rx[1].r_line_count[13]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe35[14]",
+                        "net": "csi_rx[1].r_line_count[14]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe35[15]",
+                        "net": "csi_rx[1].r_line_count[15]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe36[0]",
+                        "net": "csi_rx[0].r_line_count[0]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe36[1]",
+                        "net": "csi_rx[0].r_line_count[1]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe36[2]",
+                        "net": "csi_rx[0].r_line_count[2]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe36[3]",
+                        "net": "csi_rx[0].r_line_count[3]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe36[4]",
+                        "net": "csi_rx[0].r_line_count[4]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe36[5]",
+                        "net": "csi_rx[0].r_line_count[5]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe36[6]",
+                        "net": "csi_rx[0].r_line_count[6]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe36[7]",
+                        "net": "csi_rx[0].r_line_count[7]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe36[8]",
+                        "net": "csi_rx[0].r_line_count[8]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe36[9]",
+                        "net": "csi_rx[0].r_line_count[9]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe36[10]",
+                        "net": "csi_rx[0].r_line_count[10]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe36[11]",
+                        "net": "csi_rx[0].r_line_count[11]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe36[12]",
+                        "net": "csi_rx[0].r_line_count[12]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe36[13]",
+                        "net": "csi_rx[0].r_line_count[13]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe36[14]",
+                        "net": "csi_rx[0].r_line_count[14]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe36[15]",
+                        "net": "csi_rx[0].r_line_count[15]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe37[0]",
+                        "net": "csi_rx[1].w_debug_error_bits[0]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe37[1]",
+                        "net": "csi_rx[1].w_debug_error_bits[1]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe37[2]",
+                        "net": "csi_rx[1].w_debug_error_bits[2]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe37[3]",
+                        "net": "csi_rx[1].w_debug_error_bits[3]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe37[4]",
+                        "net": "csi_rx[1].w_debug_error_bits[4]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe37[5]",
+                        "net": "csi_rx[1].w_debug_error_bits[5]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe37[6]",
+                        "net": "csi_rx[1].w_debug_error_bits[6]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe37[7]",
+                        "net": "csi_rx[1].w_debug_error_bits[7]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe37[8]",
+                        "net": "csi_rx[1].w_debug_error_bits[8]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe37[9]",
+                        "net": "csi_rx[1].w_debug_error_bits[9]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe37[10]",
+                        "net": "csi_rx[1].w_debug_error_bits[10]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe37[11]",
+                        "net": "csi_rx[1].w_debug_error_bits[11]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe37[12]",
+                        "net": "csi_rx[1].w_debug_error_bits[12]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe37[13]",
+                        "net": "csi_rx[1].w_debug_error_bits[13]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe37[14]",
+                        "net": "csi_rx[1].w_debug_error_bits[14]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe37[15]",
+                        "net": "csi_rx[1].w_debug_error_bits[15]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe37[16]",
+                        "net": "csi_rx[1].w_debug_error_bits[16]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe37[17]",
+                        "net": "csi_rx[1].w_debug_error_bits[17]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe37[18]",
+                        "net": "csi_rx[1].w_debug_error_bits[18]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe37[19]",
+                        "net": "csi_rx[1].w_debug_error_bits[19]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe37[20]",
+                        "net": "csi_rx[1].w_debug_error_bits[20]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe37[21]",
+                        "net": "csi_rx[1].w_debug_error_bits[21]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe37[22]",
+                        "net": "csi_rx[1].w_debug_error_bits[22]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe37[23]",
+                        "net": "csi_rx[1].w_debug_error_bits[23]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe37[24]",
+                        "net": "csi_rx[1].w_debug_error_bits[24]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe37[25]",
+                        "net": "csi_rx[1].w_debug_error_bits[25]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe37[26]",
+                        "net": "csi_rx[1].w_debug_error_bits[26]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe37[27]",
+                        "net": "csi_rx[1].w_debug_error_bits[27]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe37[28]",
+                        "net": "csi_rx[1].w_debug_error_bits[28]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe37[29]",
+                        "net": "csi_rx[1].w_debug_error_bits[29]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe37[30]",
+                        "net": "csi_rx[1].w_debug_error_bits[30]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe37[31]",
+                        "net": "csi_rx[1].w_debug_error_bits[31]",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe38[0]",
+                        "net": "mipi_clk_freq[0]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe38[1]",
+                        "net": "mipi_clk_freq[1]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe38[2]",
+                        "net": "mipi_clk_freq[2]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe38[3]",
+                        "net": "mipi_clk_freq[3]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe38[4]",
+                        "net": "mipi_clk_freq[4]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe38[5]",
+                        "net": "mipi_clk_freq[5]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe38[6]",
+                        "net": "mipi_clk_freq[6]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe38[7]",
+                        "net": "mipi_clk_freq[7]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe38[8]",
+                        "net": "mipi_clk_freq[8]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe38[9]",
+                        "net": "mipi_clk_freq[9]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe38[10]",
+                        "net": "mipi_clk_freq[10]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe38[11]",
+                        "net": "mipi_clk_freq[11]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe38[12]",
+                        "net": "mipi_clk_freq[12]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe38[13]",
+                        "net": "mipi_clk_freq[13]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe38[14]",
+                        "net": "mipi_clk_freq[14]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe38[15]",
+                        "net": "mipi_clk_freq[15]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe38[16]",
+                        "net": "mipi_clk_freq[16]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe38[17]",
+                        "net": "mipi_clk_freq[17]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe38[18]",
+                        "net": "mipi_clk_freq[18]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe38[19]",
+                        "net": "mipi_clk_freq[19]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe38[20]",
+                        "net": "mipi_clk_freq[20]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe38[21]",
+                        "net": "mipi_clk_freq[21]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe38[22]",
+                        "net": "mipi_clk_freq[22]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe38[23]",
+                        "net": "mipi_clk_freq[23]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe38[24]",
+                        "net": "mipi_clk_freq[24]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe38[25]",
+                        "net": "mipi_clk_freq[25]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe38[26]",
+                        "net": "mipi_clk_freq[26]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe38[27]",
+                        "net": "mipi_clk_freq[27]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe38[28]",
+                        "net": "mipi_clk_freq[28]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe38[29]",
+                        "net": "mipi_clk_freq[29]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe38[30]",
+                        "net": "mipi_clk_freq[30]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe38[31]",
+                        "net": "mipi_clk_freq[31]",
+                        "path": [
+                            "csi_rx_monitor[0].inst_csi_rx_monitor"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe39",
+                        "net": "csi_rx[0].w_rx_vs",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe40",
+                        "net": "csi_rx[0].w_rx_valid",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe41",
+                        "net": "csi_rx[0].w_rx_hs",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe42",
+                        "net": "csi_rx[1].w_rx_vs",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe43",
+                        "net": "csi_rx[1].w_rx_valid",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe44",
+                        "net": "csi_rx[1].w_rx_hs",
+                        "path": [
+                            "inst_csi_rx_controllers"
+                        ]
+                    },
+                    {
+                        "name": "la0_probe45[0]",
+                        "net": "global_hsyn_cnt[0]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe45[1]",
+                        "net": "global_hsyn_cnt[1]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe45[2]",
+                        "net": "global_hsyn_cnt[2]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe45[3]",
+                        "net": "global_hsyn_cnt[3]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe45[4]",
+                        "net": "global_hsyn_cnt[4]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe45[5]",
+                        "net": "global_hsyn_cnt[5]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe45[6]",
+                        "net": "global_hsyn_cnt[6]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe45[7]",
+                        "net": "global_hsyn_cnt[7]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe45[8]",
+                        "net": "global_hsyn_cnt[8]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe45[9]",
+                        "net": "global_hsyn_cnt[9]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe45[10]",
+                        "net": "global_hsyn_cnt[10]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe45[11]",
+                        "net": "global_hsyn_cnt[11]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe45[12]",
+                        "net": "global_hsyn_cnt[12]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe45[13]",
+                        "net": "global_hsyn_cnt[13]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe45[14]",
+                        "net": "global_hsyn_cnt[14]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe45[15]",
+                        "net": "global_hsyn_cnt[15]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe45[16]",
+                        "net": "global_hsyn_cnt[16]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe45[17]",
+                        "net": "global_hsyn_cnt[17]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe45[18]",
+                        "net": "global_hsyn_cnt[18]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe45[19]",
+                        "net": "global_hsyn_cnt[19]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe45[20]",
+                        "net": "global_hsyn_cnt[20]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe45[21]",
+                        "net": "global_hsyn_cnt[21]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe45[22]",
+                        "net": "global_hsyn_cnt[22]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe45[23]",
+                        "net": "global_hsyn_cnt[23]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe45[24]",
+                        "net": "global_hsyn_cnt[24]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe45[25]",
+                        "net": "global_hsyn_cnt[25]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe45[26]",
+                        "net": "global_hsyn_cnt[26]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe45[27]",
+                        "net": "global_hsyn_cnt[27]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe45[28]",
+                        "net": "global_hsyn_cnt[28]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe45[29]",
+                        "net": "global_hsyn_cnt[29]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe45[30]",
+                        "net": "global_hsyn_cnt[30]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe45[31]",
+                        "net": "global_hsyn_cnt[31]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe46[0]",
+                        "net": "idle_cnt[0]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe46[1]",
+                        "net": "idle_cnt[1]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe46[2]",
+                        "net": "idle_cnt[2]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe46[3]",
+                        "net": "idle_cnt[3]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe46[4]",
+                        "net": "idle_cnt[4]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe46[5]",
+                        "net": "idle_cnt[5]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe46[6]",
+                        "net": "idle_cnt[6]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe46[7]",
+                        "net": "idle_cnt[7]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe46[8]",
+                        "net": "idle_cnt[8]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe46[9]",
+                        "net": "idle_cnt[9]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe46[10]",
+                        "net": "idle_cnt[10]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe46[11]",
+                        "net": "idle_cnt[11]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe46[12]",
+                        "net": "idle_cnt[12]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe46[13]",
+                        "net": "idle_cnt[13]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe46[14]",
+                        "net": "idle_cnt[14]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe46[15]",
+                        "net": "idle_cnt[15]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe46[16]",
+                        "net": "idle_cnt[16]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe46[17]",
+                        "net": "idle_cnt[17]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe46[18]",
+                        "net": "idle_cnt[18]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe46[19]",
+                        "net": "idle_cnt[19]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe46[20]",
+                        "net": "idle_cnt[20]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe46[21]",
+                        "net": "idle_cnt[21]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe46[22]",
+                        "net": "idle_cnt[22]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe46[23]",
+                        "net": "idle_cnt[23]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe46[24]",
+                        "net": "idle_cnt[24]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe46[25]",
+                        "net": "idle_cnt[25]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe46[26]",
+                        "net": "idle_cnt[26]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe46[27]",
+                        "net": "idle_cnt[27]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe46[28]",
+                        "net": "idle_cnt[28]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe46[29]",
+                        "net": "idle_cnt[29]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe46[30]",
+                        "net": "idle_cnt[30]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe46[31]",
+                        "net": "idle_cnt[31]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe47[0]",
+                        "net": "hsyn_cnt[0]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe47[1]",
+                        "net": "hsyn_cnt[1]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe47[2]",
+                        "net": "hsyn_cnt[2]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe47[3]",
+                        "net": "hsyn_cnt[3]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe47[4]",
+                        "net": "hsyn_cnt[4]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe47[5]",
+                        "net": "hsyn_cnt[5]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe47[6]",
+                        "net": "hsyn_cnt[6]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe47[7]",
+                        "net": "hsyn_cnt[7]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe47[8]",
+                        "net": "hsyn_cnt[8]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe47[9]",
+                        "net": "hsyn_cnt[9]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe47[10]",
+                        "net": "hsyn_cnt[10]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe47[11]",
+                        "net": "hsyn_cnt[11]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe47[12]",
+                        "net": "hsyn_cnt[12]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe47[13]",
+                        "net": "hsyn_cnt[13]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe47[14]",
+                        "net": "hsyn_cnt[14]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe47[15]",
+                        "net": "hsyn_cnt[15]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe47[16]",
+                        "net": "hsyn_cnt[16]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe47[17]",
+                        "net": "hsyn_cnt[17]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe47[18]",
+                        "net": "hsyn_cnt[18]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe47[19]",
+                        "net": "hsyn_cnt[19]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe47[20]",
+                        "net": "hsyn_cnt[20]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe47[21]",
+                        "net": "hsyn_cnt[21]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe47[22]",
+                        "net": "hsyn_cnt[22]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe47[23]",
+                        "net": "hsyn_cnt[23]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe47[24]",
+                        "net": "hsyn_cnt[24]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe47[25]",
+                        "net": "hsyn_cnt[25]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe47[26]",
+                        "net": "hsyn_cnt[26]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe47[27]",
+                        "net": "hsyn_cnt[27]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe47[28]",
+                        "net": "hsyn_cnt[28]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe47[29]",
+                        "net": "hsyn_cnt[29]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe47[30]",
+                        "net": "hsyn_cnt[30]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe47[31]",
+                        "net": "hsyn_cnt[31]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe48[0]",
+                        "net": "de_cnt[0]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe48[1]",
+                        "net": "de_cnt[1]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe48[2]",
+                        "net": "de_cnt[2]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe48[3]",
+                        "net": "de_cnt[3]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe48[4]",
+                        "net": "de_cnt[4]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe48[5]",
+                        "net": "de_cnt[5]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe48[6]",
+                        "net": "de_cnt[6]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe48[7]",
+                        "net": "de_cnt[7]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe48[8]",
+                        "net": "de_cnt[8]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe48[9]",
+                        "net": "de_cnt[9]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe48[10]",
+                        "net": "de_cnt[10]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe48[11]",
+                        "net": "de_cnt[11]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe48[12]",
+                        "net": "de_cnt[12]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe48[13]",
+                        "net": "de_cnt[13]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe48[14]",
+                        "net": "de_cnt[14]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe48[15]",
+                        "net": "de_cnt[15]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe48[16]",
+                        "net": "de_cnt[16]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe48[17]",
+                        "net": "de_cnt[17]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe48[18]",
+                        "net": "de_cnt[18]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe48[19]",
+                        "net": "de_cnt[19]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe48[20]",
+                        "net": "de_cnt[20]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe48[21]",
+                        "net": "de_cnt[21]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe48[22]",
+                        "net": "de_cnt[22]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe48[23]",
+                        "net": "de_cnt[23]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe48[24]",
+                        "net": "de_cnt[24]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe48[25]",
+                        "net": "de_cnt[25]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe48[26]",
+                        "net": "de_cnt[26]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe48[27]",
+                        "net": "de_cnt[27]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe48[28]",
+                        "net": "de_cnt[28]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe48[29]",
+                        "net": "de_cnt[29]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe48[30]",
+                        "net": "de_cnt[30]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe48[31]",
+                        "net": "de_cnt[31]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe49[0]",
+                        "net": "ref_cnt[0]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe49[1]",
+                        "net": "ref_cnt[1]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe49[2]",
+                        "net": "ref_cnt[2]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe49[3]",
+                        "net": "ref_cnt[3]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe49[4]",
+                        "net": "ref_cnt[4]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe49[5]",
+                        "net": "ref_cnt[5]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe49[6]",
+                        "net": "ref_cnt[6]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe49[7]",
+                        "net": "ref_cnt[7]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe49[8]",
+                        "net": "ref_cnt[8]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe49[9]",
+                        "net": "ref_cnt[9]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe49[10]",
+                        "net": "ref_cnt[10]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe49[11]",
+                        "net": "ref_cnt[11]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe49[12]",
+                        "net": "ref_cnt[12]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe49[13]",
+                        "net": "ref_cnt[13]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe49[14]",
+                        "net": "ref_cnt[14]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe49[15]",
+                        "net": "ref_cnt[15]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe49[16]",
+                        "net": "ref_cnt[16]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe49[17]",
+                        "net": "ref_cnt[17]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe49[18]",
+                        "net": "ref_cnt[18]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe49[19]",
+                        "net": "ref_cnt[19]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe49[20]",
+                        "net": "ref_cnt[20]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe49[21]",
+                        "net": "ref_cnt[21]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe49[22]",
+                        "net": "ref_cnt[22]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe49[23]",
+                        "net": "ref_cnt[23]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe49[24]",
+                        "net": "ref_cnt[24]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe49[25]",
+                        "net": "ref_cnt[25]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe49[26]",
+                        "net": "ref_cnt[26]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe49[27]",
+                        "net": "ref_cnt[27]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe49[28]",
+                        "net": "ref_cnt[28]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe49[29]",
+                        "net": "ref_cnt[29]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe49[30]",
+                        "net": "ref_cnt[30]",
+                        "path": []
+                    },
+                    {
+                        "name": "la0_probe49[31]",
+                        "net": "ref_cnt[31]",
+                        "path": []
+                    }
+                ]
+            }
+        }
+    ],
+    "vdbs": [
+        {
+            "file": "debug_top.post.vdb",
+            "instance": "edb_top_autodbg_inst__"
+        }
+    ],
+    "session": {
+        "wizard": {
+            "data_depth": 8192,
+            "capture_control": false,
+            "selected_nets": [
+                {
+                    "name": "pixel_per_line",
+                    "width": 16,
+                    "clk_domain": "i_pixel_clk_tx",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "csi_rx_monitor[0].inst_csi_rx_monitor"
+                    ],
+                    "net_idx_left": 15,
+                    "net_idx_right": 0
+                },
+                {
+                    "name": "frame_rate",
+                    "width": 10,
+                    "clk_domain": "i_pixel_clk_tx",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "csi_rx_monitor[0].inst_csi_rx_monitor"
+                    ],
+                    "net_idx_left": 9,
+                    "net_idx_right": 0
+                },
+                {
+                    "name": "hsync_per_frame",
+                    "width": 16,
+                    "clk_domain": "i_pixel_clk_tx",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "csi_rx_monitor[0].inst_csi_rx_monitor"
+                    ],
+                    "net_idx_left": 15,
+                    "net_idx_right": 0
+                },
+                {
+                    "name": "frame_rate",
+                    "width": 10,
+                    "clk_domain": "i_pixel_clk_tx",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "csi_rx_monitor[1].inst_csi_rx_monitor"
+                    ],
+                    "net_idx_left": 9,
+                    "net_idx_right": 0
+                },
+                {
+                    "name": "hsync_per_frame",
+                    "width": 16,
+                    "clk_domain": "i_pixel_clk_tx",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "csi_rx_monitor[1].inst_csi_rx_monitor"
+                    ],
+                    "net_idx_left": 15,
+                    "net_idx_right": 0
+                },
+                {
+                    "name": "pixel_per_line",
+                    "width": 16,
+                    "clk_domain": "i_pixel_clk_tx",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "csi_rx_monitor[1].inst_csi_rx_monitor"
+                    ],
+                    "net_idx_left": 15,
+                    "net_idx_right": 0
+                },
+                {
+                    "name": "hsync_per_frame",
+                    "width": 16,
+                    "clk_domain": "i_pixel_clk_tx",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "csi_tx_vc_monitor[0].inst_csi_Tx_monitor"
+                    ],
+                    "net_idx_left": 15,
+                    "net_idx_right": 0
+                },
+                {
+                    "name": "frame_rate",
+                    "width": 10,
+                    "clk_domain": "i_pixel_clk_tx",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "csi_tx_vc_monitor[0].inst_csi_Tx_monitor"
+                    ],
+                    "net_idx_left": 9,
+                    "net_idx_right": 0
+                },
+                {
+                    "name": "pixel_per_line",
+                    "width": 16,
+                    "clk_domain": "i_pixel_clk_tx",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "csi_tx_vc_monitor[0].inst_csi_Tx_monitor"
+                    ],
+                    "net_idx_left": 15,
+                    "net_idx_right": 0
+                },
+                {
+                    "name": "frame_rate",
+                    "width": 10,
+                    "clk_domain": "i_pixel_clk_tx",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "csi_tx_vc_monitor[1].inst_csi_Tx_monitor"
+                    ],
+                    "net_idx_left": 9,
+                    "net_idx_right": 0
+                },
+                {
+                    "name": "hsync_per_frame",
+                    "width": 16,
+                    "clk_domain": "i_pixel_clk_tx",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "csi_tx_vc_monitor[1].inst_csi_Tx_monitor"
+                    ],
+                    "net_idx_left": 15,
+                    "net_idx_right": 0
+                },
+                {
+                    "name": "pixel_per_line",
+                    "width": 16,
+                    "clk_domain": "i_pixel_clk_tx",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "csi_tx_vc_monitor[1].inst_csi_Tx_monitor"
+                    ],
+                    "net_idx_left": 15,
+                    "net_idx_right": 0
+                },
+                {
+                    "name": "tx_in_de",
+                    "width": 1,
+                    "clk_domain": "i_pixel_clk_tx",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_csi_tx_controllers"
+                    ],
+                    "net_idx_left": 0,
+                    "net_idx_right": 0
+                },
+                {
+                    "name": "wr_buffer_full[1]",
+                    "width": 1,
+                    "clk_domain": "i_pixel_clk_tx",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_csi2_aggregator"
+                    ]
+                },
+                {
+                    "name": "wr_buffer_full[0]",
+                    "width": 1,
+                    "clk_domain": "i_pixel_clk_tx",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_csi2_aggregator"
+                    ]
+                },
+                {
+                    "name": "wr_line_full[1]",
+                    "width": 1,
+                    "clk_domain": "i_pixel_clk_tx",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_csi2_aggregator"
+                    ]
+                },
+                {
+                    "name": "wr_line_full[0]",
+                    "width": 1,
+                    "clk_domain": "i_pixel_clk_tx",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_csi2_aggregator"
+                    ]
+                },
+                {
+                    "name": "tx_vsync[1]",
+                    "width": 1,
+                    "clk_domain": "i_pixel_clk_tx",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_csi2_aggregator"
+                    ]
+                },
+                {
+                    "name": "tx_vsync[0]",
+                    "width": 1,
+                    "clk_domain": "i_pixel_clk_tx",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_csi2_aggregator"
+                    ]
+                },
+                {
+                    "name": "tx_hsync[0]",
+                    "width": 1,
+                    "clk_domain": "i_pixel_clk_tx",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_csi2_aggregator"
+                    ]
+                },
+                {
+                    "name": "tx_hsync[1]",
+                    "width": 1,
+                    "clk_domain": "i_pixel_clk_tx",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_csi2_aggregator"
+                    ]
+                },
+                {
+                    "name": "global_hact",
+                    "width": 1,
+                    "clk_domain": "i_pixel_clk_tx",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_csi2_aggregator"
+                    ]
+                },
+                {
+                    "name": "global_hsync",
+                    "width": 1,
+                    "clk_domain": "i_pixel_clk_tx",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_csi2_aggregator"
+                    ]
+                },
+                {
+                    "name": "vsync_sync",
+                    "width": 1,
+                    "clk_domain": "i_pixel_clk_tx",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "csi_rx_monitor[0].inst_csi_rx_monitor"
+                    ]
+                },
+                {
+                    "name": "hsync_sync",
+                    "width": 1,
+                    "clk_domain": "i_pixel_clk_tx",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "csi_rx_monitor[0].inst_csi_rx_monitor"
+                    ]
+                },
+                {
+                    "name": "vsync_sync",
+                    "width": 1,
+                    "clk_domain": "i_pixel_clk_tx",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "csi_rx_monitor[1].inst_csi_rx_monitor"
+                    ]
+                },
+                {
+                    "name": "hsync_sync",
+                    "width": 1,
+                    "clk_domain": "i_pixel_clk_tx",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "csi_rx_monitor[1].inst_csi_rx_monitor"
+                    ]
+                },
+                {
+                    "name": "csi_tx[0].w_fifo_empty",
+                    "width": 1,
+                    "clk_domain": "i_pixel_clk_tx",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_csi_tx_controllers"
+                    ]
+                },
+                {
+                    "name": "csi_tx[0].w_fifo_full",
+                    "width": 1,
+                    "clk_domain": "i_pixel_clk_tx",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_csi_tx_controllers"
+                    ]
+                },
+                {
+                    "name": "csi_tx[0].w_mipi_debug_out",
+                    "width": 32,
+                    "clk_domain": "i_pixel_clk_tx",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_csi_tx_controllers"
+                    ],
+                    "net_idx_left": 31,
+                    "net_idx_right": 0
+                },
+                {
+                    "name": "csi_tx[0].w_video_hs",
+                    "width": 16,
+                    "clk_domain": "i_pixel_clk_tx",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_csi_tx_controllers"
+                    ],
+                    "net_idx_left": 15,
+                    "net_idx_right": 0
+                },
+                {
+                    "name": "csi_tx[0].w_video_de",
+                    "width": 1,
+                    "clk_domain": "i_pixel_clk_tx",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_csi_tx_controllers"
+                    ]
+                },
+                {
+                    "name": "csi_tx[0].w_video_vs",
+                    "width": 16,
+                    "clk_domain": "i_pixel_clk_tx",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_csi_tx_controllers"
+                    ],
+                    "net_idx_left": 15,
+                    "net_idx_right": 0
+                },
+                {
+                    "name": "csi_tx[0].w_video_valid",
+                    "width": 1,
+                    "clk_domain": "i_pixel_clk_tx",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_csi_tx_controllers"
+                    ]
+                },
+                {
+                    "name": "csi_rx[0].w_debug_error_bits",
+                    "width": 32,
+                    "clk_domain": "i_pixel_clk_tx",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_csi_rx_controllers"
+                    ],
+                    "net_idx_left": 31,
+                    "net_idx_right": 0
+                },
+                {
+                    "name": "csi_rx[1].r_line_count",
+                    "width": 16,
+                    "clk_domain": "i_pixel_clk_tx",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_csi_rx_controllers"
+                    ],
+                    "net_idx_left": 15,
+                    "net_idx_right": 0
+                },
+                {
+                    "name": "csi_rx[0].r_line_count",
+                    "width": 16,
+                    "clk_domain": "i_pixel_clk_tx",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_csi_rx_controllers"
+                    ],
+                    "net_idx_left": 15,
+                    "net_idx_right": 0
+                },
+                {
+                    "name": "csi_rx[1].w_debug_error_bits",
+                    "width": 32,
+                    "clk_domain": "i_pixel_clk_tx",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_csi_rx_controllers"
+                    ],
+                    "net_idx_left": 31,
+                    "net_idx_right": 0
+                },
+                {
+                    "name": "mipi_clk_freq",
+                    "width": 32,
+                    "clk_domain": "i_pixel_clk_tx",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "csi_rx_monitor[0].inst_csi_rx_monitor"
+                    ],
+                    "net_idx_left": 31,
+                    "net_idx_right": 0
+                },
+                {
+                    "name": "csi_rx[0].w_rx_vs",
+                    "width": 1,
+                    "clk_domain": "i_pixel_clk_tx",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_csi_rx_controllers"
+                    ]
+                },
+                {
+                    "name": "csi_rx[0].w_rx_valid",
+                    "width": 1,
+                    "clk_domain": "i_pixel_clk_tx",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_csi_rx_controllers"
+                    ]
+                },
+                {
+                    "name": "csi_rx[0].w_rx_hs",
+                    "width": 1,
+                    "clk_domain": "i_pixel_clk_tx",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_csi_rx_controllers"
+                    ]
+                },
+                {
+                    "name": "csi_rx[1].w_rx_vs",
+                    "width": 1,
+                    "clk_domain": "i_pixel_clk_tx",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_csi_rx_controllers"
+                    ]
+                },
+                {
+                    "name": "csi_rx[1].w_rx_valid",
+                    "width": 1,
+                    "clk_domain": "i_pixel_clk_tx",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_csi_rx_controllers"
+                    ]
+                },
+                {
+                    "name": "csi_rx[1].w_rx_hs",
+                    "width": 1,
+                    "clk_domain": "i_pixel_clk_tx",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [
+                        "inst_csi_rx_controllers"
+                    ]
+                },
+                {
+                    "name": "global_hsyn_cnt",
+                    "width": 32,
+                    "clk_domain": "i_pixel_clk_tx",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [],
+                    "net_idx_left": 31,
+                    "net_idx_right": 0
+                },
+                {
+                    "name": "idle_cnt",
+                    "width": 32,
+                    "clk_domain": "i_pixel_clk_tx",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [],
+                    "net_idx_left": 31,
+                    "net_idx_right": 0
+                },
+                {
+                    "name": "hsyn_cnt",
+                    "width": 32,
+                    "clk_domain": "i_pixel_clk_tx",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [],
+                    "net_idx_left": 31,
+                    "net_idx_right": 0
+                },
+                {
+                    "name": "de_cnt",
+                    "width": 32,
+                    "clk_domain": "i_pixel_clk_tx",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [],
+                    "net_idx_left": 31,
+                    "net_idx_right": 0
+                },
+                {
+                    "name": "ref_cnt",
+                    "width": 32,
+                    "clk_domain": "i_pixel_clk_tx",
+                    "selected_probe_type": "DATA AND TRIGGER",
+                    "child": [],
+                    "path": [],
+                    "net_idx_left": 31,
+                    "net_idx_right": 0
+                }
+            ],
+            "top_module": "efx_gmsl_sensorhub_line_4cam_top",
+            "src": "elaborate",
+            "jtag_user": "USER2",
+            "input_pipeline": 1
+        }
+    }
+}
